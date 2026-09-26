@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "astro-dev",
+      "runtimeExecutable": "/bin/zsh",
+      "runtimeArgs": ["-c", "export PATH=\"$HOME/.local/node/bin:$PATH\"; cd \"$HOME/Projects/my-astro-site\" && npm run dev -- --port 4321"],
+      "port": 4321
+    }
+  ]
+}
