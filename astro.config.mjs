@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 
 // Domain für Canonical-URLs, Open Graph und Sitemap (DNS bei Strato → GitHub Pages).
-const SITE_URL = 'https://studio-kuhls.de';
+const SITE_URL = 'https://www.studio-kuhls.de';
 
 export default defineConfig({
   site: SITE_URL,
