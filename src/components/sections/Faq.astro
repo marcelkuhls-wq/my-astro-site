@@ -1,0 +1,40 @@
+---
+/** Häufige Fragen – native <details>, kein JavaScript. */
+import SectionLabel from '../ui/SectionLabel.astro';
+
+interface Props {
+  items: { q: string; a: string }[];
+  title?: string;
+}
+const { items, title = 'Häufige Fragen' } = Astro.props;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: items.map((i) => ({
+    '@type': 'Question',
+    name: i.q,
+    acceptedAnswer: { '@type': 'Answer', text: i.a },
+  })),
+};
+---
+
+<section class="section-t">
+  <SectionLabel label={title} />
+  <div class="wrap grid-12 mt-10 md:mt-14">
+    <div class="col-span-12 md:col-span-9 md:col-start-4">
+      {
+        items.map((item) => (
+          <details class="group border-b border-line" data-reveal>
+            <summary class="flex cursor-pointer list-none items-baseline justify-between gap-8 py-6 text-[1.1875rem] leading-snug tracking-[-0.01em] [&::-webkit-details-marker]:hidden">
+              <span>{item.q}</span>
+              <span class="shrink-0 text-muted transition-transform duration-300 group-open:rotate-45" aria-hidden="true">+</span>
+            </summary>
+            <p class="max-w-[40rem] pb-8 text-muted">{item.a}</p>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+</section>

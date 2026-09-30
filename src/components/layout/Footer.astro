@@ -1,0 +1,75 @@
+---
+import { site } from '../../config/site';
+import { services } from '../../data/services';
+import { getArticles } from '../../lib/work';
+
+const hasJournal = (await getArticles()).length > 0;
+
+const year = new Date().getFullYear();
+const socials = [
+  { label: 'Instagram', href: site.social.instagram },
+  { label: 'LinkedIn', href: site.social.linkedin },
+].filter((s) => s.href);
+---
+
+<footer class="bg-ink text-bone">
+  <div class="wrap grid-12 gap-y-12 pt-20 pb-10 md:pt-28">
+    <div class="col-span-12 md:col-span-5">
+      <p class="font-display text-[0.9375rem] font-medium tracking-[0.16em] uppercase">Studio Kuhls</p>
+      <p class="mt-4 max-w-[22rem] text-muted-dark">
+        Fotografie für Unternehmen.<br />
+        Employer Branding, Business, Immobilien und Events aus Hamburg.
+      </p>
+    </div>
+
+    <nav aria-label="Leistungen" class="col-span-6 md:col-span-3">
+      <p class="label mb-4 text-muted-dark">Leistungen</p>
+      <ul class="space-y-1.5">
+        {services.map((s) => <li><a class="link-line decoration-transparent" href={s.href}>{s.title}</a></li>)}
+      </ul>
+    </nav>
+
+    <nav aria-label="Studio" class="col-span-6 md:col-span-2">
+      <p class="label mb-4 text-muted-dark">Studio</p>
+      <ul class="space-y-1.5">
+        <li><a class="link-line decoration-transparent" href="/work">Work</a></li>
+        <li><a class="link-line decoration-transparent" href="/about">About</a></li>
+        {hasJournal && <li><a class="link-line decoration-transparent" href="/journal">Journal</a></li>}
+        <li><a class="link-line decoration-transparent" href="/kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+
+    <div class="col-span-12 md:col-span-2">
+      <p class="label mb-4 text-muted-dark">Kontakt</p>
+      <ul class="space-y-1.5">
+        <li><a class="link-line decoration-transparent break-all" href={`mailto:${site.email}`}>{site.email}</a></li>
+        {site.phone && <li><a class="link-line decoration-transparent" href={`tel:${site.phone.replace(/\s/g, '')}`}>{site.phone}</a></li>}
+        {socials.map((s) => <li><a class="link-line decoration-transparent" href={s.href} rel="me noopener" target="_blank">{s.label}</a></li>)}
+      </ul>
+    </div>
+
+    <div class="col-span-12 mt-8 flex flex-col gap-3 border-t border-line-dark pt-6 text-[0.8125rem] text-muted-dark sm:flex-row sm:justify-between">
+      <p>
+        © {year} {site.name}, Hamburg
+        <span class="ml-3 tabular-nums" data-hamburg-time hidden>· <span></span> Ortszeit</span>
+      </p>
+      <p class="flex gap-6">
+        <a href="/impressum" class="hover:text-bone">Impressum</a>
+        <a href="/datenschutz" class="hover:text-bone">Datenschutz</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Ortszeit Hamburg – kleines lokales Detail, aktualisiert jede halbe Minute
+  const el = document.querySelector<HTMLElement>('[data-hamburg-time]');
+  if (el) {
+    const out = el.querySelector('span')!;
+    const fmt = new Intl.DateTimeFormat('de-DE', { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Berlin' });
+    const tick = () => (out.textContent = fmt.format(new Date()));
+    tick();
+    el.hidden = false;
+    setInterval(tick, 30_000);
+  }
+</script>

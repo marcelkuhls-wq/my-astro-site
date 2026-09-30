@@ -1,0 +1,35 @@
+---
+/**
+ * Typografische Zeile "wofür die Bilder eingesetzt werden".
+ * Bewusst ohne Icons: Label links, Begriffe fließend rechts, getrennt durch Schrägstriche.
+ */
+interface Props {
+  items: string[];
+  label?: string;
+  size?: 'h3' | 'body';
+  dark?: boolean;
+  class?: string;
+}
+const { items, label = 'Im Einsatz', size = 'h3', dark = false, class: className } = Astro.props;
+---
+
+<div class:list={['wrap grid-12 gap-y-4', className]} data-reveal>
+  <p class:list={['label col-span-12 md:col-span-3', size === 'h3' ? 'md:pt-[0.7em]' : 'md:pt-[0.35em]', dark ? 'text-muted-dark' : 'text-muted']}>
+    {label}
+  </p>
+  <ul
+    class:list={[
+      'col-span-12 flex flex-wrap md:col-span-9',
+      size === 'h3' ? 'text-h3 !leading-[1.3] gap-x-[0.45em] max-md:!text-[1.25rem]' : 'gap-x-[0.4em] text-[1.0625rem]',
+    ]}
+  >
+    {
+      items.map((item, i) => (
+        <li class="whitespace-nowrap">
+          {item}
+          {i < items.length - 1 && <span class:list={['ml-[0.45em]', dark ? 'text-muted-dark/60' : 'text-ink/25']} aria-hidden="true">/</span>}
+        </li>
+      ))
+    }
+  </ul>
+</div>

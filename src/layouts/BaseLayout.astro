@@ -1,0 +1,57 @@
+---
+import '../styles/global.css';
+import { Font } from 'astro:assets';
+import Seo, { type SeoProps } from '../components/layout/Seo.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+
+type Props = SeoProps;
+const seo = Astro.props;
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f2f0eb" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <Font cssVariable="--font-inter" preload />
+    <Font cssVariable="--font-inter-tight" preload />
+    <Seo {...seo} />
+    <script is:inline>document.documentElement.classList.add('js');</script>
+  </head>
+  <body class="min-h-svh">
+    <a href="#main" class="label sr-only fixed top-3 left-3 z-50 bg-ink px-3 py-2 text-bone focus:not-sr-only">
+      Zum Inhalt
+    </a>
+    <Header />
+    <main id="main" class="pt-[var(--header-h)]">
+      <slot />
+    </main>
+    <Footer />
+
+    <script>
+      // Leise Einblendung beim Scrollen. Ohne JS ist alles sofort sichtbar.
+      // Linien (scaleX(0)) haben keine Fläche – dafür wird das Elternelement beobachtet.
+      const targets = new Map<Element, HTMLElement[]>();
+      document.querySelectorAll<HTMLElement>('[data-reveal]').forEach((el) => {
+        const watch = el.dataset.reveal === 'line' && el.parentElement ? el.parentElement : el;
+        targets.set(watch, [...(targets.get(watch) ?? []), el]);
+      });
+      const io = new IntersectionObserver(
+        (entries) => {
+          for (const e of entries) {
+            if (e.isIntersecting) {
+              targets.get(e.target)?.forEach((el) => el.classList.add('is-in'));
+              io.unobserve(e.target);
+            }
+          }
+        },
+        { rootMargin: '0px 0px -8% 0px', threshold: 0.05 },
+      );
+      targets.forEach((_, el) => io.observe(el));
+    </script>
+  </body>
+</html>

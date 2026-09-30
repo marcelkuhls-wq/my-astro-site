@@ -1,0 +1,126 @@
+---
+/**
+ * Journal – Übersicht (/journal) und Artikel (/journal/<datei>).
+ * Beide Seiten entstehen erst, wenn mindestens ein Artikel `draft: false` hat.
+ * Bis dahin gibt es weder eine leere Seite noch einen Link im Footer.
+ */
+import { render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Photo from '../../components/media/Photo.astro';
+import SectionLabel from '../../components/ui/SectionLabel.astro';
+import IndexList from '../../components/sections/IndexList.astro';
+import Cta from '../../components/sections/Cta.astro';
+import { serviceById } from '../../data/services';
+import { getArticles, type Article } from '../../lib/work';
+import { breadcrumbs } from '../../lib/schema';
+
+export async function getStaticPaths() {
+  const articles = await getArticles();
+  if (articles.length === 0) return [];
+  return [
+    { params: { slug: undefined }, props: { articles, article: undefined } },
+    ...articles.map((article) => ({ params: { slug: article.id }, props: { articles, article } })),
+  ];
+}
+
+interface Props {
+  articles: Article[];
+  article?: Article;
+}
+const { articles, article } = Astro.props;
+
+const fmt = (d: Date) => d.toLocaleDateString('de-DE', { day: 'numeric', month: 'long', year: 'numeric' });
+
+const rendered = article ? await render(article) : undefined;
+const Content = rendered?.Content;
+const service = article?.data.service ? serviceById(article.data.service) : undefined;
+
+const schema = article
+  ? [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: article.data.title,
+        description: article.data.description,
+        datePublished: article.data.date.toISOString(),
+        author: { '@type': 'Person', name: 'Marcel Kuhls' },
+        publisher: { '@type': 'Organization', name: 'Studio Kuhls' },
+      },
+      breadcrumbs(Astro.site, [
+        { name: 'Journal', path: '/journal' },
+        { name: article.data.title, path: `/journal/${article.id}` },
+      ]),
+    ]
+  : [breadcrumbs(Astro.site, [{ name: 'Journal', path: '/journal' }])];
+---
+
+{
+  !article && (
+    <BaseLayout
+      title="Journal"
+      description="Journal von Studio Kuhls: Planung, Ablauf und Praxis von Employer Branding, Business-, Immobilien- und Eventfotografie für Unternehmen."
+      schema={schema}
+    >
+      <section class="pt-14 md:pt-24">
+        <div class="wrap grid-12 gap-y-10">
+          <p class="label col-span-12 text-muted md:col-span-3 md:pt-[0.9em]">Journal</p>
+          <div class="col-span-12 md:col-span-9">
+            <h1 class="text-display">Aus der Praxis</h1>
+            <p class="mt-8 max-w-[34rem] text-lead md:mt-12">
+              Wie Unternehmensfotografie geplant, produziert und eingesetzt wird – aus der Arbeit von Studio Kuhls.
+            </p>
+          </div>
+        </div>
+      </section>
+      <div class="wrap section-t">
+        <IndexList
+          numbered={false}
+          items={articles.map((a) => ({ title: a.data.title, text: `${fmt(a.data.date)} – ${a.data.description}`, href: `/journal/${a.id}` }))}
+        />
+      </div>
+      <Cta />
+    </BaseLayout>
+  )
+}
+
+{
+  article && Content && (
+    <BaseLayout title={article.data.title} description={article.data.description} type="article" schema={schema}>
+      <article>
+        <header class="pt-14 md:pt-24">
+          <div class="wrap grid-12 gap-y-8">
+            <p class="label col-span-12 text-muted md:col-span-3 md:pt-[0.6em]">
+              <a href="/journal" class="hover:text-ink">Journal</a> · <time datetime={article.data.date.toISOString()}>{fmt(article.data.date)}</time>
+            </p>
+            <div class="col-span-12 md:col-span-9 lg:col-span-8">
+              <h1 class="text-h2">{article.data.title}</h1>
+              <p class="mt-8 max-w-[36rem] text-lead">{article.data.description}</p>
+            </div>
+          </div>
+          {article.data.cover && (
+            <div class="wrap mt-14 md:mt-20">
+              <Photo {...article.data.cover} ratio="16 / 9" sizes="(min-width: 768px) 94vw, 100vw" priority />
+            </div>
+          )}
+        </header>
+
+        <div class="wrap grid-12 section-t">
+          <div class="journal-prose col-span-12 md:col-span-8 md:col-start-4 lg:col-span-6 lg:col-start-4">
+            <Content />
+          </div>
+        </div>
+      </article>
+
+      {service && (
+        <section class="section-t">
+          <SectionLabel label="Passende Leistung" />
+          <div class="wrap mt-10 md:mt-14">
+            <IndexList numbered={false} items={[{ title: service.title, text: service.summary, href: service.href }]} />
+          </div>
+        </section>
+      )}
+
+      <Cta />
+    </BaseLayout>
+  )
+}

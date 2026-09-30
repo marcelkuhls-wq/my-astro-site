@@ -1,0 +1,23 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  description: string;
+}
+const { title, description } = Astro.props;
+---
+
+<BaseLayout title={title} description={description} noindex>
+  <section class="section-y pt-14 md:pt-24">
+    <div class="wrap grid-12 gap-y-10">
+      <p class="label col-span-12 text-muted md:col-span-3 md:pt-[0.9em]">Rechtliches</p>
+      <div class="col-span-12 md:col-span-9">
+        <h1 class="text-h2">{title}</h1>
+        <div class="legal mt-10">
+          <slot />
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

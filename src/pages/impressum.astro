@@ -1,0 +1,29 @@
+---
+import LegalLayout from '../layouts/LegalLayout.astro';
+import { site } from '../config/site';
+---
+
+<LegalLayout title="Impressum" description="Impressum von Studio Kuhls, Fotostudio in Hamburg.">
+  <h2>Angaben gemäß § 5 DDG</h2>
+  <p>
+    {site.name}<br />
+    {site.legalName}<br />
+    {site.address.street}<br />
+    {site.address.zip} {site.address.city}
+  </p>
+
+  <h2>Kontakt</h2>
+  <p>
+    Telefon: <a class="link-line" href={`tel:${site.phone.replace(/\s/g, '')}`}>{site.phone}</a><br />
+    E-Mail: <a class="link-line" href={`mailto:${site.email}`}>{site.email}</a>
+  </p>
+
+  <h2>Vertreten durch</h2>
+  <p>{site.legalName}</p>
+
+  <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+  <p>{site.legalName}, Anschrift wie oben</p>
+
+  <h2>Verbraucherstreitbeilegung</h2>
+  <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+</LegalLayout>

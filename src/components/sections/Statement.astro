@@ -1,0 +1,36 @@
+---
+/**
+ * Editoriales Statement: Label links, großer Text über 8–9 Spalten,
+ * optional ergänzende Spalten darunter (slot "aside").
+ */
+interface Props {
+  label: string;
+  size?: 'h2' | 'h3' | 'lead';
+  as?: 'h2' | 'p';
+  class?: string;
+}
+const { label, size = 'h3', as: Tag = 'p', class: className } = Astro.props;
+const hasAside = Astro.slots.has('aside');
+---
+
+<section class:list={['wrap grid-12 gap-y-8', className]}>
+  <p class="label col-span-12 text-muted md:col-span-3 md:pt-[0.55em]" data-reveal>{label}</p>
+  <Tag
+    class:list={[
+      'col-span-12 font-display md:col-span-9 lg:col-span-8',
+      size === 'h2' && 'text-h2',
+      size === 'h3' && 'text-h3 !leading-[1.18]',
+      size === 'lead' && 'text-lead',
+    ]}
+    data-reveal
+  >
+    <slot />
+  </Tag>
+  {
+    hasAside && (
+      <div class="col-span-12 grid-12 gap-y-6 md:col-span-9 md:col-start-4 md:mt-8" data-reveal style="--reveal-delay: .1s">
+        <slot name="aside" />
+      </div>
+    )
+  }
+</section>

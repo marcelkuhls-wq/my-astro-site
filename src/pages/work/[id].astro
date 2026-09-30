@@ -1,0 +1,203 @@
+---
+/**
+ * Case Study. Alle erzählenden Felder sind optional – ein Projekt kann als
+ * reines Portfolio (Meta + Bilder) oder als ausführliche Case Study erscheinen:
+ *
+ *   summary      Lead-Satz (Pflicht)
+ *   Markdown     "Das Projekt" – fließender Text
+ *   task         "Die Aufgabe"
+ *   approach     "Die Umsetzung"
+ *   usage        "Im Einsatz" – Liste der Kanäle
+ *   outcome      "Im Einsatz" – ein, zwei Sätze
+ *   testimonial  Kundenstimme
+ */
+import { render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Photo from '../../components/media/Photo.astro';
+import Gallery from '../../components/media/Gallery.astro';
+import SectionLabel from '../../components/ui/SectionLabel.astro';
+import ArrowLink from '../../components/ui/ArrowLink.astro';
+import ProjectGrid from '../../components/sections/ProjectGrid.astro';
+import UseLine from '../../components/sections/UseLine.astro';
+import Testimonial from '../../components/sections/Testimonial.astro';
+import Cta from '../../components/sections/Cta.astro';
+import { serviceById } from '../../data/services';
+import { getProjects, type Project } from '../../lib/work';
+import { breadcrumbs } from '../../lib/schema';
+
+export async function getStaticPaths() {
+  const projects = await getProjects();
+  return projects.map((project) => ({ params: { id: project.id }, props: { project, all: projects } }));
+}
+
+interface Props {
+  project: Project;
+  all: Project[];
+}
+
+const { project, all } = Astro.props;
+const { data } = project;
+const { Content } = await render(project);
+const service = serviceById(data.service);
+const allServices = [data.service, ...data.alsoServices].map(serviceById);
+const hasBody = Boolean(project.body?.trim());
+
+const more = [
+  ...all.filter((p) => p.id !== project.id && p.data.service === data.service),
+  ...all.filter((p) => p.id !== project.id && p.data.service !== data.service),
+].slice(0, 2);
+
+const [firstRow, ...restRows] = data.gallery;
+
+const meta: { k: string; v: string; links?: { label: string; href: string }[] }[] = [
+  { k: 'Kunde', v: data.client },
+  { k: 'Branche', v: data.industry },
+  { k: 'Location', v: data.location },
+  { k: 'Leistung', v: '', links: allServices.map((s) => ({ label: s.title, href: s.href })) },
+  ...(data.scope ? [{ k: 'Umfang', v: data.scope }] : []),
+  { k: 'Jahr', v: String(data.year) },
+];
+
+const schema = [
+  breadcrumbs(Astro.site, [
+    { name: 'Work', path: '/work' },
+    { name: data.title.replace(/­/g, ''), path: `/work/${project.id}` },
+  ]),
+];
+---
+
+<BaseLayout
+  title={`${data.title.replace(/­/g, '')} – ${service.title}`}
+  description={data.summary}
+  type="article"
+  noindex={data.placeholder}
+  schema={schema}
+>
+  <article>
+    <header class="pt-14 md:pt-24">
+      <div class="wrap grid-12 gap-y-8">
+        <p class="label col-span-12 text-muted md:col-span-3 md:pt-[0.6em]" data-reveal>
+          <a href="/work" class="hover:text-ink">Work</a> / <a href={service.href} class="hover:text-ink">{service.title}</a>
+        </p>
+        <h1 class="col-span-12 text-h2 hyphens-manual md:col-span-9 lg:col-span-8" data-reveal>{data.title}</h1>
+      </div>
+      <div class="wrap mt-14 md:mt-24">
+        <Photo transitionName={`work-${project.id}`} id={data.cover.id} spec={data.cover.spec} position={data.cover.position} ratio="16 / 9" sizes="(min-width: 768px) 94vw, 100vw" priority class="max-md:!aspect-[4/5]" />
+      </div>
+    </header>
+
+    {/* Das Projekt: Meta + Lead + Fließtext */}
+    <section class="section-y">
+      <div class="wrap grid-12 gap-y-12">
+        <dl class="col-span-12 grid grid-cols-2 gap-x-[var(--gutter)] gap-y-6 sm:grid-cols-3 md:col-span-3 md:grid-cols-1" data-reveal>
+          {
+            meta.map(({ k, v, links }) => (
+              <div>
+                <dt class="label text-muted">{k}</dt>
+                <dd class="mt-1.5">
+                  {links
+                    ? links.map((l, i) => (
+                        <>
+                          <a href={l.href} class="link-line">{l.label}</a>
+                          {i < links.length - 1 && <br />}
+                        </>
+                      ))
+                    : v}
+                </dd>
+              </div>
+            ))
+          }
+        </dl>
+        <div class="col-span-12 md:col-span-8 md:col-start-5 lg:col-span-6 lg:col-start-5" data-reveal>
+          <p class="text-lead">{data.summary}</p>
+          {
+            hasBody && (
+              <div class="mt-6 space-y-4 text-muted [&_p]:max-w-[36rem]">
+                <Content />
+              </div>
+            )
+          }
+        </div>
+      </div>
+    </section>
+
+    {firstRow && <Gallery layout={firstRow.layout} images={firstRow.images} />}
+
+    {/* Aufgabe & Umsetzung – zwischen den Bildern, nicht als Textblock davor */}
+    {
+      (data.task || data.approach) && (
+        <section class="section-y">
+          <div class="wrap grid-12 gap-y-10">
+            {data.task && (
+              <div class="col-span-12 md:col-span-5 md:col-start-4 lg:col-span-4 lg:col-start-4" data-reveal>
+                <h2 class="label text-muted">Die Aufgabe</h2>
+                <p class="mt-4 text-[1.1875rem] leading-relaxed">{data.task}</p>
+              </div>
+            )}
+            {data.approach && (
+              <div class="col-span-12 md:col-span-4 md:col-start-9" data-reveal style="--reveal-delay: .06s">
+                <h2 class="label text-muted">Die Umsetzung</h2>
+                <p class="mt-4 text-[1.1875rem] leading-relaxed">{data.approach}</p>
+              </div>
+            )}
+          </div>
+        </section>
+      )
+    }
+
+    <div class:list={['space-y-[var(--gutter)]', !(data.task || data.approach) && firstRow && 'mt-[var(--gutter)]']}>
+      {restRows.map((row) => <Gallery layout={row.layout} images={row.images} />)}
+    </div>
+
+    {/* Im Einsatz */}
+    {
+      (data.usage.length > 0 || data.outcome) && (
+        <section class="section-t">
+          <SectionLabel label="Im Einsatz" />
+          <div class="mt-10 space-y-10 md:mt-14">
+            {data.outcome && (
+              <div class="wrap grid-12">
+                <p class="col-span-12 text-h3 !leading-[1.22] md:col-span-9 md:col-start-4 lg:col-span-7 lg:col-start-4" data-reveal>
+                  {data.outcome}
+                </p>
+              </div>
+            )}
+            {data.usage.length > 0 && <UseLine items={data.usage} label="Kanäle" size="body" />}
+          </div>
+        </section>
+      )
+    }
+
+    {
+      data.testimonial && (
+        <Testimonial {...data.testimonial} class="section-t" />
+      )
+    }
+
+    {
+      data.behindTheScenes && data.behindTheScenes.length > 0 && (
+        <section class="section-t">
+          <SectionLabel label="Behind the Scenes" />
+          <div class="mt-10 space-y-[var(--gutter)] md:mt-14">
+            {data.behindTheScenes.map((row) => <Gallery layout={row.layout} images={row.images} />)}
+          </div>
+        </section>
+      )
+    }
+  </article>
+
+  {
+    more.length > 0 && (
+      <section class="section-t">
+        <SectionLabel label="Weitere Projekte" />
+        <div class="wrap mt-10 mb-12 flex items-end justify-between gap-8 md:mt-14 md:mb-16">
+          <h2 class="text-h2">Mehr Work</h2>
+          <ArrowLink href="/work" class="mb-[0.6em] hidden sm:inline-flex">Projekte ansehen</ArrowLink>
+        </div>
+        <ProjectGrid projects={more} layout="pair" />
+      </section>
+    )
+  }
+
+  <Cta />
+</BaseLayout>

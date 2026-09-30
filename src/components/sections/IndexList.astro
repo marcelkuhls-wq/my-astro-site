@@ -1,0 +1,58 @@
+---
+/**
+ * Typografische Liste mit Haarlinien – für Einsatzbereiche, Leistungen,
+ * Grundsätze. Ersetzt die übliche Icon-Kachel-Sektion.
+ */
+interface Item {
+  title: string;
+  text?: string;
+  href?: string;
+}
+interface Props {
+  items: Item[];
+  numbered?: boolean;
+  dark?: boolean;
+  class?: string;
+}
+const { items, numbered = true, dark = false, class: className } = Astro.props;
+---
+
+<ol class:list={['border-b', dark ? 'border-line-dark' : 'border-line', className]}>
+  {
+    items.map((item, i) => {
+      const Row = item.href ? 'a' : 'div';
+      return (
+        <li class:list={['border-t', dark ? 'border-line-dark' : 'border-line']} data-reveal style={`--reveal-delay: ${i * 0.05}s`}>
+          <Row
+            href={item.href}
+            class:list={['grid-12 gap-y-2 py-6 md:py-8', item.href && 'group transition-opacity hover:opacity-70']}
+          >
+            {numbered && (
+              <span class:list={['label col-span-2 pt-[0.5em] tabular-nums md:col-span-1', dark ? 'text-muted-dark' : 'text-muted']}>
+                {String(i + 1).padStart(2, '0')}
+              </span>
+            )}
+            <h3 class:list={['text-h3', numbered ? 'col-span-10 md:col-span-5' : 'col-span-12 md:col-span-6']}>
+              {item.title}
+            </h3>
+            {item.text && (
+              <p
+                class:list={[
+                  'col-span-10 col-start-3 md:col-span-5 md:col-start-auto md:pt-[0.3em] lg:col-span-4',
+                  dark ? 'text-muted-dark' : 'text-muted',
+                ]}
+              >
+                {item.text}
+              </p>
+            )}
+            {item.href && (
+              <span class="hidden justify-self-end pt-[0.3em] transition-transform duration-300 group-hover:translate-x-1 md:col-span-1 md:block lg:col-span-2" aria-hidden="true">
+                →
+              </span>
+            )}
+          </Row>
+        </li>
+      );
+    })
+  }
+</ol>

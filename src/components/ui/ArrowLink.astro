@@ -1,0 +1,20 @@
+---
+/**
+ * Textlink mit Pfeil. CTA-System der Website – nur drei Formulierungen:
+ *   Primär:    "Projekt anfragen"  → /kontakt
+ *   Sekundär:  "Projekte ansehen"  → /work oder Projektliste
+ *   Textlink:  "Mehr erfahren"     → mit `context` für Screenreader/SEO
+ */
+interface Props {
+  href: string;
+  /** Unsichtbarer Zusatz für Screenreader, z. B. "über Employer Branding" */
+  context?: string;
+  class?: string;
+}
+const { href, context, class: className } = Astro.props;
+---
+
+<a href={href} class:list={['link-arrow', className]}>
+  <span><slot />{context && <span class="sr-only"> {context}</span>}</span>
+  <span class="arrow" aria-hidden="true">→</span>
+</a>

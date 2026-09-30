@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/sections/PageHeader.astro';
+import Gallery from '../components/media/Gallery.astro';
+import SectionLabel from '../components/ui/SectionLabel.astro';
+import ProjectGrid from '../components/sections/ProjectGrid.astro';
+import Cta from '../components/sections/Cta.astro';
+import UseLine from '../components/sections/UseLine.astro';
+import Faq from '../components/sections/Faq.astro';
+import ServiceLinks from '../components/sections/ServiceLinks.astro';
+import ArrowLink from '../components/ui/ArrowLink.astro';
+import { getProjects } from '../lib/work';
+import { serviceById } from '../data/services';
+import { breadcrumbs, serviceSchema } from '../lib/schema';
+
+const projects = await getProjects({ service: 'immobilien' });
+
+const description =
+  'Immobilien-, Architektur- und Interiorfotografie in Hamburg für Makler, Projektentwickler, Architekten, Hotels und Gastronomie. Natürliches Licht, saubere Perspektiven, keine HDR-Optik.';
+const schema = [
+  serviceSchema(Astro.site, serviceById('immobilien'), 'Immobilienfotografie', description),
+  breadcrumbs(Astro.site, [{ name: 'Immobilien & Interior', path: '/immobilienfotografie' }]),
+];
+
+const audiences = ['Makler', 'Projektentwickler', 'Architekturbüros', 'Interior Designer', 'Hotels', 'Gastronomie', 'Ferienimmobilien', 'Unternehmen'];
+const principles = ['Natürliches Licht', 'Saubere Perspektiven', 'Realistische Farben', 'Sorgfältige Retusche', 'Atmosphäre erhalten'];
+const uses = ['Exposés', 'Websites', 'Immobilienportale', 'Social Media', 'PR', 'Projektkommunikation', 'Hospitality Marketing'];
+
+const faq = [
+  {
+    q: 'Wie bereiten wir die Räume vor?',
+    a: 'Aufgeräumte Flächen, eingeschaltete Beleuchtung, persönliche Gegenstände aus dem Bild. Die wichtigsten Punkte für Ihr Objekt besprechen wir vor dem Termin.',
+  },
+  {
+    q: 'Arbeiten Sie mit HDR?',
+    a: 'Nicht im Sinne der typischen, überzeichneten HDR-Optik. Wo es für Fenster und Innenraum nötig ist, kombinieren wir Belichtungen – und bearbeiten so, dass Licht und Farben dem Raum entsprechen.',
+  },
+  {
+    q: 'Fotografieren Sie Hotels und Restaurants im laufenden Betrieb?',
+    a: 'Ja. Wir stimmen die Zeitfenster so ab, dass Gäste möglichst wenig gestört werden – etwa vor Öffnung oder in ruhigen Stunden.',
+  },
+  {
+    q: 'Welche Formate erhalten wir?',
+    a: 'Quer- und Hochformate für Exposé, Website und Immobilienportale. Auf Wunsch zusätzlich zugeschnittene Formate für Social Media.',
+  },
+  {
+    q: 'Wie werden die Nutzungsrechte geregelt?',
+    a: 'Nach dem geplanten Einsatz – Vermarktung, Portale, Presse. Wenn mehrere Beteiligte die Bilder nutzen möchten, etwa Bauherr und Architekturbüro, regeln wir das vorab.',
+  },
+];
+---
+
+<BaseLayout title="Immobilienfotograf in Hamburg – Architektur & Interior" description={description} schema={schema}>
+  <PageHeader
+    label="Leistung 03"
+    title="Immobilien & Interior"
+    lead="Räume so, wie sie sich anfühlen – für Exposé, Immobilienportal, Hospitality Marketing und Projektkommunikation. Natürliches Licht, saubere Perspektiven, keine HDR-Optik."
+    photo="immo-hero"
+    photoMode="bleed"
+    ratio="21 / 9"
+  />
+
+  <UseLine items={audiences} label="Für" class="section-y" />
+
+  <Gallery layout="full" images={['immo-interior-1']} />
+  <Gallery layout="pair" images={['immo-detail-1', 'immo-interior-2']} class="mt-[var(--gutter)]" />
+
+  <section class="section-y">
+    <div class="wrap grid-12 gap-y-8">
+      <p class="label col-span-12 text-muted md:col-span-3 md:pt-[0.55em]" data-reveal>Ansatz</p>
+      <div class="col-span-12 md:col-span-6" data-reveal>
+        <p class="text-h3 !leading-[1.2]">Wir fotografieren mit dem Licht, das ein Raum hat, und ergänzen nur dort, wo es nötig ist.</p>
+        <p class="mt-6 max-w-[32rem] text-muted">
+          Senkrechte Linien, ehrliche Farben, sorgfältig vorbereitete Räume. Die Bilder funktionieren im Exposé, auf der Website und
+          im Hotelbuchungsportal – und halten auch beim Besichtigungstermin, was sie versprechen.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <UseLine items={principles} label="Anspruch" class="-mt-[calc(var(--section)*0.5)] mb-[var(--section)]" />
+
+  <Gallery layout="bleed" images={['immo-architecture']} />
+  <Gallery layout="offset" images={['immo-hotel', 'immo-gastro']} class="mt-[var(--gutter)]" />
+  <Gallery layout="single-r" images={['immo-detail-2']} class="mt-[var(--gutter)]" />
+
+  <UseLine items={uses} label="Im Einsatz" class="section-t" />
+
+  {
+    projects.length > 0 && (
+      <section class="section-t">
+        <SectionLabel label="Projekte" />
+        <div class="wrap mt-10 mb-12 flex items-end justify-between gap-8 md:mt-14 md:mb-16">
+          <h2 class="text-h2">Immobilien Projekte</h2>
+          <ArrowLink href="/work" class="mb-[0.6em] hidden sm:inline-flex">Projekte ansehen</ArrowLink>
+        </div>
+        <ProjectGrid projects={projects} />
+      </section>
+    )
+  }
+
+  <Faq items={faq} />
+  <ServiceLinks current="immobilien" />
+
+  <Cta
+    title="Objekt in Vorbereitung?"
+    text="Schicken Sie uns Adresse, Größe und gewünschten Termin. Wir melden uns mit Angebot und Hinweisen zur Vorbereitung der Räume."
+  />
+</BaseLayout>

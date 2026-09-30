@@ -1,0 +1,113 @@
+---
+/**
+ * Typografische Projektliste – die "Index"-Ansicht auf /work.
+ * Für B2B-Leser: Projekt, Kunde, Leistung und Ort auf einen Blick.
+ * Mit Maus: das Titelbild folgt dem Cursor als kleine Vorschau.
+ */
+import Photo from '../media/Photo.astro';
+import { serviceById } from '../../data/services';
+import type { Project } from '../../lib/work';
+
+interface Props {
+  projects: Project[];
+}
+const { projects } = Astro.props;
+---
+
+<div class="work-index wrap">
+  <div class="label hidden grid-12 border-b border-line pb-3 text-muted md:grid">
+    <span class="col-span-1">Nr.</span>
+    <span class="col-span-5">Projekt</span>
+    <span class="col-span-3">Leistung</span>
+    <span class="col-span-2">Location</span>
+    <span class="col-span-1 text-right">Jahr</span>
+  </div>
+  <ol>
+    {
+      projects.map((p, i) => (
+        <li class="border-b border-line">
+          <a
+            href={`/work/${p.id}`}
+            class="work-index-row grid-12 items-baseline gap-y-1 py-5 transition-colors duration-300 md:py-6"
+            data-preview={i}
+          >
+            <span class="label col-span-2 tabular-nums text-muted md:col-span-1">{String(i + 1).padStart(2, '0')}</span>
+            <span class="col-span-10 text-[1.25rem] leading-snug tracking-[-0.015em] md:col-span-5 md:text-h3 md:!leading-[1.15]">
+              {p.data.title}
+            </span>
+            <span class="col-span-10 col-start-3 text-[0.9375rem] text-muted md:col-span-3 md:col-start-auto">
+              {serviceById(p.data.service).title}
+              <span class="md:hidden"> · {p.data.location}</span>
+            </span>
+            <span class="hidden text-[0.9375rem] text-muted md:col-span-2 md:block">{p.data.location}</span>
+            <span class="hidden text-right text-[0.9375rem] tabular-nums text-muted md:col-span-1 md:block">{p.data.year}</span>
+          </a>
+        </li>
+      ))
+    }
+  </ol>
+
+  {/* Vorschaubilder – nur bei Maus sichtbar, per JS positioniert */}
+  <div class="work-preview pointer-events-none fixed top-0 left-0 z-30 hidden w-[min(22vw,320px)]" aria-hidden="true">
+    {
+      projects.map((p, i) => (
+        <div class="work-preview-item absolute inset-x-0 top-0 opacity-0 transition-opacity duration-300" data-item={i}>
+          <Photo id={p.data.cover.id} spec={p.data.cover.spec} position={p.data.cover.position} ratio="4 / 5" sizes="320px" reveal={false} />
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  /* Andere Zeilen treten beim Überfahren zurück */
+  @media (hover: hover) {
+    .work-index ol:hover .work-index-row:not(:hover) {
+      color: color-mix(in srgb, var(--color-ink) 30%, transparent);
+    }
+  }
+  .work-preview-item.is-active {
+    opacity: 1;
+  }
+</style>
+
+<script>
+  const root = document.querySelector<HTMLElement>('.work-index');
+  const preview = root?.querySelector<HTMLElement>('.work-preview');
+  const fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (root && preview && fine) {
+    preview.classList.remove('hidden');
+    const items = [...preview.querySelectorAll<HTMLElement>('.work-preview-item')];
+    let x = 0, y = 0, cx = 0, cy = 0, raf = 0, active = -1;
+
+    const loop = () => {
+      // Weiches Nachziehen – ohne Bewegung reduziert: direkt an der Maus
+      const k = still ? 1 : 0.14;
+      cx += (x - cx) * k;
+      cy += (y - cy) * k;
+      preview.style.transform = `translate3d(${cx + 28}px, ${cy - 120}px, 0)`;
+      raf = Math.abs(x - cx) + Math.abs(y - cy) > 0.3 ? requestAnimationFrame(loop) : 0;
+    };
+    const setActive = (i: number) => {
+      if (i === active) return;
+      items[active]?.classList.remove('is-active');
+      items[i]?.classList.add('is-active');
+      active = i;
+    };
+
+    root.querySelectorAll<HTMLElement>('[data-preview]').forEach((row) => {
+      row.addEventListener('mouseenter', (e) => {
+        if (active === -1) { cx = e.clientX; cy = e.clientY; }
+        setActive(Number(row.dataset.preview));
+      });
+    });
+    root.querySelector('ol')!.addEventListener('mouseleave', () => setActive(-1));
+    window.addEventListener('mousemove', (e) => {
+      x = e.clientX;
+      y = e.clientY;
+      if (!raf) raf = requestAnimationFrame(loop);
+    }, { passive: true });
+  }
+</script>

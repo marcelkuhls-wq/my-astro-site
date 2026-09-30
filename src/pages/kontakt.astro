@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactForm from '../components/ui/ContactForm.astro';
+import { site } from '../config/site';
+
+const addressLine = [site.address.street, [site.address.zip, site.address.city].filter(Boolean).join(' ')].filter(Boolean);
+---
+
+<BaseLayout
+  title="Kontakt"
+  description="Projekt anfragen bei Studio Kuhls, Fotostudio für Unternehmen in Hamburg: Employer Branding, Business-Fotografie, Immobilien und Events."
+>
+  <section class="section-y pt-14 md:pt-24">
+    <div class="wrap grid-12 gap-y-10">
+      <p class="label col-span-12 text-muted md:col-span-3 md:pt-[0.9em]">Kontakt</p>
+      <h1 class="col-span-12 text-display md:col-span-9">Lassen Sie uns über Ihr Projekt sprechen.</h1>
+    </div>
+
+    <div class="wrap grid-12 mt-16 gap-y-16 md:mt-28">
+      <aside class="col-span-12 space-y-10 md:col-span-3">
+        <div>
+          <p class="label mb-3 text-muted">Direkt</p>
+          <a href={`mailto:${site.email}`} class="link-line block break-all">{site.email}</a>
+          {site.phone && <a href={`tel:${site.phone.replace(/\s/g, '')}`} class="link-line mt-1 block">{site.phone}</a>}
+        </div>
+        <div>
+          <p class="label mb-3 text-muted">Studio</p>
+          <p>{site.name}<br />{addressLine.map((l) => <>{l}<br /></>)}</p>
+        </div>
+        <div>
+          <p class="label mb-3 text-muted">Ansprechpartner</p>
+          <p class="text-muted">Marcel Kuhls, Gründer und Fotograf</p>
+        </div>
+      </aside>
+
+      <div class="col-span-12 md:col-span-8 md:col-start-5 lg:col-span-7 lg:col-start-5">
+        <p class="mb-14 max-w-[32rem] text-lead">
+          Erzählen Sie kurz, was Sie vorhaben. Sie erhalten eine persönliche Rückmeldung mit einer ersten Einschätzung.
+        </p>
+        <ContactForm />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

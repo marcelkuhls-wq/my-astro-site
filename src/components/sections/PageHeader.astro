@@ -1,0 +1,51 @@
+---
+/**
+ * Seitenkopf für Unterseiten: kleine Einordnung, große Headline,
+ * ein Satz, dann das Titelbild.
+ */
+import Photo from '../media/Photo.astro';
+
+interface Props {
+  label: string;
+  title: string;
+  lead?: string;
+  photo?: string;
+  /** "full" = volle Rasterbreite, "bleed" = randlos */
+  photoMode?: 'full' | 'bleed';
+  ratio?: string;
+}
+
+const { label, title, lead, photo, photoMode = 'full', ratio = '16 / 9' } = Astro.props;
+---
+
+<section class="pt-14 md:pt-24">
+  <div class="wrap grid-12 gap-y-8">
+    <p class="label col-span-12 text-muted md:col-span-3 md:pt-[0.9em]" data-reveal>{label}</p>
+    <div class="col-span-12 md:col-span-9">
+      <h1 class="hero-lines text-display"><span class="line"><span>{title}</span></span></h1>
+      {
+        lead && (
+          <p class="mt-8 max-w-[36rem] text-lead md:mt-12" data-reveal style="--reveal-delay: .08s">
+            {lead}
+          </p>
+        )
+      }
+      <slot />
+    </div>
+  </div>
+
+  {
+    photo && (
+      <div class:list={['mt-14 md:mt-24', photoMode === 'full' && 'wrap']}>
+        <Photo
+          id={photo}
+          ratio={ratio}
+          sizes={photoMode === 'full' ? '(min-width: 768px) 94vw, 100vw' : '100vw'}
+          priority
+          drift={photoMode === 'bleed'}
+          class="hero-curtain max-md:!aspect-[4/5]"
+        />
+      </div>
+    )
+  }
+</section>

@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/sections/PageHeader.astro';
+import Statement from '../components/sections/Statement.astro';
+import Gallery from '../components/media/Gallery.astro';
+import Photo from '../components/media/Photo.astro';
+import SectionLabel from '../components/ui/SectionLabel.astro';
+import IndexList from '../components/sections/IndexList.astro';
+import ProjectGrid from '../components/sections/ProjectGrid.astro';
+import Cta from '../components/sections/Cta.astro';
+import UseLine from '../components/sections/UseLine.astro';
+import Faq from '../components/sections/Faq.astro';
+import ServiceLinks from '../components/sections/ServiceLinks.astro';
+import ArrowLink from '../components/ui/ArrowLink.astro';
+import { getProjects } from '../lib/work';
+import { serviceById } from '../data/services';
+import { breadcrumbs, serviceSchema } from '../lib/schema';
+
+const projects = await getProjects({ service: 'events' });
+
+const description =
+  'Eventfotografie in Hamburg für Unternehmen, Agenturen und PR-Teams: Konferenzen, Produktlaunches, Dinner, Messen und Eröffnungen als dokumentarische Reportage – für PR, LinkedIn und interne Kommunikation.';
+const schema = [
+  serviceSchema(Astro.site, serviceById('events'), 'Eventfotografie', description),
+  breadcrumbs(Astro.site, [{ name: 'Events', path: '/eventfotografie' }]),
+];
+
+const audiences = ['Unternehmen', 'Agenturen', 'PR-Teams', 'Eventagenturen', 'Veranstalter'];
+const documented = ['Menschen', 'Atmosphäre', 'Speaker', 'Interaktionen', 'Emotionen', 'Location', 'Details', 'Branding'];
+const uses = ['PR', 'Presse', 'LinkedIn', 'Social Media', 'Interne Kommunikation', 'Event-Recaps', 'Folgeveranstaltungen'];
+
+const faq = [
+  {
+    q: 'Wie bereiten wir die Eventfotografie vor?',
+    a: 'Wir gehen Ablauf, wichtige Programmpunkte, Speaker und gewünschte Motive vorab mit Ihnen oder Ihrer Agentur durch. So wissen wir am Tag, wann wir wo sein müssen.',
+  },
+  {
+    q: 'Können wir Bilder schon während oder kurz nach der Veranstaltung bekommen?',
+    a: 'Eine schnelle Vorauswahl für Social Media oder Presse lässt sich einplanen. Umfang und Zeitpunkt stimmen wir im Briefing ab.',
+  },
+  {
+    q: 'Wie verhalten Sie sich während des Events?',
+    a: 'Zurückhaltend. Wir bewegen uns leise, arbeiten ohne ständigen Blitz und stellen Gäste nicht für Fotos auf – es sei denn, Gruppenbilder sind ausdrücklich gewünscht.',
+  },
+  {
+    q: 'Wie gehen wir mit Gästen um, die nicht fotografiert werden möchten?',
+    a: 'Das klären wir vorab – etwa über einen Hinweis in der Einladung oder ein Kennzeichen am Namensschild. Wer nicht fotografiert werden möchte, wird es nicht.',
+  },
+  {
+    q: 'Wie werden die Nutzungsrechte geregelt?',
+    a: 'Nach Ihrem Einsatz – PR, Social Media, interne Kommunikation. Arbeiten Agentur und Kunde gemeinsam mit den Bildern, regeln wir das vorab.',
+  },
+];
+
+const formats = [
+  { title: 'Konferenzen & Tagungen', text: 'Bühne, Publikum, Speaker und die Gespräche am Rand.' },
+  { title: 'Produktlaunches', text: 'Produkt, Inszenierung und Reaktionen – für Presse und Social Media.' },
+  { title: 'Dinner & Corporate Events', text: 'Ruhige Begleitung ohne Blitzgewitter. Gäste bleiben Gäste.' },
+  { title: 'Networking & Messen', text: 'Stand, Begegnungen, Details. Bilder, die zeigen, dass etwas los war.' },
+  { title: 'Eröffnungen', text: 'Neue Standorte, Büros, Hotels und Restaurants – Menschen und Räume zusammen.' },
+  { title: 'Sommerfeste & Firmenfeiern', text: 'Das Team außerhalb des Arbeitsalltags – für interne Kommunikation und Employer Branding.' },
+];
+---
+
+<BaseLayout title="Eventfotograf in Hamburg – Firmenevents & Konferenzen" description={description} schema={schema}>
+  <PageHeader
+    label="Leistung 04"
+    title="Events"
+    lead="Dokumentarische Eventfotografie für Unternehmen, Agenturen und PR-Teams – mit Bildern, die in PR, LinkedIn und interner Kommunikation weiterarbeiten."
+    photo="events-hero"
+    ratio="3 / 2"
+  />
+
+  <Statement label="Reportage" class="section-y">
+    Ein gutes Eventfoto zeigt nicht, dass jemand fotografiert hat. Es zeigt, wie der Abend war. Wir bewegen uns leise, sehen
+    Momente kommen und liefern eine Auswahl, die den Verlauf erzählt – vom Aufbau bis zum letzten Gespräch.
+  </Statement>
+
+  <UseLine items={audiences} label="Für" size="body" class="-mt-[calc(var(--section)*0.55)] mb-[calc(var(--section)*0.6)]" />
+
+  <Gallery layout="trio" images={['events-moment-1', 'events-stage', 'events-detail-1']} />
+
+  <div class="wrap grid-12 mt-[var(--gutter)] items-start gap-y-[var(--gutter)]">
+    <Photo id="events-crowd" ratio="16 / 9" sizes="(min-width: 768px) 70vw, 100vw" class="col-span-12 md:col-span-9" />
+    <Photo id="events-detail-2" ratio="3 / 4" sizes="(min-width: 768px) 23vw, 50vw" class="col-span-6 md:col-span-3 md:mt-[40%]" />
+    <Photo id="events-moment-2" ratio="1 / 1" sizes="(min-width: 768px) 23vw, 50vw" class="col-span-6 md:col-span-3 md:col-start-2 md:mt-[24%]" />
+    <Photo id="events-location" ratio="3 / 2" sizes="(min-width: 768px) 47vw, 100vw" class="col-span-12 md:col-span-6 md:col-start-6" />
+  </div>
+
+  <section class="section-t">
+    <SectionLabel label="Formate" />
+    <div class="wrap mt-10 md:mt-14">
+      <IndexList items={formats} />
+    </div>
+    <div class="mt-14 space-y-10 md:mt-20">
+      <UseLine items={documented} label="Im Bild" size="body" />
+      <UseLine items={uses} label="Im Einsatz" />
+    </div>
+  </section>
+
+  <Gallery layout="bleed" images={['events-atmosphere']} class="section-t" />
+
+  {
+    projects.length > 0 && (
+      <section class="section-t">
+        <SectionLabel label="Projekte" />
+        <div class="wrap mt-10 mb-12 flex items-end justify-between gap-8 md:mt-14 md:mb-16">
+          <h2 class="text-h2">Event Projekte</h2>
+          <ArrowLink href="/work" class="mb-[0.6em] hidden sm:inline-flex">Projekte ansehen</ArrowLink>
+        </div>
+        <ProjectGrid projects={projects} />
+      </section>
+    )
+  }
+
+  <Faq items={faq} />
+  <ServiceLinks current="events" />
+
+  <Cta
+    title="Event im Kalender?"
+    text="Datum, Ort, erwartete Gäste und Programm – mehr brauchen wir für ein erstes Angebot nicht."
+  />
+</BaseLayout>

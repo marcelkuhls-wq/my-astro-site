@@ -1,0 +1,101 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectGrid from '../../components/sections/ProjectGrid.astro';
+import WorkIndex from '../../components/sections/WorkIndex.astro';
+import Cta from '../../components/sections/Cta.astro';
+import { services } from '../../data/services';
+import { getProjects } from '../../lib/work';
+import { breadcrumbs } from '../../lib/schema';
+
+const projects = await getProjects();
+const schema = [breadcrumbs(Astro.site, [{ name: 'Work', path: '/work' }])];
+---
+
+<BaseLayout
+  title="Work – Projekte"
+  description="Ausgewählte Projekte von Studio Kuhls: Employer Branding, Business-Fotografie, Immobilien- und Eventfotografie für Unternehmen in Hamburg."
+  schema={schema}
+>
+  <section class="pt-14 md:pt-24">
+    <div class="wrap grid-12 gap-y-10">
+      <p class="label col-span-12 text-muted md:col-span-3 md:pt-[0.9em]" data-reveal>Work</p>
+      <div class="col-span-12 md:col-span-9">
+        <h1 class="hero-lines text-display"><span class="line"><span>Ausgewählte Projekte</span></span></h1>
+        <ul class="mt-10 flex flex-wrap gap-x-7 gap-y-2 md:mt-14" data-reveal>
+          {
+            services.map((s) => (
+              <li>
+                <a href={s.href} class="label text-muted transition-colors hover:text-ink">{s.title}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  {/* Ansicht: Raster (Bilder) oder Index (Liste). Ohne JS nur Raster. */}
+  <div class="wrap section-t flex items-baseline justify-between">
+    <p class="label tabular-nums text-muted">{String(projects.length).padStart(2, '0')} Projekte</p>
+    <div id="view-toggle" class="flex gap-6" role="group" aria-label="Ansicht" hidden>
+      <button type="button" class="label view-btn" data-view="grid" aria-pressed="true">Raster</button>
+      <button type="button" class="label view-btn" data-view="index" aria-pressed="false">Index</button>
+    </div>
+  </div>
+
+  <div id="view-grid" class="mt-10 md:mt-14">
+    <ProjectGrid projects={projects} priorityFirst />
+  </div>
+  <div id="view-index" class="mt-10 md:mt-14" hidden>
+    <WorkIndex projects={projects} />
+  </div>
+
+  <Cta />
+</BaseLayout>
+
+<style>
+  .view-btn {
+    color: var(--color-muted);
+    padding-bottom: 0.3em;
+    background: linear-gradient(currentColor, currentColor) no-repeat 0 100% / 0% 1px;
+    transition:
+      color 0.3s,
+      background-size 0.5s var(--ease-out-soft);
+  }
+  .view-btn:hover,
+  .view-btn[aria-pressed='true'] {
+    color: var(--color-ink);
+  }
+  .view-btn[aria-pressed='true'] {
+    background-size: 100% 1px;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    #view-grid:not([hidden]),
+    #view-index:not([hidden]) {
+      animation: view-in 0.6s var(--ease-out-soft);
+    }
+  }
+  @keyframes view-in {
+    from { opacity: 0; transform: translate3d(0, 0.75rem, 0); }
+    to { opacity: 1; transform: none; }
+  }
+</style>
+
+<script>
+  const toggle = document.getElementById('view-toggle')!;
+  const views = { grid: document.getElementById('view-grid')!, index: document.getElementById('view-index')! };
+  const buttons = toggle.querySelectorAll<HTMLButtonElement>('[data-view]');
+
+  const show = (view: 'grid' | 'index') => {
+    views.grid.hidden = view !== 'grid';
+    views.index.hidden = view !== 'index';
+    buttons.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.view === view)));
+    try { sessionStorage.setItem('work-view', view); } catch {}
+  };
+
+  toggle.hidden = false;
+  buttons.forEach((b) => b.addEventListener('click', () => show(b.dataset.view as 'grid' | 'index')));
+  let saved: string | null = null;
+  try { saved = sessionStorage.getItem('work-view'); } catch {}
+  if (saved === 'index') show('index');
+</script>

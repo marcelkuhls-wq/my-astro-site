@@ -1,0 +1,32 @@
+---
+/**
+ * Kundenlogos – bewusst zurückhaltend und kuratiert (max. 10, monochrom).
+ * Logos als SVG nach src/assets/clients/ legen und in src/data/clients.ts eintragen.
+ * Ohne Einträge erscheint die Sektion nur als Platzhalter (wenn showPlaceholderSpecs aktiv ist).
+ */
+import { clients } from '../../data/clients';
+import { site } from '../../config/site';
+import SectionLabel from '../ui/SectionLabel.astro';
+
+const show = clients.length > 0 || site.showPlaceholderSpecs;
+const slots = clients.length > 0 ? clients.slice(0, 10) : Array.from({ length: 6 }, (_, i) => ({ name: `Logo ${i + 1}`, logo: undefined }));
+---
+
+{
+  show && (
+    <section class="section-t">
+      <SectionLabel label="Ausgewählte Kunden" />
+      <ul class="wrap grid grid-cols-2 gap-x-[var(--gutter)] sm:grid-cols-3 lg:grid-cols-6" data-reveal>
+        {slots.map((c) => (
+          <li class="flex h-24 items-center justify-center md:h-28">
+            {c.logo ? (
+              <c.logo class="h-7 w-auto max-w-[70%] opacity-70 md:h-8" aria-label={c.name} role="img" />
+            ) : (
+              <span class="label text-ink/30">{c.name}</span>
+            )}
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}

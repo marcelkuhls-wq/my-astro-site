@@ -1,0 +1,54 @@
+---
+/**
+ * Kundenstimme: großes Zitat, kleine Angabe, viel Raum. Keine Sterne.
+ * Ohne Zitat wird nichts gerendert – außer einem markierten Platzhalter
+ * in der Vorschau (site.showPlaceholderSpecs).
+ */
+import { site } from '../../config/site';
+import ArrowLink from '../ui/ArrowLink.astro';
+
+interface Props {
+  quote?: string;
+  name?: string;
+  role?: string;
+  company?: string;
+  /** Link zum zugehörigen Projekt */
+  projectHref?: string;
+  class?: string;
+}
+const { quote, name, role, company, projectHref, class: className } = Astro.props;
+const isPlaceholder = !quote;
+const show = !isPlaceholder || site.showPlaceholderSpecs;
+---
+
+{
+  show && (
+    <figure class:list={['wrap grid-12 gap-y-8', className]} data-reveal>
+      <p class="label col-span-12 text-muted md:col-span-3 md:pt-[0.7em]">Kundenstimme</p>
+      <div class="col-span-12 md:col-span-9 lg:col-span-8">
+        {isPlaceholder ? (
+          <div class="border border-dashed border-ink/20 p-6 text-ink/45 md:p-8">
+            <p class="text-h3 !leading-[1.25]">„Platzhalter für ein echtes, freigegebenes Kundenzitat.“</p>
+            <p class="label mt-6">Name · Position · Unternehmen – in src/data/testimonials.ts oder in der Case Study eintragen</p>
+          </div>
+        ) : (
+          <>
+            <blockquote class="text-h3 !leading-[1.25]">
+              <p>„{quote}“</p>
+            </blockquote>
+            <figcaption class="mt-8 flex flex-wrap items-baseline gap-x-8 gap-y-4">
+              <span class="text-[0.9375rem]">
+                {name}
+                <span class="text-muted">
+                  {' '}
+                  · {role}, {company}
+                </span>
+              </span>
+              {projectHref && <ArrowLink href={projectHref} context={`zum Projekt mit ${company}`}>Mehr erfahren</ArrowLink>}
+            </figcaption>
+          </>
+        )}
+      </div>
+    </figure>
+  )
+}

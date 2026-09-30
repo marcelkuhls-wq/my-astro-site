@@ -1,0 +1,21 @@
+---
+/** Haarlinie mit Abschnittsname und Nummer – das wiederkehrende Ordnungselement. */
+interface Props {
+  label: string;
+  number?: string;
+  dark?: boolean;
+  class?: string;
+}
+const { label, number, dark = false, class: className } = Astro.props;
+---
+
+<div class:list={['wrap', className]}>
+  <div class:list={['relative flex items-baseline justify-between pt-4', dark ? 'text-muted-dark' : 'text-muted']}>
+    <span
+      class:list={['absolute inset-x-0 top-0 h-px', dark ? 'bg-line-dark' : 'bg-line']}
+      data-reveal="line"
+      aria-hidden="true"></span>
+    <p class="label">{label}</p>
+    {number && <p class="label tabular-nums">{number}</p>}
+  </div>
+</div>

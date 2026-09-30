@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Photo from '../components/media/Photo.astro';
+import Gallery from '../components/media/Gallery.astro';
+import SectionLabel from '../components/ui/SectionLabel.astro';
+import IndexList from '../components/sections/IndexList.astro';
+import { services } from '../data/services';
+import Cta from '../components/sections/Cta.astro';
+import { breadcrumbs } from '../lib/schema';
+
+const schema = [breadcrumbs(Astro.site, [{ name: 'About', path: '/about' }])];
+---
+
+<BaseLayout
+  title="About – Marcel Kuhls, Fotograf in Hamburg"
+  description="Studio Kuhls ist ein Fotostudio für Unternehmen in Hamburg, gegründet von Fotograf Marcel Kuhls. Über zehn Jahre Erfahrung mit Employer Branding, Business, Immobilien und Events."
+  schema={schema}
+>
+  <section class="pt-14 md:pt-24">
+    <div class="wrap grid-12 gap-y-10">
+      <p class="label col-span-12 text-muted md:col-span-3 md:pt-[0.9em]" data-reveal>About</p>
+      <h1 class="col-span-12 text-display md:col-span-9" data-reveal>Ein Studio. Eine Handschrift.</h1>
+    </div>
+
+    <div class="wrap grid-12 mt-14 items-end gap-y-10 md:mt-24">
+      <Photo id="about-portrait" ratio="4 / 5" sizes="(min-width: 768px) 39vw, 100vw" priority class="col-span-12 sm:col-span-9 md:col-span-5" />
+      <div class="col-span-12 md:col-span-6 md:col-start-7 lg:col-span-5 lg:col-start-8" data-reveal>
+        <p class="text-lead">
+          Ich bin Marcel Kuhls, Fotograf und Gründer von Studio Kuhls in Hamburg. Seit über zehn Jahren arbeite ich mit Fotografie
+          und begleite Unternehmen, Menschen und Veranstaltungen.
+        </p>
+        <p class="mt-6 text-muted">
+          Mich interessiert, wie Menschen arbeiten, wie Räume wirken und was an einem Abend wirklich passiert. Daraus entstehen Bilder,
+          die Unternehmen nicht schöner machen, als sie sind – sondern so zeigen, wie sie an ihren besten Tagen sind.
+        </p>
+        <p class="mt-4 text-muted">
+          Studio Kuhls fotografiert Employer Branding, Business-Portraits, Immobilien und Events – für HR- und Marketingteams,
+          Agenturen, Immobilienunternehmen und Hotels. Jedes Projekt leite ich selbst, vom Briefing bis zur Bildauswahl.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-t">
+    <SectionLabel label="Arbeitsweise" />
+    <div class="wrap mt-10 md:mt-14">
+      <IndexList
+        items={[
+          { title: 'Vorbereitet', text: 'Klare Absprachen, Shotlist und Ablaufplan. Am Produktionstag gibt es keine Überraschungen.' },
+          { title: 'Ruhig & unkompliziert', text: 'Kompaktes Setup, kurze Wege, wenig Störung im Betrieb.' },
+          { title: 'Nah an Menschen', text: 'Wenig künstliches Posing, Anleitung nur dort, wo sie hilft. Menschen fühlen sich wohl – das sieht man.' },
+          { title: 'Konsequent', text: 'Eine Bildsprache, eine Bearbeitung, ein Ansprechpartner. Auch über mehrere Termine und Jahre.' },
+        ]}
+      />
+    </div>
+  </section>
+
+  <Gallery layout="offset" images={['about-work-1', 'about-work-2']} class="section-t" />
+
+  <section class="section-t">
+    <SectionLabel label="Leistungen" />
+    <div class="wrap mt-10 md:mt-14">
+      <IndexList numbered={false} items={services.map((s) => ({ title: s.title, text: s.summary, href: s.href }))} />
+    </div>
+  </section>
+
+  <Cta />
+</BaseLayout>

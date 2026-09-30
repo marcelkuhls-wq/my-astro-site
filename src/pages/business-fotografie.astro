@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/sections/PageHeader.astro';
+import Statement from '../components/sections/Statement.astro';
+import Gallery from '../components/media/Gallery.astro';
+import SectionLabel from '../components/ui/SectionLabel.astro';
+import IndexList from '../components/sections/IndexList.astro';
+import ProjectGrid from '../components/sections/ProjectGrid.astro';
+import Process from '../components/sections/Process.astro';
+import Cta from '../components/sections/Cta.astro';
+import UseLine from '../components/sections/UseLine.astro';
+import ServiceLinks from '../components/sections/ServiceLinks.astro';
+import ArrowLink from '../components/ui/ArrowLink.astro';
+import { getProjects } from '../lib/work';
+import { serviceById } from '../data/services';
+import { breadcrumbs, serviceSchema } from '../lib/schema';
+
+const projects = await getProjects({ service: 'business' });
+
+const description =
+  'Business- und Corporate-Fotografie in Hamburg: Portraits, Führungsteams und Arbeitswelten mit einheitlicher Bildsprache – für Website, Presse, LinkedIn und Geschäftsbericht.';
+const schema = [
+  serviceSchema(Astro.site, serviceById('business'), 'Business- und Corporate-Fotografie', description),
+  breadcrumbs(Astro.site, [{ name: 'Business & Corporate', path: '/business-fotografie' }]),
+];
+
+const offers = [
+  { title: 'Portraits', text: 'Geschäftsführung, Vorstand, Mitarbeitende. Im Studio-Setup vor Ort oder in Ihrer Arbeitsumgebung.' },
+  { title: 'Führungsteams', text: 'Gruppenbilder mit Haltung – für Website, Geschäftsbericht und Presse.' },
+  { title: 'Arbeitswelten', text: 'Büros, Produktion, Kundenkontakt. Reportageartige Bilder für Website und Kommunikation.' },
+  { title: 'Presse & PR', text: 'Bildmaterial zu Personalien, Standorten und Anlässen – passend zum restlichen Auftritt.' },
+];
+---
+
+<BaseLayout title="Business- & Corporate-Fotograf in Hamburg" description={description} schema={schema}>
+  <PageHeader
+    label="Leistung 02"
+    title="Business & Corporate"
+    lead="Portraits und Unternehmensbilder mit einer Bildsprache, die zu Ihrer Marke passt – einheitlich über alle Personen, Standorte und Termine hinweg."
+    photo="business-hero"
+  />
+
+  <Statement label="Anspruch" class="section-y">
+    Ein gutes Business-Portrait wirkt souverän, ohne steif zu sein. Wir nehmen uns Zeit für jede Person, führen klar durch den
+    Termin und sorgen dafür, dass auch der zwanzigste Mitarbeitende im selben Licht steht wie der erste.
+  </Statement>
+
+  <Gallery layout="pair" images={['business-portrait-1', 'business-portrait-2']} />
+  <Gallery layout="offset-r" images={['business-team', 'business-portrait-3']} class="mt-[var(--gutter)]" />
+
+  <section class="section-t">
+    <SectionLabel label="Leistungen" />
+    <div class="wrap mt-10 md:mt-14">
+      <IndexList items={offers} />
+    </div>
+    <UseLine
+      items={['Website', 'LinkedIn', 'Presse', 'Geschäftsbericht', 'Präsentationen', 'Unternehmenskommunikation']}
+      class="mt-14 md:mt-20"
+    />
+  </section>
+
+  <Gallery layout="bleed" images={['business-workspace']} class="section-t" />
+
+  {
+    projects.length > 0 && (
+      <section class="section-t">
+        <SectionLabel label="Projekte" />
+        <div class="wrap mt-10 mb-12 flex items-end justify-between gap-8 md:mt-14 md:mb-16">
+          <h2 class="text-h2">Business Projekte</h2>
+          <ArrowLink href="/work" class="mb-[0.6em] hidden sm:inline-flex">Projekte ansehen</ArrowLink>
+        </div>
+        <ProjectGrid projects={projects} />
+      </section>
+    )
+  }
+
+  <Process />
+  <ServiceLinks current="business" />
+  <Cta />
+</BaseLayout>

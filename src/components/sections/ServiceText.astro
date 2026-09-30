@@ -1,0 +1,45 @@
+---
+/** Textteil eines Leistungsblocks: Nummer, Titel, was + wofür, Einsatzbereiche, Link. */
+import ArrowLink from '../ui/ArrowLink.astro';
+import type { Service } from '../../data/services';
+
+interface Props {
+  service: Service;
+  /** Ein bis zwei Sätze: was fotografiert wird */
+  text: string;
+  part?: 'all' | 'heading' | 'copy';
+}
+const { service, text, part = 'all' } = Astro.props;
+---
+
+{
+  part !== 'copy' && (
+    <>
+      <p class="label tabular-nums text-muted">{service.number}</p>
+      <h2 id={`svc-${service.id}`} class="mt-5 text-h2">
+        <a href={service.href}>{service.title}</a>
+      </h2>
+    </>
+  )
+}
+{
+  part !== 'heading' && (
+    <div class:list={[part === 'all' && 'mt-6']}>
+      <p class="max-w-[30rem] text-muted">{text}</p>
+      <p class="mt-5 max-w-[30rem] text-[0.9375rem]">
+        <span class="label mr-2 text-muted">Für</span>
+        {service.uses.map((u, i) => (
+          <>
+            <span class="whitespace-nowrap">
+              {u}
+              {i < service.uses.length - 1 && ' ·'}
+            </span>{' '}
+          </>
+        ))}
+      </p>
+      <ArrowLink href={service.href} context={`über ${service.title}`} class="mt-8">
+        Mehr erfahren
+      </ArrowLink>
+    </div>
+  )
+}

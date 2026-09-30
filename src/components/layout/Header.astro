@@ -1,0 +1,114 @@
+---
+import { nav, site } from '../../config/site';
+
+const path = Astro.url.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+const isActive = (href: string) => path === href || path.startsWith(`${href}/`);
+---
+
+<header
+  id="site-header"
+  class="fixed inset-x-0 top-0 z-40 bg-paper/95 transition-transform duration-500 ease-out-soft"
+>
+  <div class="wrap flex h-[var(--header-h)] items-center justify-between">
+    <a href="/" class="font-display text-[0.9375rem] font-medium tracking-[0.16em] uppercase" aria-label={`${site.name} – Startseite`}>
+      Studio Kuhls
+    </a>
+
+    <nav aria-label="Hauptnavigation" class="hidden lg:block">
+      <ul class="flex items-center gap-x-7 xl:gap-x-9">
+        {
+          nav.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class:list={[
+                  'label relative py-2 transition-opacity duration-300 hover:opacity-100',
+                  isActive(item.href) ? 'opacity-100' : 'opacity-60',
+                ]}
+                aria-current={isActive(item.href) ? 'page' : undefined}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <button
+      type="button"
+      id="menu-toggle"
+      class="label -mr-2 p-2 lg:hidden"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <span data-closed>Menü</span>
+      <span data-open hidden>Schließen</span>
+    </button>
+  </div>
+
+  <div
+    id="mobile-menu"
+    class="fixed inset-x-0 top-[var(--header-h)] bottom-0 hidden flex-col justify-between bg-paper lg:hidden"
+  >
+    <nav aria-label="Mobile Navigation" class="wrap pt-10">
+      <ul class="space-y-1">
+        {
+          nav.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class:list={[
+                  'block py-1.5 font-display text-[2.125rem] leading-tight tracking-[-0.03em]',
+                  !isActive(item.href) && 'text-ink/55',
+                ]}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+    <div class="wrap pb-10 text-muted">
+      <a href={`mailto:${site.email}`} class="block">{site.email}</a>
+      {site.phone && <a href={`tel:${site.phone.replace(/\s/g, '')}`} class="block">{site.phone}</a>}
+    </div>
+  </div>
+</header>
+
+<script>
+  const header = document.getElementById('site-header')!;
+  const toggle = document.getElementById('menu-toggle')!;
+  const menu = document.getElementById('mobile-menu')!;
+
+  const setMenu = (open: boolean) => {
+    toggle.setAttribute('aria-expanded', String(open));
+    menu.classList.toggle('hidden', !open);
+    menu.classList.toggle('flex', open);
+    toggle.querySelector('[data-closed]')!.toggleAttribute('hidden', open);
+    toggle.querySelector('[data-open]')!.toggleAttribute('hidden', !open);
+    document.documentElement.style.overflow = open ? 'hidden' : '';
+  };
+  toggle.addEventListener('click', () => setMenu(toggle.getAttribute('aria-expanded') !== 'true'));
+  document.addEventListener('keydown', (e) => e.key === 'Escape' && setMenu(false));
+
+  // Header beim Runterscrollen ausblenden, beim Hochscrollen zeigen
+  let lastY = window.scrollY;
+  let ticking = false;
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const y = window.scrollY;
+        const hide = y > lastY && y > 240 && toggle.getAttribute('aria-expanded') !== 'true';
+        header.style.transform = hide ? 'translateY(-100%)' : '';
+        lastY = y;
+        ticking = false;
+      });
+    },
+    { passive: true },
+  );
+</script>

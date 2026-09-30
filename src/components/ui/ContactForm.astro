@@ -1,0 +1,118 @@
+---
+/**
+ * Kontaktformular. Mit site.formEndpoint (z. B. Formspree, Web3Forms)
+ * wird per POST gesendet. Ohne Endpunkt öffnet sich eine vorbefüllte E-Mail.
+ */
+import { site } from '../../config/site';
+
+const projectTypes = ['Employer Branding', 'Business & Corporate', 'Immobilien & Interior', 'Event', 'Etwas anderes'];
+const endpoint = site.formEndpoint;
+
+const field =
+  'mt-2 block w-full border-0 border-b border-ink/25 bg-transparent px-0 py-2.5 text-[1.0625rem] outline-none transition-colors placeholder:text-ink/35 focus:border-ink';
+const labelCls = 'label text-muted';
+---
+
+<form
+  id="contact-form"
+  class="grid-12 gap-y-9"
+  method="post"
+  action={endpoint || undefined}
+  data-mailto={endpoint ? undefined : site.email}
+>
+  <div class="col-span-12 md:col-span-6">
+    <label for="cf-name" class={labelCls}>Name</label>
+    <input id="cf-name" name="name" type="text" autocomplete="name" required class={field} />
+  </div>
+  <div class="col-span-12 md:col-span-6">
+    <label for="cf-company" class={labelCls}>Unternehmen</label>
+    <input id="cf-company" name="unternehmen" type="text" autocomplete="organization" class={field} />
+  </div>
+  <div class="col-span-12 md:col-span-6">
+    <label for="cf-email" class={labelCls}>E-Mail</label>
+    <input id="cf-email" name="email" type="email" autocomplete="email" required class={field} />
+  </div>
+  <div class="col-span-12 md:col-span-6">
+    <label for="cf-phone" class={labelCls}>Telefon <span class="normal-case tracking-normal">(optional)</span></label>
+    <input id="cf-phone" name="telefon" type="tel" autocomplete="tel" class={field} />
+  </div>
+
+  <fieldset class="col-span-12">
+    <legend class={labelCls}>Art des Projekts</legend>
+    <div class="mt-4 flex flex-wrap gap-x-7 gap-y-3">
+      {
+        projectTypes.map((t, i) => (
+          <label class="flex cursor-pointer items-center gap-2.5 text-[1.0625rem]">
+            <input type="radio" name="projekt" value={t} required={i === 0} class="size-3.5 accent-ink" />
+            {t}
+          </label>
+        ))
+      }
+    </div>
+  </fieldset>
+
+  <div class="col-span-12 md:col-span-6">
+    <label for="cf-time" class={labelCls}>Zeitraum <span class="normal-case tracking-normal">(optional)</span></label>
+    <input id="cf-time" name="zeitraum" type="text" placeholder="z. B. Ende Mai oder Q3" class={field} />
+  </div>
+
+  <div class="col-span-12">
+    <label for="cf-message" class={labelCls}>Nachricht</label>
+    <textarea id="cf-message" name="nachricht" rows="5" required class:list={[field, 'resize-y']} placeholder="Worum geht es, wofür werden die Bilder gebraucht?"></textarea>
+  </div>
+
+  {/* Honeypot gegen Spam – für Menschen unsichtbar */}
+  <div class="hidden" aria-hidden="true">
+    <label>Nicht ausfüllen <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" /></label>
+  </div>
+
+  <div class="col-span-12 flex flex-col-reverse gap-6 sm:flex-row sm:items-center sm:justify-between">
+    <p class="max-w-[28rem] text-[0.8125rem] text-muted">
+      Ihre Angaben verwenden wir nur zur Bearbeitung der Anfrage. Details in der
+      <a href="/datenschutz" class="link-line">Datenschutzerklärung</a>.
+    </p>
+    <button type="submit" class="label shrink-0 bg-ink px-8 py-4 text-bone transition-colors hover:bg-black">
+      Projekt anfragen
+    </button>
+  </div>
+
+  <p id="cf-status" class="col-span-12 text-muted" role="status" aria-live="polite"></p>
+</form>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const status = document.getElementById('cf-status');
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    if (data.get('_gotcha')) return;
+
+    const mailto = form.dataset.mailto;
+    if (mailto) {
+      const body = [
+        `Name: ${data.get('name')}`,
+        `Unternehmen: ${data.get('unternehmen') || '–'}`,
+        `E-Mail: ${data.get('email')}`,
+        `Telefon: ${data.get('telefon') || '–'}`,
+        `Projekt: ${data.get('projekt')}`,
+        `Zeitraum: ${data.get('zeitraum') || '–'}`,
+        '',
+        String(data.get('nachricht')),
+      ].join('\n');
+      const subject = `Projektanfrage: ${data.get('projekt')} – ${data.get('unternehmen') || data.get('name')}`;
+      window.location.href = `mailto:${mailto}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      return;
+    }
+
+    if (status) status.textContent = 'Wird gesendet …';
+    try {
+      const res = await fetch(form.action, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
+      if (!res.ok) throw new Error();
+      form.reset();
+      if (status) status.textContent = 'Danke. Ihre Anfrage ist angekommen – Sie erhalten eine persönliche Rückmeldung.';
+    } catch {
+      if (status) status.textContent = 'Das hat leider nicht geklappt. Bitte schreiben Sie uns direkt eine E-Mail.';
+    }
+  });
+</script>

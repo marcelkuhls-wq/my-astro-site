@@ -1,11 +1,173 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Photo from '../components/media/Photo.astro';
+import ArrowLink from '../components/ui/ArrowLink.astro';
+import SectionLabel from '../components/ui/SectionLabel.astro';
+import Statement from '../components/sections/Statement.astro';
+import UseLine from '../components/sections/UseLine.astro';
+import ServiceFeature from '../components/sections/ServiceFeature.astro';
+import ProjectGrid from '../components/sections/ProjectGrid.astro';
+import IndexList from '../components/sections/IndexList.astro';
+import Process from '../components/sections/Process.astro';
+import Testimonial from '../components/sections/Testimonial.astro';
+import ClientLogos from '../components/sections/ClientLogos.astro';
+import Cta from '../components/sections/Cta.astro';
+import { serviceById, allUses } from '../data/services';
+import { testimonials } from '../data/testimonials';
+import { getProjects } from '../lib/work';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const featured = (await getProjects({ featured: true })).slice(0, 5);
+const quote = testimonials[0];
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout
+  title="Unternehmensfotografie in Hamburg"
+  description="Studio Kuhls ist ein Fotostudio für Unternehmen in Hamburg: Employer Branding, Business- und Corporate-Fotografie, Immobilien und Eventreportagen – für Website, Recruiting, Presse und Kommunikation."
+>
+  {/* HERO: Headline, ein Satz, ein CTA ------------------------------------ */}
+  <section class="flex flex-col pt-6 md:pt-10">
+    <div class="wrap grid-12 items-end gap-y-7">
+      <h1 class="hero-lines col-span-12 text-display md:col-span-9">
+        <span class="line"><span>Menschen. Räume.</span></span>
+        <span class="line"><span style="--i: 1">Unternehmen.</span></span>
+      </h1>
+      <div class="hero-fade col-span-12 md:col-span-3 md:pb-[0.4rem]">
+        <p class="max-w-[22rem]">
+          Fotostudio für Unternehmen in Hamburg. Employer Branding, Corporate, Interior und Events.
+        </p>
+        <ArrowLink href="/kontakt" class="mt-7">Projekt anfragen</ArrowLink>
+      </div>
+    </div>
+    {/* Bild füllt den Rest des ersten Bildschirms und ragt leicht darüber hinaus */}
+    <div class="wrap relative mt-8 h-[68svh] md:mt-10 md:h-[max(34rem,calc(100svh-var(--header-h)-13rem))]">
+      <Photo id="home-hero" ratio="auto" sizes="(min-width: 768px) 94vw, 100vw" priority class="hero-curtain !absolute inset-y-0 inset-x-[var(--margin)]" />
+    </div>
+  </section>
+
+  {/* INTRO + WOFÜR ------------------------------------------------------- */}
+  <Statement label="Studio" class="section-t">
+    Studio Kuhls ist ein Fotostudio für Unternehmen. Wir entwickeln Bildwelten, die in Recruiting, Kommunikation und Vertrieb
+    funktionieren – mit echten Menschen, echten Räumen und einer Bildsprache, die über Jahre trägt.
+    <Fragment slot="aside">
+      <div class="col-span-12 lg:col-span-7">
+        <p class="label mb-3 text-muted">Für</p>
+        <p class="text-muted">
+          HR- und People-Teams, Marketing und Unternehmenskommunikation, Agenturen, Makler und Projektentwickler, Hotels und
+          Gastronomie.
+        </p>
+      </div>
+    </Fragment>
+  </Statement>
+
+  <UseLine items={allUses} class="mt-16 mb-[var(--section)] md:mt-24" />
+
+  {/* LEISTUNGEN ---------------------------------------------------------- */}
+  <SectionLabel label="Leistungen" number="01–04" />
+
+  <ServiceFeature
+    first
+    service={serviceById('employer-branding')}
+    variant="wide"
+    photos={['home-eb']}
+    text="Keine Gruppenfotos vor der Firmenwand, sondern Ihre Teams bei der Arbeit – so, wie sich Ihr Unternehmen im Alltag tatsächlich anfühlt."
+  />
+  <ServiceFeature
+    service={serviceById('business')}
+    variant="pair"
+    photos={['home-business-1', 'home-business-2']}
+    text="Portraits von Geschäftsführung und Mitarbeitenden, Führungsteams und Arbeitswelten – einheitlich im Look über alle Personen und Termine."
+  />
+  <ServiceFeature
+    service={serviceById('immobilien')}
+    variant="bleed"
+    photos={['home-immobilien']}
+    text="Architektur und Interior für Makler, Projektentwickler, Architekturbüros, Hotels und Gastronomie. Natürliches Licht, saubere Linien, keine HDR-Optik."
+  />
+  <ServiceFeature
+    service={serviceById('events')}
+    variant="scatter"
+    photos={['home-events-1', 'home-events-2', 'home-events-3']}
+    text="Konferenzen, Produktlaunches, Dinner und Eröffnungen – dokumentarisch fotografiert: Menschen, Atmosphäre, Speaker und Details."
+  />
+
+  {/* SELECTED WORK ------------------------------------------------------- */}
+  {
+    featured.length > 0 && (
+      <section class="section-t">
+        <SectionLabel label="Ausgewählte Arbeiten" />
+        <div class="wrap mt-10 mb-12 flex items-end justify-between gap-8 md:mt-14 md:mb-16">
+          <h2 class="text-h2">Work</h2>
+          <ArrowLink href="/work" class="mb-[0.6em]">Projekte ansehen</ArrowLink>
+        </div>
+        <ProjectGrid projects={featured} />
+      </section>
+    )
+  }
+
+  {/* EMPLOYER BRANDING FEATURE ------------------------------------------- */}
+  <section class="section-y mt-[var(--section)] bg-ink text-bone">
+    <SectionLabel label="Schwerpunkt Employer Branding" dark />
+    <div class="wrap grid-12 mt-10 gap-y-8 md:mt-14">
+      <h2 class="col-span-12 text-h2 md:col-span-8" data-reveal>Menschen bewerben sich bei Menschen.</h2>
+      <p class="col-span-12 max-w-[34rem] text-lead text-bone/80 md:col-span-6 md:col-start-4" data-reveal style="--reveal-delay: .08s">
+        Eine Karriereseite mit Stockfotos sagt nichts über Ihr Unternehmen. Echte Bilder Ihrer Teams zeigen Kultur, Arbeitsumgebung
+        und Zusammenarbeit – bevor das erste Gespräch stattfindet.
+      </p>
+    </div>
+
+    <div class="wrap grid-12 mt-16 items-start gap-y-[var(--gutter)] md:mt-24">
+      <Photo id="home-eb-feature-1" ratio="4 / 5" sizes="(min-width: 768px) 39vw, 100vw" class="col-span-12 md:col-span-5" />
+      <Photo
+        id="home-eb-feature-2"
+        ratio="3 / 2"
+        sizes="(min-width: 768px) 47vw, 100vw"
+        class="col-span-12 md:col-span-6 md:col-start-7 md:mt-[30%]"
+      />
+    </div>
+
+    <div class="wrap mt-16 md:mt-24">
+      <IndexList
+        dark
+        items={[
+          { title: 'Recruiting', text: 'Bilder für Stellenanzeigen und Kampagnen, die zur Rolle passen – vom Ausbildungsplatz bis zur Führungsebene.' },
+          { title: 'Karriereseite', text: 'Arbeitsplätze, Teams und Alltag als zusammenhängende Bildwelt statt einzelner Motive.' },
+          { title: 'LinkedIn & Social Media', text: 'Laufend nutzbares Material, auch im Hochformat für Posts und Stories.' },
+          { title: 'Unternehmens­kommunikation', text: 'Für Website, Geschäftsbericht, Presse und interne Kanäle.' },
+        ]}
+      />
+      <ArrowLink href="/employer-branding" context="über Employer Branding" class="mt-12">Mehr erfahren</ArrowLink>
+    </div>
+  </section>
+
+  {/* VORBEREITUNG & ABLAUF ----------------------------------------------- */}
+  <Process />
+
+  {/* KUNDENSTIMME (erscheint erst mit echtem Zitat) ---------------------- */}
+  <Testimonial
+    {...quote}
+    projectHref={quote?.project ? `/work/${quote.project}` : undefined}
+    class="section-t"
+  />
+
+  {/* ABOUT --------------------------------------------------------------- */}
+  <section class="section-y">
+    <div class="wrap grid-12 items-end gap-y-10">
+      <Photo id="home-about" ratio="4 / 5" sizes="(min-width: 768px) 31vw, 100vw" class="col-span-12 sm:col-span-8 md:col-span-4" />
+      <div class="col-span-12 md:col-span-6 md:col-start-6 lg:col-span-5 lg:col-start-7" data-reveal>
+        <p class="label text-muted">Hinter dem Studio</p>
+        <h2 class="mt-5 text-h2">Marcel Kuhls</h2>
+        <p class="mt-8 text-lead">
+          Fotograf und Gründer von Studio Kuhls. Seit über zehn Jahren fotografiert er Menschen, Räume und Veranstaltungen.
+        </p>
+        <p class="mt-5 max-w-[32rem] text-muted">
+          Jedes Projekt leitet er persönlich – vom ersten Gespräch über den Produktionstag bis zur finalen Bildauswahl. Sie haben
+          einen Ansprechpartner, der Ihr Unternehmen kennt.
+        </p>
+        <ArrowLink href="/about" context="über Studio Kuhls" class="mt-10">Mehr erfahren</ArrowLink>
+      </div>
+    </div>
+  </section>
+
+  <ClientLogos />
+  <Cta />
+</BaseLayout>

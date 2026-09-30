@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArrowLink from '../components/ui/ArrowLink.astro';
+---
+
+<BaseLayout title="Seite nicht gefunden" description="Diese Seite existiert nicht." noindex>
+  <section class="wrap grid-12 section-y min-h-[70svh] content-end gap-y-10">
+    <p class="label col-span-12 text-muted md:col-span-3 md:pt-[0.9em]">404</p>
+    <div class="col-span-12 md:col-span-9">
+      <h1 class="text-display">Hier ist nichts.</h1>
+      <ArrowLink href="/" class="mt-12">Zur Startseite</ArrowLink>
+    </div>
+  </section>
+</BaseLayout>

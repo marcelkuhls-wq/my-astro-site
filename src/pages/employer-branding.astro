@@ -1,0 +1,177 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/sections/PageHeader.astro';
+import Statement from '../components/sections/Statement.astro';
+import Gallery from '../components/media/Gallery.astro';
+import Photo from '../components/media/Photo.astro';
+import SectionLabel from '../components/ui/SectionLabel.astro';
+import IndexList from '../components/sections/IndexList.astro';
+import ProjectGrid from '../components/sections/ProjectGrid.astro';
+import Process from '../components/sections/Process.astro';
+import Faq from '../components/sections/Faq.astro';
+import ArrowLink from '../components/ui/ArrowLink.astro';
+import Cta from '../components/sections/Cta.astro';
+import ServiceLinks from '../components/sections/ServiceLinks.astro';
+import UseLine from '../components/sections/UseLine.astro';
+import { getProjects } from '../lib/work';
+import { serviceById } from '../data/services';
+import { breadcrumbs, serviceSchema } from '../lib/schema';
+
+const description =
+  'Employer Branding Fotografie aus Hamburg: echte Mitarbeitende, echte Arbeitswelten. Bilder für Karriereseite, Recruiting, LinkedIn, Kampagnen und interne Kommunikation.';
+const schema = [
+  serviceSchema(Astro.site, serviceById('employer-branding'), 'Employer Branding Fotografie', description),
+  breadcrumbs(Astro.site, [{ name: 'Employer Branding', path: '/employer-branding' }]),
+];
+
+const projects = await getProjects({ service: 'employer-branding' });
+
+const principles = [
+  {
+    title: 'Echte Mitarbeitende',
+    text: 'Wir fotografieren Ihr Team, keine Models. Wer sich bewirbt, soll die Menschen wiedererkennen, mit denen er später arbeitet.',
+  },
+  {
+    title: 'Echte Situationen',
+    text: 'Wir begleiten den Arbeitsalltag und greifen nur behutsam ein. So entstehen Bilder, die nicht gestellt aussehen – weil sie es nicht sind.',
+  },
+  {
+    title: 'Ein System, keine Einzelbilder',
+    text: 'Eine durchgängige Bildsprache für alle Kanäle: Karriereseite, Anzeigen, Social Media, Präsentationen. Erweiterbar bei jedem weiteren Termin.',
+  },
+];
+
+const uses = [
+  { title: 'Arbeitssituationen', text: 'Besprechungen, Werkstatt, Labor, Empfang, Außendienst – dort, wo die Arbeit tatsächlich passiert.' },
+  { title: 'Portraits', text: 'Mitarbeitende als Gesichter der Kampagne. Ruhig, direkt, mit Bezug zum Arbeitsplatz.' },
+  { title: 'Teams', text: 'Teambilder, die nach Zusammenarbeit aussehen – nicht nach Aufstellung.' },
+  { title: 'Recruiting & Kampagnen', text: 'Motive passend zu konkreten Stellen und Zielgruppen, von Ausbildung bis Führung.' },
+  { title: 'Karriereseite', text: 'Ein zusammenhängendes Set aus Übersicht, Details und Menschen für Ihre Karrierewebsite.' },
+  { title: 'LinkedIn & Social Media', text: 'Hoch- und Querformate aus einer Produktion, geplant für Posts, Stories und Unternehmensprofile.' },
+  { title: 'Interne Kommunikation', text: 'Für Intranet, Mitarbeitermagazin, Onboarding und Präsentationen.' },
+];
+
+const faq = [
+  {
+    q: 'Wie läuft ein Employer Branding Shooting ab?',
+    a: 'Nach dem Briefing planen wir gemeinsam mit HR oder Marketing Motive, Bereiche und Zeitfenster. Am Produktionstag begleiten wir die Teams im laufenden Betrieb und fotografieren Portraits zwischendurch mit einem mobilen Setup vor Ort. Danach folgen Auswahl, Bearbeitung und Übergabe.',
+  },
+  {
+    q: 'Wie viele Mitarbeitende können wir fotografieren lassen?',
+    a: 'Das hängt vom Zeitplan ab, nicht von einer festen Grenze. Für ein Portrait reichen meist wenige Minuten pro Person. Wir planen die Zeitfenster pro Team so, dass niemand lange warten muss.',
+  },
+  {
+    q: 'Wie lange dauert eine Produktion?',
+    a: 'Von einem halben Tag bis zu mehreren Tagen – je nach Standorten, Motiven und Anzahl der Personen. Den Umfang legen wir im Briefing gemeinsam fest.',
+  },
+  {
+    q: 'Unsere Mitarbeitenden stehen nicht gern vor der Kamera. Funktioniert das trotzdem?',
+    a: 'Ja – das ist der Normalfall. Wir fotografieren überwiegend während der Arbeit statt in Posen. Wer nicht abgebildet werden möchte, wird es auch nicht.',
+  },
+  {
+    q: 'Wie gehen wir mit Einwilligungen und Datenschutz um?',
+    a: 'Für Mitarbeitende auf Bildern brauchen Sie in der Regel eine schriftliche Einwilligung. Wir stimmen den Ablauf vorab mit HR ab und berücksichtigen, wer fotografiert werden möchte und wer nicht.',
+  },
+  {
+    q: 'Wie werden die Nutzungsrechte geregelt?',
+    a: 'Nach Ihrem tatsächlichen Einsatz – von Karriereseite und Social Media bis zur Kampagne. Wir legen die Rechte im Angebot transparent fest.',
+  },
+  {
+    q: 'Wie erhalten wir die Bilder?',
+    a: 'Als bearbeitete Auswahl in den vereinbarten Formaten, zum Beispiel hochaufgelöst für Druck und optimiert für Web und Social Media.',
+  },
+];
+---
+
+<BaseLayout title="Employer Branding Fotograf in Hamburg" description={description} schema={schema}>
+  <PageHeader
+    label="Leistung 01"
+    title="Employer Branding"
+    lead="Echte Teams, echte Arbeitsplätze und eine Bildsprache, die zeigt, wie sich Ihr Unternehmen von innen anfühlt – für Karriereseite, Recruiting und Kommunikation. Aus Hamburg und darüber hinaus."
+    photo="eb-hero"
+    ratio="16 / 9"
+  />
+
+  <Statement label="Haltung" size="h2" as="h2" class="section-y">
+    Menschen erkennen, ob ein Bild echt ist.
+  </Statement>
+
+  <div class="wrap -mt-[calc(var(--section)*0.4)]">
+    <div class="grid-12">
+      <ol class="col-span-12 grid-12 gap-y-12 md:col-span-9 md:col-start-4">
+        {
+          principles.map((p, i) => (
+            <li class="col-span-12 md:col-span-4" data-reveal style={`--reveal-delay: ${i * 0.07}s`}>
+              <p class="label tabular-nums text-muted">{String(i + 1).padStart(2, '0')}</p>
+              <h3 class="mt-4 text-[1.375rem] leading-tight tracking-[-0.015em]">{p.title}</h3>
+              <p class="mt-3 text-muted">{p.text}</p>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </div>
+
+  <UseLine
+    items={['Unternehmenskultur', 'Arbeitsumgebung', 'Teams', 'Führung', 'Ausbildung', 'Standorte']}
+    label="Was wir zeigen"
+    class="mt-16 md:mt-24"
+  />
+
+  <Gallery layout="bleed" images={['eb-situation-wide']} class="section-t" />
+  <Gallery layout="offset" images={['eb-situation-1', 'eb-portrait-1']} class="mt-[var(--gutter)]" />
+
+  <section class="section-t">
+    <SectionLabel label="Einsatz" />
+    <div class="wrap grid-12 mt-10 gap-y-10 md:mt-14">
+      <h2 class="col-span-12 text-h2 md:col-span-7" data-reveal>Wofür die Bilder gemacht sind.</h2>
+      <p class="col-span-12 max-w-[30rem] text-muted md:col-span-4 md:col-start-9 md:self-end" data-reveal>
+        Wir planen jede Produktion vom Einsatz her. So entsteht an einem Tag Material, das Sie über Monate in allen Kanälen nutzen
+        können.
+      </p>
+    </div>
+    <div class="wrap mt-14 md:mt-20">
+      <IndexList items={uses} />
+    </div>
+  </section>
+
+  <Gallery layout="trio" images={['eb-team-1', 'eb-situation-2', 'eb-detail-1']} class="section-t" />
+  <Gallery layout="pair" images={['eb-portrait-2', 'eb-portrait-3']} class="mt-[var(--gutter)]" />
+
+  {
+    projects.length > 0 && (
+      <section class="section-t">
+        <SectionLabel label="Projekte" />
+        <div class="wrap mt-10 mb-12 flex items-end justify-between gap-8 md:mt-14 md:mb-16">
+          <h2 class="text-h2">Employer Branding Projekte</h2>
+          <ArrowLink href="/work" class="mb-[0.6em] hidden sm:inline-flex">Projekte ansehen</ArrowLink>
+        </div>
+        <ProjectGrid projects={projects} />
+      </section>
+    )
+  }
+
+  <Process />
+
+  <section class="section-t">
+    <div class="wrap grid-12 items-center gap-y-10">
+      <Photo id="eb-behind" ratio="3 / 2" sizes="(min-width: 768px) 47vw, 100vw" class="col-span-12 md:col-span-6" />
+      <div class="col-span-12 md:col-span-5 md:col-start-8" data-reveal>
+        <p class="label text-muted">Am Produktionstag</p>
+        <p class="mt-5 text-h3 !leading-[1.2]">
+          Kompaktes Setup, klare Absprachen, wenig Unterbrechung. Nach kurzer Zeit arbeitet das Team einfach weiter – und genau dann
+          entstehen die Bilder, um die es geht.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <Faq items={faq} />
+
+  <ServiceLinks current="employer-branding" />
+
+  <Cta
+    title="Karriereseite in Planung?"
+    text="Erzählen Sie uns, welche Stellen, Standorte und Kanäle Sie im Blick haben. Wir schlagen Ihnen einen passenden Produktionsumfang vor."
+  />
+</BaseLayout>

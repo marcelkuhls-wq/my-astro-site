@@ -1,0 +1,18 @@
+---
+/** "Weitere Leistungen" am Ende jeder Leistungsseite – damit keine Seite eine Sackgasse ist. */
+import SectionLabel from '../ui/SectionLabel.astro';
+import IndexList from './IndexList.astro';
+import { otherServices, type ServiceId } from '../../data/services';
+
+interface Props {
+  current: ServiceId;
+}
+const items = otherServices(Astro.props.current).map((s) => ({ title: s.title, text: s.summary, href: s.href }));
+---
+
+<section class="section-t">
+  <SectionLabel label="Weitere Leistungen" />
+  <div class="wrap mt-10 md:mt-14">
+    <IndexList numbered={false} items={items} />
+  </div>
+</section>

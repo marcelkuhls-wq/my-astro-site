@@ -1,0 +1,122 @@
+---
+/**
+ * Photo – zeigt ein echtes Foto oder einen beschrifteten Platzhalter.
+ *
+ * So kommt ein echtes Bild auf die Seite:
+ *   Datei mit dem Namen der ID nach src/assets/photos/ legen, z. B.
+ *   src/assets/photos/home-hero.jpg  →  ersetzt <Photo id="home-hero" />
+ *
+ * Welche Bilder gebraucht werden (Motiv, Format, Hinweise), steht in
+ * src/data/photos.ts. Astro erzeugt daraus automatisch AVIF/WebP in
+ * passenden Größen, mit Lazy Loading und festen Seitenverhältnissen.
+ */
+import type { ImageMetadata } from 'astro';
+import { Picture } from 'astro:assets';
+import { photos, type PhotoSpec } from '../../data/photos';
+import { site } from '../../config/site';
+
+interface Props {
+  id: string;
+  /** CSS aspect-ratio, z. B. "3 / 2", "4 / 5", "21 / 9" */
+  ratio?: string;
+  /** sizes-Attribut – so genau wie möglich zur Spaltenbreite */
+  sizes?: string;
+  /** Hero-Bilder: sofort laden */
+  priority?: boolean;
+  /** Bildausschnitt, z. B. "50% 30%" */
+  position?: string;
+  /** Spezifikation direkt übergeben (für Case Studies) */
+  spec?: PhotoSpec;
+  reveal?: boolean;
+  /** Name für den Seitenübergang – gleiches Bild auf zwei Seiten "wächst" hinüber */
+  transitionName?: string;
+  /** Panorama bewegt sich beim Scrollen minimal langsamer als die Seite */
+  drift?: boolean;
+  class?: string;
+}
+
+const {
+  id,
+  ratio = '3 / 2',
+  sizes = '100vw',
+  priority = false,
+  position: positionProp,
+  spec: specProp,
+  reveal = true,
+  transitionName,
+  drift = false,
+  class: className,
+} = Astro.props;
+
+const files = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/photos/*.{jpg,jpeg,png,webp,avif,tif,tiff,JPG,JPEG,PNG}',
+  { eager: true },
+);
+const byId = new Map(
+  Object.entries(files).map(([path, mod]) => [
+    path.split('/').pop()!.replace(/\.[^.]+$/, ''),
+    mod.default,
+  ]),
+);
+
+const spec: PhotoSpec | undefined = specProp ?? photos[id];
+const image = byId.get(id) ?? (spec?.file ? byId.get(spec.file) : undefined);
+const widths = image
+  ? [...[480, 768, 1080, 1440, 1920, 2560].filter((w) => w < image.width), Math.min(image.width, 2560)]
+  : [];
+
+if (!spec && import.meta.env.DEV) {
+  console.warn(`[Photo] Keine Bildbeschreibung für "${id}" in src/data/photos.ts`);
+}
+
+const alt = spec?.alt ?? '';
+const position = positionProp ?? spec?.position ?? 'center';
+const tone = spec?.tone ?? 'light';
+const showSpec = site.showPlaceholderSpecs;
+---
+
+<figure
+  class:list={['photo relative overflow-hidden', drift && 'photo-drift', className]}
+  style={`aspect-ratio: ${ratio};${transitionName ? ` view-transition-name: ${transitionName};` : ''}`}
+  data-reveal={reveal && !priority ? 'image' : undefined}
+>
+  {
+    image ? (
+      <Picture
+        src={image}
+        alt={alt}
+        formats={['avif', 'webp']}
+        widths={widths}
+        sizes={sizes}
+        loading={priority ? 'eager' : 'lazy'}
+        fetchpriority={priority ? 'high' : 'auto'}
+        decoding={priority ? 'sync' : 'async'}
+        class="absolute inset-0 h-full w-full object-cover"
+        style={`object-position: ${position}`}
+      />
+    ) : (
+      <div
+        class:list={[
+          'ph-surface absolute inset-0',
+          tone === 'dark' && 'bg-ph-dark text-muted-dark',
+          tone === 'mid' && 'bg-ph-mid text-ink/60',
+          tone === 'light' && 'bg-ph-light text-ink/55',
+        ]}
+        role="img"
+        aria-label={alt}
+        data-photo-id={id}
+      >
+        {showSpec && spec && (
+          <div class="absolute inset-x-0 bottom-0 p-3 font-sans text-[0.6875rem] leading-snug tracking-[0.02em] sm:p-4">
+            <p class="label mb-1.5 !text-[0.625rem]">Bild · {id}</p>
+            <p>
+              {spec.category} · {spec.format}
+            </p>
+            <p class="max-w-[42ch]">{spec.motif}</p>
+            {spec.note && <p class="max-w-[42ch] opacity-75">{spec.note}</p>}
+          </div>
+        )}
+      </div>
+    )
+  }
+</figure>
