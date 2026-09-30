@@ -412,3 +412,19 @@
   line-height: 1.25;
   margin-block: 3rem;
 }
+
+/* --- Formular: Datumsfeld --------------------------------------------- */
+
+.date-field {
+  color-scheme: light;
+  min-height: 2.75rem;
+  font-variant-numeric: tabular-nums;
+}
+.date-field::-webkit-calendar-picker-indicator {
+  opacity: 0.45;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.date-field:hover::-webkit-calendar-picker-indicator {
+  opacity: 0.9;
+}

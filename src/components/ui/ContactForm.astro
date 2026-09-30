@@ -7,6 +7,8 @@ import { site } from '../../config/site';
 
 const projectTypes = ['Employer Branding', 'Business & Corporate', 'Immobilien & Interior', 'Event', 'Etwas anderes'];
 const endpoint = site.formEndpoint;
+// Frühestes wählbares Datum (Build-Zeitpunkt; wird im Browser auf heute aktualisiert)
+const today = new Date().toISOString().slice(0, 10);
 
 const field =
   'mt-2 block w-full border-0 border-b border-ink/25 bg-transparent px-0 py-2.5 text-[1.0625rem] outline-none transition-colors placeholder:text-ink/35 focus:border-ink';
@@ -53,8 +55,14 @@ const labelCls = 'label text-muted';
   </fieldset>
 
   <div class="col-span-12 md:col-span-6">
-    <label for="cf-time" class={labelCls}>Zeitraum <span class="normal-case tracking-normal">(optional)</span></label>
-    <input id="cf-time" name="zeitraum" type="text" placeholder="z. B. Ende Mai oder Q3" class={field} />
+    <label for="cf-date" class={labelCls}>Wunschtermin <span class="normal-case tracking-normal">(optional)</span></label>
+    <input id="cf-date" name="termin" type="date" min={today} class:list={[field, 'date-field']} />
+  </div>
+  <div class="col-span-12 flex items-end md:col-span-6">
+    <label class="flex cursor-pointer items-center gap-2.5 pb-3 text-[1.0625rem]">
+      <input type="checkbox" name="flexibel" value="ja" class="size-3.5 accent-ink" />
+      Termin ist flexibel
+    </label>
   </div>
 
   <div class="col-span-12">
@@ -71,7 +79,7 @@ const labelCls = 'label text-muted';
 
   <div class="col-span-12 flex flex-col-reverse gap-6 sm:flex-row sm:items-center sm:justify-between">
     <p class="max-w-[28rem] text-[0.8125rem] text-muted">
-      Ihre Angaben verwenden wir nur zur Bearbeitung der Anfrage. Details in der
+      Ihre Angaben verwenden wir nur zur Bearbeitung der Anfrage. Details in der{' '}
       <a href="/datenschutz" class="link-line">Datenschutzerklärung</a>.
     </p>
     <button type="submit" class="label shrink-0 bg-ink px-8 py-4 text-bone transition-colors hover:bg-black disabled:opacity-50">
@@ -86,10 +94,22 @@ const labelCls = 'label text-muted';
   const form = document.getElementById('contact-form') as HTMLFormElement | null;
   const status = document.getElementById('cf-status');
 
+  const dateInput = document.getElementById('cf-date') as HTMLInputElement | null;
+  if (dateInput) dateInput.min = new Date().toISOString().slice(0, 10);
+
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
     const data = new FormData(form);
     if (data.get('botcheck')) return;
+
+    // Termin lesbar zusammenfassen: "15.05.2027 (flexibel)" – Rohfelder nicht mitsenden
+    const raw = String(data.get('termin') || '');
+    const flexibel = data.get('flexibel') === 'ja';
+    const datum = raw ? new Date(raw + 'T12:00').toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' }) : '';
+    const termin = [datum, flexibel ? (datum ? '(flexibel)' : 'flexibel') : ''].filter(Boolean).join(' ') || '–';
+    data.delete('termin');
+    data.delete('flexibel');
+    data.set('wunschtermin', termin);
 
     const subject = `Projektanfrage: ${data.get('projekt')} – ${data.get('unternehmen') || data.get('name')}`;
 
@@ -102,7 +122,7 @@ const labelCls = 'label text-muted';
         `E-Mail: ${data.get('email')}`,
         `Telefon: ${data.get('telefon') || '–'}`,
         `Projekt: ${data.get('projekt')}`,
-        `Zeitraum: ${data.get('zeitraum') || '–'}`,
+        `Wunschtermin: ${termin}`,
         '',
         String(data.get('nachricht')),
       ].join('\n');
