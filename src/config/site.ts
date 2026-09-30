@@ -23,10 +23,11 @@ export const site = {
   },
 
   /**
-   * Formular-Endpunkt, z. B. von Formspree, Web3Forms oder Netlify Forms.
+   * Formular-Endpunkt (FormSubmit, AJAX). Leitet Anfragen per E-Mail an die Adresse weiter.
+   * Beim allerersten Absenden schickt FormSubmit eine Aktivierungs-Mail an diese Adresse.
    * Leer = das Formular öffnet eine vorbefüllte E-Mail im Mailprogramm.
    */
-  formEndpoint: '',
+  formEndpoint: 'https://formsubmit.co/ajax/kontakt@studio-kuhls.de',
 
   /**
    * Zeigt auf Bildplatzhaltern die Bildbeschreibung (Motiv, Format, Hinweise).
