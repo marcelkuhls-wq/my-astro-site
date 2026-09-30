@@ -118,10 +118,21 @@ const labelCls = 'label text-muted';
     try {
       const res = await fetch(form.action, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
       const json = await res.json().catch(() => ({}));
-      if (!res.ok || json.success === 'false' || json.success === false) throw new Error(json.message);
+      const ok = res.ok && json.success !== 'false' && json.success !== false;
+      if (!ok) {
+        const msg = String(json.message || '');
+        // Erste Nutzung: FormSubmit wartet auf Aktivierung per Mail an die Zieladresse
+        if (/activat/i.test(msg)) {
+          if (status) status.textContent = 'Das Formular wird gerade eingerichtet – bitte versuchen Sie es in Kürze erneut oder schreiben Sie direkt per E-Mail.';
+          console.info('[Kontaktformular] FormSubmit:', msg);
+          return;
+        }
+        throw new Error(msg);
+      }
       form.reset();
       if (status) status.textContent = 'Danke. Ihre Anfrage ist angekommen – Sie erhalten eine persönliche Rückmeldung.';
-    } catch {
+    } catch (err) {
+      console.warn('[Kontaktformular]', err);
       if (status)
         status.innerHTML = `Das hat leider nicht geklappt. Bitte schreiben Sie direkt an <a class="link-line" href="mailto:${form.dataset.email}">${form.dataset.email}</a>.`;
     } finally {
