@@ -3,8 +3,8 @@ import { defineConfig, fontProviders } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 
-// TODO: Finale Domain eintragen (wird für Canonical-URLs, Open Graph und Sitemap genutzt).
-const SITE_URL = 'https://www.studio-kuhls.de';
+// Domain für Canonical-URLs, Open Graph und Sitemap (DNS bei Strato → GitHub Pages).
+const SITE_URL = 'https://studio-kuhls.de';
 
 export default defineConfig({
   site: SITE_URL,
