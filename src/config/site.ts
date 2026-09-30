@@ -23,11 +23,12 @@ export const site = {
   },
 
   /**
-   * Formular-Endpunkt (FormSubmit, AJAX). Leitet Anfragen per E-Mail an die Adresse weiter.
-   * Beim allerersten Absenden schickt FormSubmit eine Aktivierungs-Mail an diese Adresse.
-   * Leer = das Formular öffnet eine vorbefüllte E-Mail im Mailprogramm.
+   * Kontaktformular über Web3Forms (Konto: kontakt@studio-kuhls.de, app.web3forms.com).
+   * Der Access Key ist öffentlich und darf im Code stehen.
+   * Leer lassen = das Formular öffnet eine vorbefüllte E-Mail im Mailprogramm.
    */
-  formEndpoint: 'https://formsubmit.co/ajax/kontakt@studio-kuhls.de',
+  formEndpoint: 'https://api.web3forms.com/submit',
+  formAccessKey: '5348b19e-1879-4429-99a3-ad606b8582e4',
 
   /**
    * Zeigt auf Bildplatzhaltern die Bildbeschreibung (Motiv, Format, Hinweise).

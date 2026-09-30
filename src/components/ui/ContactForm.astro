@@ -62,9 +62,11 @@ const labelCls = 'label text-muted';
     <textarea id="cf-message" name="nachricht" rows="5" required class:list={[field, 'resize-y']} placeholder="Worum geht es, wofür werden die Bilder gebraucht?"></textarea>
   </div>
 
+  {endpoint && <input type="hidden" name="access_key" value={site.formAccessKey} />}
+
   {/* Honeypot gegen Spam – für Menschen unsichtbar */}
   <div class="hidden" aria-hidden="true">
-    <label>Nicht ausfüllen <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" /></label>
+    <label>Nicht ausfüllen <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" /></label>
   </div>
 
   <div class="col-span-12 flex flex-col-reverse gap-6 sm:flex-row sm:items-center sm:justify-between">
@@ -87,8 +89,11 @@ const labelCls = 'label text-muted';
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
     const data = new FormData(form);
-    if (data.get('_gotcha')) return;
+    if (data.get('botcheck')) return;
 
+    const subject = `Projektanfrage: ${data.get('projekt')} – ${data.get('unternehmen') || data.get('name')}`;
+
+    // Ohne Formular-Dienst: vorbefüllte E-Mail im Mailprogramm öffnen
     const mailto = form.dataset.mailto;
     if (mailto) {
       const body = [
@@ -101,16 +106,15 @@ const labelCls = 'label text-muted';
         '',
         String(data.get('nachricht')),
       ].join('\n');
-      const subject = `Projektanfrage: ${data.get('projekt')} – ${data.get('unternehmen') || data.get('name')}`;
       window.location.href = `mailto:${mailto}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       return;
     }
 
-    const subject = `Projektanfrage: ${data.get('projekt')} – ${data.get('unternehmen') || data.get('name')}`;
-    data.set('_subject', subject);
-    data.set('_template', 'table');
-    data.set('_replyto', String(data.get('email')));
-    data.delete('_gotcha');
+    // Web3Forms
+    data.set('subject', subject);
+    data.set('from_name', 'Studio Kuhls Website');
+    data.set('replyto', String(data.get('email')));
+    data.delete('botcheck');
 
     const button = form.querySelector<HTMLButtonElement>('button[type="submit"]');
     if (button) button.disabled = true;
@@ -118,17 +122,7 @@ const labelCls = 'label text-muted';
     try {
       const res = await fetch(form.action, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
       const json = await res.json().catch(() => ({}));
-      const ok = res.ok && json.success !== 'false' && json.success !== false;
-      if (!ok) {
-        const msg = String(json.message || '');
-        // Erste Nutzung: FormSubmit wartet auf Aktivierung per Mail an die Zieladresse
-        if (/activat/i.test(msg)) {
-          if (status) status.textContent = 'Das Formular wird gerade eingerichtet – bitte versuchen Sie es in Kürze erneut oder schreiben Sie direkt per E-Mail.';
-          console.info('[Kontaktformular] FormSubmit:', msg);
-          return;
-        }
-        throw new Error(msg);
-      }
+      if (!res.ok || !json.success) throw new Error(json.message || `HTTP ${res.status}`);
       form.reset();
       if (status) status.textContent = 'Danke. Ihre Anfrage ist angekommen – Sie erhalten eine persönliche Rückmeldung.';
     } catch (err) {
