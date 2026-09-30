@@ -8,7 +8,7 @@ export const site = {
   city: 'Hamburg',
   tagline: 'Fotografie für Unternehmen',
 
-  email: 'marcel.kuhls@web.de',
+  email: 'kontakt@studio-kuhls.de',
   phone: '+49 176 28979148', // leer lassen, um die Telefonnummer auszublenden
   address: {
     street: 'Mühlenkamp 52',
