@@ -1,6 +1,9 @@
 ---
+import { ogImageFor } from '../lib/og';
+const ogImage = await ogImageFor('immo-hero');
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHeader from '../components/sections/PageHeader.astro';
+import JournalLink from '../components/sections/JournalLink.astro';
 import Gallery from '../components/media/Gallery.astro';
 import SectionLabel from '../components/ui/SectionLabel.astro';
 import ProjectGrid from '../components/sections/ProjectGrid.astro';
@@ -50,8 +53,10 @@ const faq = [
 ];
 ---
 
-<BaseLayout title="Immobilienfotograf in Hamburg – Architektur & Interior" description={description} schema={schema}>
+<BaseLayout ogImage={ogImage} title="Immobilien- & Architekturfotograf Hamburg" description={description} schema={schema}>
   <PageHeader
+    kicker="Immobilien- & Architekturfotografie in Hamburg"
+    clients
     label="Leistung 03"
     title="Immobilien & Interior"
     lead="Räume so, wie sie sich anfühlen – für Exposé, Immobilienportal, Hospitality Marketing und Projektkommunikation. Natürliches Licht, saubere Perspektiven, keine HDR-Optik."
@@ -101,6 +106,8 @@ const faq = [
 
   <Faq items={faq} />
   <ServiceLinks current="immobilien" />
+
+  <JournalLink slug="immobilienfotos-vorbereiten" />
 
   <Cta
     title="Objekt in Vorbereitung?"

@@ -1,6 +1,9 @@
 ---
+import { ogImageFor } from '../lib/og';
+const ogImage = await ogImageFor('business-hero');
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHeader from '../components/sections/PageHeader.astro';
+import JournalLink from '../components/sections/JournalLink.astro';
 import Statement from '../components/sections/Statement.astro';
 import Gallery from '../components/media/Gallery.astro';
 import SectionLabel from '../components/ui/SectionLabel.astro';
@@ -32,8 +35,10 @@ const offers = [
 ];
 ---
 
-<BaseLayout title="Business- & Corporate-Fotograf in Hamburg" description={description} schema={schema}>
+<BaseLayout ogImage={ogImage} title="Businessfotograf Hamburg – Portraits & Teams" description={description} schema={schema}>
   <PageHeader
+    kicker="Businessfotografie in Hamburg"
+    clients
     label="Leistung 02"
     title="Business & Corporate"
     lead="Portraits und Unternehmensbilder mit einer Bildsprache, die zu Ihrer Marke passt – einheitlich über alle Personen, Standorte und Termine hinweg."
@@ -76,5 +81,7 @@ const offers = [
 
   <Process />
   <ServiceLinks current="business" />
+  <JournalLink slug="business-portraits-vorbereitung" />
+
   <Cta />
 </BaseLayout>

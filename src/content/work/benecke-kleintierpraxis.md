@@ -8,7 +8,7 @@ location: Elstorf
 year: 2026
 summary: Team-Portraits, Behandlungssituationen und Bilder der Praxis – für die neue Website und Social Media.
 usage: [Website, Social Media]
-featured: true
+featured: false
 order: 4
 cover:
   id: benecke-untersuchung-katze

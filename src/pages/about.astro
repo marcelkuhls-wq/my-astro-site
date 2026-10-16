@@ -8,7 +8,7 @@ import { services } from '../data/services';
 import Cta from '../components/sections/Cta.astro';
 import { breadcrumbs } from '../lib/schema';
 
-const schema = [breadcrumbs(Astro.site, [{ name: 'About', path: '/about' }])];
+const schema = [breadcrumbs(Astro.site, [{ name: 'Über mich', path: '/about' }])];
 ---
 
 <BaseLayout
@@ -18,7 +18,7 @@ const schema = [breadcrumbs(Astro.site, [{ name: 'About', path: '/about' }])];
 >
   <section class="pt-14 md:pt-24">
     <div class="wrap grid-12 gap-y-10">
-      <p class="label col-span-12 text-muted md:col-span-3 md:pt-[0.9em]" data-reveal>About</p>
+      <p class="label col-span-12 text-muted md:col-span-3 md:pt-[0.9em]" data-reveal>Über mich</p>
       <h1 class="col-span-12 text-display md:col-span-9" data-reveal>Ein Fotograf. Eine Handschrift.</h1>
     </div>
 

@@ -1,4 +1,6 @@
 ---
+import { ogImageFor } from '../lib/og';
+const ogImage = await ogImageFor('events-hero');
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHeader from '../components/sections/PageHeader.astro';
 import Statement from '../components/sections/Statement.astro';
@@ -62,8 +64,10 @@ const formats = [
 ];
 ---
 
-<BaseLayout title="Eventfotograf in Hamburg – Firmenevents & Konferenzen" description={description} schema={schema}>
+<BaseLayout ogImage={ogImage} title="Eventfotograf Hamburg – Firmenevents" description={description} schema={schema}>
   <PageHeader
+    kicker="Eventfotografie in Hamburg"
+    clients
     label="Leistung 04"
     title="Events"
     lead="Dokumentarische Eventfotografie für Unternehmen, Agenturen und PR-Teams – mit Bildern, die in PR, LinkedIn und interner Kommunikation weiterarbeiten."

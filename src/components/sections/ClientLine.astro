@@ -1,0 +1,30 @@
+---
+/** Vertrauenszeile: „Projekte u. a. für …“ – Namen aus src/data/clients.ts */
+import { clientNames } from '../../data/clients';
+
+interface Props {
+  /** Anzahl der Namen (Standard: alle) */
+  limit?: number;
+  class?: string;
+}
+const { limit, class: className } = Astro.props;
+const names = limit ? clientNames.slice(0, limit) : clientNames;
+---
+
+{
+  names.length > 0 && (
+    <div class:list={['wrap', className]} data-reveal>
+      <div class="grid-12 gap-y-3 border-t border-line pt-5">
+        <p class="label col-span-12 text-muted md:col-span-3">Projekte u. a. für</p>
+        <p class="col-span-12 text-[0.9375rem] leading-relaxed md:col-span-9">
+          {names.map((n, i) => (
+            <>
+              <span class="whitespace-nowrap">{n}</span>
+              {i < names.length - 1 && <> <span class="text-muted" aria-hidden="true">·</span> </>}
+            </>
+          ))}
+        </p>
+      </div>
+    </div>
+  )
+}

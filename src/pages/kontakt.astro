@@ -7,8 +7,8 @@ const addressLine = [site.address.street, [site.address.zip, site.address.city].
 ---
 
 <BaseLayout
-  title="Kontakt"
-  description="Projekt anfragen bei Studio Kuhls – Marcel Kuhls, Fotograf für Unternehmen in Hamburg: Employer Branding, Business-Fotografie, Immobilien und Events."
+  title="Projekt anfragen – Hamburg"
+  description="Erzählen Sie kurz, was Sie vorhaben – Sie erhalten eine persönliche Rückmeldung mit Einschätzung und Vorschlag. Marcel Kuhls, Unternehmensfotograf in Hamburg."
 >
   <section class="section-y pt-14 md:pt-24">
     <div class="wrap grid-12 gap-y-10">
@@ -19,9 +19,22 @@ const addressLine = [site.address.street, [site.address.zip, site.address.city].
     <div class="wrap grid-12 mt-16 gap-y-16 md:mt-28">
       <aside class="col-span-12 space-y-10 md:col-span-3">
         <div>
-          <p class="label mb-3 text-muted">Direkt</p>
+          <p class="label mb-3 text-muted">So geht es weiter</p>
+          <ol class="space-y-3 text-[0.9375rem]">
+            <li><span class="text-muted tabular-nums">1</span>&ensp;Sie schreiben kurz, worum es geht.</li>
+            <li><span class="text-muted tabular-nums">2</span>&ensp;Ich melde mich persönlich mit Rückfragen oder einem Vorschlag.</li>
+            <li><span class="text-muted tabular-nums">3</span>&ensp;Sie erhalten ein schriftliches Angebot.</li>
+          </ol>
+        </div>
+        {site.phone && (
+          <div>
+            <p class="label mb-3 text-muted">Lieber telefonieren?</p>
+            <a href={`tel:${site.phone.replace(/\s/g, '')}`} class="link-line font-display text-[1.375rem] tracking-[-0.01em]">{site.phone}</a>
+          </div>
+        )}
+        <div>
+          <p class="label mb-3 text-muted">E-Mail</p>
           <a href={`mailto:${site.email}`} class="link-line block break-all">{site.email}</a>
-          {site.phone && <a href={`tel:${site.phone.replace(/\s/g, '')}`} class="link-line mt-1 block">{site.phone}</a>}
         </div>
         <div>
           <p class="label mb-3 text-muted">Adresse</p>

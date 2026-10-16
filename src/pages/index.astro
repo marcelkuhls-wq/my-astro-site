@@ -1,4 +1,6 @@
 ---
+import { ogImageFor } from '../lib/og';
+const ogImage = await ogImageFor('home-hero');
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Photo from '../components/media/Photo.astro';
 import ArrowLink from '../components/ui/ArrowLink.astro';
@@ -11,23 +13,26 @@ import IndexList from '../components/sections/IndexList.astro';
 import Process from '../components/sections/Process.astro';
 import Testimonial from '../components/sections/Testimonial.astro';
 import ClientLogos from '../components/sections/ClientLogos.astro';
+import ClientLine from '../components/sections/ClientLine.astro';
 import Cta from '../components/sections/Cta.astro';
 import { serviceById, allUses } from '../data/services';
 import { testimonials } from '../data/testimonials';
 import { getProjects } from '../lib/work';
 
-const featured = await getProjects();
+const featured = await getProjects({ featured: true });
+const allProjects = await getProjects();
 const quote = testimonials[0];
 ---
 
-<BaseLayout
-  title="Unternehmensfotografie in Hamburg – Marcel Kuhls"
+<BaseLayout ogImage={ogImage}
+  title="Unternehmensfotograf in Hamburg – Marcel Kuhls"
   description="Unternehmensfotograf Marcel Kuhls, Hamburg: Employer Branding, Business-Portraits, Immobilien und Events – Bilder für Website, Recruiting und Presse."
 >
   {/* HERO: Headline, ein Satz, ein CTA ------------------------------------ */}
   <section class="flex flex-col pt-6 md:pt-10">
     <div class="wrap grid-12 items-end gap-y-7">
       <h1 class="hero-lines col-span-12 text-display md:col-span-9">
+        <span class="label mb-5 block !tracking-[0.1em] text-muted md:mb-7">Unternehmensfotograf in Hamburg</span>
         <span class="line"><span>Menschen. Räume.</span></span>{' '}
         <span class="line"><span style="--i: 1">Unternehmen.</span></span>
       </h1>
@@ -43,6 +48,8 @@ const quote = testimonials[0];
       <Photo id="home-hero" ratio="auto" sizes="(min-width: 768px) 94vw, 100vw" priority crop class="hero-curtain !absolute inset-y-0 inset-x-[var(--margin)]" />
     </div>
   </section>
+
+  <ClientLine class="mt-10 md:mt-14" />
 
   {/* INTRO + WOFÜR ------------------------------------------------------- */}
   <Statement label="Studio Kuhls" class="section-t">
@@ -96,8 +103,8 @@ const quote = testimonials[0];
       <section class="section-t">
         <SectionLabel label="Ausgewählte Arbeiten" />
         <div class="wrap mt-10 mb-12 flex items-end justify-between gap-8 md:mt-14 md:mb-16">
-          <h2 class="text-h2">Work</h2>
-          <ArrowLink href="/work" class="mb-[0.6em]">Projekte ansehen</ArrowLink>
+          <h2 class="text-h2">Projekte</h2>
+          <ArrowLink href="/work" class="mb-[0.6em]">Alle {allProjects.length} Projekte</ArrowLink>
         </div>
         <ProjectGrid projects={featured} layout="compact" />
       </section>

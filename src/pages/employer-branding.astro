@@ -1,6 +1,9 @@
 ---
+import { ogImageFor } from '../lib/og';
+const ogImage = await ogImageFor('eb-hero');
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHeader from '../components/sections/PageHeader.astro';
+import JournalLink from '../components/sections/JournalLink.astro';
 import Statement from '../components/sections/Statement.astro';
 import Gallery from '../components/media/Gallery.astro';
 import Photo from '../components/media/Photo.astro';
@@ -83,8 +86,10 @@ const faq = [
 ];
 ---
 
-<BaseLayout title="Employer Branding Fotograf in Hamburg" description={description} schema={schema}>
+<BaseLayout ogImage={ogImage} title="Employer Branding Fotograf Hamburg" description={description} schema={schema}>
   <PageHeader
+    kicker="Employer-Branding-Fotografie in Hamburg"
+    clients
     label="Leistung 01"
     title="Employer Branding"
     lead="Echte Teams, echte Arbeitsplätze und eine Bildsprache, die zeigt, wie sich Ihr Unternehmen von innen anfühlt – für Karriereseite, Recruiting und Kommunikation. Aus Hamburg und darüber hinaus."
@@ -169,6 +174,8 @@ const faq = [
   <Faq items={faq} />
 
   <ServiceLinks current="employer-branding" />
+
+  <JournalLink slug="employer-branding-shooting-planen" />
 
   <Cta
     title="Karriereseite in Planung?"

@@ -58,16 +58,22 @@ const meta: { k: string; v: string; links?: { label: string; href: string }[] }[
   { k: 'Jahr', v: String(data.year) },
 ];
 
+import { ogImageFor } from '../../lib/og';
+const ogImage = await ogImageFor(data.cover.id);
+const cleanTitle = data.title.replace(/­/g, '');
+const pageTitle = cleanTitle.length + service.title.length + 18 <= 62 ? `${cleanTitle} – ${service.title}` : cleanTitle;
+
 const schema = [
   breadcrumbs(Astro.site, [
-    { name: 'Work', path: '/work' },
+    { name: 'Projekte', path: '/work' },
     { name: data.title.replace(/­/g, ''), path: `/work/${project.id}` },
   ]),
 ];
 ---
 
 <BaseLayout
-  title={`${data.title.replace(/­/g, '')} – ${service.title}`}
+  title={pageTitle}
+  ogImage={ogImage}
   description={data.summary}
   type="article"
   noindex={data.placeholder}
@@ -77,7 +83,7 @@ const schema = [
     <header class="pt-14 md:pt-24">
       <div class="wrap grid-12 gap-y-8">
         <p class="label col-span-12 text-muted md:col-span-3 md:pt-[0.6em]" data-reveal>
-          <a href="/work" class="hover:text-ink">Work</a> / <a href={service.href} class="hover:text-ink">{service.title}</a>
+          <a href="/work" class="hover:text-ink">Projekte</a> / <a href={service.href} class="hover:text-ink">{service.title}</a>
         </p>
         <h1 class="col-span-12 text-h2 hyphens-manual md:col-span-9 lg:col-span-8" data-reveal>{data.title}</h1>
       </div>
@@ -191,7 +197,7 @@ const schema = [
       <section class="section-t">
         <SectionLabel label="Weitere Projekte" />
         <div class="wrap mt-10 mb-12 flex items-end justify-between gap-8 md:mt-14 md:mb-16">
-          <h2 class="text-h2">Mehr Work</h2>
+          <h2 class="text-h2">Weitere Projekte</h2>
           <ArrowLink href="/work" class="mb-[0.6em] hidden sm:inline-flex">Projekte ansehen</ArrowLink>
         </div>
         <ProjectGrid projects={more} layout="pair" />

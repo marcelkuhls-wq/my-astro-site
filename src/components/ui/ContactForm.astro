@@ -6,6 +6,8 @@
 import { site } from '../../config/site';
 
 const projectTypes = ['Employer Branding', 'Business & Corporate', 'Immobilien & Interior', 'Event', 'Etwas anderes'];
+const budgets = ['bis 1.000 €', '1.000–2.500 €', '2.500–5.000 €', 'über 5.000 €', 'noch offen'];
+const sources = ['Google-Suche', 'LinkedIn', 'Empfehlung', 'Instagram', 'Anderes'];
 const endpoint = site.formEndpoint;
 // Frühestes wählbares Datum (Build-Zeitpunkt; wird im Browser auf heute aktualisiert)
 const today = new Date().toISOString().slice(0, 10);
@@ -65,9 +67,31 @@ const labelCls = 'label text-muted';
     </label>
   </div>
 
+  <fieldset class="col-span-12">
+    <legend class={labelCls}>Budgetrahmen <span class="normal-case tracking-normal">(netto)</span></legend>
+    <div class="mt-4 flex flex-wrap gap-x-7 gap-y-3">
+      {
+        budgets.map((b, i) => (
+          <label class="flex cursor-pointer items-center gap-2.5 text-[1.0625rem]">
+            <input type="radio" name="budget" value={b} required={i === 0} class="size-3.5 accent-ink" />
+            {b}
+          </label>
+        ))
+      }
+    </div>
+  </fieldset>
+
   <div class="col-span-12">
     <label for="cf-message" class={labelCls}>Nachricht</label>
     <textarea id="cf-message" name="nachricht" rows="5" required class:list={[field, 'resize-y']} placeholder="Worum geht es, wofür werden die Bilder gebraucht?"></textarea>
+  </div>
+
+  <div class="col-span-12 md:col-span-6">
+    <label for="cf-source" class={labelCls}>Wie haben Sie mich gefunden? <span class="normal-case tracking-normal">(optional)</span></label>
+    <select id="cf-source" name="quelle" class:list={[field, 'cursor-pointer']}>
+      <option value="">Bitte wählen</option>
+      {sources.map((q) => <option value={q}>{q}</option>)}
+    </select>
   </div>
 
   {endpoint && <input type="hidden" name="access_key" value={site.formAccessKey} />}
@@ -122,6 +146,8 @@ const labelCls = 'label text-muted';
         `E-Mail: ${data.get('email')}`,
         `Telefon: ${data.get('telefon') || '–'}`,
         `Projekt: ${data.get('projekt')}`,
+        `Budget: ${data.get('budget') || '–'}`,
+        `Gefunden über: ${data.get('quelle') || '–'}`,
         `Wunschtermin: ${termin}`,
         '',
         String(data.get('nachricht')),

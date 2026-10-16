@@ -38,11 +38,12 @@ export const site = {
 };
 
 export const nav = [
-  { label: 'Work', href: '/work' },
+  { label: 'Projekte', href: '/work' },
   { label: 'Employer Branding', href: '/employer-branding' },
   { label: 'Business', href: '/business-fotografie' },
   { label: 'Immobilien', href: '/immobilienfotografie' },
   { label: 'Events', href: '/eventfotografie' },
-  { label: 'About', href: '/about' },
+  { label: 'Journal', href: '/journal' },
+  { label: 'Über mich', href: '/about' },
   { label: 'Kontakt', href: '/kontakt' },
 ] as const;

@@ -13,6 +13,7 @@ import Cta from '../../components/sections/Cta.astro';
 import { serviceById } from '../../data/services';
 import { getArticles, type Article } from '../../lib/work';
 import { breadcrumbs } from '../../lib/schema';
+import { ogImageFor } from '../../lib/og';
 
 export async function getStaticPaths() {
   const articles = await getArticles();
@@ -33,6 +34,7 @@ const fmt = (d: Date) => d.toLocaleDateString('de-DE', { day: 'numeric', month: 
 
 const rendered = article ? await render(article) : undefined;
 const Content = rendered?.Content;
+const ogImage = await ogImageFor(article?.data.cover?.id);
 const service = article?.data.service ? serviceById(article.data.service) : undefined;
 
 const schema = article
@@ -106,7 +108,7 @@ const schema = article
 
 {
   article && Content && (
-    <BaseLayout title={article.data.title} description={article.data.description} type="article" schema={schema}>
+    <BaseLayout title={article.data.title} description={article.data.description} type="article" schema={schema} ogImage={ogImage}>
       <article>
         <header class="pt-14 md:pt-24">
           <div class="wrap grid-12 gap-y-8">

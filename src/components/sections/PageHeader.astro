@@ -4,6 +4,7 @@
  * ein Satz, dann das Titelbild.
  */
 import Photo from '../media/Photo.astro';
+import ClientLine from './ClientLine.astro';
 
 interface Props {
   label: string;
@@ -13,16 +14,23 @@ interface Props {
   /** "full" = volle Rasterbreite, "bleed" = randlos */
   photoMode?: 'full' | 'bleed';
   ratio?: string;
+  /** Kleine erste H1-Zeile mit Suchbegriff, z. B. „Eventfotografie in Hamburg“ */
+  kicker?: string;
+  /** Vertrauenszeile „Projekte u. a. für …“ unter dem Titelbild */
+  clients?: boolean;
 }
 
-const { label, title, lead, photo, photoMode = 'full', ratio = '16 / 9' } = Astro.props;
+const { label, title, lead, photo, photoMode = 'full', ratio = '16 / 9', kicker, clients = false } = Astro.props;
 ---
 
 <section class="pt-14 md:pt-24">
   <div class="wrap grid-12 gap-y-8">
     <p class="label col-span-12 text-muted md:col-span-3 md:pt-[0.9em]" data-reveal>{label}</p>
     <div class="col-span-12 md:col-span-9">
-      <h1 class="hero-lines text-display"><span class="line"><span>{title}</span></span></h1>
+      <h1 class="hero-lines text-display">
+        {kicker && <span class="label mb-5 block !tracking-[0.1em] text-muted md:mb-7">{kicker}</span>}
+        <span class="line"><span>{title}</span></span>
+      </h1>
       {
         lead && (
           <p class="mt-8 max-w-[36rem] text-lead md:mt-12" data-reveal style="--reveal-delay: .08s">
@@ -48,4 +56,5 @@ const { label, title, lead, photo, photoMode = 'full', ratio = '16 / 9' } = Astr
       </div>
     )
   }
+  {clients && <ClientLine class="mt-10 md:mt-14" />}
 </section>

@@ -12,3 +12,19 @@ export interface Client {
 }
 
 export const clients: Client[] = [];
+
+/**
+ * Kunden als Textzeile („Projekte u. a. für …“) – nur Namen, deren Projekte
+ * bereits öffentlich auf der Website stehen. Keine Logos, daher keine Freigabe nötig.
+ */
+export const clientNames: string[] = [
+  'Engel & Völkers',
+  'Armand de Brignac',
+  'gamesright × HSV',
+  'Weiss Immobilien',
+  'Stadermann',
+  'Adam & Eve',
+  'Haacke Objektsteuerung',
+  'Four Elements',
+  'Kleintierpraxis Benecke',
+];
