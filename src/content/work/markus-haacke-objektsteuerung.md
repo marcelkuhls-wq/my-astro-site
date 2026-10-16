@@ -10,16 +10,21 @@ usage: [Website, LinkedIn, Presse]
 featured: false
 order: 11
 cover:
-  id: haacke-skyline
-  position: "50% 30%"
+  id: haacke-cover
   spec:
-    alt: "Markus Haacke lehnt an einer Brüstung, dahinter die Kirchtürme der Hamburger Innenstadt."
+    alt: "Markus Haacke auf der Terrasse vor den Kirchtürmen der Hamburger Innenstadt und im hellen Sakko am Fenster."
     category: "Business & Corporate"
     format: "Querformat"
     motif: "Titel"
 gallery:
-  - layout: trio
+  - layout: pair
     images:
+      - id: haacke-skyline
+        spec:
+          alt: "Markus Haacke lehnt an einer Brüstung, dahinter die Kirchtürme der Hamburger Innenstadt."
+          category: "Portrait"
+          format: "Hochformat"
+          motif: "haacke-skyline"
       - id: haacke-portrait
         position: "50% 25%"
         spec:
@@ -27,6 +32,8 @@ gallery:
           category: "Portrait"
           format: "Hochformat 4:5"
           motif: "haacke-portrait"
+  - layout: pair
+    images:
       - id: haacke-sakko
         position: "50% 25%"
         spec:
