@@ -17,7 +17,7 @@ const { title, description, ogImage = '/og-default.jpg', noindex = false, type =
   Astro.props as SeoProps;
 
 const fullTitle = title ? `${title} | ${site.name}` : `${site.name} – ${site.tagline} in ${site.city}`;
-const canonical = new URL(Astro.url.pathname.replace(/\.html$/, ''), Astro.site);
+const canonical = new URL(Astro.url.pathname.replace(/\.html$/, '').replace(/\/index$/, '/'), Astro.site);
 const ogUrl = new URL(ogImage, Astro.site);
 
 const address = Object.fromEntries(

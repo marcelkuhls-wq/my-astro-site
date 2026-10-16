@@ -16,7 +16,7 @@ import { breadcrumbs, serviceSchema } from '../lib/schema';
 const projects = await getProjects({ service: 'immobilien' });
 
 const description =
-  'Immobilien-, Architektur- und Interiorfotografie in Hamburg für Makler, Projektentwickler, Architekten, Hotels und Gastronomie. Natürliches Licht, saubere Perspektiven, keine HDR-Optik.';
+  'Immobilienfotograf in Hamburg: Architektur-, Interior- und Drohnenaufnahmen für Exposés, Portale und Projektmarketing – natürliches Licht, gerade Linien.';
 const schema = [
   serviceSchema(Astro.site, serviceById('immobilien'), 'Immobilienfotografie', description),
   breadcrumbs(Astro.site, [{ name: 'Immobilien & Interior', path: '/immobilienfotografie' }]),

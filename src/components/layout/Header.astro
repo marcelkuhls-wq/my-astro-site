@@ -10,7 +10,7 @@ const isActive = (href: string) => path === href || path.startsWith(`${href}/`);
   class="fixed inset-x-0 top-0 z-40 bg-paper/95 transition-transform duration-500 ease-out-soft"
 >
   <div class="wrap flex h-[var(--header-h)] items-center justify-between">
-    <a href="/" class="font-display text-[1.25rem] leading-none tracking-[0.06em] uppercase md:text-[1.5rem]" aria-label={`${site.name} – Startseite`}>
+    <a href="/" class="inline-flex min-h-11 items-center font-display text-[1.25rem] leading-none tracking-[0.06em] uppercase md:text-[1.5rem]" aria-label={`${site.name} – Startseite`}>
       <span class="font-normal">Studio</span> <span class="font-semibold">Kuhls</span>
     </a>
 
@@ -23,7 +23,7 @@ const isActive = (href: string) => path === href || path.startsWith(`${href}/`);
                 href={item.href}
                 class:list={[
                   'label relative py-2 transition-opacity duration-300 hover:opacity-100',
-                  isActive(item.href) ? 'opacity-100' : 'opacity-60',
+                  isActive(item.href) ? 'opacity-100' : 'opacity-75',
                 ]}
                 aria-current={isActive(item.href) ? 'page' : undefined}
               >
@@ -47,11 +47,11 @@ const isActive = (href: string) => path === href || path.startsWith(`${href}/`);
     </nav>
 
     <div class="flex items-center gap-4 lg:hidden">
-      <a href="/kontakt" class="label bg-ink px-3 py-2 text-bone">Anfragen</a>
+      <a href="/kontakt" class="label inline-flex min-h-11 items-center bg-ink px-4 text-bone">Anfragen</a>
     <button
       type="button"
       id="menu-toggle"
-      class="label -mr-2 p-2"
+      class="label -mr-2 min-h-11 px-2"
       aria-expanded="false"
       aria-controls="mobile-menu"
     >

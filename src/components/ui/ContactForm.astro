@@ -11,7 +11,7 @@ const endpoint = site.formEndpoint;
 const today = new Date().toISOString().slice(0, 10);
 
 const field =
-  'mt-2 block w-full border-0 border-b border-ink/25 bg-transparent px-0 py-2.5 text-[1.0625rem] outline-none transition-colors placeholder:text-ink/35 focus:border-ink';
+  'mt-2 block w-full border-0 border-b border-ink/25 bg-transparent px-0 py-2.5 text-[1.0625rem] outline-none transition-[border-color,box-shadow] placeholder:text-ink/35 focus:border-ink focus-visible:shadow-[0_1px_0_0_var(--color-ink)]';
 const labelCls = 'label text-muted';
 ---
 

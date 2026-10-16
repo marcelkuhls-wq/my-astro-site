@@ -19,7 +19,7 @@ import { breadcrumbs, serviceSchema } from '../lib/schema';
 const projects = await getProjects({ service: 'events' });
 
 const description =
-  'Eventfotografie in Hamburg für Unternehmen, Agenturen und PR-Teams: Konferenzen, Produktlaunches, Dinner, Messen und Eröffnungen als dokumentarische Reportage – für PR, LinkedIn und interne Kommunikation.';
+  'Eventfotograf in Hamburg für Firmenevents, Konferenzen, Jubiläen und Launches: dokumentarische Reportagen für PR, LinkedIn und interne Kommunikation.';
 const schema = [
   serviceSchema(Astro.site, serviceById('events'), 'Eventfotografie', description),
   breadcrumbs(Astro.site, [{ name: 'Events', path: '/eventfotografie' }]),
