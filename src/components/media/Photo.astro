@@ -32,6 +32,8 @@ interface Props {
   transitionName?: string;
   /** Panorama bewegt sich beim Scrollen minimal langsamer als die Seite */
   drift?: boolean;
+  /** Bild beschneiden statt Originalformat (nur für Flächen wie das Startseiten-Titelbild) */
+  crop?: boolean;
   class?: string;
 }
 
@@ -45,6 +47,7 @@ const {
   reveal = true,
   transitionName,
   drift = false,
+  crop = false,
   class: className,
 } = Astro.props;
 
@@ -70,14 +73,19 @@ if (!spec && import.meta.env.DEV) {
 }
 
 const alt = spec?.alt ?? '';
+const natural = Boolean(image && !crop);
+const style = natural
+  ? `aspect-ratio: ${image!.width} / ${image!.height}; --r: ${(image!.width / image!.height).toFixed(4)};`
+  : `aspect-ratio: ${ratio};`;
 const position = positionProp ?? spec?.position ?? 'center';
 const tone = spec?.tone ?? 'light';
 const showSpec = site.showPlaceholderSpecs;
 ---
 
 <figure
-  class:list={['photo relative overflow-hidden', drift && 'photo-drift', className]}
-  style={`aspect-ratio: ${ratio};${transitionName ? ` view-transition-name: ${transitionName};` : ''}`}
+  class:list={['photo relative overflow-hidden', natural && 'photo-natural', className]}
+  style={`${style}${transitionName ? ` view-transition-name: ${transitionName};` : ''}`}
+  data-full={image ? image.src : undefined}
   data-reveal={reveal && !priority ? 'image' : undefined}
 >
   {

@@ -4,6 +4,7 @@ import { Font } from 'astro:assets';
 import Seo, { type SeoProps } from '../components/layout/Seo.astro';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
+import Lightbox from '../components/media/Lightbox.astro';
 
 type Props = SeoProps;
 const seo = Astro.props;
@@ -35,6 +36,7 @@ const seo = Astro.props;
       <slot />
     </main>
     <Footer />
+    <Lightbox />
 
     <script>
       // Leise Einblendung beim Scrollen. Ohne JS ist alles sofort sichtbar.

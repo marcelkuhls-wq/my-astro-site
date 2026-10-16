@@ -73,7 +73,7 @@ const schema = [
   noindex={data.placeholder}
   schema={schema}
 >
-  <article>
+  <article data-lightbox>
     <header class="pt-14 md:pt-24">
       <div class="wrap grid-12 gap-y-8">
         <p class="label col-span-12 text-muted md:col-span-3 md:pt-[0.6em]" data-reveal>
@@ -82,7 +82,7 @@ const schema = [
         <h1 class="col-span-12 text-h2 hyphens-manual md:col-span-9 lg:col-span-8" data-reveal>{data.title}</h1>
       </div>
       <div class="wrap mt-14 md:mt-24">
-        <Photo transitionName={`work-${project.id}`} id={data.cover.id} spec={data.cover.spec} position={data.cover.position} ratio="16 / 9" sizes="(min-width: 768px) 94vw, 100vw" priority class="max-md:!aspect-[4/5]" />
+        <Photo transitionName={`work-${project.id}`} id={data.cover.id} spec={data.cover.spec} position={data.cover.position} ratio="16 / 9" sizes="(min-width: 768px) 94vw, 100vw" priority  />
       </div>
     </header>
 

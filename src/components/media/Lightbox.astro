@@ -1,0 +1,74 @@
+---
+/**
+ * Diashow: Klick auf ein Foto innerhalb von [data-lightbox] öffnet alle Fotos
+ * dieses Bereichs als Vollbild-Diashow. Pfeiltasten, Wischen, Esc.
+ */
+---
+
+<div id="lightbox" class="fixed inset-0 z-50 hidden bg-black/95 text-bone" role="dialog" aria-modal="true" aria-label="Diashow">
+  <img id="lb-img" alt="" class="absolute inset-0 m-auto max-h-[88svh] max-w-[92vw] object-contain select-none" />
+  <p id="lb-count" class="label absolute top-5 left-5 tabular-nums text-muted-dark"></p>
+  <button id="lb-close" type="button" class="label absolute top-4 right-4 p-2" aria-label="Schließen">Schließen</button>
+  <button id="lb-prev" type="button" class="absolute inset-y-0 left-0 w-1/4 text-left md:w-24 md:pl-6" aria-label="Vorheriges Bild"><span class="text-2xl">←</span></button>
+  <button id="lb-next" type="button" class="absolute inset-y-0 right-0 w-1/4 text-right md:w-24 md:pr-6" aria-label="Nächstes Bild"><span class="text-2xl">→</span></button>
+  <p id="lb-alt" class="absolute inset-x-0 bottom-5 mx-auto max-w-[40rem] px-6 text-center text-[0.875rem] text-muted-dark"></p>
+</div>
+
+<style>
+  [data-lightbox] figure[data-full] {
+    cursor: zoom-in;
+  }
+</style>
+
+<script>
+  const box = document.getElementById('lightbox')!;
+  const img = document.getElementById('lb-img') as HTMLImageElement;
+  const count = document.getElementById('lb-count')!;
+  const altText = document.getElementById('lb-alt')!;
+  let items: { src: string; alt: string }[] = [];
+  let index = 0;
+
+  const show = (i: number) => {
+    index = (i + items.length) % items.length;
+    img.src = items[index].src;
+    img.alt = items[index].alt;
+    altText.textContent = items[index].alt;
+    count.textContent = `${index + 1} / ${items.length}`;
+  };
+  const open = (group: Element, figure: Element) => {
+    const figs = [...group.querySelectorAll<HTMLElement>('figure[data-full]')];
+    items = figs.map((f) => ({ src: f.dataset.full!, alt: f.querySelector('img')?.alt ?? '' }));
+    box.classList.remove('hidden');
+    document.documentElement.style.overflow = 'hidden';
+    show(figs.indexOf(figure as HTMLElement));
+  };
+  const close = () => {
+    box.classList.add('hidden');
+    document.documentElement.style.overflow = '';
+  };
+
+  document.addEventListener('click', (e) => {
+    const figure = (e.target as Element).closest('figure[data-full]');
+    const group = figure?.closest('[data-lightbox]');
+    if (figure && group) {
+      e.preventDefault();
+      open(group, figure);
+    }
+  });
+  document.getElementById('lb-close')!.addEventListener('click', close);
+  document.getElementById('lb-prev')!.addEventListener('click', () => show(index - 1));
+  document.getElementById('lb-next')!.addEventListener('click', () => show(index + 1));
+  img.addEventListener('click', () => show(index + 1));
+  document.addEventListener('keydown', (e) => {
+    if (box.classList.contains('hidden')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowRight') show(index + 1);
+    if (e.key === 'ArrowLeft') show(index - 1);
+  });
+  let x0 = 0;
+  box.addEventListener('touchstart', (e) => (x0 = e.touches[0].clientX), { passive: true });
+  box.addEventListener('touchend', (e) => {
+    const dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 40) show(index + (dx < 0 ? 1 : -1));
+  });
+</script>

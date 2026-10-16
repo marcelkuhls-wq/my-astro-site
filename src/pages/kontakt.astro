@@ -8,7 +8,7 @@ const addressLine = [site.address.street, [site.address.zip, site.address.city].
 
 <BaseLayout
   title="Kontakt"
-  description="Projekt anfragen bei Studio Kuhls, Fotostudio für Unternehmen in Hamburg: Employer Branding, Business-Fotografie, Immobilien und Events."
+  description="Projekt anfragen bei Studio Kuhls – Marcel Kuhls, Fotograf für Unternehmen in Hamburg: Employer Branding, Business-Fotografie, Immobilien und Events."
 >
   <section class="section-y pt-14 md:pt-24">
     <div class="wrap grid-12 gap-y-10">
@@ -24,7 +24,7 @@ const addressLine = [site.address.street, [site.address.zip, site.address.city].
           {site.phone && <a href={`tel:${site.phone.replace(/\s/g, '')}`} class="link-line mt-1 block">{site.phone}</a>}
         </div>
         <div>
-          <p class="label mb-3 text-muted">Studio</p>
+          <p class="label mb-3 text-muted">Adresse</p>
           <p>{site.name}<br />{addressLine.map((l) => <>{l}<br /></>)}</p>
         </div>
         <div>

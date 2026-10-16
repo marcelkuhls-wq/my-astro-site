@@ -22,7 +22,7 @@ const quote = testimonials[0];
 
 <BaseLayout
   title="Unternehmensfotografie in Hamburg"
-  description="Studio Kuhls ist ein Fotostudio für Unternehmen in Hamburg: Employer Branding, Business- und Corporate-Fotografie, Immobilien und Eventreportagen – für Website, Recruiting, Presse und Kommunikation."
+  description="Studio Kuhls ist der Business-Fotograf Marcel Kuhls aus Hamburg: Employer Branding, Business- und Corporate-Fotografie, Immobilien und Eventreportagen – für Website, Recruiting, Presse und Kommunikation."
 >
   {/* HERO: Headline, ein Satz, ein CTA ------------------------------------ */}
   <section class="flex flex-col pt-6 md:pt-10">
@@ -33,20 +33,20 @@ const quote = testimonials[0];
       </h1>
       <div class="hero-fade col-span-12 md:col-span-3 md:pb-[0.4rem]">
         <p class="max-w-[22rem]">
-          Fotostudio für Unternehmen in Hamburg. Employer Branding, Corporate, Interior und Events.
+          Fotograf für Unternehmen in Hamburg. Employer Branding, Corporate, Interior und Events.
         </p>
         <ArrowLink href="/kontakt" class="mt-7">Projekt anfragen</ArrowLink>
       </div>
     </div>
     {/* Bild füllt den Rest des ersten Bildschirms und ragt leicht darüber hinaus */}
     <div class="wrap relative mt-8 h-[68svh] md:mt-10 md:h-[max(34rem,calc(100svh-var(--header-h)-13rem))]">
-      <Photo id="home-hero" ratio="auto" sizes="(min-width: 768px) 94vw, 100vw" priority class="hero-curtain !absolute inset-y-0 inset-x-[var(--margin)] !w-auto !max-h-none" />
+      <Photo id="home-hero" ratio="auto" sizes="(min-width: 768px) 94vw, 100vw" priority crop class="hero-curtain !absolute inset-y-0 inset-x-[var(--margin)]" />
     </div>
   </section>
 
   {/* INTRO + WOFÜR ------------------------------------------------------- */}
-  <Statement label="Studio" class="section-t">
-    Studio Kuhls ist ein Fotostudio für Unternehmen. Wir entwickeln Bildwelten, die in Recruiting, Kommunikation und Vertrieb
+  <Statement label="Studio Kuhls" class="section-t">
+    Hinter Studio Kuhls stehe ich, Marcel Kuhls – Fotograf für Unternehmen. Ich entwickle Bildwelten, die in Recruiting, Kommunikation und Vertrieb
     funktionieren – mit echten Menschen, echten Räumen und einer Bildsprache, die über Jahre trägt.
     <Fragment slot="aside">
       <div class="col-span-12 lg:col-span-7">
@@ -154,7 +154,7 @@ const quote = testimonials[0];
     <div class="wrap grid-12 items-end gap-y-10">
       <Photo id="home-about" ratio="4 / 5" sizes="(min-width: 768px) 31vw, 100vw" class="col-span-12 sm:col-span-8 md:col-span-4" />
       <div class="col-span-12 md:col-span-6 md:col-start-6 lg:col-span-5 lg:col-start-7" data-reveal>
-        <p class="label text-muted">Hinter dem Studio</p>
+        <p class="label text-muted">Der Fotograf</p>
         <h2 class="mt-5 text-h2">Marcel Kuhls</h2>
         <p class="mt-8 text-lead">
           Fotograf und Gründer von Studio Kuhls. Seit über zehn Jahren fotografiert er Menschen, Räume und Veranstaltungen.

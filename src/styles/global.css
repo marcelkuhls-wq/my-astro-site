@@ -112,16 +112,20 @@
 }
 
 /* --- Bildgrößen ---------------------------------------------------------
-   Kein Foto wird höher als ~3/4 des Bildschirms: Hochformate werden ab Tablet
-   sauber beschnitten (object-fit: cover), damit man nicht endlos scrollt. */
-.photo {
-  width: 100%;
-  max-height: 62svh;
+   Fotos erscheinen immer im Originalformat (kein Beschnitt). Damit sie nicht
+   zu viel Platz einnehmen, sind sie höchstens --photo-maxh hoch und werden
+   dafür schmaler (Breite = Höhe × Seitenverhältnis), mittig in ihrer Spalte. */
+:root {
+  --photo-maxh: 60svh;
 }
 @media (min-width: 768px) {
-  .photo {
-    max-height: 68svh;
+  :root {
+    --photo-maxh: 64svh;
   }
+}
+.photo-natural {
+  width: min(100%, calc(var(--photo-maxh) * var(--r)));
+  margin-inline: auto;
 }
 
 /* --- Layout-Utilities -------------------------------------------------- */

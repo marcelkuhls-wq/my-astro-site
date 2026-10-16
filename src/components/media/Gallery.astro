@@ -31,7 +31,7 @@ const [a, b, c] = items;
 {
   layout === 'bleed' && a && (
     <div class={className}>
-      <Photo {...a} ratio="21 / 9" sizes="100vw" drift class="max-md:!aspect-[4/3]" />
+      <Photo {...a} ratio="21 / 9" sizes="100vw" drift  />
     </div>
   )
 }
@@ -39,7 +39,7 @@ const [a, b, c] = items;
 {
   layout !== 'bleed' && (
     <div class:list={['wrap', className]}>
-      {layout === 'full' && a && <Photo {...a} ratio="16 / 9" sizes="(min-width: 768px) 94vw, 100vw" class="max-md:!aspect-[4/3]" />}
+      {layout === 'full' && a && <Photo {...a} ratio="16 / 9" sizes="(min-width: 768px) 94vw, 100vw"  />}
 
       {layout === 'pair' && (
         <div class="grid-12 gap-y-[var(--gutter)]">
