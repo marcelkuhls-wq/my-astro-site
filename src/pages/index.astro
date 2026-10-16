@@ -16,7 +16,7 @@ import { serviceById, allUses } from '../data/services';
 import { testimonials } from '../data/testimonials';
 import { getProjects } from '../lib/work';
 
-const featured = (await getProjects({ featured: true })).slice(0, 5);
+const featured = (await getProjects({ featured: true })).slice(0, 4);
 const quote = testimonials[0];
 ---
 
@@ -99,7 +99,7 @@ const quote = testimonials[0];
           <h2 class="text-h2">Work</h2>
           <ArrowLink href="/work" class="mb-[0.6em]">Projekte ansehen</ArrowLink>
         </div>
-        <ProjectGrid projects={featured} />
+        <ProjectGrid projects={featured} layout="compact" />
       </section>
     )
   }
@@ -115,17 +115,17 @@ const quote = testimonials[0];
       </p>
     </div>
 
-    <div class="wrap grid-12 mt-16 items-start gap-y-[var(--gutter)] md:mt-24">
-      <Photo id="home-eb-feature-1" ratio="4 / 5" sizes="(min-width: 768px) 39vw, 100vw" class="col-span-12 md:col-span-5" />
+    <div class="wrap grid-12 mt-12 items-start gap-y-[var(--gutter)] md:mt-16">
+      <Photo id="home-eb-feature-1" ratio="4 / 5" sizes="(min-width: 768px) 31vw, 50vw" class="col-span-6 md:col-span-4 md:col-start-2" />
       <Photo
         id="home-eb-feature-2"
         ratio="3 / 2"
         sizes="(min-width: 768px) 47vw, 100vw"
-        class="col-span-12 md:col-span-6 md:col-start-7 md:mt-[30%]"
+        class="col-span-6 mt-[30%] md:col-span-6 md:col-start-7 md:mt-[12%]"
       />
     </div>
 
-    <div class="wrap mt-16 md:mt-24">
+    <div class="wrap mt-12 md:mt-16">
       <IndexList
         dark
         items={[

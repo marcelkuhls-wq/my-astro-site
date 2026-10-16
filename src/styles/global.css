@@ -58,7 +58,7 @@
 :root {
   --margin: clamp(1.25rem, 3.4vw, 3.25rem);
   --gutter: clamp(1rem, 1.7vw, 1.75rem);
-  --section: clamp(6rem, 3.5rem + 9vw, 13.5rem);
+  --section: clamp(4.5rem, 2.75rem + 6vw, 9rem);
   --header-h: 4.25rem;
 }
 
@@ -108,6 +108,18 @@
   img {
     display: block;
     max-width: 100%;
+  }
+}
+
+/* --- Bildgrößen ---------------------------------------------------------
+   Kein Foto wird höher als ~3/4 des Bildschirms: Hochformate werden ab Tablet
+   sauber beschnitten (object-fit: cover), damit man nicht endlos scrollt. */
+.photo {
+  max-height: 62svh;
+}
+@media (min-width: 768px) {
+  .photo {
+    max-height: 68svh;
   }
 }
 
