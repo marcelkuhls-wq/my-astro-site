@@ -40,7 +40,13 @@ const organization = {
   ...(site.phone && { telephone: site.phone }),
   address,
   areaServed: { '@type': 'City', name: 'Hamburg' },
-  founder: { '@type': 'Person', name: site.founder, jobTitle: 'Fotograf' },
+  founder: {
+    '@type': 'Person',
+    name: site.founder,
+    jobTitle: 'Fotograf',
+    url: new URL('/about', Astro.site).toString(),
+    sameAs: ['https://www.linkedin.com/in/marcel-kuhls-957aa121a'],
+  },
   knowsAbout: [
     'Employer Branding Fotografie',
     'Business Fotografie',

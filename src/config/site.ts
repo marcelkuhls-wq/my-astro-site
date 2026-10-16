@@ -19,7 +19,7 @@ export const site = {
 
   social: {
     instagram: '', // TODO: z. B. 'https://www.instagram.com/studiokuhls'
-    linkedin: '', // TODO
+    linkedin: 'https://www.linkedin.com/company/studio-kuhls',
   },
 
   /**
