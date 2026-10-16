@@ -59,7 +59,7 @@
   --margin: clamp(1.25rem, 3.4vw, 3.25rem);
   --gutter: clamp(1rem, 1.7vw, 1.75rem);
   --section: clamp(4.5rem, 2.75rem + 6vw, 9rem);
-  --header-h: 4.25rem;
+  --header-h: 4.75rem;
 }
 
 /* --- Basis ------------------------------------------------------------- */
