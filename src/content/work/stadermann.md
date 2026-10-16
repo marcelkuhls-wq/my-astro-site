@@ -10,7 +10,7 @@ summary: Employer Branding für den Hersteller der Laborsoftware DENTAplus – T
 scope: "Mitarbeiterportraits, Arbeitssituationen, Produkt- und Anwendungsbilder"
 usage: [Karriereseite, Website, Social Media, Produktmarketing]
 featured: true
-order: 2
+order: 99
 cover:
   id: st-besprechung
   spec:

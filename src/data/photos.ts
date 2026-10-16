@@ -104,11 +104,11 @@ export const photos: Record<string, PhotoSpec> = {
     position: '50% 30%',
   },
   'home-eb-feature-2': {
-    alt: 'Geschäftsführung im Gespräch am Besprechungstisch.',
+    alt: 'Kurs im roten Licht in der Kriegerposition.',
     category: 'Employer Branding',
     format: 'Querformat 3:2',
     motif: 'Four Elements – Kurs',
-    file: 'st-geschaeftsfuehrung',
+    file: 'fe-kurs-rotlicht',
   },
   'home-about': {
     alt: 'Marcel Kuhls, Fotograf und Gründer von Studio Kuhls.',
@@ -121,27 +121,27 @@ export const photos: Record<string, PhotoSpec> = {
 
   /* ── Employer Branding ──────────────────────────────────────────────── */
   'eb-hero': {
-    alt: 'Mitarbeiter präsentiert im Besprechungsraum vor dem Team.',
+    alt: 'Teilnehmerinnen trainieren mit Hanteln vor beleuchteten Spiegeln.',
     category: 'Employer Branding',
     format: 'Querformat 16:9 (Mobile: 4:5)',
     motif: 'Four Elements – Kurs',
-    file: 'st-praesentation',
+    file: 'fe-kurs-hanteln',
     position: '55% 45%',
   },
   'eb-situation-wide': {
-    alt: 'Blick in ein Büro mit mehreren Arbeitsplätzen.',
+    alt: 'Logo auf dem Spiegel, dahinter ein laufender Kurs.',
     category: 'Employer Branding',
     format: 'Panorama 21:9',
     motif: 'Four Elements – Studio',
-    file: 'st-buero',
+    file: 'fe-kurs-spiegel',
     position: '50% 55%',
   },
   'eb-situation-1': {
-    alt: 'Zwei Kollegen besprechen sich vor großen Monitoren.',
+    alt: 'Tierärztin hält einen Hund beim Röntgen.',
     category: 'Employer Branding',
     format: 'Querformat 3:2',
     motif: 'Four Elements',
-    file: 'st-monitor-duo',
+    file: 'benecke-roentgen-hund',
   },
   'eb-portrait-1': {
     alt: 'Portrait einer Trainerin vor den Spiegeln des Studios.',
