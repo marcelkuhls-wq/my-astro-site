@@ -12,9 +12,9 @@ usage: [Karriereseite, Website, Social Media, Produktmarketing]
 featured: true
 order: 2
 cover:
-  id: st-team-mittag
+  id: st-besprechung
   spec:
-    alt: "Team von Stadermann beim gemeinsamen Mittagessen im Büro."
+    alt: "Drei Kollegen von Stadermann lachen im Gespräch am Besprechungstisch."
     category: "Employer Branding"
     format: "Querformat"
     motif: "Team"
@@ -41,12 +41,12 @@ gallery:
           category: "Employer Branding"
           format: "Original"
           motif: "st-monitor-duo"
-      - id: st-besprechung
+      - id: st-geschaeftsfuehrung
         spec:
-          alt: "Drei Kollegen im Gespräch am Besprechungstisch."
-          category: "Employer Branding"
+          alt: "Geschäftsführung von Stadermann am Besprechungstisch."
+          category: "Business"
           format: "Original"
-          motif: "st-besprechung"
+          motif: "st-geschaeftsfuehrung"
       - id: st-entwickler
         spec:
           alt: "Entwickler arbeitet an mehreren Bildschirmen."
@@ -109,20 +109,6 @@ gallery:
           category: "Employer Branding"
           format: "Original"
           motif: "st-buerohund"
-  - layout: offset
-    images:
-      - id: st-geschaeftsfuehrung
-        spec:
-          alt: "Geschäftsführer im Gespräch mit zwei Mitarbeitern."
-          category: "Business"
-          format: "Original"
-          motif: "st-geschaeftsfuehrung"
-      - id: st-geschaeftsfuehrung-sw
-        spec:
-          alt: "Schwarzweiß: Besprechung der Geschäftsführung."
-          category: "Business"
-          format: "Original"
-          motif: "st-geschaeftsfuehrung-sw"
   - layout: full
     images:
       - id: st-labor-team
@@ -139,12 +125,12 @@ gallery:
           category: "Produkt"
           format: "Original"
           motif: "st-3d-prothese"
-      - id: st-labor-lachen
+      - id: st-labor-scan
         spec:
-          alt: "Zahntechnikerin lacht am Arbeitsplatz mit DENTAplus."
+          alt: "Zahntechniker lacht am Arbeitsplatz mit DENTAplus."
           category: "Produkt"
           format: "Original"
-          motif: "st-labor-lachen"
+          motif: "st-labor-scan"
       - id: st-3d-schiene
         spec:
           alt: "Hände halten ein grünes 3D-gedrucktes Modell."
@@ -153,18 +139,18 @@ gallery:
           motif: "st-3d-schiene"
   - layout: pair
     images:
-      - id: st-labor-scan
+      - id: st-labor-tablet
         spec:
-          alt: "Zahntechniker scannt einen Auftrag am Arbeitsplatz."
+          alt: "Berater zeigt einer Zahntechnikerin die Software auf dem Tablet."
           category: "Produkt"
           format: "Original"
-          motif: "st-labor-scan"
-      - id: st-labor-gespraech
+          motif: "st-labor-tablet"
+      - id: st-labor-erklaeren
         spec:
-          alt: "Berater erklärt einer Kundin die Software."
+          alt: "Berater erklärt einer Kundin die Software am Bildschirm."
           category: "Produkt"
           format: "Original"
-          motif: "st-labor-gespraech"
+          motif: "st-labor-erklaeren"
   - layout: trio
     images:
       - id: st-3d-modelle
@@ -179,12 +165,12 @@ gallery:
           category: "Produkt"
           format: "Original"
           motif: "st-3d-harz"
-      - id: st-labor-tablet
+      - id: st-labor-kundin
         spec:
-          alt: "Zahntechnikerin arbeitet mit Tablet und Scanner."
+          alt: "Kundin arbeitet am Tablet im Büro."
           category: "Produkt"
           format: "Original"
-          motif: "st-labor-tablet"
+          motif: "st-labor-kundin"
   - layout: offset-r
     images:
       - id: st-buero
@@ -193,14 +179,6 @@ gallery:
           category: "Employer Branding"
           format: "Original"
           motif: "st-buero"
-      - id: st-labor-modelle
-        spec:
-          alt: "Gedruckte Zahnmodelle hinter Glas."
-          category: "Produkt"
-          format: "Original"
-          motif: "st-labor-modelle"
-  - layout: single-r
-    images:
       - id: st-labor-beratung
         spec:
           alt: "Beraterin steht neben einem Kollegen am Bildschirm."

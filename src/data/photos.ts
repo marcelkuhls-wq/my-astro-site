@@ -104,11 +104,11 @@ export const photos: Record<string, PhotoSpec> = {
     position: '50% 30%',
   },
   'home-eb-feature-2': {
-    alt: 'Team beim gemeinsamen Mittagessen im Büro.',
+    alt: 'Geschäftsführung im Gespräch am Besprechungstisch.',
     category: 'Employer Branding',
     format: 'Querformat 3:2',
     motif: 'Four Elements – Kurs',
-    file: 'st-team-mittag',
+    file: 'st-geschaeftsfuehrung',
   },
   'home-about': {
     alt: 'Marcel Kuhls, Fotograf und Gründer von Studio Kuhls.',
