@@ -39,6 +39,13 @@ const { project, all } = Astro.props;
 const { data } = project;
 const { Content } = await render(project);
 const service = serviceById(data.service);
+const formType: Record<string, string> = {
+  'employer-branding': 'Employer Branding',
+  business: 'Business & Corporate',
+  immobilien: 'Immobilien & Interior',
+  events: 'Event',
+};
+const ctaHref = `/kontakt?projekt=${encodeURIComponent(formType[data.service] ?? '')}`;
 const allServices = [data.service, ...data.alsoServices].map(serviceById);
 const hasBody = Boolean(project.body?.trim());
 
@@ -205,5 +212,9 @@ const schema = [
     )
   }
 
-  <Cta />
+  <Cta
+    title="Ähnliches Projekt geplant?"
+    text="Erzählen Sie kurz, was Sie vorhaben – die Projektart ist im Formular schon ausgewählt. Sie erhalten innerhalb von 24 Stunden (werktags) eine Rückmeldung."
+    href={ctaHref}
+  />
 </BaseLayout>

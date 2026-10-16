@@ -45,7 +45,7 @@ export default defineConfig({
 
   integrations: [
     sitemap({
-      filter: (page) => !page.includes('/impressum') && !page.includes('/datenschutz'),
+      filter: (page) => !page.includes('/impressum') && !page.includes('/datenschutz') && !page.includes('/danke'),
     }),
   ],
 });

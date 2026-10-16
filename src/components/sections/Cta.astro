@@ -6,8 +6,11 @@ import ArrowLink from '../ui/ArrowLink.astro';
 interface Props {
   title?: string;
   text?: string;
+  /** Ziel des Anfrage-Links, z. B. mit vorausgewählter Projektart */
+  href?: string;
 }
 const {
+  href = '/kontakt',
   title = 'Was steht an?',
   text = 'Ein paar Sätze zu Projekt, Zeitraum und Ort reichen für den Anfang. Ich melde mich mit einer ersten Einschätzung und einem Vorschlag für das weitere Vorgehen.',
 } = Astro.props;
@@ -19,7 +22,7 @@ const {
     <div class="col-span-12 flex flex-col justify-end gap-10 md:col-span-4 md:col-start-9" data-reveal style="--reveal-delay: .08s">
       <p class="max-w-[30rem] text-muted">{text}</p>
       <div class="flex flex-wrap items-baseline gap-x-8 gap-y-5">
-        <ArrowLink href="/kontakt">Projekt anfragen</ArrowLink>
+        <ArrowLink href={href}>Projekt anfragen</ArrowLink>
         <a href={`mailto:${site.email}`} class="link-line text-[0.9375rem]">{site.email}</a>
       </div>
     </div>

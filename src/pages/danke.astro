@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectGrid from '../components/sections/ProjectGrid.astro';
+import SectionLabel from '../components/ui/SectionLabel.astro';
+import ArrowLink from '../components/ui/ArrowLink.astro';
+import { getProjects } from '../lib/work';
+import { site } from '../config/site';
+
+const projects = (await getProjects({ featured: true })).slice(1, 4);
+---
+
+<BaseLayout title="Danke für Ihre Anfrage" description="Ihre Anfrage ist bei Studio Kuhls angekommen." noindex>
+  <section class="section-y pt-14 md:pt-24">
+    <div class="wrap grid-12 gap-y-10">
+      <p class="label col-span-12 text-muted md:col-span-3 md:pt-[0.9em]">Anfrage gesendet</p>
+      <div class="col-span-12 md:col-span-9">
+        <h1 class="text-display">Danke.</h1>
+        <p class="mt-8 max-w-[36rem] text-lead md:mt-12">
+          Ihre Anfrage ist angekommen. Ich melde mich innerhalb von 24 Stunden (werktags) persönlich – mit Rückfragen oder einem ersten Vorschlag.
+        </p>
+        <ol class="mt-12 grid max-w-[48rem] gap-6 sm:grid-cols-3">
+          <li class="border-t border-ink pt-4"><p class="label text-muted">1 · Jetzt</p><p class="mt-2 text-[0.9375rem]">Ich lese Ihre Anfrage und melde mich innerhalb von 24 Stunden.</p></li>
+          <li class="border-t border-ink pt-4"><p class="label text-muted">2 · Briefing</p><p class="mt-2 text-[0.9375rem]">Wir klären kurz Ziel, Einsatz der Bilder, Ort und Termin.</p></li>
+          <li class="border-t border-ink pt-4"><p class="label text-muted">3 · Angebot</p><p class="mt-2 text-[0.9375rem]">Sie erhalten ein schriftliches, verbindliches Angebot.</p></li>
+        </ol>
+        <p class="mt-12 text-muted">
+          Eilig? Rufen Sie gern direkt an:
+          {site.phone && <a href={`tel:${site.phone.replace(/\s/g, '')}`} class="link-line text-ink">{site.phone}</a>}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {
+    projects.length > 0 && (
+      <section class="section-t pb-[var(--section)]">
+        <SectionLabel label="Bis dahin" />
+        <div class="wrap mt-10 mb-12 flex items-end justify-between gap-8 md:mt-14 md:mb-16">
+          <h2 class="text-h2">Ein paar Projekte</h2>
+          <ArrowLink href="/work" class="mb-[0.6em]">Alle Projekte</ArrowLink>
+        </div>
+        <ProjectGrid projects={projects} />
+      </section>
+    )
+  }
+</BaseLayout>
