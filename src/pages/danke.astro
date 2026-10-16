@@ -24,7 +24,7 @@ const projects = (await getProjects({ featured: true })).slice(1, 4);
           <li class="border-t border-ink pt-4"><p class="label text-muted">3 · Angebot</p><p class="mt-2 text-[0.9375rem]">Sie erhalten ein schriftliches, verbindliches Angebot.</p></li>
         </ol>
         <p class="mt-12 text-muted">
-          Eilig? Rufen Sie gern direkt an:
+          Eilig? Rufen Sie gern direkt an:{" "}
           {site.phone && <a href={`tel:${site.phone.replace(/\s/g, '')}`} class="link-line text-ink">{site.phone}</a>}
         </p>
       </div>
