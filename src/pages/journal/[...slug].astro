@@ -73,10 +73,31 @@ const schema = article
         </div>
       </section>
       <div class="wrap section-t">
-        <IndexList
-          numbered={false}
-          items={articles.map((a) => ({ title: a.data.title, text: `${fmt(a.data.date)} – ${a.data.description}`, href: `/journal/${a.id}` }))}
-        />
+        <ul class="grid gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+          {
+            articles.map((a) => (
+              <li>
+                <a href={`/journal/${a.id}`} class="group block">
+                  {a.data.cover && (
+                    <div class="overflow-hidden">
+                      <Photo
+                        {...a.data.cover}
+                        crop
+                        ratio="4 / 5"
+                        sizes="(min-width: 1024px) 31vw, (min-width: 640px) 47vw, 100vw"
+                        class="transition-transform duration-700 ease-out-soft group-hover:scale-[1.02]"
+                      />
+                    </div>
+                  )}
+                  <p class="label mt-5 text-muted">{fmt(a.data.date)}</p>
+                  <h2 class="mt-3 text-h3">{a.data.title}</h2>
+                  <p class="mt-3 max-w-[30rem] text-muted">{a.data.description}</p>
+                  <span class="link-arrow mt-5 inline-block text-[0.9375rem]">Weiterlesen</span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
       </div>
       <Cta />
     </BaseLayout>
