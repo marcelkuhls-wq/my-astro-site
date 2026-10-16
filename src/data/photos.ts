@@ -116,7 +116,7 @@ export const photos: Record<string, PhotoSpec> = {
     format: 'Hochformat 4:5',
     motif: 'Portrait Marcel Kuhls',
     file: 'marcel-kuhls-portrait',
-    position: '50% 30%',
+    position: '50% 12%',
   },
 
   /* ── Employer Branding ──────────────────────────────────────────────── */
@@ -391,7 +391,7 @@ export const photos: Record<string, PhotoSpec> = {
     format: 'Hochformat 4:5',
     motif: 'Portrait Marcel Kuhls',
     file: 'marcel-kuhls-portrait',
-    position: '50% 30%',
+    position: '50% 12%',
   },
   'about-work-1': {
     alt: 'Marcel Kuhls mit Kamera auf der Plaza der Elbphilharmonie, gespiegelt in einer Glasfront.',
