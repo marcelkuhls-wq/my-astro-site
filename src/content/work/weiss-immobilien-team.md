@@ -10,7 +10,7 @@ year: 2026
 summary: Teambilder, Portraits und Arbeitssituationen des Maklerteams – im Büro, vor dem Geschäft und unterwegs im Viertel, in einer durchgängigen Bildsprache.
 # Optional ergänzen: scope, usage, task, approach, outcome, testimonial
 featured: true
-order: 1
+order: 2
 cover:
   id: weiss-team-storefront
   position: "50% 55%"

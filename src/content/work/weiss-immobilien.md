@@ -14,7 +14,7 @@ summary: Architektur- und Interioraufnahmen einer Wohnung im Hochhaus – von de
 # approach: "..."
 # outcome: "..."
 featured: true
-order: 2
+order: 3
 cover:
   id: weiss-immobilien-wohnraum
   position: "50% 58%"

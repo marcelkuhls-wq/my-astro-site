@@ -9,7 +9,7 @@ year: 2026
 summary: Fotografische Begleitung eines Sponsoring-Termins beim HSV mit Marcell Jansen – Trikotübergabe, Mannschaft und Momente auf dem Trainingsplatz.
 # Optional ergänzen: scope, usage (z. B. [PR, LinkedIn, Social Media]), task, approach, outcome, testimonial
 featured: true
-order: 3
+order: 4
 cover:
   id: gamesright-hsv-trikot
   position: "50% 45%"

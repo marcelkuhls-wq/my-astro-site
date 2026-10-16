@@ -115,6 +115,7 @@
    Kein Foto wird höher als ~3/4 des Bildschirms: Hochformate werden ab Tablet
    sauber beschnitten (object-fit: cover), damit man nicht endlos scrollt. */
 .photo {
+  width: 100%;
   max-height: 62svh;
 }
 @media (min-width: 768px) {

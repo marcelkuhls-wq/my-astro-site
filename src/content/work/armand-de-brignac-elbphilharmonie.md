@@ -14,7 +14,7 @@ summary: Abendevent auf der Plaza-Ebene und dem Dach der Elbphilharmonie – Gä
 # approach: "..."
 # outcome: "..."
 featured: true
-order: 4
+order: 5
 cover:
   id: armand-lounge
   spec:

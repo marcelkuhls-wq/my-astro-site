@@ -20,6 +20,7 @@ testimonial:
 featured: false
 order: 6
 placeholder: true
+draft: true
 cover:
   id: work-karriereseite-cover
   spec:

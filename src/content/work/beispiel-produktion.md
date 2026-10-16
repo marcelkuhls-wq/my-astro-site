@@ -11,6 +11,7 @@ usage: [Kampagne, Karriereseite, Social Media]
 featured: false
 order: 7
 placeholder: true
+draft: true
 cover:
   id: work-produktion-cover
   spec:
