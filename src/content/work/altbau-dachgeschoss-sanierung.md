@@ -9,7 +9,7 @@ year: 2026
 summary: Neu ausgebautes Dachgeschoss in einem Gründerzeitbau – Architektur, Treppen, Küche unter sichtbarem Gebälk und Dachterrasse.
 usage: [Exposé, Immobilienportale, Website]
 featured: false
-order: 13
+order: 14
 cover:
   id: immo-sanierung-kueche
   spec:

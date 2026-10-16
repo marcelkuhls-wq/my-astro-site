@@ -9,7 +9,7 @@ year: 2026
 summary: Architektur-, Drohnen- und Interioraufnahmen eines Neubaus für die Vermarktung.
 usage: [Exposé, Immobilienportale, Website]
 featured: false
-order: 10
+order: 11
 cover:
   id: immo-neubau-drohne
   spec:

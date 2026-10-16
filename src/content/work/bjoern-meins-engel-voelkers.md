@@ -8,7 +8,7 @@ year: 2026
 summary: Business-Portraits für Björn Meins – im Studio und vor der Fensterfront mit Blick über den Hamburger Hafen.
 usage: [Website, LinkedIn, Presse]
 featured: true
-order: 2
+order: 3
 cover:
   id: meins-fenster
   position: "50% 40%"

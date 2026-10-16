@@ -18,7 +18,7 @@ testimonial:
   role: Position
   company: Unternehmen
 featured: false
-order: 6
+order: 7
 placeholder: true
 draft: true
 cover:

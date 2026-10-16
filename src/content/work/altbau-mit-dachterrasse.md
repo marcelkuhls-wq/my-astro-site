@@ -9,7 +9,7 @@ year: 2026
 summary: Altbauwohnung mit Wendeltreppe und Dachterrasse – vom historischen Foyer bis zum Blick über die Dächer.
 usage: [Exposé, Immobilienportale, Website]
 featured: true
-order: 4
+order: 5
 cover:
   id: immo-altbau-essbereich
   spec:

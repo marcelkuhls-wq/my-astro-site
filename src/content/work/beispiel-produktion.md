@@ -9,7 +9,7 @@ year: 2024
 summary: Motive für eine Recruiting-Kampagne um Ausbildungsplätze – mit Auszubildenden in Werkstatt, Lager und Verwaltung.
 usage: [Kampagne, Karriereseite, Social Media]
 featured: false
-order: 7
+order: 8
 placeholder: true
 draft: true
 cover:

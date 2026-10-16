@@ -9,7 +9,7 @@ year: 2026
 summary: Interioraufnahmen einer möblierten Dachgeschosswohnung – Wohnraum, Essbereich und Details.
 usage: [Exposé, Immobilienportale, Website]
 featured: false
-order: 11
+order: 12
 cover:
   id: immo-dg-wohnraum
   spec:

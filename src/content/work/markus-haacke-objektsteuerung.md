@@ -8,7 +8,7 @@ year: 2026
 summary: Business-Portraits für Markus Haacke – drinnen und auf der Terrasse mit Blick über die Hamburger Innenstadt.
 usage: [Website, LinkedIn, Presse]
 featured: false
-order: 10
+order: 11
 cover:
   id: haacke-skyline
   position: "50% 30%"
