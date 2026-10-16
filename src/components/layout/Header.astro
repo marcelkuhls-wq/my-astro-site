@@ -17,7 +17,7 @@ const isActive = (href: string) => path === href || path.startsWith(`${href}/`);
     <nav aria-label="Hauptnavigation" class="hidden lg:block">
       <ul class="flex items-center gap-x-7 xl:gap-x-9">
         {
-          nav.map((item) => (
+          nav.filter((item) => item.href !== '/kontakt').map((item) => (
             <li>
               <a
                 href={item.href}
@@ -32,19 +32,33 @@ const isActive = (href: string) => path === href || path.startsWith(`${href}/`);
             </li>
           ))
         }
+        <li>
+          <a
+            href="/kontakt"
+            class:list={[
+              'label ml-2 inline-flex items-center gap-2 bg-ink px-4 py-2.5 text-bone transition-colors duration-300 hover:bg-black',
+              isActive('/kontakt') && 'pointer-events-none opacity-60',
+            ]}
+          >
+            Projekt anfragen <span aria-hidden="true">→</span>
+          </a>
+        </li>
       </ul>
     </nav>
 
+    <div class="flex items-center gap-4 lg:hidden">
+      <a href="/kontakt" class="label bg-ink px-3 py-2 text-bone">Anfragen</a>
     <button
       type="button"
       id="menu-toggle"
-      class="label -mr-2 p-2 lg:hidden"
+      class="label -mr-2 p-2"
       aria-expanded="false"
       aria-controls="mobile-menu"
     >
       <span data-closed>Menü</span>
       <span data-open hidden>Schließen</span>
     </button>
+    </div>
   </div>
 
   <div
