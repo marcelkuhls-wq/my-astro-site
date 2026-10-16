@@ -16,7 +16,7 @@ import { serviceById, allUses } from '../data/services';
 import { testimonials } from '../data/testimonials';
 import { getProjects } from '../lib/work';
 
-const featured = (await getProjects({ featured: true })).slice(0, 4);
+const featured = (await getProjects({ featured: true })).slice(0, 7);
 const quote = testimonials[0];
 ---
 

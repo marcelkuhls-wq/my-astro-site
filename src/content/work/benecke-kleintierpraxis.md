@@ -9,7 +9,7 @@ year: 2026
 summary: Team-Portraits, Behandlungssituationen und Bilder der Praxis – für die neue Website und Social Media.
 usage: [Website, Social Media]
 featured: true
-order: 2
+order: 3
 cover:
   id: benecke-untersuchung-katze
   position: "45% 45%"

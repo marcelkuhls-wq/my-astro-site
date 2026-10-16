@@ -35,12 +35,14 @@ const compactSlots = [
   { cls: 'col-span-12 md:col-span-4', ratio: '4 / 5', sizes: '(min-width: 768px) 31vw, 100vw' },
 ];
 const slots = layout === 'pair' ? [pairSlot] : layout === 'compact' ? compactSlots : editorialSlots;
+// "compact": nur das erste Projekt breit, danach alle in Dreierreihen
+const slotFor = (i: number) => (layout === 'compact' ? (i === 0 ? compactSlots[0] : compactSlots[1]) : slots[i % slots.length]);
 ---
 
 <div class="wrap grid-12 items-start gap-y-12 md:gap-y-20">
   {
     projects.map((p, i) => {
-      const slot = slots[i % slots.length];
+      const slot = slotFor(i);
       const service = serviceById(p.data.service);
       return (
         <article class={slot.cls}>

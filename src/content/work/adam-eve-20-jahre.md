@@ -13,8 +13,8 @@ summary: Reportage der Jubiläumsfeier zum 20-jährigen Bestehen – Begrüßung
 # task: "..."
 # approach: "..."
 # outcome: "..."
-featured: true
-order: 7
+featured: false
+order: 9
 cover:
   id: adam-eve-rede
   spec:
