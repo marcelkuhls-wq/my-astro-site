@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.studio-kuhls.de/sitemap-index.xml
+Sitemap: https://studio-kuhls.de/sitemap-index.xml

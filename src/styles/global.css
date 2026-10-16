@@ -182,12 +182,6 @@
   &:hover .arrow {
     transform: translateX(0.3em);
   }
-  /* Unterstrich zieht sich nach rechts zurück und zeichnet sich von links neu */
-  @media (prefers-reduced-motion: no-preference) {
-    &:hover {
-      animation: line-redraw 0.75s var(--ease-out-soft);
-    }
-  }
 }
 
 /* Dezenter Unterstrich-Link im Fließtext */
@@ -203,146 +197,60 @@
 }
 
 /* --- Bewegung ------------------------------------------------------------
-   Bewegungssprache aus der Fotografie: Bilder "entwickeln" sich (Wisch von
-   oben + Entsättigung → Farbe), Linien zeichnen sich, Headlines steigen aus
-   einer Maske. Keine Dauerbewegung. Bei "Bewegung reduzieren" ist alles statisch.
+   Bewusst sparsam: Text und Bilder blenden beim Scrollen einmal leise ein,
+   die Hero-Headline steigt zeilenweise auf, Seitenwechsel blenden über.
+   Keine Wischeffekte, kein Parallax, keine Dauerbewegung.
+   Bei "Bewegung reduzieren" ist alles statisch.
    -------------------------------------------------------------------------- */
 
-@keyframes line-redraw {
-  0% { background-size: 100% 1px; background-position: 100% 100%; }
-  45% { background-size: 0% 1px; background-position: 100% 100%; }
-  55% { background-size: 0% 1px; background-position: 0 100%; }
-  100% { background-size: 100% 1px; background-position: 0 100%; }
-}
 @keyframes rise {
   from { transform: translate3d(0, 105%, 0); }
   to { transform: none; }
 }
-@keyframes curtain {
-  from { clip-path: inset(0 0 22% 0); }
-  to { clip-path: inset(0 0 0 0); }
-}
-@keyframes develop {
-  from { filter: grayscale(0.7) brightness(1.06); }
-  to { filter: none; }
-}
-@keyframes drift {
-  from { transform: translate3d(0, -5%, 0) scale(1.1); }
-  to { transform: translate3d(0, 5%, 0) scale(1.1); }
-}
 
 @media (prefers-reduced-motion: no-preference) {
-  /* Seitenwechsel: sanfter Crossfade; Projektbilder wachsen ins Titelbild der Case Study */
   @view-transition {
     navigation: auto;
   }
   ::view-transition-old(root),
   ::view-transition-new(root) {
-    animation-duration: 0.35s;
+    animation-duration: 0.3s;
     animation-timing-function: ease;
   }
-  ::view-transition-group(*) {
-    animation-duration: 0.6s;
-    animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
-  }
-  /* Bildformat beim Übergang beschneiden statt verzerren */
-  ::view-transition-old(*),
-  ::view-transition-new(*) {
-    height: 100%;
-    object-fit: cover;
-  }
 
-  /* Text: leises Fade-up */
+  /* Text und Bilder: einmaliges, kurzes Einblenden */
   .js [data-reveal] {
     opacity: 0;
-    transform: translate3d(0, 1.25rem, 0);
+    transform: translate3d(0, 0.5rem, 0);
     transition:
-      opacity 0.9s var(--ease-out-soft),
-      transform 0.9s var(--ease-out-soft);
-    transition-delay: var(--reveal-delay, 0s);
+      opacity 0.7s var(--ease-out-soft),
+      transform 0.7s var(--ease-out-soft);
   }
   .js [data-reveal].is-in {
     opacity: 1;
     transform: none;
   }
-
-  /* Bilder: Wisch von oben, dabei "entwickelt" sich die Farbe.
-     Der Beschnitt liegt bewusst auf dem Bild im Inneren, nicht auf der <figure>:
-     ein komplett beschnittenes Element gilt für den IntersectionObserver als
-     unsichtbar – die Einblendung würde nie ausgelöst. */
   .js [data-reveal="image"] {
-    opacity: 1;
     transform: none;
+    transition: opacity 0.9s ease;
   }
-  .js [data-reveal="image"] img,
-  .js [data-reveal="image"] .ph-surface {
-    clip-path: inset(0 0 100% 0);
-    transform: scale(1.06);
-    filter: grayscale(0.7) brightness(1.06);
-    transition:
-      clip-path 1.3s cubic-bezier(0.65, 0, 0.35, 1) var(--reveal-delay, 0s),
-      transform 1.8s var(--ease-out-soft) var(--reveal-delay, 0s),
-      filter 2.2s ease var(--reveal-delay, 0s);
-  }
-  .js [data-reveal="image"].is-in img,
-  .js [data-reveal="image"].is-in .ph-surface {
-    clip-path: inset(0 0 0 0);
-    transform: none;
-    filter: none;
-  }
-
-  /* Linien zeichnen sich von links */
+  /* Linien sind einfach da */
   .js [data-reveal="line"] {
     opacity: 1;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 1.2s cubic-bezier(0.65, 0, 0.35, 1);
-    transition-delay: var(--reveal-delay, 0s);
-  }
-  .js [data-reveal="line"].is-in {
-    transform: scaleX(1);
+    transform: none;
+    transition: none;
   }
 
-  /* Hero: Zeilen steigen aus der Maske, Bild öffnet sich wie ein Vorhang */
+  /* Hero: Headline steigt zeilenweise auf, Rest blendet ein */
   .hero-lines .line > span {
-    animation: rise 1.1s cubic-bezier(0.22, 0.61, 0.36, 1) both;
-    animation-delay: calc(0.12s + var(--i, 0) * 0.1s);
+    animation: rise 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+    animation-delay: calc(0.1s + var(--i, 0) * 0.08s);
   }
   .hero-fade {
-    animation: fade-in 1s ease both 0.55s;
+    animation: fade-in 0.8s ease both 0.4s;
   }
   .hero-curtain {
-    animation: curtain 1.4s cubic-bezier(0.65, 0, 0.35, 1) both 0.15s;
-  }
-  .hero-curtain img,
-  .hero-curtain .ph-surface {
-    animation: develop 2.4s ease both 0.3s;
-  }
-
-  /* Projektbilder: langsamer Zoom beim Überfahren */
-  .zoom-on-hover .photo {
-    transition: transform 1.2s var(--ease-out-soft);
-  }
-  .group:hover .zoom-on-hover .photo {
-    transform: scale(1.025);
-  }
-
-  /* Panoramen: minimal langsamer als die Seite (nur wo Scroll-Timelines unterstützt werden) */
-  @supports (animation-timeline: view()) {
-    .photo-drift img,
-    .photo-drift .ph-surface {
-      animation: drift linear both;
-      animation-timeline: view();
-    }
-    .hero-curtain.photo-drift img,
-    .hero-curtain.photo-drift .ph-surface {
-      animation: drift linear both, develop 2.4s ease both 0.3s;
-      animation-timeline: view(), auto;
-    }
-    .js .photo-drift[data-reveal="image"].is-in img,
-    .js .photo-drift[data-reveal="image"].is-in .ph-surface {
-      transform: translate3d(0, -5%, 0) scale(1.1);
-    }
+    animation: fade-in 0.8s ease both 0.15s;
   }
 }
 
