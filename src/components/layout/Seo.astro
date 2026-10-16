@@ -33,7 +33,10 @@ const address = Object.fromEntries(
 const organization = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
+  '@id': new URL('/#studio', Astro.site).toString(),
   name: site.name,
+  alternateName: 'Marcel Kuhls Photography',
+  logo: new URL('/logo.jpg', Astro.site).toString(),
   url: Astro.site?.toString(),
   image: ogUrl.toString(),
   email: site.email,
@@ -42,6 +45,7 @@ const organization = {
   areaServed: { '@type': 'City', name: 'Hamburg' },
   founder: {
     '@type': 'Person',
+    '@id': new URL('/about#marcel', Astro.site).toString(),
     name: site.founder,
     jobTitle: 'Fotograf',
     url: new URL('/about', Astro.site).toString(),

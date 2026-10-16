@@ -10,6 +10,8 @@ summary: Neu ausgebautes Dachgeschoss in einem Gründerzeitbau – Architektur, 
 usage: [Exposé, Immobilienportale, Website]
 featured: false
 order: 14
+task: "Ein neu ausgebautes Dachgeschoss in einem Gründerzeitbau sollte für die Vermarktung so gezeigt werden, wie es sich vor Ort anfühlt: historische Substanz und neuer Ausbau in einem."
+approach: "Ich habe von der Gründerzeitfassade und dem historischen Treppenhaus bis zur Küche unter dem sichtbaren Gebälk fotografiert, ergänzt um Details wie die Wendeltreppe und eine Luftaufnahme über die Dächer im Abendlicht."
 cover:
   id: immo-sanierung-kueche
   spec:

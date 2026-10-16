@@ -10,6 +10,8 @@ summary: Team-Portraits, Behandlungssituationen und Bilder der Praxis – für d
 usage: [Website, Social Media]
 featured: false
 order: 4
+task: "Für die neue Website und Social Media brauchte die Kleintierpraxis Benecke in Elstorf Bilder, die das Team und den Praxisalltag zeigen – nahbar und ohne gestellte Szenen."
+approach: "Ich habe Team-Portraits mit Behandlungssituationen kombiniert: Untersuchungen, Röntgen, Empfang und die Praxis von außen. Die Tiere haben das Tempo bestimmt, die Bilder entstanden im laufenden Betrieb."
 cover:
   id: benecke-untersuchung-katze
   position: "45% 45%"

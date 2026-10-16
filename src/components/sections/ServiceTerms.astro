@@ -1,0 +1,35 @@
+---
+/** Umfang & Konditionen einer Leistung – Lieferzeit, Rechte, Kosten, kurz und ehrlich. */
+import SectionLabel from '../ui/SectionLabel.astro';
+import ArrowLink from '../ui/ArrowLink.astro';
+
+interface Props {
+  scope: string;
+  delivery: string;
+}
+const { scope, delivery } = Astro.props;
+
+const items = [
+  { title: 'Umfang', text: scope },
+  { title: 'Lieferung', text: delivery },
+  { title: 'Nutzungsrechte', text: 'Werden passend zum geplanten Einsatz im Angebot festgelegt – von Website und Social Media bis zu Kampagne und Presse.' },
+  { title: 'Kosten', text: 'Auf Anfrage. Nach dem Briefing erhalten Sie ein verbindliches Angebot; Ihren Budgetrahmen können Sie im Formular angeben.' },
+];
+---
+
+<section class="section-t">
+  <SectionLabel label="Umfang & Konditionen" />
+  <div class="wrap mt-10 md:mt-14">
+    <dl class="grid gap-x-[var(--gutter)] gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        items.map((i) => (
+          <div class="border-t border-ink pt-5" data-reveal>
+            <dt class="text-[1.125rem] font-medium tracking-[-0.01em]">{i.title}</dt>
+            <dd class="mt-3 text-[0.9375rem] text-muted">{i.text}</dd>
+          </div>
+        ))
+      }
+    </dl>
+    <ArrowLink href="/ablauf" class="mt-10">Ablauf & Konditionen im Detail</ArrowLink>
+  </div>
+</section>

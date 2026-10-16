@@ -9,6 +9,8 @@ summary: Business-Portraits für Björn Meins – im Studio und vor der Fensterf
 usage: [Website, LinkedIn, Presse]
 featured: true
 order: 3
+task: "Björn Meins von Engel & Völkers brauchte Business-Portraits für Website, LinkedIn und Presse – mit Varianten für unterschiedliche Einsätze."
+approach: "Ich habe zwei Looks an einem Termin fotografiert: klassische Portraits im Studio-Setup und Bilder vor der Fensterfront mit Blick über den Hamburger Hafen, dazu Schwarzweiß-Varianten."
 cover:
   id: meins-fenster
   position: "50% 40%"

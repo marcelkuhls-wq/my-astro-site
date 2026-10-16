@@ -11,6 +11,8 @@ scope: "Mitarbeiterportraits, Arbeitssituationen, Produkt- und Anwendungsbilder"
 usage: [Karriereseite, Website, Social Media, Produktmarketing]
 featured: true
 order: 99
+task: "Software Service Stadermann, Hersteller der Laborsoftware DENTAplus, brauchte Bilder für Karriereseite, Website, Social Media und Produktmarketing – vom Team bis zur Software im Einsatz."
+approach: "Ich habe Mitarbeiterportraits, Besprechungen und Entwicklerarbeitsplätze im Büro fotografiert und anschließend die Anwendung im Dentallabor begleitet – vom Scan bis zum 3D-Druck."
 cover:
   id: st-besprechung
   spec:

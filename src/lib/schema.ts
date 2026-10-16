@@ -27,6 +27,6 @@ export function serviceSchema(base: URL | undefined, service: Service, serviceTy
       { '@type': 'City', name: 'Hamburg' },
       { '@type': 'Country', name: 'Deutschland' },
     ],
-    provider: { '@type': 'ProfessionalService', name: site.name, url: base?.toString() },
+    provider: { '@id': new URL('/#studio', base).toString() },
   };
 }

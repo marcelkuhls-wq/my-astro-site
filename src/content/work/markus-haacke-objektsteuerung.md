@@ -9,6 +9,8 @@ summary: Business-Portraits für Markus Haacke – drinnen und auf der Terrasse 
 usage: [Website, LinkedIn, Presse]
 featured: false
 order: 11
+task: "Markus Haacke brauchte Business-Portraits für Website, LinkedIn und Presse, die zeigen, wo sein Unternehmen zu Hause ist: in Hamburg."
+approach: "Ich habe drinnen und auf der Terrasse fotografiert, mit den Kirchtürmen der Innenstadt im Hintergrund – in verschiedenen Outfits und Ausschnitten für unterschiedliche Einsätze."
 cover:
   id: haacke-cover
   spec:

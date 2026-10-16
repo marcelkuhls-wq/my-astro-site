@@ -4,6 +4,9 @@ const ogImage = await ogImageFor('business-hero');
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHeader from '../components/sections/PageHeader.astro';
 import JournalLink from '../components/sections/JournalLink.astro';
+import SeoText from '../components/sections/SeoText.astro';
+import ServiceTerms from '../components/sections/ServiceTerms.astro';
+import Faq from '../components/sections/Faq.astro';
 import Statement from '../components/sections/Statement.astro';
 import Gallery from '../components/media/Gallery.astro';
 import SectionLabel from '../components/ui/SectionLabel.astro';
@@ -19,6 +22,33 @@ import { serviceById } from '../data/services';
 import { breadcrumbs, serviceSchema } from '../lib/schema';
 
 const projects = await getProjects({ service: 'business' });
+
+const faq = [
+  {
+    q: 'Kommen Sie zu uns ins Unternehmen?',
+    a: 'Ja. Ich fotografiere in Ihren Räumen – mit einem mobilen Studio-Setup für einheitliche Portraits oder direkt in Ihrer Arbeitsumgebung. Sie brauchen dafür nur einen ruhigen Raum oder eine passende Ecke.',
+  },
+  {
+    q: 'Wie lange dauert ein Portrait pro Person?',
+    a: 'Für ein Portrait mit mehreren Varianten reichen meist wenige Minuten. Bei Teams plane ich feste Zeitfenster, damit niemand lange aus dem Arbeitstag herausgeholt wird.',
+  },
+  {
+    q: 'Können neue Mitarbeitende später im gleichen Look fotografiert werden?',
+    a: 'Ja. Licht, Hintergrund, Ausschnitt und Bearbeitung halte ich fest. So lassen sich neue Kolleginnen und Kollegen auch Monate später nahtlos in die bestehende Teamseite einfügen.',
+  },
+  {
+    q: 'Was sollen wir anziehen?',
+    a: 'Das, was Sie auch im Arbeitsalltag tragen – gepflegt und am besten einfarbig. Ein, zwei Alternativen, etwa mit und ohne Sakko, geben mehr Möglichkeiten für unterschiedliche Einsätze.',
+  },
+  {
+    q: 'Was kostet ein Business-Shooting?',
+    a: 'Das hängt von der Anzahl der Personen, den Motiven, dem Ort und der geplanten Nutzung ab. Nach dem Briefing erhalten Sie ein verbindliches Angebot. Im Anfrageformular können Sie Ihren Budgetrahmen angeben.',
+  },
+  {
+    q: 'Wann erhalten wir die Bilder?',
+    a: 'Innerhalb einer Woche nach dem Shooting – bearbeitet, hochaufgelöst für Druck und optimiert für Web und LinkedIn.',
+  },
+];
 
 const description =
   'Business- und Corporate-Fotografie in Hamburg: Portraits, Führungsteams und Arbeitswelten mit einheitlicher Bildsprache – für Website, Presse, LinkedIn und Geschäftsbericht.';
@@ -64,6 +94,11 @@ const offers = [
     />
   </section>
 
+  <SeoText label="Mitarbeiterfotos" title="Mitarbeiterfotos und Teamfotos in Hamburg" link={{ href: '/mitarbeiterfotos', text: 'Mitarbeiterfotos im Detail' }}>
+    <p>Als Businessfotograf in Hamburg fotografiere ich Geschäftsführung, Teams und Mitarbeitende direkt bei Ihnen vor Ort – mit einem mobilen Studio-Setup oder in Ihrer Arbeitsumgebung.</p>
+    <p>Alle Portraits entstehen in <strong>einem einheitlichen Look</strong>: gleiches Licht, gleicher Ausschnitt, gleiche Bearbeitung. So wirkt Ihre Teamseite geschlossen, und neue Kolleginnen und Kollegen lassen sich später nahtlos ergänzen.</p>
+  </SeoText>
+
   <Gallery layout="bleed" images={['business-workspace']} class="section-t" />
 
   {
@@ -80,6 +115,12 @@ const offers = [
   }
 
   <Process />
+  <ServiceTerms
+    scope="Vom einzelnen Portrait bis zum ganzen Team an mehreren Standorten. Den Zeitplan pro Person stimme ich vorab mit Ihnen ab."
+    delivery="Innerhalb einer Woche nach dem Shooting – bearbeitet, für Web und Druck."
+  />
+
+  <Faq items={faq} />
   <ServiceLinks current="business" />
   <JournalLink slug="business-portraits-vorbereitung" />
 

@@ -1,0 +1,113 @@
+---
+import { ogImageFor } from '../lib/og';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/sections/PageHeader.astro';
+import Statement from '../components/sections/Statement.astro';
+import Photo from '../components/media/Photo.astro';
+import SectionLabel from '../components/ui/SectionLabel.astro';
+import IndexList from '../components/sections/IndexList.astro';
+import SeoText from '../components/sections/SeoText.astro';
+import ServiceTerms from '../components/sections/ServiceTerms.astro';
+import Faq from '../components/sections/Faq.astro';
+import JournalLink from '../components/sections/JournalLink.astro';
+import Cta from '../components/sections/Cta.astro';
+import { breadcrumbs, serviceSchema } from '../lib/schema';
+import { serviceById } from '../data/services';
+
+const ogImage = await ogImageFor('weiss-team-sofa');
+const description =
+  'Mitarbeiterfotos und Teamfotos in Hamburg: einheitliche Portraits für das ganze Team an einem Termin, bei Ihnen vor Ort – und neue Kolleginnen später im gleichen Look.';
+const schema = [
+  serviceSchema(Astro.site, serviceById('business'), 'Mitarbeiterfotos und Teamfotos', description),
+  breadcrumbs(Astro.site, [
+    { name: 'Business & Corporate', path: '/business-fotografie' },
+    { name: 'Mitarbeiterfotos', path: '/mitarbeiterfotos' },
+  ]),
+];
+
+const spec = (alt: string, motif: string) => ({ alt, category: 'Mitarbeiterfotos', format: 'Hochformat 2:3', motif });
+const team = [
+  { id: 'weiss-team-portrait-beige', spec: spec('Portrait eines Maklers von Weiss Immobilien im hellen Sakko.', 'Weiss Immobilien') },
+  { id: 'weiss-team-portrait-tuch', spec: spec('Portrait einer Maklerin von Weiss Immobilien mit Halstuch.', 'Weiss Immobilien') },
+  { id: 'weiss-team-portrait-dunkel', spec: spec('Portrait eines Mitarbeiters von Weiss Immobilien im dunklen Sakko.', 'Weiss Immobilien') },
+  { id: 'weiss-team-portrait-sitzend', spec: spec('Sitzendes Portrait einer Mitarbeiterin von Weiss Immobilien.', 'Weiss Immobilien') },
+  { id: 'benecke-portrait-1', spec: spec('Portrait einer Mitarbeiterin der Kleintierpraxis Benecke.', 'Kleintierpraxis Benecke') },
+  { id: 'benecke-portrait-2', spec: spec('Portrait eines Mitarbeiters der Kleintierpraxis Benecke.', 'Kleintierpraxis Benecke') },
+  { id: 'benecke-portrait-3', spec: spec('Portrait einer Mitarbeiterin der Kleintierpraxis Benecke.', 'Kleintierpraxis Benecke') },
+  { id: 'weiss-team-duo', spec: spec('Zwei Kolleginnen von Weiss Immobilien im Büro.', 'Weiss Immobilien') },
+];
+
+const steps = [
+  { title: 'Ein Raum genügt', text: 'Ich baue ein mobiles Studio-Setup bei Ihnen auf – ein Besprechungsraum oder eine ruhige Ecke reicht.' },
+  { title: 'Feste Zeitfenster', text: 'Jede Person bekommt ein kurzes Zeitfenster. Niemand wartet lange, der Arbeitstag läuft weiter.' },
+  { title: 'Ein Look für alle', text: 'Gleiches Licht, gleicher Hintergrund, gleicher Ausschnitt – vom ersten bis zum letzten Portrait.' },
+  { title: 'Später ergänzbar', text: 'Licht und Aufbau halte ich fest. Neue Kolleginnen und Kollegen passen auch Monate später in die bestehende Teamseite.' },
+];
+
+const faq = [
+  {
+    q: 'Wie viele Mitarbeitende schaffen wir an einem Termin?',
+    a: 'Das hängt vom Zeitplan ab, nicht von einer festen Grenze. Für ein Portrait mit mehreren Varianten reichen meist wenige Minuten pro Person. Den Ablauf plane ich vorab mit Ihnen.',
+  },
+  {
+    q: 'Was brauchen Sie von uns?',
+    a: 'Einen Raum mit etwas Platz, eine Liste der Teilnehmenden mit Zeitfenstern und die Einwilligungen zur Bildnutzung. Strom und ein Tisch genügen, das Licht bringe ich mit.',
+  },
+  {
+    q: 'Können wir zusätzlich Teamfotos und Bilder im Arbeitsalltag machen?',
+    a: 'Ja, das lässt sich gut am selben Tag verbinden: Einzelportraits im mobilen Studio, dazu Gruppenbilder und Arbeitssituationen in Ihren Räumen.',
+  },
+  {
+    q: 'Wie fotografieren Sie Neuzugänge später?',
+    a: 'Mit denselben Einstellungen wie beim ersten Termin. So fügen sich neue Portraits nahtlos in Website, Teamseite und Signaturen ein.',
+  },
+  {
+    q: 'Was kostet ein Termin für unser Team?',
+    a: 'Das hängt von der Anzahl der Personen, dem Ort und der geplanten Nutzung ab. Nach dem Briefing erhalten Sie ein verbindliches Angebot. Im Anfrageformular können Sie Ihren Budgetrahmen angeben.',
+  },
+];
+---
+
+<BaseLayout ogImage={ogImage} title="Mitarbeiterfotos & Teamfotos Hamburg" description={description} schema={schema}>
+  <PageHeader
+    kicker="Mitarbeiterfotos in Hamburg"
+    clients
+    label="Business & Corporate"
+    title="Ein Team. Ein Look."
+    lead="Einheitliche Portraits für Ihr ganzes Team – an einem Termin, bei Ihnen vor Ort. Für Website, Teamseite, LinkedIn und E-Mail-Signatur."
+  />
+
+  <section class="section-t">
+    <div class="wrap">
+      <ul class="grid grid-cols-2 gap-[var(--gutter)] md:grid-cols-4">
+        {team.map((p) => <li><Photo {...p} sizes="(min-width: 768px) 23vw, 47vw" /></li>)}
+      </ul>
+    </div>
+  </section>
+
+  <Statement label="Warum einheitlich" class="section-y">
+    Eine Teamseite wirkt dann professionell, wenn alle Bilder zusammenpassen. Unterschiedliche Hintergründe, Ausschnitte und
+    Lichtstimmungen lassen selbst ein starkes Team zusammengewürfelt aussehen.
+  </Statement>
+
+  <section class="section-t">
+    <SectionLabel label="So läuft der Termin" />
+    <div class="wrap mt-10 md:mt-14">
+      <IndexList items={steps} />
+    </div>
+  </section>
+
+  <SeoText label="Teamfotos" title="Teamfotos und Gruppenbilder in Hamburg" link={{ href: '/employer-branding', text: 'Bilder aus dem Arbeitsalltag: Employer Branding' }}>
+    <p>Neben den Einzelportraits entstehen auf Wunsch <strong>Teamfotos und Gruppenbilder</strong> – in kleinen Gruppen, die miteinander arbeiten, statt in einer langen Reihe vor der Wand.</p>
+    <p>Wer zusätzlich zeigen möchte, wie im Unternehmen gearbeitet wird, ergänzt das Set um Arbeitssituationen für Karriereseite und Recruiting.</p>
+  </SeoText>
+
+  <ServiceTerms
+    scope="Vom kleinen Team bis zu mehreren Abteilungen und Standorten. Neuzugänge später zu einem eigenen Termin."
+    delivery="Innerhalb einer Woche nach dem Termin – einheitlich bearbeitet, für Web, Druck und LinkedIn."
+  />
+
+  <Faq items={faq} />
+  <JournalLink slug="mitarbeiterfotos-ganzes-team" />
+  <Cta title="Teamfotos geplant?" />
+</BaseLayout>

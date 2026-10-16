@@ -24,7 +24,7 @@
   --color-ph-dark: #2c2b29;
 
   /* Typo-Skala: label · body · lead · h3 · h2 · display */
-  --text-label: 0.75rem;
+  --text-label: clamp(0.75rem, 0.84rem - 0.1vw, 0.8125rem);
   --text-label--line-height: 1.35;
   --text-label--letter-spacing: 0.1em;
 

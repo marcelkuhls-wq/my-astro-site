@@ -26,6 +26,8 @@ const socials = [
       <p class="label mb-4 text-muted-dark">Leistungen</p>
       <ul class="space-y-1.5">
         {services.map((s) => <li><a class="link-line decoration-transparent" href={s.href}>{s.title}</a></li>)}
+        <li><a class="link-line decoration-transparent" href="/mitarbeiterfotos">Mitarbeiterfotos</a></li>
+        <li><a class="link-line decoration-transparent" href="/immobilienwirtschaft">Für Makler &amp; Immobilien</a></li>
       </ul>
     </nav>
 
@@ -33,6 +35,7 @@ const socials = [
       <p class="label mb-4 text-muted-dark">Studio</p>
       <ul class="space-y-1.5">
         <li><a class="link-line decoration-transparent" href="/work">Projekte</a></li>
+        <li><a class="link-line decoration-transparent" href="/ablauf">Ablauf &amp; Konditionen</a></li>
         <li><a class="link-line decoration-transparent" href="/about">Über mich</a></li>
         {hasJournal && <li><a class="link-line decoration-transparent" href="/journal">Journal</a></li>}
         <li><a class="link-line decoration-transparent" href="/kontakt">Kontakt</a></li>
@@ -48,7 +51,7 @@ const socials = [
       </ul>
     </div>
 
-    <div class="col-span-12 mt-8 flex flex-col gap-3 border-t border-line-dark pt-6 text-[0.8125rem] text-muted-dark sm:flex-row sm:justify-between">
+    <div class="col-span-12 mt-8 flex flex-col gap-3 border-t border-line-dark pt-6 text-[0.875rem] text-muted-dark sm:flex-row sm:justify-between">
       <p>
         © {year} {site.name}, Hamburg
         <span class="ml-3 tabular-nums" data-hamburg-time hidden>· <span></span> Ortszeit</span>

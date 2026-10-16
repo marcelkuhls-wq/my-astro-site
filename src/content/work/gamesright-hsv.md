@@ -10,6 +10,8 @@ summary: Fotografische Begleitung eines Sponsoring-Termins beim HSV mit Marcell 
 # Optional ergänzen: scope, usage (z. B. [PR, LinkedIn, Social Media]), task, approach, outcome, testimonial
 featured: true
 order: 8
+task: "gamesright wollte einen Sponsoring-Termin beim HSV mit Marcell Jansen fotografisch begleiten lassen – mit Bildern für die eigene Kommunikation rund um die Partnerschaft."
+approach: "Ich habe die Trikotübergabe, das Mannschaftsfoto und Momente auf dem Trainingsplatz dokumentiert, vom offiziellen Bild bis zu Szenen im Abendlicht."
 cover:
   id: gamesright-hsv-trikot
   position: "50% 45%"

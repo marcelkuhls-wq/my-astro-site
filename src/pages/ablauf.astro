@@ -1,0 +1,85 @@
+---
+import { ogImageFor } from '../lib/og';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/sections/PageHeader.astro';
+import Process from '../components/sections/Process.astro';
+import SectionLabel from '../components/ui/SectionLabel.astro';
+import Faq from '../components/sections/Faq.astro';
+import SeoText from '../components/sections/SeoText.astro';
+import Cta from '../components/sections/Cta.astro';
+import { breadcrumbs } from '../lib/schema';
+
+const ogImage = await ogImageFor('eb-behind');
+const description =
+  'Ablauf, Lieferzeiten, Nutzungsrechte und Kosten einer Fotoproduktion mit Studio Kuhls in Hamburg – vom Briefing bis zur fertigen Bildauswahl.';
+const schema = [breadcrumbs(Astro.site, [{ name: 'Ablauf & Konditionen', path: '/ablauf' }])];
+
+const terms = [
+  { title: 'Rückmeldung', text: 'Auf jede Anfrage innerhalb von 24 Stunden (werktags) – mit Rückfragen oder einem ersten Vorschlag.' },
+  { title: 'Lieferung Shootings', text: 'Innerhalb einer Woche nach dem Termin, bearbeitet und in allen vereinbarten Formaten.' },
+  { title: 'Lieferung Events', text: 'Innerhalb von 48 Stunden nach der Veranstaltung. Eine schnelle Vorauswahl am selben Tag ist möglich.' },
+  { title: 'Formate', text: 'Hochaufgelöst für Druck, optimiert für Web und Social Media – Hoch- und Querformate nach Bedarf.' },
+  { title: 'Nutzungsrechte', text: 'Werden im Angebot passend zum geplanten Einsatz festgelegt: Website, Social Media, Presse, Kampagne, Weitergabe an Partner.' },
+  { title: 'Kosten', text: 'Auf Anfrage. Sie erhalten nach dem Briefing ein verbindliches, schriftliches Angebot.' },
+  { title: 'Einsatzgebiet', text: 'Hamburg und Umgebung, auf Anfrage auch darüber hinaus.' },
+  { title: 'Ansprechpartner', text: 'Ein Ansprechpartner vom ersten Gespräch bis zur Bildauswahl: Marcel Kuhls.' },
+];
+
+const faq = [
+  {
+    q: 'Wovon hängen die Kosten ab?',
+    a: 'Vom Umfang (Dauer, Anzahl der Personen und Motive, Standorte), vom Aufwand für Vorbereitung und Bearbeitung und von der geplanten Nutzung der Bilder. Je genauer das Briefing, desto genauer das Angebot. Ihren Budgetrahmen können Sie direkt im Anfrageformular angeben.',
+  },
+  {
+    q: 'Was bedeutet „Nutzungsrechte je nach Projekt“?',
+    a: 'Eine Teamseite braucht andere Rechte als eine bezahlte Kampagne oder eine Weitergabe an Partner, Architekten oder Agenturen. Ich lege die Rechte deshalb im Angebot genau für Ihren Einsatz fest – transparent und ohne Kleingedrucktes.',
+  },
+  {
+    q: 'Arbeiten Sie auch für Agenturen?',
+    a: 'Ja. Ich arbeite nach Ihrem Briefing, Moodboard oder Layout und stimme mich mit Ihnen und Ihrem Kunden ab. Wie die Bilder an den Endkunden weitergegeben werden, klären wir vorab.',
+  },
+  {
+    q: 'Wie weit im Voraus sollten wir buchen?',
+    a: 'Je früher, desto besser – besonders für Events und Termine mit vielen Beteiligten. Kurzfristige Anfragen sind trotzdem willkommen; schreiben Sie einfach Ihren Wunschtermin in die Anfrage.',
+  },
+  {
+    q: 'Was brauchen Sie von uns vor dem Termin?',
+    a: 'Ziel und Einsatz der Bilder, eine grobe Motivliste, Ansprechpartner vor Ort und – bei Mitarbeitenden – die Einwilligungen zur Bildnutzung. Den Rest erarbeiten wir im Briefing gemeinsam.',
+  },
+];
+---
+
+<BaseLayout ogImage={ogImage} title="Ablauf & Konditionen – Fotoproduktion Hamburg" description={description} schema={schema}>
+  <PageHeader
+    kicker="Ablauf & Konditionen"
+    label="Zusammenarbeit"
+    title="So arbeiten wir zusammen."
+    lead="Vom ersten Gespräch bis zur fertigen Bildauswahl – mit klaren Absprachen, festen Lieferzeiten und einem Ansprechpartner."
+  />
+
+  <Process title="Vier Schritte bis zum fertigen Bild." showLink={false} />
+
+  <section class="section-t">
+    <SectionLabel label="Konditionen" />
+    <div class="wrap mt-10 md:mt-14">
+      <dl class="grid gap-x-[var(--gutter)] gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+        {
+          terms.map((t) => (
+            <div class="border-t border-ink pt-5" data-reveal>
+              <dt class="text-[1.125rem] font-medium tracking-[-0.01em]">{t.title}</dt>
+              <dd class="mt-3 text-[0.9375rem] text-muted">{t.text}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+  </section>
+
+  <SeoText label="Für Agenturen" title="Fotografie im Auftrag von Agenturen">
+    <p>Für Event-, PR- und Werbeagenturen arbeite ich nach Ihrem Briefing und in Ihrer Abstimmung mit dem Kunden – diskret, pünktlich und mit klar geregelter Weitergabe der Bilder.</p>
+    <p>Typische Einsätze: Eventreportagen, Speaker- und Gästebilder, Portraits für Kampagnen und Bildmaterial für Pressemitteilungen.</p>
+  </SeoText>
+
+  <Faq items={faq} />
+  <Cta />
+</BaseLayout>

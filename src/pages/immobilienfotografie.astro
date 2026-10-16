@@ -4,6 +4,8 @@ const ogImage = await ogImageFor('immo-hero');
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHeader from '../components/sections/PageHeader.astro';
 import JournalLink from '../components/sections/JournalLink.astro';
+import SeoText from '../components/sections/SeoText.astro';
+import ServiceTerms from '../components/sections/ServiceTerms.astro';
 import Gallery from '../components/media/Gallery.astro';
 import SectionLabel from '../components/ui/SectionLabel.astro';
 import ProjectGrid from '../components/sections/ProjectGrid.astro';
@@ -44,7 +46,11 @@ const faq = [
   },
   {
     q: 'Welche Formate erhalten wir?',
-    a: 'Quer- und Hochformate für Exposé, Website und Immobilienportale. Auf Wunsch zusätzlich zugeschnittene Formate für Social Media.',
+    a: 'Quer- und Hochformate für Exposé, Website und Immobilienportale, innerhalb einer Woche nach dem Termin. Auf Wunsch zusätzlich zugeschnittene Formate für Social Media.',
+  },
+  {
+    q: 'Was kostet ein Immobilien-Shooting?',
+    a: 'Das hängt von Umfang, Anzahl der Personen und Motive, Ort und geplanter Nutzung ab. Nach dem Briefing erhalten Sie ein verbindliches Angebot. Im Anfrageformular können Sie Ihren Budgetrahmen angeben – dann plane ich passend dazu.',
   },
   {
     q: 'Wie werden die Nutzungsrechte geregelt?',
@@ -91,6 +97,11 @@ const faq = [
 
   <UseLine items={uses} label="Im Einsatz" class="section-t" />
 
+  <SeoText label="Architektur" title="Architektur- und Interiorfotografie in Hamburg" link={{ href: '/immobilienwirtschaft', text: 'Für Makler & Immobilienunternehmen' }}>
+    <p>Neben Wohnungen für die Vermarktung fotografiere ich Architektur und Interiors: Fassaden, Treppenhäuser, Foyers, Büro- und Gastronomieflächen. Mit geraden Linien, natürlichen Farben und Perspektiven, die den Raum ehrlich wiedergeben.</p>
+    <p>Für Lage und Umgebung ergänzen <strong>Drohnenaufnahmen</strong> das Set. Die Tageszeit plane ich nach der Ausrichtung des Gebäudes, damit Fassade und Ausblick im besten Licht stehen.</p>
+  </SeoText>
+
   {
     projects.length > 0 && (
       <section class="section-t">
@@ -106,6 +117,11 @@ const faq = [
 
   <Faq items={faq} />
   <ServiceLinks current="immobilien" />
+
+  <ServiceTerms
+    scope="Ein Objekt pro Termin oder mehrere Objekte als Serie – innen, außen und auf Wunsch aus der Luft."
+    delivery="Innerhalb einer Woche nach dem Termin – in den Formaten für Exposé, Portale und Social Media."
+  />
 
   <JournalLink slug="immobilienfotos-vorbereiten" />
 

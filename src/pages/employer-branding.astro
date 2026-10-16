@@ -4,6 +4,8 @@ const ogImage = await ogImageFor('eb-hero');
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHeader from '../components/sections/PageHeader.astro';
 import JournalLink from '../components/sections/JournalLink.astro';
+import SeoText from '../components/sections/SeoText.astro';
+import ServiceTerms from '../components/sections/ServiceTerms.astro';
 import Statement from '../components/sections/Statement.astro';
 import Gallery from '../components/media/Gallery.astro';
 import Photo from '../components/media/Photo.astro';
@@ -76,12 +78,16 @@ const faq = [
     a: 'Für Mitarbeitende auf Bildern brauchen Sie in der Regel eine schriftliche Einwilligung. Ich stimme den Ablauf vorab mit HR ab und berücksichtige, wer fotografiert werden möchte und wer nicht.',
   },
   {
+    q: 'Was kostet ein Employer-Branding-Shooting?',
+    a: 'Das hängt von Umfang, Anzahl der Personen und Motive, Ort und geplanter Nutzung ab. Nach dem Briefing erhalten Sie ein verbindliches Angebot. Im Anfrageformular können Sie Ihren Budgetrahmen angeben – dann plane ich passend dazu.',
+  },
+  {
     q: 'Wie werden die Nutzungsrechte geregelt?',
     a: 'Nach Ihrem tatsächlichen Einsatz – von Karriereseite und Social Media bis zur Kampagne. Ich lege die Rechte im Angebot transparent fest.',
   },
   {
     q: 'Wie erhalten wir die Bilder?',
-    a: 'Als bearbeitete Auswahl in den vereinbarten Formaten, zum Beispiel hochaufgelöst für Druck und optimiert für Web und Social Media.',
+    a: 'Innerhalb einer Woche nach dem Shooting als bearbeitete Auswahl in den vereinbarten Formaten – hochaufgelöst für Druck und optimiert für Web und Social Media.',
   },
 ];
 ---
@@ -143,6 +149,11 @@ const faq = [
   <Gallery layout="trio" images={['eb-team-1', 'eb-situation-2', 'eb-detail-1']} class="section-t" />
   <Gallery layout="pair" images={['eb-portrait-2', 'eb-portrait-3']} class="mt-[var(--gutter)]" />
 
+  <SeoText label="Karriereseite & Recruiting" title="Fotos für Karriereseite, Stellenanzeigen und LinkedIn" link={{ href: '/mitarbeiterfotos', text: 'Einheitliche Mitarbeiterfotos' }}>
+    <p>Employer-Branding-Fotografie zeigt Bewerberinnen und Bewerbern, wie es bei Ihnen wirklich aussieht: die Menschen, die Räume, den Arbeitsalltag. Ich plane die Motive gemeinsam mit HR oder Marketing so, dass am Ende ein zusammenhängendes Bildset entsteht – für <strong>Karriereseite, Stellenanzeigen, LinkedIn und interne Kommunikation</strong>.</p>
+    <p>Fotografiert wird im laufenden Betrieb in Hamburg und Umgebung, mit einem kompakten Setup und Zeitfenstern pro Team. Hoch- und Querformate entstehen gleich mit, damit jede Anzeige und jeder Post das passende Bild hat.</p>
+  </SeoText>
+
   {
     projects.length > 0 && (
       <section class="section-t">
@@ -157,6 +168,11 @@ const faq = [
   }
 
   <Process />
+  <ServiceTerms
+    scope="Von einem halben Tag bis zu mehreren Produktionstagen und Standorten – je nach Motivliste und Anzahl der Personen."
+    delivery="Innerhalb einer Woche nach dem Shooting – als bearbeitete Auswahl in allen vereinbarten Formaten."
+  />
+
 
   <section class="section-t">
     <div class="wrap grid-12 items-center gap-y-10">

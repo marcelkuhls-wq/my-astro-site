@@ -45,8 +45,11 @@ const schema = article
         headline: article.data.title,
         description: article.data.description,
         datePublished: article.data.date.toISOString(),
-        author: { '@type': 'Person', name: 'Marcel Kuhls' },
-        publisher: { '@type': 'Organization', name: 'Studio Kuhls' },
+        dateModified: article.data.date.toISOString(),
+        mainEntityOfPage: new URL(`/journal/${article.id}`, Astro.site).toString(),
+        ...(ogImage && { image: new URL(ogImage, Astro.site).toString() }),
+        author: { '@id': new URL('/about#marcel', Astro.site).toString(), '@type': 'Person', name: 'Marcel Kuhls', url: new URL('/about', Astro.site).toString() },
+        publisher: { '@id': new URL('/#studio', Astro.site).toString() },
       },
       breadcrumbs(Astro.site, [
         { name: 'Journal', path: '/journal' },

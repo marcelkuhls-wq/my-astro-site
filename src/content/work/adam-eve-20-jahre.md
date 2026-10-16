@@ -15,6 +15,8 @@ summary: Reportage der Jubiläumsfeier zum 20-jährigen Bestehen – Begrüßung
 # outcome: "..."
 featured: false
 order: 10
+task: "Zum 20-jährigen Bestehen lud die Adam & Eve Beautylounge Gäste und Partner auf die Alsterinsel. Gefragt war eine Reportage, die den Abend als Ganzes erzählt – von der Begrüßung bis zu den Details an der Bar."
+approach: "Ich habe den Abend dokumentarisch begleitet: Begrüßung und Rede der Gastgeberin, Begegnungen unter den Gästen, die Jubiläumswand und die Inszenierung an der Bar im roten Licht. Zurückhaltend, ohne Gäste für Fotos aufzustellen."
 cover:
   id: adam-eve-rede
   spec:

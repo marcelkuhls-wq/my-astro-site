@@ -6,6 +6,7 @@
  */
 import SectionLabel from '../ui/SectionLabel.astro';
 import UseLine from './UseLine.astro';
+import ArrowLink from '../ui/ArrowLink.astro';
 
 interface Step {
   title: string;
@@ -18,6 +19,8 @@ interface Props {
   intro?: string;
   /** Was vorab geklärt wird – als typografische Zeile */
   planning?: string[] | false;
+  /** Link auf /ablauf am Ende */
+  showLink?: boolean;
 }
 
 const defaultSteps: Step[] = [
@@ -45,6 +48,7 @@ const {
   title = 'Die Arbeit beginnt vor dem ersten Bild.',
   intro = 'Bevor ich fotografiere, kläre ich, wo die Bilder eingesetzt werden und was sie leisten sollen. Daraus entstehen Motivliste, Ablaufplan und Bildsprache – damit der Produktionstag ruhig und planbar verläuft.',
   planning = ['Bildkonzept', 'Motive', 'Locations', 'Licht', 'Personen', 'Formate'],
+  showLink = true,
 } = Astro.props;
 ---
 
@@ -79,4 +83,5 @@ const {
       }
     </ol>
   </div>
+  {showLink && <div class="wrap"><ArrowLink href="/ablauf" class="mt-12">Ablauf &amp; Konditionen</ArrowLink></div>}
 </section>

@@ -10,6 +10,8 @@ summary: Trainerinnen-Portraits, Kursszenen und Kampagnenmotive für das neue Pi
 usage: [Instagram, Werbeanzeigen, Buchungsplattformen, Website]
 featured: true
 order: 1
+task: "Das neue Pilates-Studio Four Elements in Winterhude brauchte Bildmaterial für den Start: für Instagram, Werbeanzeigen, Buchungsplattformen und die Website."
+approach: "Ich habe Trainerinnen-Portraits, Kursszenen und Details wie Logo und Studio-Socken fotografiert – viel im Hochformat, damit das Material direkt für Posts, Stories und Anzeigen nutzbar ist."
 cover:
   id: fe-kurs-seitstuetz
   position: "50% 45%"

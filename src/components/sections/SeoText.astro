@@ -1,0 +1,27 @@
+---
+/**
+ * Klartext-Abschnitt mit Suchbegriff in der H2 – ruhig gesetzt, damit er
+ * sich in die Seite einfügt. Absätze über den Slot.
+ */
+import SectionLabel from '../ui/SectionLabel.astro';
+import ArrowLink from '../ui/ArrowLink.astro';
+
+interface Props {
+  label: string;
+  title: string;
+  link?: { href: string; text: string };
+  class?: string;
+}
+const { label, title, link, class: className } = Astro.props;
+---
+
+<section class:list={['section-t', className]}>
+  <SectionLabel label={label} />
+  <div class="wrap grid-12 mt-10 gap-y-8 md:mt-14">
+    <h2 class="col-span-12 text-h3 md:col-span-5" data-reveal>{title}</h2>
+    <div class="col-span-12 max-w-[36rem] space-y-5 text-muted md:col-span-6 md:col-start-7 [&_strong]:font-medium [&_strong]:text-ink" data-reveal style="--reveal-delay: .06s">
+      <slot />
+      {link && <ArrowLink href={link.href} class="!mt-8">{link.text}</ArrowLink>}
+    </div>
+  </div>
+</section>

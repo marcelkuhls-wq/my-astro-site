@@ -15,6 +15,8 @@ summary: Architektur- und Interioraufnahmen einer Wohnung im Hochhaus – von de
 # outcome: "..."
 featured: true
 order: 9
+task: "Für Weiss Immobilien sollte eine Wohnung in einem Hochhaus mit Hafenblick so fotografiert werden, dass Gebäude, Ausstattung und Ausblick gleichermaßen wirken."
+approach: "Ich habe von der Glasfassade und der Eingangshalle bis zu Wohnraum, Essbereich und Loggia fotografiert, mit natürlichem Licht und geraden Linien – und dem Blick über Hafen und Großmarkthalle."
 cover:
   id: weiss-immobilien-wohnraum
   position: "50% 58%"

@@ -10,6 +10,8 @@ summary: Interioraufnahmen einer möblierten Dachgeschosswohnung – Wohnraum, E
 usage: [Exposé, Immobilienportale, Website]
 featured: false
 order: 12
+task: "Eine möblierte Dachgeschosswohnung sollte für die Vermarktung hell, wohnlich und großzügig wirken – ohne die Räume größer erscheinen zu lassen, als sie sind."
+approach: "Ich habe Wohnraum, Essbereich und Details mit natürlichem Licht fotografiert und den Hauseingang ergänzt, damit Interessenten auch die Umgebung einordnen können."
 cover:
   id: immo-dg-wohnraum
   spec:
