@@ -20,7 +20,11 @@ const seo = Astro.props;
     <Font cssVariable="--font-inter" preload />
     <Font cssVariable="--font-inter-tight" preload />
     <Seo {...seo} />
-    <script is:inline>document.documentElement.classList.add('js');</script>
+    <script is:inline>
+      // Bis GitHub "Enforce HTTPS" erlaubt: auf der Live-Domain auf HTTPS umleiten
+      if (location.protocol === 'http:' && /studio-kuhls\.de$/.test(location.hostname)) location.replace('https://studio-kuhls.de' + location.pathname + location.search + location.hash);
+      document.documentElement.classList.add('js');
+    </script>
   </head>
   <body class="min-h-svh">
     <a href="#main" class="label sr-only fixed top-3 left-3 z-50 bg-ink px-3 py-2 text-bone focus:not-sr-only">
