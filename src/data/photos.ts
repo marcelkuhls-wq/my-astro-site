@@ -33,20 +33,20 @@ export interface PhotoSpec {
 export const photos: Record<string, PhotoSpec> = {
   /* ── Startseite ─────────────────────────────────────────────────────── */
   'home-hero': {
-    alt: 'Vier Mitarbeitende eines Hamburger Maklerbüros gehen lachend im Gespräch durch eine Wohnstraße.',
-    category: 'Business / Team',
+    alt: 'Drei Frauen im seitlichen Unterarmstütz mit Hanteln vor beleuchteten runden Spiegeln in einem Pilates-Studio.',
+    category: 'Business / Employer Branding',
     format: 'Querformat, sehr breit',
-    motif: 'Weiss Immobilien – Team unterwegs',
-    file: 'weiss-team-unterwegs',
-    position: '50% 45%',
+    motif: 'Four Elements – Kurs',
+    file: 'fe-kurs-seitstuetz',
+    position: '50% 55%',
   },
   'home-eb': {
-    alt: 'Trainerinnen und Teilnehmerinnen im Kurs, seitlicher Unterarmstütz mit Hanteln.',
+    alt: 'Tierärztin untersucht lächelnd eine Katze mit dem Stethoskop.',
     category: 'Employer Branding',
     format: 'Querformat 3:2',
     motif: 'Four Elements – Kurs',
-    file: 'fe-kurs-seitstuetz',
-    position: '50% 45%',
+    file: 'benecke-untersuchung-katze',
+    position: '45% 45%',
   },
   'home-business-1': {
     alt: 'Portrait eines Mitarbeiters in beigem Sakko vor neutralem Hintergrund.',
