@@ -33,12 +33,12 @@ export interface PhotoSpec {
 export const photos: Record<string, PhotoSpec> = {
   /* ── Startseite ─────────────────────────────────────────────────────── */
   'home-hero': {
-    alt: 'Drei Frauen im seitlichen Unterarmstütz mit Hanteln vor beleuchteten runden Spiegeln in einem Pilates-Studio.',
-    category: 'Business / Employer Branding',
+    alt: 'Geschäftsmann im Anzug telefoniert an einer bodentiefen Fensterfront hoch über dem Hamburger Hafen.',
+    category: 'Business & Corporate',
     format: 'Querformat, sehr breit',
-    motif: 'Four Elements – Kurs',
-    file: 'fe-kurs-seitstuetz',
-    position: '50% 55%',
+    motif: 'Björn Meins, Engel & Völkers',
+    file: 'meins-fenster-hafen',
+    position: '52% 50%',
   },
   'home-eb': {
     alt: 'Tierärztin untersucht lächelnd eine Katze mit dem Stethoskop.',
