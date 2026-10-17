@@ -13,6 +13,11 @@ featured: true
 order: 99
 task: "Software Service Stadermann, Hersteller der Laborsoftware DENTAplus, brauchte Bilder für Karriereseite, Website, Social Media und Produktmarketing – vom Team bis zur Software im Einsatz."
 approach: "Ich habe Mitarbeiterportraits, Besprechungen und Entwicklerarbeitsplätze im Büro fotografiert und anschließend die Anwendung im Dentallabor begleitet – vom Scan bis zum 3D-Druck."
+testimonial:
+  quote: "Marcel hat uns bei der Aufnahme von Produktfotos und Employer Branding Thematiken unterstützt. Sehr professionell und mit einem guten ästhetischen Auge."
+  name: "Till Stadermann"
+  role: "Geschäftsführer"
+  company: "Stadermann"
 cover:
   id: st-besprechung
   spec:

@@ -10,7 +10,7 @@ interface Props {
 const { ids, class: className } = Astro.props;
 const list = ids ? ids.map((id) => testimonials.find((t) => t.id === id)).filter((t) => t !== undefined) : testimonials;
 const [first, ...rest] = list;
-const meta = (t: (typeof list)[number]) => [t.company, t.source].filter(Boolean).join(' · ');
+const meta = (t: (typeof list)[number]) => [[t.role, t.company].filter(Boolean).join(', '), t.source].filter(Boolean).join(' · ');
 ---
 
 {

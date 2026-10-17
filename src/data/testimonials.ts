@@ -26,8 +26,11 @@ export const testimonials: Testimonial[] = [
     id: 'till',
     quote:
       'Marcel hat uns bei der Aufnahme von Produktfotos und Employer Branding Thematiken unterstützt. Sehr professionell und mit einem guten ästhetischen Auge.',
-    name: 'Till',
+    name: 'Till Stadermann',
+    role: 'Geschäftsführer',
+    company: 'Stadermann',
     source: 'Google-Bewertung',
+    project: 'stadermann',
   },
   {
     id: 'felix-lippe',
@@ -49,6 +52,7 @@ export const testimonials: Testimonial[] = [
     quote:
       'Die Arbeit mit Marcel ist immer hoch professionell und er arbeitet sehr präzise mit Leidenschaft. Die Ergebnisse sind wirklich immer sehr gut …',
     name: 'Konstantin Tuludis',
+    company: 'voltpol GmbH',
     source: 'Google-Bewertung',
   },
 ];
