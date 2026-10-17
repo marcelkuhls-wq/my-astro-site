@@ -103,10 +103,10 @@ const meta = (t: (typeof list)[number]) => [t.role, t.company].filter(Boolean).j
     let visible = false;
     let paused = false;
     let timer = 0;
-    // Anzeigedauer nach Länge: ca. 3,5 s + 0,12 s pro Wort (kurz ≈ 5 s, lang ≈ 10 s)
+    // Anzeigedauer nach Länge: ca. 1,5 s + 0,12 s pro Wort (kurz ≈ 4 s, lang ≈ 8 s)
     const duration = (i: number) => {
       const words = (slides[i]?.querySelector('blockquote')?.textContent ?? '').trim().split(/\s+/).length;
-      return Math.min(11000, Math.max(4500, 3500 + words * 120));
+      return Math.min(9000, Math.max(3500, 1500 + words * 120));
     };
     const schedule = (shown = current()) => {
       clearTimeout(timer);
