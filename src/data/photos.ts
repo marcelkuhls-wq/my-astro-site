@@ -21,6 +21,8 @@ export interface PhotoSpec {
   note?: string;
   /** Helligkeit des Platzhalters – nur für die Vorschau */
   tone?: 'light' | 'mid' | 'dark';
+  /** KI-Kennzeichnung (Art. 50 KI-VO), z. B. „Virtuell eingerichtet (KI)“ – erscheint als Hinweis auf dem Bild */
+  ai?: string;
   /**
    * Optional: vorhandene Datei aus src/assets/photos/ verwenden (Name ohne Endung),
    * statt eine Datei mit der ID anzulegen. So kann ein Foto an mehreren Stellen stehen.

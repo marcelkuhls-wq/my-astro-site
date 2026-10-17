@@ -11,6 +11,8 @@ const photoSpec = z.object({
   motif: z.string(),
   note: z.string().optional(),
   tone: z.enum(['light', 'mid', 'dark']).optional(),
+  /** KI-Kennzeichnung (Art. 50 KI-VO), z. B. "Virtuell eingerichtet (KI)" – erscheint als Hinweis auf dem Bild */
+  ai: z.string().optional(),
 });
 
 const photoRef = z.object({

@@ -12,7 +12,7 @@ featured: false
 order: 11
 scope: "Luftaufnahme, Interior, Treppenhaus"
 task: "Ein Neubau mit Gartenwohnung sollte für die Vermarktung von innen und außen gezeigt werden – inklusive Lage und Grünflächen."
-approach: "Ich habe Interior und Architektur fotografiert und mit einer Drohnenaufnahme ergänzt, die das Gebäude mit seinen Gärten im Zusammenhang zeigt."
+approach: "Ich habe Interior und Architektur fotografiert und mit einer Drohnenaufnahme ergänzt, die das Gebäude mit seinen Gärten im Zusammenhang zeigt. Einige Räume und die Terrasse wurden für die Vermarktung virtuell eingerichtet (Home Staging mit KI); diese Bilder sind gekennzeichnet."
 cover:
   id: immo-neubau-drohne
   spec:
@@ -54,13 +54,15 @@ gallery:
     images:
       - id: pet-03
         spec:
-          alt: "Wohnzimmer mit Sofa und Blick auf die Terrasse."
+          alt: "Wohnzimmer mit Sofa und Blick auf die Terrasse – virtuell eingerichtet, Einrichtung mit KI ergänzt."
+          ai: "Virtuell eingerichtet (KI)"
           category: "Immobilien"
           format: "Querformat"
           motif: "pet-03"
       - id: pet-04
         spec:
-          alt: "Bad mit Badewanne und Dusche."
+          alt: "Bad mit Badewanne und Dusche – virtuell eingerichtet, Einrichtung mit KI ergänzt."
+          ai: "Virtuell eingerichtet (KI)"
           category: "Immobilien"
           format: "Querformat"
           motif: "pet-04"
@@ -68,13 +70,15 @@ gallery:
     images:
       - id: pet-05
         spec:
-          alt: "Terrasse mit Loungemöbeln."
+          alt: "Terrasse mit Loungemöbeln – virtuell eingerichtet, Einrichtung mit KI ergänzt."
+          ai: "Virtuell eingerichtet (KI)"
           category: "Immobilien"
           format: "Querformat"
           motif: "pet-05"
       - id: pet-06
         spec:
-          alt: "Garten mit Terrasse in der Abenddämmerung."
+          alt: "Garten mit Terrasse in der Abenddämmerung – virtuell eingerichtet, Einrichtung mit KI ergänzt."
+          ai: "Virtuell eingerichtet (KI)"
           category: "Immobilien"
           format: "Querformat"
           motif: "pet-06"

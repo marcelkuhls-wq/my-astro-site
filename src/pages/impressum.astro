@@ -9,14 +9,16 @@ import { site } from '../config/site';
     {site.legalName}<br />
     {site.businessName}<br />
     {site.address.street}<br />
-    {site.address.zip} {site.address.city}
+    {site.address.zip} {site.address.city}<br />
+    Deutschland
   </p>
   <p>„{site.name}“ ist eine Marke von {site.businessName}, Inhaber {site.legalName}.</p>
 
   <h2>Kontakt</h2>
   <p>
     Telefon: <a class="link-line" href={`tel:${site.phone.replace(/\s/g, '')}`}>{site.phone}</a><br />
-    E-Mail: <a class="link-line" href={`mailto:${site.email}`}>{site.email}</a>
+    E-Mail: <a class="link-line" href={`mailto:${site.email}`}>{site.email}</a><br />
+    Website: <a class="link-line" href="https://studio-kuhls.de">studio-kuhls.de</a>
   </p>
 
   {
@@ -29,16 +31,74 @@ import { site } from '../config/site';
   }
 
   <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
-  <p>{site.legalName}, Anschrift wie oben</p>
+  <p>
+    {site.legalName}<br />
+    {site.address.street}, {site.address.zip} {site.address.city}
+  </p>
 
-  <h2>Bildrechte</h2>
+  <h2>Haftung für Inhalte</h2>
+  <p>
+    Die Inhalte dieser Website erstelle ich mit größtmöglicher Sorgfalt. Für die Richtigkeit, Vollständigkeit und Aktualität
+    kann ich dennoch keine Gewähr übernehmen. Als Diensteanbieter bin ich nach den allgemeinen Gesetzen für eigene Inhalte
+    verantwortlich. Ich bin jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder
+    nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen (§§ 7 bis 10 DDG).
+  </p>
+  <p>
+    Pflichten zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon
+    unberührt. Eine Haftung ist erst ab dem Zeitpunkt möglich, zu dem ich von einer konkreten Rechtsverletzung Kenntnis erhalte.
+    Sobald mir eine solche bekannt wird, entferne ich die betreffenden Inhalte umgehend.
+  </p>
+
+  <h2>Haftung für Links</h2>
+  <p>
+    Diese Website enthält Links zu externen Websites, etwa zu LinkedIn, zu meinem Google-Unternehmensprofil, zu Presseartikeln
+    oder zu Websites meiner Kunden. Auf deren Inhalte habe ich keinen Einfluss; verantwortlich ist stets der jeweilige Anbieter
+    oder Betreiber. Zum Zeitpunkt der Verlinkung waren keine Rechtsverstöße erkennbar. Eine dauerhafte inhaltliche Kontrolle
+    der verlinkten Seiten ist ohne konkrete Anhaltspunkte nicht zumutbar. Wird mir eine Rechtsverletzung bekannt, entferne ich
+    den betreffenden Link umgehend.
+  </p>
+
+  <h2>Urheberrecht und Bildrechte</h2>
   <p>
     Alle Fotografien auf dieser Website stammen, soweit nicht anders angegeben, von {site.legalName} und sind urheberrechtlich
-    geschützt. Eine Nutzung, Vervielfältigung oder Weitergabe ist nur mit vorheriger schriftlicher Zustimmung erlaubt.
-    Kundenlogos dienen der Darstellung von Referenzen; die Markenrechte liegen bei den
-    jeweiligen Unternehmen.
+    geschützt. Das gilt ebenso für Texte und Gestaltung. Jede Verwendung außerhalb der Grenzen des Urheberrechts, insbesondere
+    Vervielfältigung, Bearbeitung, Verbreitung oder Veröffentlichung, auch auszugsweise und in sozialen Netzwerken, bedarf
+    meiner vorherigen schriftlichen Zustimmung.
+  </p>
+  <p>
+    Die gezeigten Aufnahmen entstanden überwiegend im Auftrag meiner Kunden und werden als Referenz gezeigt. Nutzungsrechte
+    für Kunden richten sich nach der jeweiligen Vereinbarung. Kundenlogos dienen der Darstellung von Referenzen;
+    die Marken- und Namensrechte liegen bei den jeweiligen Unternehmen.
+  </p>
+  <p>
+    Sollten Sie auf einer Aufnahme abgebildet sein und eine Entfernung wünschen, oder auf eine Urheberrechtsverletzung
+    aufmerksam werden, schreiben Sie mir bitte an <a class="link-line" href={`mailto:${site.email}`}>{site.email}</a>. Ich
+    kümmere mich umgehend darum.
+  </p>
+
+  <h2>Einsatz von künstlicher Intelligenz</h2>
+  <p>
+    Transparenz ist mir wichtig, deshalb hier offen, wo KI im Spiel ist:
+  </p>
+  <ul>
+    <li>
+      <strong>Fotos:</strong> Die Bilder auf dieser Website sind echte Aufnahmen von realen Menschen, Räumen und Veranstaltungen.
+      In der Bildbearbeitung nutze ich KI-gestützte Hilfswerkzeuge, etwa zum Entrauschen, Maskieren oder für kleine Retuschen.
+      Gelegentlich wird ein Himmel ausgetauscht, ohne KI. Wurde Bildinhalt mit KI erzeugt, etwa bei virtuell eingerichteten
+      Räumen (Home Staging), ist das direkt am Bild mit „Virtuell eingerichtet (KI)“ gekennzeichnet.
+    </li>
+    <li>
+      <strong>Texte und Website:</strong> Texte und Programmierung dieser Website sind teilweise mit Unterstützung von KI entstanden.
+      Ich habe alle Inhalte geprüft, überarbeitet und trage dafür die redaktionelle Verantwortung.
+    </li>
+  </ul>
+  <p>
+    Die Kennzeichnung erfolgt im Sinne der Transparenzpflichten nach Art. 50 der EU-Verordnung über künstliche Intelligenz
+    (KI-Verordnung).
   </p>
 
   <h2>Verbraucherstreitbeilegung</h2>
-  <p>Ich bin nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+  <p>
+    Ich bin nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+  </p>
 </LegalLayout>
