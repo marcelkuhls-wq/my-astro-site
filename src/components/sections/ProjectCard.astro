@@ -1,0 +1,46 @@
+---
+/** Eine Projektkachel: Titelbild, Titel, Leistung · Ort, optional ein Satz Kontext. */
+import Photo from '../media/Photo.astro';
+import { serviceById } from '../../data/services';
+import type { Project } from '../../lib/work';
+
+interface Props {
+  project: Project;
+  ratio: string;
+  sizes: string;
+  crop?: boolean;
+  priority?: boolean;
+  showContext?: boolean;
+  /** Seitenübergang nur für eine Variante setzen (Namen müssen eindeutig sein) */
+  transition?: boolean;
+  class?: string;
+}
+const { project: p, ratio, sizes, crop = false, priority = false, showContext = true, transition = true, class: className } = Astro.props;
+const service = serviceById(p.data.service);
+---
+
+<article class={className}>
+  <a href={`/work/${p.id}`} class="group block">
+    <div class="zoom-on-hover overflow-hidden">
+      <Photo
+        transitionName={transition ? `work-${p.id}` : undefined}
+        id={p.data.cover.id}
+        spec={p.data.cover.spec}
+        position={p.data.cover.position}
+        ratio={ratio}
+        sizes={sizes}
+        crop={crop}
+        priority={priority}
+      />
+    </div>
+    <div class="mt-4" data-reveal>
+      <h3 class="text-[1rem] leading-snug font-medium tracking-[-0.012em] md:text-[1.125rem]">
+        <span class="link-line decoration-transparent group-hover:decoration-current">{p.data.title}</span>
+      </h3>
+      <p class="label mt-1.5 text-muted">
+        {service.title} · {p.data.location}
+      </p>
+      {showContext && <p class="mt-3 max-w-[34rem] text-[0.9375rem] text-muted">{p.data.summary}</p>}
+    </div>
+  </a>
+</article>

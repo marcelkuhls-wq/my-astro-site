@@ -5,9 +5,8 @@
  * So entstehen wechselnde Bildgrößen ohne Masonry und ohne Lücken auf Mobile.
  */
 import type { ImageMetadata } from 'astro';
-import Photo from '../media/Photo.astro';
+import ProjectCard from './ProjectCard.astro';
 import { photos } from '../../data/photos';
-import { serviceById } from '../../data/services';
 import type { Project } from '../../lib/work';
 
 interface Props {
@@ -16,7 +15,7 @@ interface Props {
   priorityFirst?: boolean;
   /** "pair" = zwei gleich große Querformate, z. B. für "Weitere Projekte" */
   /** "compact" = 1 breit + 3 nebeneinander (Startseite) */
-  /** "grid" = kompakte Bildreihen im Originalformat, ohne Beschnitt (Projektübersicht) */
+  /** "grid" = Masonry mit zwei Formaten (Projektübersicht) */
   layout?: 'editorial' | 'pair' | 'compact' | 'grid';
   /** Ein Satz Kontext unter jedem Projekt: wofür die Bilder entstanden sind */
   showContext?: boolean;
@@ -37,8 +36,7 @@ const compactSlots = [
   { cls: 'col-span-12 md:col-span-4', ratio: '4 / 5', sizes: '(min-width: 768px) 31vw, 100vw' },
   { cls: 'col-span-12 md:col-span-4', ratio: '4 / 5', sizes: '(min-width: 768px) 31vw, 100vw' },
 ];
-const gridSlot = { cls: '', ratio: '3 / 2', sizes: '(min-width: 768px) 36vw, 70vw' };
-const slots = layout === 'grid' ? [gridSlot] : layout === 'pair' ? [pairSlot] : layout === 'compact' ? compactSlots : editorialSlots;
+const slots = layout === 'pair' ? [pairSlot] : layout === 'compact' ? compactSlots : editorialSlots;
 // "compact": nur das erste Projekt breit, danach alle in Dreierreihen
 const slotFor = (i: number) => (layout === 'compact' ? (i === 0 ? compactSlots[0] : compactSlots[1]) : slots[i % slots.length]);
 
@@ -58,6 +56,16 @@ const slotPortrait = (i: number) => {
   const [w, h] = slotFor(i).ratio.split('/').map(Number);
   return h > w;
 };
+// Masonry-Verteilung: Bildhöhe je Format, plus Platz für die Bildunterschrift
+const masonry = (n: number) => {
+  const cols = Array.from({ length: n }, () => ({ h: 0, items: [] as { p: Project; i: number }[] }));
+  projects.forEach((p, i) => {
+    const c = cols.reduce((a, b) => (b.h < a.h - 0.01 ? b : a));
+    c.items.push({ p, i });
+    c.h += (isPortrait(p) ? 1.25 : 2 / 3) + 0.3;
+  });
+  return cols.map((c) => c.items);
+};
 const ordered: Project[] = [];
 if (layout === 'compact' || layout === 'grid') ordered.push(...projects);
 else {
@@ -70,59 +78,34 @@ else {
 }
 ---
 
-<div class:list={layout === 'grid' ? 'justified wrap flex flex-wrap items-start gap-x-[var(--gutter)] gap-y-10 md:gap-y-14' : 'wrap grid-12 items-start gap-y-12 md:gap-y-20'}>
-  {
-    ordered.map((p, i) => {
-      const slot = slotFor(i);
-      // Passt das Format trotzdem nicht (Hochformat im Querformat-Platz), wird beschnitten
-      const crop = layout !== 'grid' && isPortrait(p) && !slotPortrait(i);
-      // "grid": Breite proportional zum Seitenverhältnis → gleiche Bildhöhe je Reihe
-      const r = ratioOf(p);
-      const service = serviceById(p.data.service);
-      return (
-        <article class={layout === 'grid' ? 'min-w-0' : slot.cls} style={layout === 'grid' ? `flex: ${r.toFixed(3)} 1 calc(var(--jb) * ${r.toFixed(3)})` : undefined}>
-          <a href={`/work/${p.id}`} class="group block">
-            <div class="zoom-on-hover overflow-hidden">
-              <Photo
-                transitionName={`work-${p.id}`}
-                id={p.data.cover.id}
-                spec={p.data.cover.spec}
-                position={p.data.cover.position}
-                ratio={slot.ratio}
-                sizes={slot.sizes}
-                crop={crop}
-                priority={priorityFirst && i === 0}
-              />
+{
+  layout === 'grid' ? (
+    <>
+      {/* Masonry: gleich breite Spalten, nur zwei Formate (quer 3:2, hoch 4:5); jedes Projekt kommt in die
+          jeweils kürzeste Spalte, so enden alle Spalten etwa gleich. */}
+      {[
+        { n: 3, cls: 'hidden md:flex', sizes: '(min-width: 768px) 31vw, 100vw', main: true },
+        { n: 2, cls: 'flex md:hidden', sizes: '50vw', main: false },
+      ].map((v) => (
+        <div class:list={['wrap items-start gap-x-[var(--gutter)]', v.cls]}>
+          {masonry(v.n).map((col) => (
+            <div class="flex min-w-0 flex-1 flex-col gap-y-10 md:gap-y-14">
+              {col.map(({ p, i }) => (
+                <ProjectCard project={p} ratio={isPortrait(p) ? '4 / 5' : '3 / 2'} crop sizes={v.sizes} showContext={showContext} priority={v.main && priorityFirst && i === 0} transition={v.main} />
+              ))}
             </div>
-            <div class="mt-4" data-reveal>
-              <h3 class="text-[1rem] md:text-[1.125rem] leading-snug font-medium tracking-[-0.012em]">
-                <span class="link-line decoration-transparent group-hover:decoration-current">{p.data.title}</span>
-              </h3>
-              <p class="label mt-1.5 text-muted">
-                {service.title} · {p.data.location}
-              </p>
-              {showContext && <p class="mt-3 max-w-[34rem] text-[0.9375rem] text-muted">{p.data.summary}</p>}
-            </div>
-          </a>
-        </article>
-      );
-    })
-  }
-  {layout === 'grid' && <span class="flex-[10_1_0%]" aria-hidden="true" />}
-</div>
-
-<style>
-  .justified {
-    --jb: 9rem;
-  }
-  @media (min-width: 768px) {
-    .justified {
-      --jb: 13rem;
-    }
-  }
-  @media (min-width: 1280px) {
-    .justified {
-      --jb: 16rem;
-    }
-  }
-</style>
+          ))}
+        </div>
+      ))}
+    </>
+  ) : (
+    <div class="wrap grid-12 items-start gap-y-12 md:gap-y-20">
+      {ordered.map((p, i) => {
+        const slot = slotFor(i);
+        // Passt das Format trotzdem nicht (Hochformat im Querformat-Platz), wird beschnitten
+        const crop = isPortrait(p) && !slotPortrait(i);
+        return <ProjectCard class={slot.cls} project={p} ratio={slot.ratio} sizes={slot.sizes} crop={crop} showContext={showContext} priority={priorityFirst && i === 0} />;
+      })}
+    </div>
+  )
+}

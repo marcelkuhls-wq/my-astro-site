@@ -1,7 +1,7 @@
 ---
 /**
  * Kundenlogos als ruhiges Laufband: läuft von rechts nach links, blendet an den
- * Rändern weich aus, hält beim Überfahren an. Bei „weniger Bewegung“ statisch.
+ * Rändern weich aus, das überfahrene Logo tritt hervor. Bei „weniger Bewegung“ statisch.
  */
 import { logos } from '../../data/clients';
 
@@ -67,10 +67,7 @@ const { class: className } = Astro.props;
     display: flex;
     width: max-content;
     will-change: transform;
-    animation: logo-scroll 55s linear infinite;
-  }
-  .logo-marquee:hover .logo-track {
-    animation-play-state: paused;
+    animation: logo-scroll 45s linear infinite;
   }
   .logo-set {
     display: flex;
