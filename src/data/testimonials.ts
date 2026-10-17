@@ -20,7 +20,9 @@ export const testimonials: Testimonial[] = [
     quote:
       'Wir fotografieren seit längerer Zeit hochwertige Immobilien in Hamburg mit Marcel Kuhls und sind sehr zufrieden. Einmal vom professionellen Auftreten gegenüber Eigentümern und auch in Bezug auf die Fotoqualität, die immer sehr gut ist. Zusätzlich arbeitet Marcel häufig mit Drohnenfotos, was für unser Auftreten sehr modern wirkt.',
     name: 'Felix Weiss',
+    company: 'Weiss Immobilien',
     source: 'Google-Bewertung',
+    project: 'weiss-immobilien',
   },
   {
     id: 'till',
