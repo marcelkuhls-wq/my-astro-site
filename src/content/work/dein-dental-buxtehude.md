@@ -14,9 +14,9 @@ scope: "Team-Portraits, Behandlungssituationen, Praxisräume"
 task: "Für den Auftritt der Praxis in Buxtehude sollten Team und Behandlungsalltag so gezeigt werden, dass sich Patientinnen und Bewerber gleichermaßen angesprochen fühlen."
 approach: "Ich habe Portraits des Teams vor natürlichem Hintergrund fotografiert und Behandlungen im laufenden Betrieb begleitet – vom Röntgenbild am Tablet bis zum Eingriff."
 cover:
-  id: ddb-01
+  id: ddb-11
   spec:
-    alt: "Zahnärztin behandelt eine Patientin."
+    alt: "Praxisalltag bei Dein Dental in Buxtehude."
     category: "Employer Branding"
     format: "Querformat"
     motif: "Titel"
@@ -87,12 +87,12 @@ gallery:
           motif: "ddb-10"
   - layout: pair
     images:
-      - id: ddb-11
+      - id: ddb-01
         spec:
-          alt: "Praxisalltag bei Dein Dental in Buxtehude."
+          alt: "Zahnärztin behandelt eine Patientin."
           category: "Employer Branding"
           format: "Querformat"
-          motif: "ddb-11"
+          motif: "ddb-01"
       - id: ddb-12
         spec:
           alt: "Praxisalltag bei Dein Dental in Buxtehude."
