@@ -16,6 +16,8 @@ summary: Reportage der Jubiläumsfeier zum 20-jährigen Bestehen – Begrüßung
 featured: false
 order: 10
 scope: "Abendreportage: Begrüßung, Reden, Gäste, Bar und Details"
+usage: [Social Media, Blog]
+outcome: "Die Bilder begleiten den Jubiläumsauftritt in Social Media und erschienen im Blogbeitrag „20 Jahre Adam & Eve Beautylounge – Mehr als nur ein Jubiläum“ der Augenmanufaktur, einer Marke der Unternehmensgruppe."
 task: "Zum 20-jährigen Bestehen lud die Adam & Eve Beautylounge Gäste und Partner auf die Alsterinsel. Gefragt war eine Reportage, die den Abend als Ganzes erzählt – von der Begrüßung bis zu den Details an der Bar."
 approach: "Ich habe den Abend dokumentarisch begleitet: Begrüßung und Rede der Gastgeberin, Begegnungen unter den Gästen, die Jubiläumswand und die Inszenierung an der Bar im roten Licht. Zurückhaltend, ohne Gäste für Fotos aufzustellen."
 cover:

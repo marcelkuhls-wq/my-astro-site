@@ -12,6 +12,7 @@ summary: Teambilder, Portraits und Arbeitssituationen des Maklerteams – im Bü
 featured: true
 order: 6
 scope: "Einzelportraits, Teambild, Büro, Ladenfront, Viertel"
+usage: [Website, Social Media]
 task: "Das Maklerteam von Weiss Immobilien sollte einen einheitlichen Bildauftritt bekommen: Portraits, Teambilder und Arbeitssituationen, die zusammenpassen."
 approach: "Ich habe im Büro, vor dem Geschäft und unterwegs im Viertel fotografiert – Einzelportraits vor neutralem Hintergrund, Szenen am Schreibtisch und das ganze Team vor der Ladenfront, in einer durchgängigen Bildsprache."
 cover:
