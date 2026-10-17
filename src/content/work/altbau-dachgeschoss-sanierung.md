@@ -1,7 +1,7 @@
 ---
 title: Saniertes Altbau-Dachgeschoss
 # TODO: Kunde (Makler/Eigentümer) und Ort prüfen
-client: Immobilienvermarktung
+client: THB Capital Invest GmbH
 industry: Immobilien
 service: immobilien
 location: Hamburg

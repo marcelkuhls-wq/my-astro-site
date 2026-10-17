@@ -104,11 +104,11 @@ export const photos: Record<string, PhotoSpec> = {
     position: '50% 30%',
   },
   'home-eb-feature-2': {
-    alt: 'Mitarbeiterin am Empfang der Kleintierpraxis Benecke am Bildschirm.',
+    alt: 'Vier Kolleginnen von Dein Dental schauen gemeinsam auf einen Laptop.',
     category: 'Employer Branding',
     format: 'Querformat 3:2',
     motif: 'Kleintierpraxis Benecke – Empfang',
-    file: 'benecke-empfang',
+    file: 'dd-02',
   },
   'home-about': {
     alt: 'Marcel Kuhls, Fotograf und Gründer von Studio Kuhls.',
@@ -121,20 +121,18 @@ export const photos: Record<string, PhotoSpec> = {
 
   /* ── Employer Branding ──────────────────────────────────────────────── */
   'eb-hero': {
-    alt: 'Das Team von Weiss Immobilien vor der Ladenfront in Hamburg.',
+    alt: 'Team von Dein Dental bespricht sich am Konferenztisch mit Laptop.',
     category: 'Employer Branding',
     format: 'Querformat 16:9 (Mobile: 4:5)',
     motif: 'Weiss Immobilien – Team',
-    file: 'weiss-team-storefront',
-    position: '50% 50%',
+    file: 'dd-01',
   },
   'eb-situation-wide': {
-    alt: 'Tierärztin untersucht eine Katze im Behandlungsraum.',
+    alt: 'Mitarbeiter von Dein Dental arbeitet konzentriert am Laptop.',
     category: 'Employer Branding',
     format: 'Panorama 21:9',
     motif: 'Kleintierpraxis Benecke',
-    file: 'benecke-untersuchung-katze',
-    position: '50% 50%',
+    file: 'dd-07',
   },
   'eb-situation-1': {
     alt: 'Tierärztin hält einen Hund beim Röntgen.',

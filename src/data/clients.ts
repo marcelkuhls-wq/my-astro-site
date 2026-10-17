@@ -20,13 +20,18 @@ export const clients: Client[] = [];
 export const clientNames: string[] = [
   'Engel & Völkers',
   'Armand de Brignac',
+  'Dein Dental',
   'gamesright × HSV',
+  'Garner Hotel (IHG)',
   'Weiss Immobilien',
+  'Lindbergh',
   'Stadermann',
+  'Bar Tabac',
+  'Lippe Personal',
   'Adam & Eve',
-  'Haacke Objektsteuerung',
+  'Select Hotel',
+  'Tiedemann Immobilien',
   'Four Elements',
-  'Kleintierpraxis Benecke',
 ];
 
 /** Veröffentlichungen mit Bildnachweis „© Marcel Kuhls“ – nur mit Link zum Beleg. */

@@ -1,7 +1,7 @@
 ---
 title: Neubau mit Gartenwohnung
 # TODO: Kunde (Makler/Eigentümer) und Ort prüfen
-client: Immobilienvermarktung
+client: Petersen Immobilien
 industry: Immobilien
 service: immobilien
 location: Hamburg
@@ -36,6 +36,48 @@ gallery:
           category: "Interior"
           format: "Hochformat 4:5"
           motif: "immo-neubau-treppenhaus"
+  - layout: pair
+    images:
+      - id: pet-01
+        spec:
+          alt: "Luftaufnahme des Neubaus mit Gärten von oben."
+          category: "Immobilien"
+          format: "Querformat"
+          motif: "pet-01"
+      - id: pet-02
+        spec:
+          alt: "Neubau von der Gartenseite mit Rasen und Hecken."
+          category: "Immobilien"
+          format: "Querformat"
+          motif: "pet-02"
+  - layout: pair
+    images:
+      - id: pet-03
+        spec:
+          alt: "Wohnzimmer mit Sofa und Blick auf die Terrasse."
+          category: "Immobilien"
+          format: "Querformat"
+          motif: "pet-03"
+      - id: pet-04
+        spec:
+          alt: "Bad mit Badewanne und Dusche."
+          category: "Immobilien"
+          format: "Querformat"
+          motif: "pet-04"
+  - layout: pair
+    images:
+      - id: pet-05
+        spec:
+          alt: "Terrasse mit Loungemöbeln."
+          category: "Immobilien"
+          format: "Querformat"
+          motif: "pet-05"
+      - id: pet-06
+        spec:
+          alt: "Garten mit Terrasse in der Abenddämmerung."
+          category: "Immobilien"
+          format: "Querformat"
+          motif: "pet-06"
 ---
 
 Die Drohnenaufnahme zeigt den Neubau mit seinen Gärten und Hecken im Zusammenhang – ein Motiv, das Lage und Grünflächen sofort verständlich macht.

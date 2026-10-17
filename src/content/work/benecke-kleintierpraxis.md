@@ -100,6 +100,28 @@ gallery:
           category: "Detail"
           format: "Hochformat 4:5"
           motif: "praxisschild"
+  - layout: full
+    images:
+      - id: benecke-x-01
+        spec:
+          alt: "Das Team der Kleintierpraxis Benecke vor dem Praxisgebäude."
+          category: "Team"
+          format: "Querformat"
+          motif: "benecke-x-01"
+  - layout: offset
+    images:
+      - id: benecke-x-02
+        spec:
+          alt: "Luftaufnahme der Praxis im Ortskern von Elstorf."
+          category: "Praxis"
+          format: "Querformat"
+          motif: "benecke-x-02"
+      - id: benecke-x-03
+        spec:
+          alt: "Portrait eines Mitarbeiters der Praxis."
+          category: "Portrait"
+          format: "Hochformat"
+          motif: "benecke-x-03"
 ---
 
 Die Bildserie verbindet Portraits des Teams mit echten Situationen aus dem Praxisalltag: Untersuchungen mit dem Stethoskop, Röntgen, die Auswertung von Dentalröntgenbildern und der Empfang.

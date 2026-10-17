@@ -1,0 +1,90 @@
+---
+title: "Garner Hotel – Eröffnung"
+client: "Garner Hotel (IHG) / Novum"
+industry: "Hotellerie"
+service: events
+alsoServices: [immobilien]
+location: "Deutschland"
+year: 2024
+summary: "Eröffnung eines Garner Hotels an IHG Hotel: Bandschnitt, Gäste, Team – und die neuen Zimmer und Räume."
+usage: [PR, Social Media]
+featured: false
+order: 9.7
+scope: "Eröffnungsreportage, Teambild, Hotel-Interior"
+task: "Zur Eröffnung sollten der Moment selbst und das neue Haus dokumentiert werden – für PR und Social Media."
+approach: "Ich habe Bandschnitt, Gäste und Team begleitet und zwischen den Programmpunkten Lobby, Frühstücksraum und Zimmer fotografiert."
+cover:
+  id: gar-01
+  spec:
+    alt: "Bandschnitt mit Konfetti zur Hotel-Eröffnung."
+    category: "Events"
+    format: "Querformat"
+    motif: "Titel"
+gallery:
+  - layout: pair
+    images:
+      - id: gar-02
+        spec:
+          alt: "Hotelteam an der Rezeption."
+          category: "Events"
+          format: "Querformat"
+          motif: "gar-02"
+      - id: gar-03
+        spec:
+          alt: "Gastgeber vor dem Welcome-Aufsteller."
+          category: "Events"
+          format: "Querformat"
+          motif: "gar-03"
+  - layout: pair
+    images:
+      - id: gar-04
+        spec:
+          alt: "Garner-Wand mit Kunstdrucken."
+          category: "Events"
+          format: "Querformat"
+          motif: "gar-04"
+      - id: gar-05
+        spec:
+          alt: "Gastgeber an der Frühstücksbar."
+          category: "Events"
+          format: "Querformat"
+          motif: "gar-05"
+  - layout: pair
+    images:
+      - id: gar-06
+        spec:
+          alt: "Anschneiden der Eröffnungstorte."
+          category: "Events"
+          format: "Querformat"
+          motif: "gar-06"
+      - id: gar-07
+        spec:
+          alt: "Frühstücksraum mit Sitzbänken."
+          category: "Events"
+          format: "Querformat"
+          motif: "gar-07"
+  - layout: pair
+    images:
+      - id: gar-08
+        spec:
+          alt: "Gäste vor der Garner-Wand."
+          category: "Events"
+          format: "Querformat"
+          motif: "gar-08"
+      - id: gar-09
+        spec:
+          alt: "Hotelzimmer mit Doppelbett."
+          category: "Events"
+          format: "Querformat"
+          motif: "gar-09"
+  - layout: full
+    images:
+      - id: gar-10
+        spec:
+          alt: "Hotelflur mit grünen Türen."
+          category: "Events"
+          format: "Querformat"
+          motif: "gar-10"
+---
+
+Event und Hotelfotografie an einem Tag: der Bandschnitt mit Konfetti, das Team an der Rezeption, die Gastgeber im Gespräch – und die Räume, die ab sofort Gäste empfangen.

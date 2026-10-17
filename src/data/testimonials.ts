@@ -47,6 +47,7 @@ export const testimonials: Testimonial[] = [
     name: 'Felix Lippe',
     company: 'Lippe Personal',
     source: 'Google-Bewertung',
+    project: 'lippe-personal-office-opening',
   },
   {
     id: 'rabil-smith',
