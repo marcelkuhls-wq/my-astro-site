@@ -16,7 +16,7 @@ interface Props {
   priorityFirst?: boolean;
   /** "pair" = zwei gleich große Querformate, z. B. für "Weitere Projekte" */
   /** "compact" = 1 breit + 3 nebeneinander (Startseite) */
-  /** "grid" = gleichmäßiges, kompaktes Raster (Projektübersicht) */
+  /** "grid" = kompakte Bildreihen im Originalformat, ohne Beschnitt (Projektübersicht) */
   layout?: 'editorial' | 'pair' | 'compact' | 'grid';
   /** Ein Satz Kontext unter jedem Projekt: wofür die Bilder entstanden sind */
   showContext?: boolean;
@@ -37,7 +37,7 @@ const compactSlots = [
   { cls: 'col-span-12 md:col-span-4', ratio: '4 / 5', sizes: '(min-width: 768px) 31vw, 100vw' },
   { cls: 'col-span-12 md:col-span-4', ratio: '4 / 5', sizes: '(min-width: 768px) 31vw, 100vw' },
 ];
-const gridSlot = { cls: 'col-span-6 md:col-span-4 lg:col-span-3', ratio: '4 / 5', sizes: '(min-width: 1024px) 23vw, (min-width: 768px) 31vw, 50vw' };
+const gridSlot = { cls: '', ratio: '3 / 2', sizes: '(min-width: 768px) 36vw, 70vw' };
 const slots = layout === 'grid' ? [gridSlot] : layout === 'pair' ? [pairSlot] : layout === 'compact' ? compactSlots : editorialSlots;
 // "compact": nur das erste Projekt breit, danach alle in Dreierreihen
 const slotFor = (i: number) => (layout === 'compact' ? (i === 0 ? compactSlots[0] : compactSlots[1]) : slots[i % slots.length]);
@@ -49,6 +49,10 @@ const dims = new Map(Object.entries(files).map(([path, m]) => [path.split('/').p
 const isPortrait = (p: Project) => {
   const img = dims.get(p.data.cover.id) ?? dims.get(photos[p.data.cover.id]?.file ?? '');
   return img ? img.height > img.width : false;
+};
+const ratioOf = (p: Project) => {
+  const img = dims.get(p.data.cover.id) ?? dims.get(photos[p.data.cover.id]?.file ?? '');
+  return img ? img.width / img.height : 1.5;
 };
 const slotPortrait = (i: number) => {
   const [w, h] = slotFor(i).ratio.split('/').map(Number);
@@ -66,15 +70,17 @@ else {
 }
 ---
 
-<div class:list={['wrap grid-12 items-start', layout === 'grid' ? 'gap-y-10 md:gap-y-14' : 'gap-y-12 md:gap-y-20']}>
+<div class:list={layout === 'grid' ? 'justified wrap flex flex-wrap items-start gap-x-[var(--gutter)] gap-y-10 md:gap-y-14' : 'wrap grid-12 items-start gap-y-12 md:gap-y-20'}>
   {
     ordered.map((p, i) => {
       const slot = slotFor(i);
       // Passt das Format trotzdem nicht (Hochformat im Querformat-Platz), wird beschnitten
-      const crop = layout === 'grid' || (isPortrait(p) && !slotPortrait(i));
+      const crop = layout !== 'grid' && isPortrait(p) && !slotPortrait(i);
+      // "grid": Breite proportional zum Seitenverhältnis → gleiche Bildhöhe je Reihe
+      const r = ratioOf(p);
       const service = serviceById(p.data.service);
       return (
-        <article class={slot.cls}>
+        <article class={layout === 'grid' ? 'min-w-0' : slot.cls} style={layout === 'grid' ? `flex: ${r.toFixed(3)} 1 calc(var(--jb) * ${r.toFixed(3)})` : undefined}>
           <a href={`/work/${p.id}`} class="group block">
             <div class="zoom-on-hover overflow-hidden">
               <Photo
@@ -102,4 +108,21 @@ else {
       );
     })
   }
+  {layout === 'grid' && <span class="flex-[10_1_0%]" aria-hidden="true" />}
 </div>
+
+<style>
+  .justified {
+    --jb: 9rem;
+  }
+  @media (min-width: 768px) {
+    .justified {
+      --jb: 13rem;
+    }
+  }
+  @media (min-width: 1280px) {
+    .justified {
+      --jb: 16rem;
+    }
+  }
+</style>
