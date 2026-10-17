@@ -43,12 +43,12 @@ export const photos: Record<string, PhotoSpec> = {
     position: '50% 85%',
   },
   'home-eb': {
-    alt: 'Teil des Teams von Weiss Immobilien entspannt auf dem Sofa im Büro.',
+    alt: 'Drei Mitarbeitende von NXG im Gespräch an der Hafenpromenade, im Hintergrund die Elbphilharmonie.',
     category: 'Employer Branding',
     format: 'Querformat 3:2',
-    motif: 'Weiss Immobilien – Team',
-    file: 'weiss-team-sofa',
-    position: '50% 15%',
+    motif: 'NXG – Team am Hafen',
+    file: 'nxg-01',
+    position: '50% 40%',
   },
   'home-business-1': {
     alt: 'Portrait eines Mitarbeiters in beigem Sakko vor neutralem Hintergrund.',
