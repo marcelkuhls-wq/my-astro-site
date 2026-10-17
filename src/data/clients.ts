@@ -18,6 +18,7 @@ export const clients: Client[] = [];
  * bereits öffentlich auf der Website stehen. Keine Logos, daher keine Freigabe nötig.
  */
 export const clientNames: string[] = [
+  'Everllence',
   'Armand de Brignac',
   'Dein Dental',
   'gamesright × HSV',
