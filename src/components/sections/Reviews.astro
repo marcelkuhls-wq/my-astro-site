@@ -97,19 +97,29 @@ const meta = (t: (typeof list)[number]) => [t.role, t.company].filter(Boolean).j
     track.tabIndex = 0;
     mark();
 
-    // Automatischer Wechsel alle 8 s – pausiert bei Maus, Fokus, Berührung,
+    // Automatischer Wechsel – pausiert bei Maus, Fokus, Berührung,
     // wenn der Bereich nicht sichtbar ist oder „Bewegung reduzieren“ aktiv ist.
     if (slides.length < 2 || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     let visible = false;
     let paused = false;
     let timer = 0;
-    const tick = () => {
-      if (visible && !paused && !document.hidden) go(current() + 1);
+    // Anzeigedauer nach Länge: ca. 3,5 s + 0,12 s pro Wort (kurz ≈ 5 s, lang ≈ 10 s)
+    const duration = (i: number) => {
+      const words = (slides[i]?.querySelector('blockquote')?.textContent ?? '').trim().split(/\s+/).length;
+      return Math.min(11000, Math.max(4500, 3500 + words * 120));
     };
-    const restart = () => {
-      clearInterval(timer);
-      timer = window.setInterval(tick, 8000);
+    const schedule = (shown = current()) => {
+      clearTimeout(timer);
+      timer = window.setTimeout(() => {
+        let next = shown;
+        if (visible && !paused && !document.hidden) {
+          next = (shown + 1) % slides.length;
+          go(next);
+        }
+        schedule(next);
+      }, duration(shown));
     };
+    const restart = () => setTimeout(() => schedule(), 600);
     new IntersectionObserver(([e]) => (visible = e.isIntersecting), { threshold: 0.4 }).observe(root);
     root.addEventListener('mouseenter', () => (paused = true));
     root.addEventListener('mouseleave', () => (paused = false));
@@ -117,6 +127,6 @@ const meta = (t: (typeof list)[number]) => [t.role, t.company].filter(Boolean).j
     root.addEventListener('focusout', () => (paused = false));
     root.addEventListener('touchstart', restart, { passive: true });
     root.querySelectorAll('button').forEach((b) => b.addEventListener('click', restart));
-    restart();
+    schedule(0);
   });
 </script>
