@@ -57,12 +57,12 @@ export const photos: Record<string, PhotoSpec> = {
     position: '50% 30%',
   },
   'home-business-2': {
-    alt: 'Portrait einer Mitarbeiterin mit Halstuch vor neutralem Hintergrund.',
+    alt: 'Björn Meins im dunkelblauen Anzug am Fenster, Blick nach draußen.',
     category: 'Business & Corporate',
     format: 'Hochformat 4:5',
-    motif: 'Weiss Immobilien – Portrait',
-    file: 'weiss-team-portrait-tuch',
-    position: '50% 30%',
+    motif: 'Björn Meins – Fenster',
+    file: 'meins-fenster-hochformat',
+    position: '50% 25%',
   },
   'home-immobilien': {
     alt: 'Heller Wohnraum mit Eichenparkett, Kücheninsel und bodentiefen Fenstern mit Blick über Hamburg.',
