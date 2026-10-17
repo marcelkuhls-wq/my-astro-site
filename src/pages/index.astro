@@ -15,6 +15,7 @@ import Reviews from '../components/sections/Reviews.astro';
 import JournalTeasers from '../components/sections/JournalTeasers.astro';
 import ClientLogos from '../components/sections/ClientLogos.astro';
 import ClientLine from '../components/sections/ClientLine.astro';
+import LogoRow from '../components/sections/LogoRow.astro';
 import Cta from '../components/sections/Cta.astro';
 import { serviceById, allUses } from '../data/services';
 import { getProjects } from '../lib/work';
@@ -48,7 +49,8 @@ const allProjects = await getProjects();
     </div>
   </section>
 
-  <ClientLine class="mt-10 md:mt-14" />
+  <LogoRow class="mt-10 md:mt-14" />
+  <ClientLine class="mt-6" pressOnly />
 
   {/* INTRO + WOFÜR ------------------------------------------------------- */}
   <Statement label="Studio Kuhls" class="section-t">
@@ -178,7 +180,6 @@ const allProjects = await getProjects();
     </div>
   </section>
 
-  <ClientLogos />
   <JournalTeasers />
 
   <Cta />

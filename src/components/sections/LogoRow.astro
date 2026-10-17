@@ -1,0 +1,32 @@
+---
+/** Kundenlogos als ruhige, einfarbige Reihe. */
+import { logos } from '../../data/clients';
+
+interface Props {
+  class?: string;
+}
+const { class: className } = Astro.props;
+---
+
+<div class:list={['wrap', className]} data-reveal>
+  <div class="grid-12 gap-y-6 border-t border-line pt-5">
+    <p class="label col-span-12 text-muted md:col-span-3">Projekte u. a. für</p>
+    <ul class="col-span-12 flex flex-wrap items-center gap-x-7 gap-y-5 md:col-span-9 md:gap-x-12 md:gap-y-7" aria-label="Kunden">
+      {
+        logos.map((l) => (
+          <li>
+            <img
+              src={`/logos/${l.file}`}
+              alt={l.name}
+              title={l.name}
+              loading="lazy"
+              decoding="async"
+              class="h-[calc(1.05rem*var(--s))] w-auto opacity-70 transition-opacity duration-300 hover:opacity-100 md:h-[calc(1.5rem*var(--s))]"
+              style={`--s: ${l.scale ?? 1}`}
+            />
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>
