@@ -357,6 +357,6 @@
 /* Startbild: auf schmalen Bildschirmen Person mittig halten */
 @media (max-width: 767px) {
   .hero-home img {
-    object-position: 51% 50% !important;
+    object-position: 48% 60% !important;
   }
 }

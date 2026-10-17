@@ -38,7 +38,7 @@ export const photos: Record<string, PhotoSpec> = {
     format: 'Querformat, sehr breit',
     motif: 'Björn Meins',
     file: 'meins-fenster-hafen',
-    position: '50% 55%',
+    position: '50% 85%',
   },
   'home-eb': {
     alt: 'Tierärztin untersucht lächelnd eine Katze mit dem Stethoskop.',
