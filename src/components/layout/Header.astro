@@ -25,13 +25,16 @@ const isActive = (href: string) => path === href || path.startsWith(`${href}/`);
       }
     </a>
     <script is:inline>
-      // Logo-Intro nur beim ersten Seitenaufruf der Sitzung
-      try {
-        if (!sessionStorage.getItem('sk-logo')) {
-          document.currentScript.previousElementSibling.classList.add('sk-intro');
+      // Logo-Intro: auf der Startseite bei jedem Aufruf, sonst nur einmal pro Sitzung
+      (function (logo) {
+        var home = location.pathname === '/' || location.pathname === '/index.html';
+        var seen = false;
+        try {
+          seen = !!sessionStorage.getItem('sk-logo');
           sessionStorage.setItem('sk-logo', '1');
-        }
-      } catch (e) {}
+        } catch (e) {}
+        if (home || !seen) logo.classList.add('sk-intro');
+      })(document.currentScript.previousElementSibling);
     </script>
 
     <nav aria-label="Hauptnavigation" class="hidden xl:block">
