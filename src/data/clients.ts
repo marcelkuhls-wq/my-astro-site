@@ -50,6 +50,7 @@ export const logos: { name: string; file: string; scale?: number }[] = [
   { name: 'gamesright', file: 'gamesright.png', scale: 0.85 },
   { name: 'Lindbergh', file: 'lindbergh.png', scale: 0.75 },
   { name: 'Weiss Immobilien', file: 'weiss-immobilien.png', scale: 0.5 },
+  { name: 'Tiedemann Immobilien', file: 'tiedemann-immobilien.png', scale: 1.4 },
   { name: 'Software Service Stadermann', file: 'stadermann.png', scale: 0.8 },
   { name: 'Lippe Personal', file: 'lippe-personal.png', scale: 1.2 },
   { name: 'Select Hotels', file: 'select-hotels.png', scale: 1.1 },
