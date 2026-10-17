@@ -15,6 +15,7 @@ summary: Abendevent auf der Plaza-Ebene und dem Dach der Elbphilharmonie – Gä
 # outcome: "..."
 featured: true
 order: 7
+scope: "Abendreportage: Gäste, DJ-Set, Champagner-Service, Location"
 task: "Armand de Brignac lud zu einem Abendevent auf die Plaza-Ebene und das Dach der Elbphilharmonie. Die Bilder sollten Gäste, Musik und Champagner-Service ebenso zeigen wie die besondere Lage über der Stadt."
 approach: "Ich habe den Abend vom Sonnenuntergang bis in die Nacht begleitet: Gäste im Gespräch, das DJ-Set im roten Licht, den Service am Glas und die Stadt vom Dach aus. Zurückhaltend und ohne ständigen Blitz, damit die Stimmung erhalten bleibt."
 cover:
@@ -132,3 +133,7 @@ gallery:
           format: "Hochformat 4:5"
           motif: "dach"
 ---
+
+Zwischen Plaza-Ebene und Dach der Elbphilharmonie entstand eine Serie, die Marke, Gäste und Ort zusammenbringt: Gäste im Gespräch unter hängenden Glühbirnen, das DJ-Set im roten Licht, Gläser mit Armand-de-Brignac-Gravur im Abendlicht.
+
+Dazu kommen Bilder, die nur an diesem Ort entstehen können – der Blick vom Dach über die Hamburger Innenstadt und den Hafen im Sonnenuntergang.

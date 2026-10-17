@@ -10,6 +10,7 @@ summary: Fotografische Begleitung eines Sponsoring-Termins beim HSV mit Marcell 
 # Optional ergänzen: scope, usage (z. B. [PR, LinkedIn, Social Media]), task, approach, outcome, testimonial
 featured: true
 order: 8
+scope: "Trikotübergabe, Mannschaftsfoto, Trainingsplatz"
 task: "gamesright wollte einen Sponsoring-Termin beim HSV mit Marcell Jansen fotografisch begleiten lassen – mit Bildern für die eigene Kommunikation rund um die Partnerschaft."
 approach: "Ich habe die Trikotübergabe, das Mannschaftsfoto und Momente auf dem Trainingsplatz dokumentiert, vom offiziellen Bild bis zu Szenen im Abendlicht."
 cover:
@@ -55,3 +56,7 @@ gallery:
           format: "Querformat 16:9"
           motif: "Mannschaft"
 ---
+
+Die Serie dokumentiert den Termin vom offiziellen Moment bis zur Stimmung auf dem Platz: die Übergabe des Trikots mit der Nummer 32 und dem gamesright-Schriftzug, das Mannschaftsfoto vor dem Tor und Spieler im Abendlicht.
+
+So stehen für die Kommunikation rund um die Partnerschaft sowohl klassische Pressebilder als auch atmosphärische Motive bereit.

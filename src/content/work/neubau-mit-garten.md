@@ -10,6 +10,7 @@ summary: Architektur-, Drohnen- und Interioraufnahmen eines Neubaus für die Ver
 usage: [Exposé, Immobilienportale, Website]
 featured: false
 order: 11
+scope: "Luftaufnahme, Interior, Treppenhaus"
 task: "Ein Neubau mit Gartenwohnung sollte für die Vermarktung von innen und außen gezeigt werden – inklusive Lage und Grünflächen."
 approach: "Ich habe Interior und Architektur fotografiert und mit einer Drohnenaufnahme ergänzt, die das Gebäude mit seinen Gärten im Zusammenhang zeigt."
 cover:
@@ -36,3 +37,7 @@ gallery:
           format: "Hochformat 4:5"
           motif: "immo-neubau-treppenhaus"
 ---
+
+Die Drohnenaufnahme zeigt den Neubau mit seinen Gärten und Hecken im Zusammenhang – ein Motiv, das Lage und Grünflächen sofort verständlich macht.
+
+Innen ergänzen ein heller Wohnraum mit bodentiefen Fenstern und das Treppenhaus mit Glastür zum Garten das Set.

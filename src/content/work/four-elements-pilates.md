@@ -10,6 +10,7 @@ summary: Trainerinnen-Portraits, Kursszenen und Kampagnenmotive für das neue Pi
 usage: [Instagram, Werbeanzeigen, Buchungsplattformen, Website]
 featured: true
 order: 1
+scope: "Trainerinnen-Portraits, Kursszenen, Details, Kampagnenmotive"
 task: "Das neue Pilates-Studio Four Elements in Winterhude brauchte Bildmaterial für den Start: für Instagram, Werbeanzeigen, Buchungsplattformen und die Website."
 approach: "Ich habe Trainerinnen-Portraits, Kursszenen und Details wie Logo und Studio-Socken fotografiert – viel im Hochformat, damit das Material direkt für Posts, Stories und Anzeigen nutzbar ist."
 cover:
@@ -126,3 +127,7 @@ gallery:
           format: "Hochformat 4:5"
           motif: "fe-studio-ball"
 ---
+
+Für den Start des Studios entstand ein Set aus drei Bausteinen: Portraits der Trainerinnen vor den beleuchteten Spiegeln, Kursszenen mit Hanteln und auf der Matte und Details wie Logo und Studio-Socken.
+
+Viele Motive sind im Hochformat fotografiert, damit sie direkt für Posts, Stories und Werbeanzeigen funktionieren – auch die Varianten im roten Licht.

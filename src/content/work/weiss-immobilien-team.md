@@ -11,6 +11,7 @@ summary: Teambilder, Portraits und Arbeitssituationen des Maklerteams – im Bü
 # Optional ergänzen: scope, usage, task, approach, outcome, testimonial
 featured: true
 order: 6
+scope: "Einzelportraits, Teambild, Büro, Ladenfront, Viertel"
 task: "Das Maklerteam von Weiss Immobilien sollte einen einheitlichen Bildauftritt bekommen: Portraits, Teambilder und Arbeitssituationen, die zusammenpassen."
 approach: "Ich habe im Büro, vor dem Geschäft und unterwegs im Viertel fotografiert – Einzelportraits vor neutralem Hintergrund, Szenen am Schreibtisch und das ganze Team vor der Ladenfront, in einer durchgängigen Bildsprache."
 cover:
@@ -95,3 +96,7 @@ gallery:
           format: "Hochformat 4:5"
           motif: "portrait-sitzend"
 ---
+
+Die Serie verbindet drei Ebenen: Einzelportraits vor neutralem Hintergrund, Szenen im Büro – am Schreibtisch, auf dem Sofa, im Sessel – und das ganze Team vor der Ladenfront mit dem Schriftzug.
+
+Bilder unterwegs in einer Hamburger Wohnstraße zeigen das Team dort, wo es arbeitet: im Viertel.

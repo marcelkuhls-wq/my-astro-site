@@ -193,3 +193,7 @@ gallery:
           format: "Original"
           motif: "st-labor-beratung"
 ---
+
+Die Bildserie reicht vom Team bis zum Produkt: Besprechungen und Präsentationen im Büro, Entwicklerarbeitsplätze mit mehreren Bildschirmen, Portraits der Mitarbeitenden und der Geschäftsführung.
+
+Im Dentallabor zeigen die Bilder, wie die Software im Alltag eingesetzt wird – von der Beratung über den Scan bis zum 3D-Druck von Modellen und Schienen.

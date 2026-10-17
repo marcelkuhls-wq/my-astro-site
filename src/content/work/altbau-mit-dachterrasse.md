@@ -10,6 +10,7 @@ summary: Altbauwohnung mit Wendeltreppe und Dachterrasse – vom historischen Fo
 usage: [Exposé, Immobilienportale, Website]
 featured: false
 order: 5
+scope: "Fassade, Foyer, Wohn- und Essbereich, Bad, Dachterrasse"
 task: "Für die Vermarktung einer Altbauwohnung mit Wendeltreppe und Dachterrasse brauchte es Bilder, die den Weg durch das Haus nachvollziehbar machen – vom Foyer bis über die Dächer."
 approach: "Ich habe das Objekt in der Reihenfolge einer Besichtigung fotografiert: Fassade und historisches Foyer, Wohn- und Essbereich, Bad unter dem Dachfenster und zum Abschluss die Dachterrasse mit verglastem Aufgang."
 cover:
@@ -69,3 +70,7 @@ gallery:
           format: "Hochformat 4:5"
           motif: "immo-altbau-zugang"
 ---
+
+Die Bilder führen in der Reihenfolge einer Besichtigung durch das Objekt: weiße Altbaufassade mit Stuck, historisches Foyer mit Fliesen, Essbereich mit Wendeltreppe und offener Küche, das Bad unter dem Dachfenster.
+
+Den Abschluss bildet die Dachterrasse mit Holzboden und verglastem Aufgang – das Motiv, das im Exposé den Unterschied macht.

@@ -15,6 +15,7 @@ summary: Architektur- und Interioraufnahmen einer Wohnung im Hochhaus – von de
 # outcome: "..."
 featured: true
 order: 9
+scope: "Fassade, Eingangshalle, Wohnräume, Loggia"
 task: "Für Weiss Immobilien sollte eine Wohnung in einem Hochhaus mit Hafenblick so fotografiert werden, dass Gebäude, Ausstattung und Ausblick gleichermaßen wirken."
 approach: "Ich habe von der Glasfassade und der Eingangshalle bis zu Wohnraum, Essbereich und Loggia fotografiert, mit natürlichem Licht und geraden Linien – und dem Blick über Hafen und Großmarkthalle."
 cover:
@@ -57,3 +58,7 @@ gallery:
           format: "Hochformat 4:5"
           motif: "Loggia"
 ---
+
+Das Set beginnt außen mit der Glasfassade des Wohnhochhauses, führt durch die Eingangshalle mit Pendelleuchten und bepflanzter Wand und endet in der Wohnung.
+
+Wohnraum mit Eichenparkett und Kücheninsel, Essbereich und die Loggia mit Blick über Hafen und Großmarkthalle zeigen, was das Objekt ausmacht: Licht, Ausstattung und Aussicht.

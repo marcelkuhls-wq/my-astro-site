@@ -10,6 +10,7 @@ summary: Interioraufnahmen einer möblierten Dachgeschosswohnung – Wohnraum, E
 usage: [Exposé, Immobilienportale, Website]
 featured: false
 order: 12
+scope: "Wohnraum, Essbereich, Hauseingang, Details"
 task: "Eine möblierte Dachgeschosswohnung sollte für die Vermarktung hell, wohnlich und großzügig wirken – ohne die Räume größer erscheinen zu lassen, als sie sind."
 approach: "Ich habe Wohnraum, Essbereich und Details mit natürlichem Licht fotografiert und den Hauseingang ergänzt, damit Interessenten auch die Umgebung einordnen können."
 cover:
@@ -49,3 +50,7 @@ gallery:
           format: "Hochformat 4:5"
           motif: "immo-dg-blick"
 ---
+
+Die Aufnahmen zeigen eine möblierte Dachgeschosswohnung hell und wohnlich: Wohnzimmer mit Sofa und Kronleuchter unter den Dachschrägen, Essbereich mit Blumen und Fensterblick.
+
+Der Hauseingang mit den Bäumen davor ordnet das Objekt im Viertel ein.

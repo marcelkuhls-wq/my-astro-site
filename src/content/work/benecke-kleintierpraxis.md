@@ -10,6 +10,7 @@ summary: Team-Portraits, Behandlungssituationen und Bilder der Praxis – für d
 usage: [Website, Social Media]
 featured: false
 order: 4
+scope: "Team-Portraits, Behandlungen, Empfang, Praxisgebäude"
 task: "Für die neue Website und Social Media brauchte die Kleintierpraxis Benecke in Elstorf Bilder, die das Team und den Praxisalltag zeigen – nahbar und ohne gestellte Szenen."
 approach: "Ich habe Team-Portraits mit Behandlungssituationen kombiniert: Untersuchungen, Röntgen, Empfang und die Praxis von außen. Die Tiere haben das Tempo bestimmt, die Bilder entstanden im laufenden Betrieb."
 cover:
@@ -100,3 +101,7 @@ gallery:
           format: "Hochformat 4:5"
           motif: "praxisschild"
 ---
+
+Die Bildserie verbindet Portraits des Teams mit echten Situationen aus dem Praxisalltag: Untersuchungen mit dem Stethoskop, Röntgen, die Auswertung von Dentalröntgenbildern und der Empfang.
+
+Ergänzt wird das Set um Bilder der Praxis von außen und um Details – so entsteht ein vollständiges Bild für Website und Social Media.

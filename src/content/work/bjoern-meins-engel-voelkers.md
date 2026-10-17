@@ -9,6 +9,7 @@ summary: Business-Portraits für Björn Meins – im Studio und vor der Fensterf
 usage: [Website, LinkedIn, Presse]
 featured: true
 order: 3
+scope: "Studio-Portraits, Fensterfront mit Hafenblick, Schwarzweiß-Varianten"
 task: "Björn Meins von Engel & Völkers brauchte Business-Portraits für Website, LinkedIn und Presse – mit Varianten für unterschiedliche Einsätze."
 approach: "Ich habe zwei Looks an einem Termin fotografiert: klassische Portraits im Studio-Setup und Bilder vor der Fensterfront mit Blick über den Hamburger Hafen, dazu Schwarzweiß-Varianten."
 cover:
@@ -59,3 +60,7 @@ gallery:
           format: "Hochformat 4:5"
           motif: "meins-fenster-hochformat"
 ---
+
+An einem Termin entstanden mehrere Looks: klassische Portraits im dunkelblauen Anzug vor neutralem Hintergrund und Bilder an einer bodentiefen Fensterfront mit Blick über den Hamburger Hafen.
+
+Schwarzweiß-Varianten und Motive mit verschränkten Armen oder dem Blick nach draußen geben die Auswahl für unterschiedliche Einsätze – von der Website bis zur Presse.
