@@ -41,12 +41,12 @@ export const photos: Record<string, PhotoSpec> = {
     position: '50% 85%',
   },
   'home-eb': {
-    alt: 'Tierärztin untersucht lächelnd eine Katze mit dem Stethoskop.',
+    alt: 'Drei Kollegen von Software Service Stadermann lachen im Gespräch am Besprechungstisch.',
     category: 'Employer Branding',
     format: 'Querformat 3:2',
-    motif: 'Four Elements – Kurs',
-    file: 'benecke-untersuchung-katze',
-    position: '45% 45%',
+    motif: 'Stadermann – Besprechung',
+    file: 'st-besprechung',
+    position: '50% 50%',
   },
   'home-business-1': {
     alt: 'Portrait eines Mitarbeiters in beigem Sakko vor neutralem Hintergrund.',
