@@ -30,7 +30,7 @@ const meta = (t: (typeof list)[number]) => [[t.role, t.company].filter(Boolean).
       {
         rest.length > 0 && (
           <div class="wrap mt-16 md:mt-24">
-            <ul class="grid gap-x-[var(--gutter)] gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+            <ul class="grid gap-x-[var(--gutter)] gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
               {rest.map((t, i) => (
                 <li class="border-t border-ink pt-5" data-reveal style={`--reveal-delay: ${i * 0.06}s`}>
                   <blockquote class="text-[1.0625rem] leading-relaxed"><p>„{t.quote}“</p></blockquote>
