@@ -3,7 +3,7 @@ title: "Garner Hotel – Eröffnung"
 client: "Garner Hotel (IHG) / Novum"
 industry: "Hotellerie"
 service: events
-alsoServices: [immobilien]
+alsoServices: []
 location: "Hamburg"
 year: 2024
 summary: "Eröffnung des Garner Hotels in Hamburg (an IHG Hotel): Bandschnitt, Gäste, Team – und die neuen Zimmer und Räume."
