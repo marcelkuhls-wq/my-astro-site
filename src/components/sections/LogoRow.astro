@@ -1,5 +1,8 @@
 ---
-/** Kundenlogos als ruhige, einfarbige Reihe. */
+/**
+ * Kundenlogos als ruhiges Laufband: läuft von rechts nach links, blendet an den
+ * Rändern weich aus, hält beim Überfahren an. Bei „weniger Bewegung“ statisch.
+ */
 import { logos } from '../../data/clients';
 
 interface Props {
@@ -11,22 +14,93 @@ const { class: className } = Astro.props;
 <div class:list={['wrap', className]} data-reveal>
   <div class="grid-12 gap-y-6 border-t border-line pt-5">
     <p class="label col-span-12 text-muted md:col-span-3">Projekte u. a. für</p>
-    <ul class="col-span-12 flex flex-wrap items-center gap-x-7 gap-y-5 md:col-span-9 md:gap-x-12 md:gap-y-7" aria-label="Kunden">
-      {
-        logos.map((l) => (
-          <li>
-            <img
-              src={`/logos/${l.file}`}
-              alt={l.name}
-              title={l.name}
-              loading="lazy"
-              decoding="async"
-              class="h-[calc(1.05rem*var(--s))] w-auto opacity-70 transition-opacity duration-300 hover:opacity-100 md:h-[calc(1.5rem*var(--s))]"
-              style={`--s: ${l.scale ?? 1}`}
-            />
-          </li>
-        ))
-      }
-    </ul>
+    <div class="logo-marquee col-span-12 md:col-span-9" aria-label="Kunden" role="list">
+      <div class="logo-track">
+        {
+          [0, 1].map((copy) => (
+            <ul class="logo-set" aria-hidden={copy === 1 ? 'true' : undefined}>
+              {logos.map((l) => (
+                <li role={copy === 0 ? 'listitem' : undefined}>
+                  <img
+                    src={`/logos/${l.file}`}
+                    alt={copy === 0 ? l.name : ''}
+                    title={l.name}
+                    loading="lazy"
+                    decoding="async"
+                    style={`--s: ${l.scale ?? 1}`}
+                  />
+                </li>
+              ))}
+            </ul>
+          ))
+        }
+      </div>
+    </div>
   </div>
 </div>
+
+<style>
+  .logo-marquee {
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+  }
+  .logo-track {
+    display: flex;
+    width: max-content;
+    animation: logo-scroll 45s linear infinite;
+  }
+  .logo-marquee:hover .logo-track {
+    animation-play-state: paused;
+  }
+  .logo-set {
+    display: flex;
+    align-items: center;
+    gap: 3.5rem;
+    padding-right: 3.5rem;
+    margin: 0;
+    list-style: none;
+  }
+  .logo-set img {
+    display: block;
+    width: auto;
+    height: calc(1.15rem * var(--s));
+    opacity: 0.7;
+    transition: opacity 0.3s;
+  }
+  .logo-set img:hover {
+    opacity: 1;
+  }
+  @media (min-width: 768px) {
+    .logo-set {
+      gap: 4.5rem;
+      padding-right: 4.5rem;
+    }
+    .logo-set img {
+      height: calc(1.5rem * var(--s));
+    }
+  }
+  @keyframes logo-scroll {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .logo-track {
+      animation: none;
+      width: auto;
+      flex-wrap: wrap;
+    }
+    .logo-set {
+      flex-wrap: wrap;
+      row-gap: 1.5rem;
+    }
+    .logo-set[aria-hidden='true'] {
+      display: none;
+    }
+    .logo-marquee {
+      mask-image: none;
+      -webkit-mask-image: none;
+    }
+  }
+</style>
