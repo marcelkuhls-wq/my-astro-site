@@ -13,7 +13,7 @@ const { class: className } = Astro.props;
 
 <section class:list={['logo-band border-y border-line py-10 md:py-14', className]} aria-label="Kunden">
   <p class="label wrap text-center text-muted" data-reveal>Projekte u. a. für</p>
-  <div class="logo-marquee mt-8 md:mt-10" data-reveal style="--reveal-delay: .1s">
+  <div class="logo-marquee mt-8 md:mt-10">
     <div class="logo-track">
       {
         [0, 1].map((copy) => (
@@ -40,14 +40,33 @@ const { class: className } = Astro.props;
 </section>
 
 <style>
+  /* Weiche Ränder als Verlauf-Overlays statt mask-image –
+     Safari aktualisiert animierte Inhalte unter einer Maske teils nicht. */
   .logo-marquee {
+    position: relative;
     overflow: hidden;
-    mask-image: linear-gradient(to right, transparent, #000 15%, #000 85%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, #000 15%, #000 85%, transparent);
+  }
+  .logo-marquee::before,
+  .logo-marquee::after {
+    content: '';
+    position: absolute;
+    inset-block: 0;
+    z-index: 1;
+    width: 15%;
+    pointer-events: none;
+  }
+  .logo-marquee::before {
+    left: 0;
+    background: linear-gradient(to right, var(--color-paper), transparent);
+  }
+  .logo-marquee::after {
+    right: 0;
+    background: linear-gradient(to left, var(--color-paper), transparent);
   }
   .logo-track {
     display: flex;
     width: max-content;
+    will-change: transform;
     animation: logo-scroll 55s linear infinite;
   }
   .logo-marquee:hover .logo-track {
@@ -88,8 +107,11 @@ const { class: className } = Astro.props;
     }
   }
   @keyframes logo-scroll {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
     to {
-      transform: translateX(-50%);
+      transform: translate3d(-50%, 0, 0);
     }
   }
   @media (prefers-reduced-motion: reduce) {
@@ -107,9 +129,9 @@ const { class: className } = Astro.props;
     .logo-set[aria-hidden='true'] {
       display: none;
     }
-    .logo-marquee {
-      mask-image: none;
-      -webkit-mask-image: none;
+    .logo-marquee::before,
+    .logo-marquee::after {
+      display: none;
     }
   }
 </style>
