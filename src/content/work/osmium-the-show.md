@@ -13,9 +13,9 @@ scope: "Eventreportage, Schmuck- und Uhrendetails, Model-Motive"
 task: "Das Osmium-Institut wollte seinen Auftritt auf der Messe dokumentieren – und gleichzeitig Bilder der Schmuckstücke für Marketing und Social Media mitnehmen."
 approach: "Ich habe Bühne, Interviews und Gäste begleitet und zwischendurch Uhren, Anhänger und Ringe am Stand fotografiert – ergänzt um Motive mit Model."
 cover:
-  id: osm-18
+  id: osm-19
   spec:
-    alt: "Model mit Collier im Abendkleid."
+    alt: "Model im rückenfreien Kleid mit Schmuck und Uhr."
     category: "Events"
     format: "Hochformat"
     motif: "Titel"
@@ -140,12 +140,12 @@ gallery:
           category: "Events"
           format: "Hochformat"
           motif: "osm-17"
-      - id: osm-19
+      - id: osm-18
         spec:
-          alt: "Model im rückenfreien Kleid mit Schmuck."
+          alt: "Model mit Collier im Abendkleid."
           category: "Events"
           format: "Hochformat"
-          motif: "osm-19"
+          motif: "osm-18"
   - layout: single-r
     images:
       - id: osm-20
