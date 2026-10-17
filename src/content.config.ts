@@ -57,6 +57,8 @@ const work = defineCollection({
     approach: z.string().optional(),
     /** "Im Einsatz" – wo die Bilder heute zu sehen sind */
     outcome: z.string().optional(),
+    /** Beleg zum Einsatz, z. B. Link zum Beitrag des Kunden */
+    outcomeLink: z.object({ href: z.string().url(), text: z.string() }).optional(),
     testimonial: z
       .object({ quote: z.string(), name: z.string(), role: z.string(), company: z.string() })
       .optional(),

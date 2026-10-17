@@ -15,6 +15,9 @@ task: "Zum Start des Trikotsponsorings beim HSV III wollte gamesright den ersten
 approach: "Ich habe den Besuch rund um das Heimspiel begleitet: die Trikotübergabe mit HSV-Präsident Marcell Jansen, das Mannschaftsfoto vor dem Tor und Szenen vom Spiel im Abendlicht."
 usage: [LinkedIn, Social Media]
 outcome: "Die Bilder erschienen im LinkedIn-Beitrag von gamesright zum Start des Trikotsponsorings beim HSV III – geteilt unter anderem von HSV-Präsident Marcell Jansen."
+outcomeLink:
+  href: "https://www.linkedin.com/posts/gamesright-gmbh_gamesright-hsv-dritteherren-ugcPost-7315280710687207426-hnyn"
+  text: "Beitrag von gamesright auf LinkedIn ansehen"
 cover:
   id: gamesright-hsv-trikot
   position: "50% 45%"
