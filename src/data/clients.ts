@@ -44,7 +44,7 @@ export const press: { outlet: string; href: string; note: string }[] = [
 
 /** Kundenlogos (einfarbig, public/logos/) – nur bekanntere Marken. scale gleicht die optische Größe aus. */
 export const logos: { name: string; file: string; scale?: number }[] = [
-  { name: 'Armand de Brignac', file: 'armand-de-brignac.png', scale: 1.5 },
+  { name: 'Everllence', file: 'everllence.png', scale: 0.9 },
   { name: 'Garner Hotels (IHG)', file: 'garner-hotels.png', scale: 1.05 },
   { name: 'Dein Dental', file: 'dein-dental.png', scale: 1.5 },
   { name: 'gamesright', file: 'gamesright.png', scale: 0.85 },
