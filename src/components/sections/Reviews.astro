@@ -108,8 +108,8 @@ const meta = (t: (typeof list)[number]) => [t.role, t.company].filter(Boolean).j
     });
     track.tabIndex = 0;
 
-    // Automatischer Wechsel: Der aktive Balken läuft während der Anzeigedauer
-    // von rechts nach links aus, dann springt er zur nächsten Bewertung.
+    // Automatischer Wechsel: Der aktive Balken füllt sich während der Anzeigedauer
+    // von links nach rechts, dann springt er zur nächsten Bewertung.
     // Pausiert bei Maus, Fokus, wenn der Bereich nicht sichtbar ist; aus bei „Bewegung reduzieren“.
     const auto = slides.length > 1 && !matchMedia('(prefers-reduced-motion: reduce)').matches;
     let visible = false;
@@ -129,7 +129,7 @@ const meta = (t: (typeof list)[number]) => [t.role, t.company].filter(Boolean).j
       anim = undefined;
       const fill = fills[i];
       if (!auto || !fill) return;
-      anim = fill.animate([{ transform: 'scaleX(1)' }, { transform: 'scaleX(0)' }], { duration: duration(i), easing: 'linear', fill: 'forwards' });
+      anim = fill.animate([{ transform: 'scaleX(0)' }, { transform: 'scaleX(1)' }], { duration: duration(i), easing: 'linear', fill: 'forwards' });
       anim.onfinish = () => go(i + 1);
       sync();
     }
