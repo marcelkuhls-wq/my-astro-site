@@ -49,6 +49,14 @@ const faq = [
     a: 'Quer- und Hochformate für Exposé, Website und Immobilienportale, innerhalb einer Woche nach dem Termin. Auf Wunsch zusätzlich zugeschnittene Formate für Social Media.',
   },
   {
+    q: 'Fotografieren Sie auch unser Makler-Team?',
+    a: 'Ja. Portraits und Teambilder für Website, Exposé und Portale entstehen in derselben Bildsprache wie die Objektfotos – an einem eigenen Termin oder, wenn es passt, am selben Tag.',
+  },
+  {
+    q: 'Arbeiten Sie regelmäßig für uns, zum Beispiel bei jedem neuen Objekt?',
+    a: 'Gerne. Bei wiederkehrendem Bedarf stimmen wir Ablauf und Vorlaufzeiten einmal ab, danach läuft jede Anfrage schneller.',
+  },
+  {
     q: 'Was kostet ein Immobilien-Shooting?',
     a: 'Das hängt von Umfang, Anzahl der Personen und Motive, Ort und geplanter Nutzung ab. Nach dem Briefing erhalten Sie ein verbindliches Angebot. Im Anfrageformular können Sie Ihren Budgetrahmen angeben – dann plane ich passend dazu.',
   },
@@ -97,7 +105,21 @@ const faq = [
 
   <UseLine items={uses} label="Im Einsatz" class="section-t" />
 
-  <SeoText label="Architektur" title="Architektur- und Interiorfotografie in Hamburg" link={{ href: '/immobilienwirtschaft', text: 'Für Makler & Immobilienunternehmen' }}>
+  <SeoText label="Für Makler & Immobilienunternehmen" title="Ihr Team und Ihre Objekte – aus einer Hand" link={{ href: '/mitarbeiterfotos', text: 'Einheitliche Teamportraits' }}>
+    <p>Für Maklerbüros, Bestandshalter und Projektentwickler fotografiere ich beides: <strong>die Menschen, die verkaufen, und die Objekte, die verkauft werden</strong>. Portraits für Teamseite und Exposé, dazu Architektur-, Interior- und Drohnenaufnahmen.</p>
+    <p>So passt Ihr Auftritt auf Website, Portalen und Social Media zusammen – und lässt sich bei jedem neuen Objekt fortsetzen.</p>
+  </SeoText>
+
+  <Gallery
+    layout="pair"
+    class="mt-14 md:mt-20"
+    images={[
+      { id: 'weiss-team-schreibtisch', spec: { alt: 'Mitarbeiterin von Weiss Immobilien im Gespräch am Schreibtisch.', category: 'Team', format: 'Original', motif: 'Weiss Immobilien' } },
+      { id: 'weiss-immobilien-wohnraum', spec: { alt: 'Wohnraum mit Blick über den Hamburger Hafen, fotografiert für Weiss Immobilien.', category: 'Objekt', format: 'Original', motif: 'Weiss Immobilien' } },
+    ]}
+  />
+
+  <SeoText label="Architektur" title="Architektur- und Interiorfotografie in Hamburg">
     <p>Neben Wohnungen für die Vermarktung fotografiere ich Architektur und Interiors: Fassaden, Treppenhäuser, Foyers, Büro- und Gastronomieflächen. Mit geraden Linien, natürlichen Farben und Perspektiven, die den Raum ehrlich wiedergeben.</p>
     <p>Für Lage und Umgebung ergänzen <strong>Drohnenaufnahmen</strong> das Set. Die Tageszeit plane ich nach der Ausrichtung des Gebäudes, damit Fassade und Ausblick im besten Licht stehen.</p>
   </SeoText>

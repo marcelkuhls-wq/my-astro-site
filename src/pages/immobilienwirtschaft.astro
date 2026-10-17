@@ -1,129 +1,17 @@
 ---
-import { ogImageFor } from '../lib/og';
-import BaseLayout from '../layouts/BaseLayout.astro';
-import PageHeader from '../components/sections/PageHeader.astro';
-import Statement from '../components/sections/Statement.astro';
-import Gallery from '../components/media/Gallery.astro';
-import SectionLabel from '../components/ui/SectionLabel.astro';
-import IndexList from '../components/sections/IndexList.astro';
-import ProjectGrid from '../components/sections/ProjectGrid.astro';
-import SeoText from '../components/sections/SeoText.astro';
-import ServiceTerms from '../components/sections/ServiceTerms.astro';
-import Faq from '../components/sections/Faq.astro';
-import JournalLink from '../components/sections/JournalLink.astro';
-import Cta from '../components/sections/Cta.astro';
-import ArrowLink from '../components/ui/ArrowLink.astro';
-import { getProjects } from '../lib/work';
-import { breadcrumbs, serviceSchema } from '../lib/schema';
-import { serviceById } from '../data/services';
-
-const ogImage = await ogImageFor('weiss-team-storefront');
-const description =
-  'Fotograf für Makler und Immobilienunternehmen in Hamburg: Team, Objekte und Events aus einer Hand – Portraits, Exposé-Fotos und Social Media in einer Bildsprache.';
-const schema = [
-  serviceSchema(Astro.site, serviceById('immobilien'), 'Fotografie für die Immobilienwirtschaft', description),
-  breadcrumbs(Astro.site, [{ name: 'Makler & Immobilienunternehmen', path: '/immobilienwirtschaft' }]),
-];
-
-const ids = ['weiss-immobilien-team', 'weiss-immobilien', 'bjoern-meins-engel-voelkers', 'markus-haacke-objektsteuerung', 'altbau-mit-dachterrasse', 'neubau-mit-garten'];
-const all = await getProjects();
-const projects = ids.map((id) => all.find((p) => p.id === id)).filter((p) => p !== undefined);
-
-const spec = (alt: string, category: string) => ({ alt, category, format: 'Original', motif: alt });
-
-const offers = [
-  { title: 'Ihr Team', text: 'Einheitliche Portraits und Teambilder für Website, Exposé, Portale und LinkedIn.' },
-  { title: 'Ihre Objekte', text: 'Architektur, Interior und Drohne für Exposé, Immobilienportale und Projektmarketing.' },
-  { title: 'Ihr Auftritt', text: 'Büro, Ladenfront und Viertel – Bilder, die zeigen, wo Sie zu Hause sind.' },
-  { title: 'Ihre Anlässe', text: 'Eröffnungen, Kundenabende und Jubiläen als Reportage für Social Media und Presse.' },
-];
-
-const faq = [
-  {
-    q: 'Fotografieren Sie Team und Objekte am selben Tag?',
-    a: 'Das ist möglich, wenn Büro und Objekt gut erreichbar sind. Häufiger planen wir zwei Termine – die Bildsprache bleibt trotzdem dieselbe.',
-  },
-  {
-    q: 'Wie schnell bekommen wir die Exposé-Fotos?',
-    a: 'Innerhalb einer Woche nach dem Termin, in den Formaten für Exposé, Portale und Social Media.',
-  },
-  {
-    q: 'Können Eigentümer, Bauherren oder Architekten die Bilder mitnutzen?',
-    a: 'Ja. Wer die Bilder wofür nutzen darf, lege ich im Angebot fest – so gibt es später keine Unklarheiten.',
-  },
-  {
-    q: 'Arbeiten Sie auch regelmäßig für uns, zum Beispiel für jedes neue Objekt?',
-    a: 'Gerne. Bei wiederkehrendem Bedarf stimmen wir Ablauf und Vorlaufzeiten einmal ab, danach läuft jede Anfrage schneller.',
-  },
-  {
-    q: 'Was kostet ein Objekt-Shooting?',
-    a: 'Das hängt von Größe und Lage des Objekts, von Innen-, Außen- und Drohnenaufnahmen und von der geplanten Nutzung ab. Nach dem Briefing erhalten Sie ein verbindliches Angebot.',
-  },
-];
+/** Zusammengeführt mit /immobilienfotografie – alte Adresse leitet weiter. */
+const target = new URL('/immobilienfotografie', Astro.site).toString();
 ---
 
-<BaseLayout ogImage={ogImage} title="Fotograf für Makler & Immobilienunternehmen Hamburg" description={description} schema={schema}>
-  <PageHeader
-    kicker="Für Makler und Immobilienunternehmen"
-    clients
-    label="Branche"
-    title="Ihr Team. Ihre Objekte."
-    lead="Makler-Team, Objekte und Anlässe aus einer Hand – in einer Bildsprache, die vom Exposé bis zur Teamseite zusammenpasst."
-    photo="eb-hero"
-  />
-
-  <Statement label="Warum aus einer Hand" class="section-y">
-    Kundinnen und Kunden sehen Ihre Teamseite, Ihr Exposé und Ihren Instagram-Kanal oft am selben Tag. Wenn alles aus einer Hand
-    kommt, wirkt Ihr Auftritt wie ein Unternehmen – nicht wie drei verschiedene Fotografen.
-  </Statement>
-
-  <Gallery
-    layout="pair"
-    images={[
-      { id: 'weiss-team-schreibtisch', spec: spec('Mitarbeiterin von Weiss Immobilien im Gespräch am Schreibtisch.', 'Team') },
-      { id: 'weiss-immobilien-wohnraum', spec: spec('Wohnraum mit Blick über den Hamburger Hafen, fotografiert für Weiss Immobilien.', 'Objekt') },
-    ]}
-  />
-  <Gallery
-    layout="offset"
-    class="mt-[var(--gutter)]"
-    images={[
-      { id: 'meins-fenster-hafen', spec: spec('Björn Meins von Engel & Völkers am Fenster über dem Hamburger Hafen.', 'Portrait') },
-      { id: 'haacke-skyline', spec: spec('Markus Haacke vor den Kirchtürmen der Hamburger Innenstadt.', 'Portrait') },
-    ]}
-  />
-
-  <section class="section-t">
-    <SectionLabel label="Was ich für Sie fotografiere" />
-    <div class="wrap mt-10 md:mt-14">
-      <IndexList items={offers} />
-    </div>
-  </section>
-
-  {
-    projects.length > 0 && (
-      <section class="section-t">
-        <SectionLabel label="Projekte" />
-        <div class="wrap mt-10 mb-12 flex items-end justify-between gap-8 md:mt-14 md:mb-16">
-          <h2 class="text-h2">Projekte aus der Immobilienwirtschaft</h2>
-          <ArrowLink href="/work" class="mb-[0.6em] hidden sm:inline-flex">Alle Projekte</ArrowLink>
-        </div>
-        <ProjectGrid projects={projects} />
-      </section>
-    )
-  }
-
-  <SeoText label="Makler & Immobilienfotos" title="Immobilienfotos und Maklerportraits in Hamburg" link={{ href: '/immobilienfotografie', text: 'Immobilien- & Architekturfotografie' }}>
-    <p>Für Maklerbüros, Bestandshalter und Projektentwickler in Hamburg fotografiere ich beides: <strong>die Menschen, die verkaufen, und die Objekte, die verkauft werden</strong>. Portraits für Teamseite und Exposé, dazu Architektur-, Interior- und Drohnenaufnahmen.</p>
-    <p>So entsteht ein Bildauftritt, der auf Website, Portalen und Social Media wiedererkennbar ist – und bei jedem neuen Objekt fortgesetzt werden kann.</p>
-  </SeoText>
-
-  <ServiceTerms
-    scope="Team-Termin, einzelne Objekte oder laufende Zusammenarbeit für neue Objekte – je nach Bedarf."
-    delivery="Innerhalb einer Woche nach dem Termin, bei Events innerhalb von 48 Stunden."
-  />
-
-  <Faq items={faq} />
-  <JournalLink slug="immobilienfotos-vorbereiten" />
-  <Cta title="Neues Objekt oder neues Team?" />
-</BaseLayout>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <title>Weiterleitung – Studio Kuhls</title>
+    <meta name="robots" content="noindex, follow" />
+    <link rel="canonical" href={target} />
+    <meta http-equiv="refresh" content="0; url=/immobilienfotografie" />
+  </head>
+  <body>
+    <p>Diese Seite ist umgezogen: <a href="/immobilienfotografie">Immobilien- &amp; Architekturfotografie</a>.</p>
+  </body>
+</html>
