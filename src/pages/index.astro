@@ -11,17 +11,15 @@ import ServiceFeature from '../components/sections/ServiceFeature.astro';
 import ProjectGrid from '../components/sections/ProjectGrid.astro';
 import IndexList from '../components/sections/IndexList.astro';
 import Process from '../components/sections/Process.astro';
-import Testimonial from '../components/sections/Testimonial.astro';
+import Reviews from '../components/sections/Reviews.astro';
 import ClientLogos from '../components/sections/ClientLogos.astro';
 import ClientLine from '../components/sections/ClientLine.astro';
 import Cta from '../components/sections/Cta.astro';
 import { serviceById, allUses } from '../data/services';
-import { testimonials } from '../data/testimonials';
 import { getProjects } from '../lib/work';
 
 const featured = await getProjects({ featured: true });
 const allProjects = await getProjects();
-const quote = testimonials[0];
 ---
 
 <BaseLayout ogImage={ogImage}
@@ -111,6 +109,8 @@ const quote = testimonials[0];
     )
   }
 
+  <Reviews ids={['felix-weiss', 'konstantin-tuludis', 'felix-lippe', 'till', 'rabil-smith']} />
+
   {/* EMPLOYER BRANDING FEATURE ------------------------------------------- */}
   <section class="section-y mt-[var(--section)] bg-ink text-bone">
     <SectionLabel label="Schwerpunkt Employer Branding" dark />
@@ -149,12 +149,6 @@ const quote = testimonials[0];
   {/* VORBEREITUNG & ABLAUF ----------------------------------------------- */}
   <Process />
 
-  {/* KUNDENSTIMME (erscheint erst mit echtem Zitat) ---------------------- */}
-  <Testimonial
-    {...quote}
-    projectHref={quote?.project ? `/work/${quote.project}` : undefined}
-    class="section-t"
-  />
 
   {/* ABOUT --------------------------------------------------------------- */}
   <section class="section-y">

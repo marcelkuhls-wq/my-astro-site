@@ -12,11 +12,13 @@ interface Props {
   name?: string;
   role?: string;
   company?: string;
+  source?: string;
   /** Link zum zugehörigen Projekt */
   projectHref?: string;
   class?: string;
 }
-const { quote, name, role, company, projectHref, class: className } = Astro.props;
+const { quote, name, role, company, source, projectHref, class: className } = Astro.props;
+const meta = [[role, company].filter(Boolean).join(', '), source].filter(Boolean).join(' · ');
 const isPlaceholder = !quote;
 const show = !isPlaceholder || site.showPlaceholderSpecs;
 ---
@@ -39,10 +41,7 @@ const show = !isPlaceholder || site.showPlaceholderSpecs;
             <figcaption class="mt-8 flex flex-wrap items-baseline gap-x-8 gap-y-4">
               <span class="text-[0.9375rem]">
                 {name}
-                <span class="text-muted">
-                  {' '}
-                  · {role}, {company}
-                </span>
+                {meta && <span class="text-muted"> · {meta}</span>}
               </span>
               {projectHref && <ArrowLink href={projectHref} context={`zum Projekt mit ${company}`}>Mehr erfahren</ArrowLink>}
             </figcaption>

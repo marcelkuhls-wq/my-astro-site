@@ -6,6 +6,8 @@ import PageHeader from '../components/sections/PageHeader.astro';
 import JournalLink from '../components/sections/JournalLink.astro';
 import SeoText from '../components/sections/SeoText.astro';
 import ServiceTerms from '../components/sections/ServiceTerms.astro';
+import Testimonial from '../components/sections/Testimonial.astro';
+import { testimonialById } from '../data/testimonials';
 import Statement from '../components/sections/Statement.astro';
 import Gallery from '../components/media/Gallery.astro';
 import Photo from '../components/media/Photo.astro';
@@ -168,6 +170,8 @@ const faq = [
   }
 
   <Process />
+  <Testimonial {...testimonialById('till')} class="section-t" />
+
   <ServiceTerms
     scope="Von einem halben Tag bis zu mehreren Produktionstagen und Standorten – je nach Motivliste und Anzahl der Personen."
     delivery="Innerhalb einer Woche nach dem Shooting – als bearbeitete Auswahl in allen vereinbarten Formaten."

@@ -6,6 +6,8 @@ import PageHeader from '../components/sections/PageHeader.astro';
 import SeoText from '../components/sections/SeoText.astro';
 import JournalLink from '../components/sections/JournalLink.astro';
 import ServiceTerms from '../components/sections/ServiceTerms.astro';
+import Testimonial from '../components/sections/Testimonial.astro';
+import { testimonialById } from '../data/testimonials';
 import Statement from '../components/sections/Statement.astro';
 import Gallery from '../components/media/Gallery.astro';
 import Photo from '../components/media/Photo.astro';
@@ -131,6 +133,8 @@ const formats = [
 
   <Faq items={faq} />
   <ServiceLinks current="events" />
+
+  <Testimonial {...testimonialById('felix-lippe')} class="section-t" />
 
   <ServiceTerms
     scope="Von einzelnen Programmpunkten bis zur ganztägigen Begleitung – abgestimmt auf Ablaufplan und Speaker."

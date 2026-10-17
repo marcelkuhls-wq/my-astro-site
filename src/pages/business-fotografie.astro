@@ -6,6 +6,8 @@ import PageHeader from '../components/sections/PageHeader.astro';
 import JournalLink from '../components/sections/JournalLink.astro';
 import SeoText from '../components/sections/SeoText.astro';
 import ServiceTerms from '../components/sections/ServiceTerms.astro';
+import Testimonial from '../components/sections/Testimonial.astro';
+import { testimonialById } from '../data/testimonials';
 import Faq from '../components/sections/Faq.astro';
 import Statement from '../components/sections/Statement.astro';
 import Gallery from '../components/media/Gallery.astro';
@@ -115,6 +117,8 @@ const offers = [
   }
 
   <Process />
+  <Testimonial {...testimonialById('konstantin-tuludis')} class="section-t" />
+
   <ServiceTerms
     scope="Vom einzelnen Portrait bis zum ganzen Team an mehreren Standorten. Den Zeitplan pro Person stimme ich vorab mit Ihnen ab."
     delivery="Innerhalb einer Woche nach dem Shooting – bearbeitet, für Web und Druck."

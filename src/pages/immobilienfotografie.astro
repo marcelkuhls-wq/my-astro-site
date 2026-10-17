@@ -6,6 +6,8 @@ import PageHeader from '../components/sections/PageHeader.astro';
 import JournalLink from '../components/sections/JournalLink.astro';
 import SeoText from '../components/sections/SeoText.astro';
 import ServiceTerms from '../components/sections/ServiceTerms.astro';
+import Testimonial from '../components/sections/Testimonial.astro';
+import { testimonialById } from '../data/testimonials';
 import Gallery from '../components/media/Gallery.astro';
 import SectionLabel from '../components/ui/SectionLabel.astro';
 import ProjectGrid from '../components/sections/ProjectGrid.astro';
@@ -139,6 +141,8 @@ const faq = [
 
   <Faq items={faq} />
   <ServiceLinks current="immobilien" />
+
+  <Testimonial {...testimonialById('felix-weiss')} class="section-t" />
 
   <ServiceTerms
     scope="Ein Objekt pro Termin oder mehrere Objekte als Serie – innen, außen und auf Wunsch aus der Luft."

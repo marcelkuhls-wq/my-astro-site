@@ -8,6 +8,8 @@ import SectionLabel from '../components/ui/SectionLabel.astro';
 import IndexList from '../components/sections/IndexList.astro';
 import SeoText from '../components/sections/SeoText.astro';
 import ServiceTerms from '../components/sections/ServiceTerms.astro';
+import Testimonial from '../components/sections/Testimonial.astro';
+import { testimonialById } from '../data/testimonials';
 import Faq from '../components/sections/Faq.astro';
 import JournalLink from '../components/sections/JournalLink.astro';
 import Cta from '../components/sections/Cta.astro';
@@ -101,6 +103,8 @@ const faq = [
     <p>Neben den Einzelportraits entstehen auf Wunsch <strong>Teamfotos und Gruppenbilder</strong> – in kleinen Gruppen, die miteinander arbeiten, statt in einer langen Reihe vor der Wand.</p>
     <p>Wer zusätzlich zeigen möchte, wie im Unternehmen gearbeitet wird, ergänzt das Set um Arbeitssituationen für Karriereseite und Recruiting.</p>
   </SeoText>
+
+  <Testimonial {...testimonialById('rabil-smith')} class="section-t" />
 
   <ServiceTerms
     scope="Vom kleinen Team bis zu mehreren Abteilungen und Standorten. Neuzugänge später zu einem eigenen Termin."
