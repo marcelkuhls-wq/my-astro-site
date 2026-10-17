@@ -10,9 +10,29 @@ const isActive = (href: string) => path === href || path.startsWith(`${href}/`);
   class="fixed inset-x-0 top-0 z-40 bg-paper/95 transition-transform duration-500 ease-out-soft"
 >
   <div class="wrap flex h-[var(--header-h)] items-center justify-between">
-    <a href="/" class="inline-flex min-h-11 items-center gap-[0.32em] font-display text-[1.25rem] leading-none tracking-[0.06em] uppercase md:text-[1.5rem]" aria-label={`${site.name} – Startseite`}>
-      <span class="font-normal">Studio</span> <span class="font-semibold">Kuhls</span>
+    <a href="/" class="sk-logo relative inline-flex min-h-11 items-center gap-[0.32em] font-display text-[1.25rem] leading-none tracking-[0.06em] uppercase md:text-[1.5rem]" aria-label={`${site.name} – Startseite`}>
+      {
+        [
+          { w: 'Studio', cls: 'font-normal', o: 0 },
+          { w: 'Kuhls', cls: 'font-semibold', o: 6 },
+        ].map(({ w, cls, o }) => (
+          <span class:list={['sk-word', cls]} aria-hidden="true">
+            {[...w].map((c, i) => (
+              <span class="sk-l" style={`--i: ${o + i}`}>{c}</span>
+            ))}
+          </span>
+        ))
+      }
     </a>
+    <script is:inline>
+      // Logo-Intro nur beim ersten Seitenaufruf der Sitzung
+      try {
+        if (!sessionStorage.getItem('sk-logo')) {
+          document.currentScript.previousElementSibling.classList.add('sk-intro');
+          sessionStorage.setItem('sk-logo', '1');
+        }
+      } catch (e) {}
+    </script>
 
     <nav aria-label="Hauptnavigation" class="hidden xl:block">
       <ul class="flex items-center gap-x-7 2xl:gap-x-9">
@@ -126,3 +146,66 @@ const isActive = (href: string) => path === href || path.startsWith(`${href}/`);
     { passive: true },
   );
 </script>
+
+<style>
+  /* Wortmarke: Buchstaben steigen beim ersten Laden gestaffelt aus einer Kante auf;
+     beim Überfahren läuft eine kleine Welle durch, darunter zeichnet sich eine feine Linie. */
+  .sk-word {
+    display: inline-flex;
+    overflow: hidden;
+    padding-block: 0.22em;
+    margin-block: -0.22em;
+  }
+  .sk-l {
+    display: inline-block;
+  }
+  .sk-intro .sk-l {
+    animation: sk-in 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    animation-delay: calc(0.15s + var(--i) * 45ms);
+  }
+  .sk-logo::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0.55rem;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  @media (hover: hover) {
+    .sk-logo:hover .sk-l {
+      animation: sk-wave 0.6s cubic-bezier(0.3, 0.6, 0.3, 1) both;
+      animation-delay: calc(var(--i) * 32ms);
+    }
+    .sk-logo:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+  }
+  @keyframes sk-in {
+    from {
+      transform: translateY(110%);
+    }
+    to {
+      transform: none;
+    }
+  }
+  @keyframes sk-wave {
+    0%,
+    100% {
+      transform: none;
+    }
+    40% {
+      transform: translateY(-0.16em);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .sk-intro .sk-l,
+    .sk-logo:hover .sk-l {
+      animation: none;
+    }
+  }
+</style>
