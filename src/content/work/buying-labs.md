@@ -8,6 +8,7 @@ year: 2025
 summary: "Gewerbe- und Büroflächen: Gebäude, Treppenhaus, Flure und Besprechungsraum für den Unternehmensauftritt."
 usage: [Website]
 featured: false
+draft: true
 order: 12.4
 scope: "Architektur außen, Treppenhaus, Büroflächen"
 task: "Buying Labs wollte die eigenen Räume zeigen – vom Gebäude bis zum Besprechungsraum."
