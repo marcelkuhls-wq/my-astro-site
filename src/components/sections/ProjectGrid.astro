@@ -4,7 +4,9 @@
  * groß quer · quer + hoch versetzt · hoch + quer versetzt – dann von vorn.
  * So entstehen wechselnde Bildgrößen ohne Masonry und ohne Lücken auf Mobile.
  */
+import type { ImageMetadata } from 'astro';
 import Photo from '../media/Photo.astro';
+import { photos } from '../../data/photos';
 import { serviceById } from '../../data/services';
 import type { Project } from '../../lib/work';
 
@@ -37,12 +39,37 @@ const compactSlots = [
 const slots = layout === 'pair' ? [pairSlot] : layout === 'compact' ? compactSlots : editorialSlots;
 // "compact": nur das erste Projekt breit, danach alle in Dreierreihen
 const slotFor = (i: number) => (layout === 'compact' ? (i === 0 ? compactSlots[0] : compactSlots[1]) : slots[i % slots.length]);
+
+// Hochformat-Titelbilder gehören in Hochformat-Plätze (sonst viel Leerraum daneben):
+// Im Raster rückt jeweils das nächste passende Projekt nach (max. 3 Plätze vorgezogen).
+const files = import.meta.glob<{ default: ImageMetadata }>('/src/assets/photos/*.{jpg,jpeg,png,webp}', { eager: true });
+const dims = new Map(Object.entries(files).map(([path, m]) => [path.split('/').pop()!.replace(/\.[^.]+$/, ''), m.default]));
+const isPortrait = (p: Project) => {
+  const img = dims.get(p.data.cover.id) ?? dims.get(photos[p.data.cover.id]?.file ?? '');
+  return img ? img.height > img.width : false;
+};
+const slotPortrait = (i: number) => {
+  const [w, h] = slotFor(i).ratio.split('/').map(Number);
+  return h > w;
+};
+const ordered: Project[] = [];
+if (layout === 'compact') ordered.push(...projects);
+else {
+  const queue = [...projects];
+  for (let i = 0; queue.length; i++) {
+    const want = slotPortrait(i);
+    const j = queue.slice(0, 4).findIndex((p) => isPortrait(p) === want);
+    ordered.push(...queue.splice(j === -1 ? 0 : j, 1));
+  }
+}
 ---
 
 <div class="wrap grid-12 items-start gap-y-12 md:gap-y-20">
   {
-    projects.map((p, i) => {
+    ordered.map((p, i) => {
       const slot = slotFor(i);
+      // Passt das Format trotzdem nicht (Hochformat im Querformat-Platz), wird beschnitten
+      const crop = isPortrait(p) && !slotPortrait(i);
       const service = serviceById(p.data.service);
       return (
         <article class={slot.cls}>
@@ -55,7 +82,7 @@ const slotFor = (i: number) => (layout === 'compact' ? (i === 0 ? compactSlots[0
                 position={p.data.cover.position}
                 ratio={slot.ratio}
                 sizes={slot.sizes}
-                
+                crop={crop}
                 priority={priorityFirst && i === 0}
               />
             </div>

@@ -14,9 +14,9 @@ scope: "Produkt- und Lifestyle-Motive, Launch-Event"
 task: "Für den Marktstart des Rosés brauchte Yahya Kampagnenmotive mit Urlaubsstimmung – und Bilder vom Launch."
 approach: "Ich habe die Flasche im natürlichen Licht an Wasser, Strand und Pool inszeniert und den Launch mit Gästen, Bar und Details begleitet."
 cover:
-  id: yah-08
+  id: yah-06
   spec:
-    alt: "Flasche am Infinity-Pool mit Palmen."
+    alt: "Flasche Yahya Rosé und gefülltes Glas am Poolrand."
     category: "Kampagne"
     format: "Hochformat"
     motif: "Titel"
@@ -29,12 +29,12 @@ gallery:
           category: "Kampagne"
           format: "Hochformat"
           motif: "yah-01"
-      - id: yah-06
+      - id: yah-08
         spec:
-          alt: "Flasche und Glas am Pool."
+          alt: "Flasche am Infinity-Pool mit Palmen."
           category: "Kampagne"
           format: "Hochformat"
-          motif: "yah-06"
+          motif: "yah-08"
   - layout: pair
     images:
       - id: yah-11

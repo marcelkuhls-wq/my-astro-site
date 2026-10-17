@@ -1,7 +1,7 @@
 ---
 /**
  * Kundenstimmen als ruhiger Slider: ein Zitat pro Ansicht, wischbar,
- * Pfeile + Punkte, kein Autoplay, keine fremden Skripte.
+ * Pfeile + Fortschrittsbalken, automatischer Wechsel nach Lesedauer.
  */
 import SectionLabel from '../ui/SectionLabel.astro';
 import { testimonials, splitQuote } from '../../data/testimonials';
@@ -59,7 +59,9 @@ const meta = (t: (typeof list)[number]) => [t.role, t.company].filter(Boolean).j
             <div class="mt-8 flex items-center gap-4">
               <div class="flex gap-2">
                 {list.map((_, i) => (
-                  <button type="button" class="rv-dot h-[3px] w-8 bg-ink/20 transition-colors aria-[current=true]:bg-ink" aria-label={`Bewertung ${i + 1}`} data-i={i} />
+                  <button type="button" class="rv-dot relative h-[3px] w-8 overflow-hidden bg-ink/20 before:absolute before:-inset-y-5 before:inset-x-0 before:content-['']" aria-label={`Bewertung ${i + 1}`} data-i={i}>
+                    <span class="rv-fill absolute inset-0 origin-left bg-ink" />
+                  </button>
                 ))}
               </div>
               <div class="ml-auto flex items-center gap-2 md:hidden">
@@ -85,7 +87,17 @@ const meta = (t: (typeof list)[number]) => [t.role, t.company].filter(Boolean).j
       const n = (i + slides.length) % slides.length;
       track.scrollTo({ left: slides[n].offsetLeft - slides[0].offsetLeft, behavior: 'smooth' });
     };
-    const mark = () => dots.forEach((d, i) => d.setAttribute('aria-current', String(i === current())));
+    let active = -1;
+    let anim: Animation | undefined;
+    const fills = dots.map((d) => d.querySelector<HTMLElement>('.rv-fill'));
+    const mark = () => {
+      const cur = current();
+      dots.forEach((d, i) => d.setAttribute('aria-current', String(i === cur)));
+      if (cur !== active) {
+        active = cur;
+        start(cur);
+      }
+    };
     root.querySelectorAll('.rv-prev').forEach((b) => b.addEventListener('click', () => go(current() - 1)));
     root.querySelectorAll('.rv-next').forEach((b) => b.addEventListener('click', () => go(current() + 1)));
     dots.forEach((d, i) => d.addEventListener('click', () => go(i)));
@@ -95,38 +107,48 @@ const meta = (t: (typeof list)[number]) => [t.role, t.company].filter(Boolean).j
       if (e.key === 'ArrowLeft') go(current() - 1);
     });
     track.tabIndex = 0;
-    mark();
 
-    // Automatischer Wechsel – pausiert bei Maus, Fokus, Berührung,
-    // wenn der Bereich nicht sichtbar ist oder „Bewegung reduzieren“ aktiv ist.
-    if (slides.length < 2 || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    // Automatischer Wechsel: Der aktive Balken läuft während der Anzeigedauer
+    // von rechts nach links aus, dann springt er zur nächsten Bewertung.
+    // Pausiert bei Maus, Fokus, wenn der Bereich nicht sichtbar ist; aus bei „Bewegung reduzieren“.
+    const auto = slides.length > 1 && !matchMedia('(prefers-reduced-motion: reduce)').matches;
     let visible = false;
     let paused = false;
-    let timer = 0;
     // Anzeigedauer nach Länge: ca. 1,5 s + 0,12 s pro Wort (kurz ≈ 4 s, lang ≈ 8 s)
     const duration = (i: number) => {
       const words = (slides[i]?.querySelector('blockquote')?.textContent ?? '').trim().split(/\s+/).length;
       return Math.min(9000, Math.max(3500, 1500 + words * 120));
     };
-    const schedule = (shown = current()) => {
-      clearTimeout(timer);
-      timer = window.setTimeout(() => {
-        let next = shown;
-        if (visible && !paused && !document.hidden) {
-          next = (shown + 1) % slides.length;
-          go(next);
-        }
-        schedule(next);
-      }, duration(shown));
+    const sync = () => {
+      if (!anim) return;
+      if (visible && !paused && !document.hidden) anim.play();
+      else anim.pause();
     };
-    const restart = () => setTimeout(() => schedule(), 600);
-    new IntersectionObserver(([e]) => (visible = e.isIntersecting), { threshold: 0.4 }).observe(root);
-    root.addEventListener('mouseenter', () => (paused = true));
-    root.addEventListener('mouseleave', () => (paused = false));
-    root.addEventListener('focusin', () => (paused = true));
-    root.addEventListener('focusout', () => (paused = false));
-    root.addEventListener('touchstart', restart, { passive: true });
-    root.querySelectorAll('button').forEach((b) => b.addEventListener('click', restart));
-    schedule(0);
+    function start(i: number) {
+      anim?.cancel();
+      anim = undefined;
+      const fill = fills[i];
+      if (!auto || !fill) return;
+      anim = fill.animate([{ transform: 'scaleX(1)' }, { transform: 'scaleX(0)' }], { duration: duration(i), easing: 'linear', fill: 'forwards' });
+      anim.onfinish = () => go(i + 1);
+      sync();
+    }
+    mark();
+    if (!auto) return;
+    new IntersectionObserver(([e]) => ((visible = e.isIntersecting), sync()), { threshold: 0.4 }).observe(root);
+    document.addEventListener('visibilitychange', sync);
+    root.addEventListener('mouseenter', () => ((paused = true), sync()));
+    root.addEventListener('mouseleave', () => ((paused = false), sync()));
+    root.addEventListener('focusin', (e) => ((paused = (e.target as HTMLElement).matches(':focus-visible')), sync()));
+    root.addEventListener('focusout', () => ((paused = false), sync()));
   });
 </script>
+
+<style>
+  .rv-fill {
+    transform: scaleX(0);
+  }
+  .rv-dot[aria-current='true'] .rv-fill {
+    transform: scaleX(1);
+  }
+</style>

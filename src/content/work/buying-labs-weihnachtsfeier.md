@@ -13,9 +13,9 @@ scope: "Eventreportage, Location, Gäste, Live-Musik"
 task: "Buying Labs feierte Weihnachten mit dem Team im Hotel Vier Jahreszeiten. Die Bilder sollten den Abend für das Team festhalten – und zeigen, wie das Unternehmen feiert."
 approach: "Ich habe die festlich geschmückten Räume vor dem Eintreffen der Gäste fotografiert und danach den Abend begleitet: Begrüßung, Gespräche an der Bar, Live-Gesang und den Auftritt des Gospelchors."
 cover:
-  id: blx-02
+  id: blx-04
   spec:
-    alt: "Begrüßungsrede mit Mikrofon vor den Gästen."
+    alt: "Lange Tafel im holzvertäfelten Saal."
     category: "Events"
     format: "Querformat"
     motif: "Titel"
@@ -36,18 +36,18 @@ gallery:
           motif: "blx-03"
   - layout: offset
     images:
-      - id: blx-04
-        spec:
-          alt: "Lange Tafel im holzvertäfelten Saal."
-          category: "Events"
-          format: "Querformat"
-          motif: "blx-04"
       - id: blx-05
         spec:
           alt: "Festlich gedeckter Saal mit Kronleuchter und Pflanzen."
           category: "Events"
-          format: "Hochformat"
+          format: "Querformat"
           motif: "blx-05"
+      - id: blx-02
+        spec:
+          alt: "Begrüßungsrede mit Mikrofon vor den Gästen."
+          category: "Events"
+          format: "Hochformat"
+          motif: "blx-02"
   - layout: offset
     images:
       - id: blx-06
