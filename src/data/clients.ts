@@ -28,3 +28,12 @@ export const clientNames: string[] = [
   'Four Elements',
   'Kleintierpraxis Benecke',
 ];
+
+/** Veröffentlichungen mit Bildnachweis „© Marcel Kuhls“ – nur mit Link zum Beleg. */
+export const press: { outlet: string; href: string; note: string }[] = [
+  {
+    outlet: 'Hamburger Abendblatt',
+    href: 'https://www.abendblatt.de/sport/article409967645/hamburger-milliarden-klage-gegen-tipico-anhoerung-startet.html',
+    note: 'Portrait der gamesright-Gründer, 11.09.2025',
+  },
+];
