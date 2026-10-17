@@ -1,0 +1,45 @@
+---
+/** Die neuesten Journal-Artikel als Bild-Teaser (Startseite). */
+import Photo from '../media/Photo.astro';
+import SectionLabel from '../ui/SectionLabel.astro';
+import ArrowLink from '../ui/ArrowLink.astro';
+import { getArticles } from '../../lib/work';
+
+interface Props {
+  limit?: number;
+}
+const articles = (await getArticles()).slice(0, Astro.props.limit ?? 3);
+---
+
+{
+  articles.length > 0 && (
+    <section class="section-t">
+      <SectionLabel label="Aus dem Journal" />
+      <div class="wrap mt-10 mb-12 flex items-end justify-between gap-8 md:mt-14 md:mb-16">
+        <h2 class="text-h2">Aus der Praxis</h2>
+        <ArrowLink href="/journal" class="mb-[0.6em]">Alle Artikel</ArrowLink>
+      </div>
+      <ul class="wrap grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+        {articles.map((a) => (
+          <li>
+            <a href={`/journal/${a.id}`} class="group block">
+              {a.data.cover && (
+                <div class="overflow-hidden">
+                  <Photo
+                    {...a.data.cover}
+                    crop
+                    ratio="4 / 3"
+                    sizes="(min-width: 1024px) 31vw, (min-width: 640px) 47vw, 100vw"
+                    class="transition-transform duration-700 ease-out-soft group-hover:scale-[1.02]"
+                  />
+                </div>
+              )}
+              <h3 class="mt-5 text-[1.25rem] leading-snug tracking-[-0.01em]">{a.data.title}</h3>
+              <span class="link-arrow mt-4 inline-block text-[0.875rem]">Weiterlesen</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}

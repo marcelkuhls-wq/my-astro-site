@@ -12,6 +12,7 @@ import ProjectGrid from '../components/sections/ProjectGrid.astro';
 import IndexList from '../components/sections/IndexList.astro';
 import Process from '../components/sections/Process.astro';
 import Reviews from '../components/sections/Reviews.astro';
+import JournalTeasers from '../components/sections/JournalTeasers.astro';
 import ClientLogos from '../components/sections/ClientLogos.astro';
 import ClientLine from '../components/sections/ClientLine.astro';
 import Cta from '../components/sections/Cta.astro';
@@ -95,6 +96,14 @@ const allProjects = await getProjects();
     text="Konferenzen, Produktlaunches, Dinner und Eröffnungen – dokumentarisch fotografiert: Menschen, Atmosphäre, Speaker und Details."
   />
 
+  <div class="wrap mt-14 md:mt-20">
+    <a href="/mitarbeiterfotos" class="group grid-12 items-baseline gap-y-3 border-t border-line pt-5">
+      <span class="label col-span-12 text-muted md:col-span-3">Außerdem</span>
+      <span class="col-span-12 text-h3 md:col-span-6">Mitarbeiterfotos für ganze Teams – ein Termin, ein Look.</span>
+      <span class="link-arrow col-span-12 text-[0.875rem] md:col-span-3 md:justify-self-end">Mehr erfahren</span>
+    </a>
+  </div>
+
   {/* SELECTED WORK ------------------------------------------------------- */}
   {
     featured.length > 0 && (
@@ -117,7 +126,7 @@ const allProjects = await getProjects();
     <div class="wrap grid-12 mt-10 gap-y-8 md:mt-14">
       <h2 class="col-span-12 text-h2 md:col-span-8" data-reveal>Menschen bewerben sich bei Menschen.</h2>
       <p class="col-span-12 max-w-[34rem] text-lead text-bone/80 md:col-span-6 md:col-start-4" data-reveal style="--reveal-delay: .08s">
-        Eine Karriereseite mit Stockfotos sagt nichts über Ihr Unternehmen. Echte Bilder Ihrer Teams zeigen Kultur, Arbeitsumgebung
+        Bewerberinnen und Bewerber wollen sehen, mit wem sie arbeiten werden. Bilder Ihrer Teams zeigen Kultur, Arbeitsumgebung
         und Zusammenarbeit – bevor das erste Gespräch stattfindet.
       </p>
     </div>
@@ -170,5 +179,7 @@ const allProjects = await getProjects();
   </section>
 
   <ClientLogos />
+  <JournalTeasers />
+
   <Cta />
 </BaseLayout>

@@ -6,14 +6,17 @@ import SectionLabel from '../components/ui/SectionLabel.astro';
 import IndexList from '../components/sections/IndexList.astro';
 import { services } from '../data/services';
 import Cta from '../components/sections/Cta.astro';
+import Reviews from '../components/sections/Reviews.astro';
+import SeoText from '../components/sections/SeoText.astro';
+import { site } from '../config/site';
 import { breadcrumbs } from '../lib/schema';
 
 const schema = [breadcrumbs(Astro.site, [{ name: 'Über mich', path: '/about' }])];
 ---
 
 <BaseLayout
-  title="About – Marcel Kuhls, Fotograf in Hamburg"
-  description="Studio Kuhls ist der Name, unter dem Fotograf Marcel Kuhls aus Hamburg für Unternehmen arbeitet. Über zehn Jahre Erfahrung mit Employer Branding, Business, Immobilien und Events."
+  title="Marcel Kuhls – Unternehmensfotograf in Hamburg"
+  description="Marcel Kuhls fotografiert seit 2014 Menschen, Räume und Veranstaltungen – unter Studio Kuhls für Unternehmen in Hamburg. Ein Ansprechpartner vom Briefing bis zur Bildauswahl."
   schema={schema}
 >
   <section class="pt-14 md:pt-24">
@@ -55,7 +58,32 @@ const schema = [breadcrumbs(Astro.site, [{ name: 'Über mich', path: '/about' }]
     </div>
   </section>
 
+  <section class="section-t">
+    <SectionLabel label="Auf einen Blick" />
+    <div class="wrap mt-10 md:mt-14">
+      <dl class="grid gap-x-[var(--gutter)] gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+        {[
+          { t: 'Selbstständig seit', d: '2014 – mit Fotografie für Unternehmen, Menschen und Veranstaltungen.' },
+          { t: 'Einsatzgebiet', d: 'Hamburg und Umgebung, auf Anfrage auch darüber hinaus.' },
+          { t: 'Zusammenarbeit', d: 'Ein Ansprechpartner vom ersten Gespräch bis zur Bildauswahl. Rückmeldung innerhalb von 24 Stunden (werktags).' },
+          { t: 'Kontakt', d: `${site.email} · ${site.phone}` },
+        ].map((i) => (
+          <div class="border-t border-ink pt-5" data-reveal>
+            <dt class="text-[1.125rem] font-medium tracking-[-0.01em]">{i.t}</dt>
+            <dd class="mt-3 text-[0.9375rem] text-muted">{i.d}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
   <Gallery layout="offset" images={['about-work-1', 'about-work-2']} class="section-t" />
+
+  <SeoText label="Für Agenturen" title="Auch im Auftrag von Agenturen" link={{ href: '/ablauf', text: 'Ablauf & Konditionen' }}>
+    <p>Für Event-, PR- und Werbeagenturen arbeite ich nach Briefing, Moodboard oder Layout und stimme mich mit Ihnen und Ihrem Kunden ab. Wie die Bilder an den Endkunden weitergegeben werden, klären wir vorab.</p>
+  </SeoText>
+
+  <Reviews ids={['felix-weiss', 'till', 'konstantin-tuludis', 'felix-lippe']} />
 
   <section class="section-t">
     <SectionLabel label="Leistungen" />

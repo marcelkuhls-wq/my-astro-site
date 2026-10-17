@@ -15,7 +15,7 @@ const { label, number, dark = false, class: className } = Astro.props;
       class:list={['absolute inset-x-0 top-0 h-px', dark ? 'bg-line-dark' : 'bg-line']}
       data-reveal="line"
       aria-hidden="true"></span>
-    <p class="label">{label}</p>
+    <h2 class="label">{label}</h2>
     {number && <p class="label tabular-nums">{number}</p>}
   </div>
 </div>

@@ -36,7 +36,7 @@ const schema = [breadcrumbs(Astro.site, [{ name: 'Projekte', path: '/work' }])];
 
   {/* Ansicht: Raster (Bilder) oder Index (Liste). Ohne JS nur Raster. */}
   <div class="wrap section-t flex items-baseline justify-between">
-    <p class="label tabular-nums text-muted">{String(projects.length).padStart(2, '0')} Projekte</p>
+    <h2 class="label tabular-nums text-muted">{String(projects.length).padStart(2, "0")} Projekte</h2>
     <div id="view-toggle" class="flex gap-6" role="group" aria-label="Ansicht" hidden>
       <button type="button" class="label view-btn" data-view="grid" aria-pressed="true">Raster</button>
       <button type="button" class="label view-btn" data-view="index" aria-pressed="false">Index</button>
