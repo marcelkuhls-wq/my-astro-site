@@ -96,5 +96,27 @@ const meta = (t: (typeof list)[number]) => [t.role, t.company].filter(Boolean).j
     });
     track.tabIndex = 0;
     mark();
+
+    // Automatischer Wechsel alle 8 s – pausiert bei Maus, Fokus, Berührung,
+    // wenn der Bereich nicht sichtbar ist oder „Bewegung reduzieren“ aktiv ist.
+    if (slides.length < 2 || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    let visible = false;
+    let paused = false;
+    let timer = 0;
+    const tick = () => {
+      if (visible && !paused && !document.hidden) go(current() + 1);
+    };
+    const restart = () => {
+      clearInterval(timer);
+      timer = window.setInterval(tick, 8000);
+    };
+    new IntersectionObserver(([e]) => (visible = e.isIntersecting), { threshold: 0.4 }).observe(root);
+    root.addEventListener('mouseenter', () => (paused = true));
+    root.addEventListener('mouseleave', () => (paused = false));
+    root.addEventListener('focusin', () => (paused = true));
+    root.addEventListener('focusout', () => (paused = false));
+    root.addEventListener('touchstart', restart, { passive: true });
+    root.querySelectorAll('button').forEach((b) => b.addEventListener('click', restart));
+    restart();
   });
 </script>
