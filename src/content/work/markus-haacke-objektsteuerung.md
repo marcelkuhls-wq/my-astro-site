@@ -51,6 +51,14 @@ gallery:
           category: "Portrait"
           format: "Hochformat 4:5"
           motif: "haacke-fenster"
+  - layout: single-r
+    images:
+      - id: haacke-x-01
+        spec:
+          alt: "Markus Haacke im Gespräch mit Björn Meins am Fenster."
+          category: "Portrait"
+          format: "Hochformat"
+          motif: "haacke-x-01"
 ---
 
 Die Portraits zeigen Markus Haacke in zwei Situationen: drinnen am Fenster und auf der Terrasse mit den Kirchtürmen der Hamburger Innenstadt im Hintergrund.

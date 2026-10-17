@@ -113,6 +113,42 @@ gallery:
           category: "Employer Branding"
           format: "Hochformat"
           motif: "dd-14"
+  - layout: pair
+    images:
+      - id: dd-15
+        spec:
+          alt: "Arbeitsalltag in der Zentrale von Dein Dental."
+          category: "Employer Branding"
+          format: "Querformat"
+          motif: "dd-15"
+      - id: dd-16
+        spec:
+          alt: "Arbeitsalltag in der Zentrale von Dein Dental."
+          category: "Employer Branding"
+          format: "Querformat"
+          motif: "dd-16"
+  - layout: offset
+    images:
+      - id: dd-17
+        spec:
+          alt: "Arbeitsalltag in der Zentrale von Dein Dental."
+          category: "Employer Branding"
+          format: "Querformat"
+          motif: "dd-17"
+      - id: dd-18
+        spec:
+          alt: "Arbeitsalltag in der Zentrale von Dein Dental."
+          category: "Employer Branding"
+          format: "Hochformat"
+          motif: "dd-18"
+  - layout: full
+    images:
+      - id: dd-19
+        spec:
+          alt: "Arbeitsalltag in der Zentrale von Dein Dental."
+          category: "Employer Branding"
+          format: "Querformat"
+          motif: "dd-19"
 ---
 
 Die Serie verbindet Menschen und Marke: Teams im Gespräch, Führungskräfte vor dem beleuchteten Logo, dazu Empfang, Moos-Wand und Arbeitsplätze.

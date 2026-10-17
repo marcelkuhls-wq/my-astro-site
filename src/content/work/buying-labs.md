@@ -3,7 +3,7 @@ title: "Buying Labs – Büro und Gebäude"
 client: "Buying Labs"
 industry: "Gewerbeimmobilie & Büro"
 service: immobilien
-location: "Deutschland"
+location: "Hamburg"
 year: 2025
 summary: "Gewerbe- und Büroflächen: Gebäude, Treppenhaus, Flure und Besprechungsraum für den Unternehmensauftritt."
 usage: [Website]

@@ -126,6 +126,104 @@ gallery:
           category: "Kampagne"
           format: "Hochformat 4:5"
           motif: "fe-studio-ball"
+  - layout: pair
+    images:
+      - id: fe-x-01
+        spec:
+          alt: "Trainerinnen, Kurs und Studio von Four Elements in Winterhude."
+          category: "Kampagne"
+          format: "Hochformat"
+          motif: "fe-x-01"
+      - id: fe-x-02
+        spec:
+          alt: "Trainerinnen, Kurs und Studio von Four Elements in Winterhude."
+          category: "Kampagne"
+          format: "Hochformat"
+          motif: "fe-x-02"
+  - layout: pair
+    images:
+      - id: fe-x-03
+        spec:
+          alt: "Trainerinnen, Kurs und Studio von Four Elements in Winterhude."
+          category: "Kampagne"
+          format: "Querformat"
+          motif: "fe-x-03"
+      - id: fe-x-04
+        spec:
+          alt: "Trainerinnen, Kurs und Studio von Four Elements in Winterhude."
+          category: "Kampagne"
+          format: "Querformat"
+          motif: "fe-x-04"
+  - layout: offset
+    images:
+      - id: fe-x-05
+        spec:
+          alt: "Trainerinnen, Kurs und Studio von Four Elements in Winterhude."
+          category: "Kampagne"
+          format: "Querformat"
+          motif: "fe-x-05"
+      - id: fe-x-06
+        spec:
+          alt: "Trainerinnen, Kurs und Studio von Four Elements in Winterhude."
+          category: "Kampagne"
+          format: "Hochformat"
+          motif: "fe-x-06"
+  - layout: pair
+    images:
+      - id: fe-x-07
+        spec:
+          alt: "Trainerinnen, Kurs und Studio von Four Elements in Winterhude."
+          category: "Kampagne"
+          format: "Hochformat"
+          motif: "fe-x-07"
+      - id: fe-x-08
+        spec:
+          alt: "Trainerinnen, Kurs und Studio von Four Elements in Winterhude."
+          category: "Kampagne"
+          format: "Hochformat"
+          motif: "fe-x-08"
+  - layout: offset-r
+    images:
+      - id: fe-x-10
+        spec:
+          alt: "Trainerinnen, Kurs und Studio von Four Elements in Winterhude."
+          category: "Kampagne"
+          format: "Querformat"
+          motif: "fe-x-10"
+      - id: fe-x-09
+        spec:
+          alt: "Trainerinnen, Kurs und Studio von Four Elements in Winterhude."
+          category: "Kampagne"
+          format: "Hochformat"
+          motif: "fe-x-09"
+  - layout: pair
+    images:
+      - id: fe-x-11
+        spec:
+          alt: "Trainerinnen, Kurs und Studio von Four Elements in Winterhude."
+          category: "Kampagne"
+          format: "Querformat"
+          motif: "fe-x-11"
+      - id: fe-x-12
+        spec:
+          alt: "Trainerinnen, Kurs und Studio von Four Elements in Winterhude."
+          category: "Kampagne"
+          format: "Querformat"
+          motif: "fe-x-12"
+  - layout: pair
+    images:
+      - id: fe-x-13
+        spec:
+          alt: "Trainerinnen, Kurs und Studio von Four Elements in Winterhude."
+          category: "Kampagne"
+          format: "Querformat"
+          motif: "fe-x-13"
+      - id: fe-x-14
+        spec:
+          alt: "Trainerinnen, Kurs und Studio von Four Elements in Winterhude."
+          category: "Kampagne"
+          format: "Querformat"
+          motif: "fe-x-14"
 ---
 
 Für den Start des Studios entstand ein Set aus drei Bausteinen: Portraits der Trainerinnen vor den beleuchteten Spiegeln, Kursszenen mit Hanteln und auf der Matte und Details wie Logo und Studio-Socken.

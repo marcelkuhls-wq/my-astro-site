@@ -132,6 +132,98 @@ gallery:
           category: "Detail"
           format: "Hochformat 4:5"
           motif: "Aperitivo"
+  - layout: pair
+    images:
+      - id: ae-x-01
+        spec:
+          alt: "Gäste und Momente der Jubiläumsfeier von Adam & Eve."
+          category: "Event"
+          format: "Hochformat"
+          motif: "ae-x-01"
+      - id: ae-x-02
+        spec:
+          alt: "Gäste und Momente der Jubiläumsfeier von Adam & Eve."
+          category: "Event"
+          format: "Hochformat"
+          motif: "ae-x-02"
+  - layout: offset
+    images:
+      - id: ae-x-03
+        spec:
+          alt: "Gäste und Momente der Jubiläumsfeier von Adam & Eve."
+          category: "Event"
+          format: "Querformat"
+          motif: "ae-x-03"
+      - id: ae-x-04
+        spec:
+          alt: "Gäste und Momente der Jubiläumsfeier von Adam & Eve."
+          category: "Event"
+          format: "Hochformat"
+          motif: "ae-x-04"
+  - layout: pair
+    images:
+      - id: ae-x-05
+        spec:
+          alt: "Gäste und Momente der Jubiläumsfeier von Adam & Eve."
+          category: "Event"
+          format: "Hochformat"
+          motif: "ae-x-05"
+      - id: ae-x-06
+        spec:
+          alt: "Gäste und Momente der Jubiläumsfeier von Adam & Eve."
+          category: "Event"
+          format: "Hochformat"
+          motif: "ae-x-06"
+  - layout: offset-r
+    images:
+      - id: ae-x-08
+        spec:
+          alt: "Gäste und Momente der Jubiläumsfeier von Adam & Eve."
+          category: "Event"
+          format: "Querformat"
+          motif: "ae-x-08"
+      - id: ae-x-07
+        spec:
+          alt: "Gäste und Momente der Jubiläumsfeier von Adam & Eve."
+          category: "Event"
+          format: "Hochformat"
+          motif: "ae-x-07"
+  - layout: pair
+    images:
+      - id: ae-x-09
+        spec:
+          alt: "Gäste und Momente der Jubiläumsfeier von Adam & Eve."
+          category: "Event"
+          format: "Hochformat"
+          motif: "ae-x-09"
+      - id: ae-x-10
+        spec:
+          alt: "Gäste und Momente der Jubiläumsfeier von Adam & Eve."
+          category: "Event"
+          format: "Hochformat"
+          motif: "ae-x-10"
+  - layout: pair
+    images:
+      - id: ae-x-11
+        spec:
+          alt: "Gäste und Momente der Jubiläumsfeier von Adam & Eve."
+          category: "Event"
+          format: "Hochformat"
+          motif: "ae-x-11"
+      - id: ae-x-12
+        spec:
+          alt: "Gäste und Momente der Jubiläumsfeier von Adam & Eve."
+          category: "Event"
+          format: "Hochformat"
+          motif: "ae-x-12"
+  - layout: full
+    images:
+      - id: ae-x-13
+        spec:
+          alt: "Gäste und Momente der Jubiläumsfeier von Adam & Eve."
+          category: "Event"
+          format: "Querformat"
+          motif: "ae-x-13"
 ---
 
 Die Bildserie folgt dem Abend: vom Empfang der Gäste über die Rede der Gastgeberin bis zu den Gesprächen in der Location. Dazu kommen Details, die das Jubiläum erzählen – die Fotowand „20 Jahre Hamburgs Beauty Adresse“, Blumenbar und die inszenierten Drinks an der Bar.

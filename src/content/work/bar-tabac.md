@@ -105,6 +105,84 @@ gallery:
           category: "Hospitality"
           format: "Hochformat"
           motif: "bt-13"
+  - layout: offset
+    images:
+      - id: bt-14
+        spec:
+          alt: "Gastraum, Speisen und Gäste der Bar Tabac."
+          category: "Hospitality"
+          format: "Querformat"
+          motif: "bt-14"
+      - id: bt-15
+        spec:
+          alt: "Gastraum, Speisen und Gäste der Bar Tabac."
+          category: "Hospitality"
+          format: "Hochformat"
+          motif: "bt-15"
+  - layout: pair
+    images:
+      - id: bt-16
+        spec:
+          alt: "Gastraum, Speisen und Gäste der Bar Tabac."
+          category: "Hospitality"
+          format: "Hochformat"
+          motif: "bt-16"
+      - id: bt-17
+        spec:
+          alt: "Gastraum, Speisen und Gäste der Bar Tabac."
+          category: "Hospitality"
+          format: "Hochformat"
+          motif: "bt-17"
+  - layout: pair
+    images:
+      - id: bt-18
+        spec:
+          alt: "Gastraum, Speisen und Gäste der Bar Tabac."
+          category: "Hospitality"
+          format: "Hochformat"
+          motif: "bt-18"
+      - id: bt-19
+        spec:
+          alt: "Gastraum, Speisen und Gäste der Bar Tabac."
+          category: "Hospitality"
+          format: "Hochformat"
+          motif: "bt-19"
+  - layout: pair
+    images:
+      - id: bt-20
+        spec:
+          alt: "Gastraum, Speisen und Gäste der Bar Tabac."
+          category: "Hospitality"
+          format: "Hochformat"
+          motif: "bt-20"
+      - id: bt-21
+        spec:
+          alt: "Gastraum, Speisen und Gäste der Bar Tabac."
+          category: "Hospitality"
+          format: "Hochformat"
+          motif: "bt-21"
+  - layout: pair
+    images:
+      - id: bt-22
+        spec:
+          alt: "Gastraum, Speisen und Gäste der Bar Tabac."
+          category: "Hospitality"
+          format: "Hochformat"
+          motif: "bt-22"
+      - id: bt-23
+        spec:
+          alt: "Gastraum, Speisen und Gäste der Bar Tabac."
+          category: "Hospitality"
+          format: "Hochformat"
+          motif: "bt-23"
+  - layout: single-r
+    images:
+      - id: bt-24
+        spec:
+          alt: "Gastraum, Speisen und Gäste der Bar Tabac."
+          category: "Hospitality"
+          format: "Hochformat"
+          motif: "bt-24"
 ---
 
 Die Serie führt von der Passage mit Schachbrettboden in den Gastraum, zeigt Etagere, Kaffee und Ente mit Rotkohl und Menschen, die genießen.

@@ -77,6 +77,14 @@ gallery:
           category: "Hospitality"
           format: "Hochformat"
           motif: "sel-09"
+  - layout: full
+    images:
+      - id: sel-10
+        spec:
+          alt: "Räume des Select Hotel Klagenfurt."
+          category: "Hospitality"
+          format: "Querformat"
+          motif: "sel-10"
 ---
 
 Von der rosafarbenen Gründerzeitfassade über die Lobby bis zur Suite: Die Bilder zeigen, was Gäste erwartet – ergänzt um Portraits der Menschen, die das Haus führen.

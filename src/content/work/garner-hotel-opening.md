@@ -4,9 +4,9 @@ client: "Garner Hotel (IHG) / Novum"
 industry: "Hotellerie"
 service: events
 alsoServices: [immobilien]
-location: "Deutschland"
+location: "Hamburg"
 year: 2024
-summary: "Eröffnung eines Garner Hotels an IHG Hotel: Bandschnitt, Gäste, Team – und die neuen Zimmer und Räume."
+summary: "Eröffnung des Garner Hotels in Hamburg (an IHG Hotel): Bandschnitt, Gäste, Team – und die neuen Zimmer und Räume."
 usage: [PR, Social Media]
 featured: false
 order: 9.7
@@ -85,6 +85,70 @@ gallery:
           category: "Events"
           format: "Querformat"
           motif: "gar-10"
+  - layout: pair
+    images:
+      - id: gar-11
+        spec:
+          alt: "Eröffnung und Räume des Garner Hotels."
+          category: "Event"
+          format: "Querformat"
+          motif: "gar-11"
+      - id: gar-12
+        spec:
+          alt: "Eröffnung und Räume des Garner Hotels."
+          category: "Event"
+          format: "Querformat"
+          motif: "gar-12"
+  - layout: pair
+    images:
+      - id: gar-13
+        spec:
+          alt: "Eröffnung und Räume des Garner Hotels."
+          category: "Event"
+          format: "Querformat"
+          motif: "gar-13"
+      - id: gar-14
+        spec:
+          alt: "Eröffnung und Räume des Garner Hotels."
+          category: "Event"
+          format: "Querformat"
+          motif: "gar-14"
+  - layout: offset
+    images:
+      - id: gar-15
+        spec:
+          alt: "Eröffnung und Räume des Garner Hotels."
+          category: "Event"
+          format: "Querformat"
+          motif: "gar-15"
+      - id: gar-16
+        spec:
+          alt: "Eröffnung und Räume des Garner Hotels."
+          category: "Event"
+          format: "Hochformat"
+          motif: "gar-16"
+  - layout: pair
+    images:
+      - id: gar-17
+        spec:
+          alt: "Eröffnung und Räume des Garner Hotels."
+          category: "Event"
+          format: "Querformat"
+          motif: "gar-17"
+      - id: gar-18
+        spec:
+          alt: "Eröffnung und Räume des Garner Hotels."
+          category: "Event"
+          format: "Querformat"
+          motif: "gar-18"
+  - layout: full
+    images:
+      - id: gar-19
+        spec:
+          alt: "Eröffnung und Räume des Garner Hotels."
+          category: "Event"
+          format: "Querformat"
+          motif: "gar-19"
 ---
 
 Event und Hotelfotografie an einem Tag: der Bandschnitt mit Konfetti, das Team an der Rezeption, die Gastgeber im Gespräch – und die Räume, die ab sofort Gäste empfangen.

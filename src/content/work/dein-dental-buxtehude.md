@@ -85,6 +85,34 @@ gallery:
           category: "Employer Branding"
           format: "Hochformat"
           motif: "ddb-10"
+  - layout: pair
+    images:
+      - id: ddb-11
+        spec:
+          alt: "Praxisalltag bei Dein Dental in Buxtehude."
+          category: "Employer Branding"
+          format: "Querformat"
+          motif: "ddb-11"
+      - id: ddb-12
+        spec:
+          alt: "Praxisalltag bei Dein Dental in Buxtehude."
+          category: "Employer Branding"
+          format: "Querformat"
+          motif: "ddb-12"
+  - layout: offset-r
+    images:
+      - id: ddb-14
+        spec:
+          alt: "Praxisalltag bei Dein Dental in Buxtehude."
+          category: "Employer Branding"
+          format: "Querformat"
+          motif: "ddb-14"
+      - id: ddb-13
+        spec:
+          alt: "Praxisalltag bei Dein Dental in Buxtehude."
+          category: "Employer Branding"
+          format: "Hochformat"
+          motif: "ddb-13"
 ---
 
 Die Bilder zeigen Menschen, Handwerk und Räume: Zahnärztinnen und Zahnärzte im Portrait, Behandlungen mit Lupenbrille, die Auswertung von Röntgenbildern und die Praxis von außen.

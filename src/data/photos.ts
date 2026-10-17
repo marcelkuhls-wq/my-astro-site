@@ -189,12 +189,12 @@ export const photos: Record<string, PhotoSpec> = {
     position: '50% 30%',
   },
   'eb-behind': {
-    alt: 'Marcel Kuhls mit Kamera, gespiegelt in einer Glasfront.',
-    category: 'Behind the Scenes',
-    format: 'Querformat 3:2',
-    motif: 'Marcel bei der Arbeit',
-    file: 'marcel-kuhls-spiegelung',
-    position: '35% 50%',
+    alt: 'Marcel Kuhls im dunklen Anzug vor einer Betonwand, Blick zur Seite.',
+    category: 'Portrait',
+    format: 'Hochformat',
+    motif: 'Marcel Kuhls',
+    file: 'marcel-kuhls-blick',
+    position: '50% 25%',
   },
 
   /* ── Business ───────────────────────────────────────────────────────── */
@@ -392,12 +392,12 @@ export const photos: Record<string, PhotoSpec> = {
     position: '50% 12%',
   },
   'about-work-1': {
-    alt: 'Marcel Kuhls mit Kamera auf der Plaza der Elbphilharmonie, gespiegelt in einer Glasfront.',
-    category: 'Behind the Scenes',
-    format: 'Querformat 3:2',
-    motif: 'Marcel bei der Arbeit',
-    file: 'marcel-kuhls-spiegelung',
-    position: '35% 50%',
+    alt: 'Marcel Kuhls im dunklen Anzug vor einer Betonwand, Blick zur Seite.',
+    category: 'Portrait',
+    format: 'Hochformat',
+    motif: 'Marcel Kuhls',
+    file: 'marcel-kuhls-blick',
+    position: '50% 25%',
   },
   'about-work-2': {
     alt: 'Dach der Elbphilharmonie mit Spiegelung des Sonnenuntergangs.',

@@ -1,7 +1,7 @@
 ---
-title: Saniertes Altbau-Dachgeschoss
+title: Saniertes Altbau-Dachgeschoss – Tiedemann Immobilien
 # TODO: Kunde (Makler/Eigentümer) und Ort prüfen
-client: THB Capital Invest GmbH
+client: Tiedemann Immobilien
 industry: Immobilien
 service: immobilien
 location: Hamburg
@@ -77,6 +77,28 @@ gallery:
           category: "Außenbereich"
           format: "Hochformat 4:5"
           motif: "immo-sanierung-dachterrasse"
+  - layout: pair
+    images:
+      - id: tie-02
+        spec:
+          alt: "Bad mit Badewanne und Dusche im sanierten Dachgeschoss."
+          category: "Immobilien"
+          format: "Querformat"
+          motif: "tie-02"
+      - id: tie-04
+        spec:
+          alt: "Flur mit Blick zur Wendeltreppe und ins Duschbad."
+          category: "Immobilien"
+          format: "Querformat"
+          motif: "tie-04"
+  - layout: full
+    images:
+      - id: tie-05
+        spec:
+          alt: "Dachterrasse mit Blick über die Dächer."
+          category: "Immobilien"
+          format: "Querformat"
+          motif: "tie-05"
 ---
 
 Das Set zeigt, was diese Wohnung besonders macht: den Kontrast zwischen historischer Substanz und neuem Ausbau. Gründerzeitfassade und Marmortreppe auf der einen Seite, Küche mit Kochinsel unter sichtbarem Gebälk und die schwarze Wendeltreppe auf der anderen.

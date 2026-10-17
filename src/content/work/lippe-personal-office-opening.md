@@ -3,7 +3,7 @@ title: "Lippe Personal – Büroeröffnung"
 client: "Lippe Personal"
 industry: "Personaldienstleistung & Recruiting"
 service: events
-location: "Hamburg"
+location: "Düsseldorf"
 year: 2024
 summary: "Reportage der Büroeinweihung von Lippe Personal – Reden, Bandschnitt, Gäste, Kunst und DJ-Set."
 usage: [Social Media, LinkedIn]
@@ -81,6 +81,56 @@ gallery:
           category: "Events"
           format: "Querformat"
           motif: "lip-09"
+  - layout: pair
+    images:
+      - id: lip-10
+        spec:
+          alt: "Büroeinweihung von Lippe Personal."
+          category: "Event"
+          format: "Querformat"
+          motif: "lip-10"
+      - id: lip-11
+        spec:
+          alt: "Büroeinweihung von Lippe Personal."
+          category: "Event"
+          format: "Querformat"
+          motif: "lip-11"
+  - layout: pair
+    images:
+      - id: lip-12
+        spec:
+          alt: "Büroeinweihung von Lippe Personal."
+          category: "Event"
+          format: "Querformat"
+          motif: "lip-12"
+      - id: lip-13
+        spec:
+          alt: "Büroeinweihung von Lippe Personal."
+          category: "Event"
+          format: "Querformat"
+          motif: "lip-13"
+  - layout: offset-r
+    images:
+      - id: lip-15
+        spec:
+          alt: "Büroeinweihung von Lippe Personal."
+          category: "Event"
+          format: "Querformat"
+          motif: "lip-15"
+      - id: lip-14
+        spec:
+          alt: "Büroeinweihung von Lippe Personal."
+          category: "Event"
+          format: "Hochformat"
+          motif: "lip-14"
+  - layout: full
+    images:
+      - id: lip-16
+        spec:
+          alt: "Büroeinweihung von Lippe Personal."
+          category: "Event"
+          format: "Querformat"
+          motif: "lip-16"
 ---
 
 Farbiges Licht, volle Räume und viele Begegnungen: Die Serie zeigt den Abend so, wie die Gäste ihn erlebt haben, inklusive Kunstübergabe und Teamfoto.

@@ -60,6 +60,34 @@ gallery:
           category: "Team"
           format: "Querformat 16:9"
           motif: "Mannschaft"
+  - layout: offset
+    images:
+      - id: gr-x-01
+        spec:
+          alt: "Besuch von gamesright beim HSV III."
+          category: "Event"
+          format: "Querformat"
+          motif: "gr-x-01"
+      - id: gr-x-02
+        spec:
+          alt: "Besuch von gamesright beim HSV III."
+          category: "Event"
+          format: "Hochformat"
+          motif: "gr-x-02"
+  - layout: pair
+    images:
+      - id: gr-x-03
+        spec:
+          alt: "Besuch von gamesright beim HSV III."
+          category: "Event"
+          format: "Querformat"
+          motif: "gr-x-03"
+      - id: gr-x-04
+        spec:
+          alt: "Besuch von gamesright beim HSV III."
+          category: "Event"
+          format: "Querformat"
+          motif: "gr-x-04"
 ---
 
 Die Serie dokumentiert den Termin vom offiziellen Moment bis zur Stimmung auf dem Platz: die Übergabe des Trikots mit der Nummer 32 und dem gamesright-Schriftzug, das Mannschaftsfoto vor dem Tor und Spieler im Abendlicht.

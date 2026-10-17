@@ -122,6 +122,104 @@ gallery:
           category: "Portrait"
           format: "Hochformat"
           motif: "benecke-x-03"
+  - layout: offset-r
+    images:
+      - id: benecke-x-05
+        spec:
+          alt: "Team und Praxisalltag der Kleintierpraxis Benecke."
+          category: "Praxis"
+          format: "Querformat"
+          motif: "benecke-x-05"
+      - id: benecke-x-04
+        spec:
+          alt: "Team und Praxisalltag der Kleintierpraxis Benecke."
+          category: "Praxis"
+          format: "Hochformat"
+          motif: "benecke-x-04"
+  - layout: offset
+    images:
+      - id: benecke-x-06
+        spec:
+          alt: "Team und Praxisalltag der Kleintierpraxis Benecke."
+          category: "Praxis"
+          format: "Querformat"
+          motif: "benecke-x-06"
+      - id: benecke-x-07
+        spec:
+          alt: "Team und Praxisalltag der Kleintierpraxis Benecke."
+          category: "Praxis"
+          format: "Hochformat"
+          motif: "benecke-x-07"
+  - layout: pair
+    images:
+      - id: benecke-x-08
+        spec:
+          alt: "Team und Praxisalltag der Kleintierpraxis Benecke."
+          category: "Praxis"
+          format: "Hochformat"
+          motif: "benecke-x-08"
+      - id: benecke-x-09
+        spec:
+          alt: "Team und Praxisalltag der Kleintierpraxis Benecke."
+          category: "Praxis"
+          format: "Hochformat"
+          motif: "benecke-x-09"
+  - layout: offset
+    images:
+      - id: benecke-x-10
+        spec:
+          alt: "Team und Praxisalltag der Kleintierpraxis Benecke."
+          category: "Praxis"
+          format: "Querformat"
+          motif: "benecke-x-10"
+      - id: benecke-x-11
+        spec:
+          alt: "Team und Praxisalltag der Kleintierpraxis Benecke."
+          category: "Praxis"
+          format: "Hochformat"
+          motif: "benecke-x-11"
+  - layout: offset
+    images:
+      - id: benecke-x-12
+        spec:
+          alt: "Team und Praxisalltag der Kleintierpraxis Benecke."
+          category: "Praxis"
+          format: "Querformat"
+          motif: "benecke-x-12"
+      - id: benecke-x-13
+        spec:
+          alt: "Team und Praxisalltag der Kleintierpraxis Benecke."
+          category: "Praxis"
+          format: "Hochformat"
+          motif: "benecke-x-13"
+  - layout: pair
+    images:
+      - id: benecke-x-14
+        spec:
+          alt: "Team und Praxisalltag der Kleintierpraxis Benecke."
+          category: "Praxis"
+          format: "Querformat"
+          motif: "benecke-x-14"
+      - id: benecke-x-15
+        spec:
+          alt: "Team und Praxisalltag der Kleintierpraxis Benecke."
+          category: "Praxis"
+          format: "Querformat"
+          motif: "benecke-x-15"
+  - layout: offset
+    images:
+      - id: benecke-x-16
+        spec:
+          alt: "Team und Praxisalltag der Kleintierpraxis Benecke."
+          category: "Praxis"
+          format: "Querformat"
+          motif: "benecke-x-16"
+      - id: benecke-x-17
+        spec:
+          alt: "Team und Praxisalltag der Kleintierpraxis Benecke."
+          category: "Praxis"
+          format: "Hochformat"
+          motif: "benecke-x-17"
 ---
 
 Die Bildserie verbindet Portraits des Teams mit echten Situationen aus dem Praxisalltag: Untersuchungen mit dem Stethoskop, Röntgen, die Auswertung von Dentalröntgenbildern und der Empfang.

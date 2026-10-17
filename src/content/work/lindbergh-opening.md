@@ -98,6 +98,42 @@ gallery:
           category: "Events"
           format: "Hochformat"
           motif: "lin-12"
+  - layout: pair
+    images:
+      - id: lin-13
+        spec:
+          alt: "Store-Eröffnung von Lindbergh in Hamburg."
+          category: "Event"
+          format: "Hochformat"
+          motif: "lin-13"
+      - id: lin-14
+        spec:
+          alt: "Store-Eröffnung von Lindbergh in Hamburg."
+          category: "Event"
+          format: "Hochformat"
+          motif: "lin-14"
+  - layout: pair
+    images:
+      - id: lin-15
+        spec:
+          alt: "Store-Eröffnung von Lindbergh in Hamburg."
+          category: "Event"
+          format: "Hochformat"
+          motif: "lin-15"
+      - id: lin-16
+        spec:
+          alt: "Store-Eröffnung von Lindbergh in Hamburg."
+          category: "Event"
+          format: "Hochformat"
+          motif: "lin-16"
+  - layout: single-r
+    images:
+      - id: lin-17
+        spec:
+          alt: "Store-Eröffnung von Lindbergh in Hamburg."
+          category: "Event"
+          format: "Hochformat"
+          motif: "lin-17"
 ---
 
 Retail-Event mit natürlicher Bildsprache: viel Tageslicht, echte Begegnungen und Details, die die Marke erzählen.

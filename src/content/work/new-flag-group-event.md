@@ -98,6 +98,104 @@ gallery:
           category: "Events"
           format: "Hochformat"
           motif: "nfg-12"
+  - layout: pair
+    images:
+      - id: nfg-13
+        spec:
+          alt: "Live-Styling und Looks beim Event der New Flag Group."
+          category: "Event"
+          format: "Querformat"
+          motif: "nfg-13"
+      - id: nfg-14
+        spec:
+          alt: "Live-Styling und Looks beim Event der New Flag Group."
+          category: "Event"
+          format: "Querformat"
+          motif: "nfg-14"
+  - layout: pair
+    images:
+      - id: nfg-15
+        spec:
+          alt: "Live-Styling und Looks beim Event der New Flag Group."
+          category: "Event"
+          format: "Querformat"
+          motif: "nfg-15"
+      - id: nfg-16
+        spec:
+          alt: "Live-Styling und Looks beim Event der New Flag Group."
+          category: "Event"
+          format: "Querformat"
+          motif: "nfg-16"
+  - layout: offset
+    images:
+      - id: nfg-17
+        spec:
+          alt: "Live-Styling und Looks beim Event der New Flag Group."
+          category: "Event"
+          format: "Querformat"
+          motif: "nfg-17"
+      - id: nfg-18
+        spec:
+          alt: "Live-Styling und Looks beim Event der New Flag Group."
+          category: "Event"
+          format: "Hochformat"
+          motif: "nfg-18"
+  - layout: pair
+    images:
+      - id: nfg-19
+        spec:
+          alt: "Live-Styling und Looks beim Event der New Flag Group."
+          category: "Event"
+          format: "Querformat"
+          motif: "nfg-19"
+      - id: nfg-20
+        spec:
+          alt: "Live-Styling und Looks beim Event der New Flag Group."
+          category: "Event"
+          format: "Querformat"
+          motif: "nfg-20"
+  - layout: pair
+    images:
+      - id: nfg-21
+        spec:
+          alt: "Live-Styling und Looks beim Event der New Flag Group."
+          category: "Event"
+          format: "Querformat"
+          motif: "nfg-21"
+      - id: nfg-22
+        spec:
+          alt: "Live-Styling und Looks beim Event der New Flag Group."
+          category: "Event"
+          format: "Querformat"
+          motif: "nfg-22"
+  - layout: pair
+    images:
+      - id: nfg-23
+        spec:
+          alt: "Live-Styling und Looks beim Event der New Flag Group."
+          category: "Event"
+          format: "Querformat"
+          motif: "nfg-23"
+      - id: nfg-24
+        spec:
+          alt: "Live-Styling und Looks beim Event der New Flag Group."
+          category: "Event"
+          format: "Querformat"
+          motif: "nfg-24"
+  - layout: pair
+    images:
+      - id: nfg-25
+        spec:
+          alt: "Live-Styling und Looks beim Event der New Flag Group."
+          category: "Event"
+          format: "Querformat"
+          motif: "nfg-25"
+      - id: nfg-26
+        spec:
+          alt: "Live-Styling und Looks beim Event der New Flag Group."
+          category: "Event"
+          format: "Querformat"
+          motif: "nfg-26"
 ---
 
 Bühne, Backstage und Portrait in einem: Die Serie zeigt Handwerk, Publikum und Ergebnis – farbig, lebendig und nah an den Menschen.
