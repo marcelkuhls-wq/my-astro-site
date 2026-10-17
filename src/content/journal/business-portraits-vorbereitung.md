@@ -5,6 +5,7 @@ date: 2026-10-14
 service: business
 cover:
   id: meins-portrait
+  position: "50% 18%"
   spec:
     alt: Business-Portrait von Björn Meins
     category: Business-Portrait

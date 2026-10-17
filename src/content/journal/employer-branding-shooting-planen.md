@@ -5,6 +5,7 @@ date: 2026-10-16
 service: employer-branding
 cover:
   id: weiss-team-schreibtisch
+  position: "50% 12%"
   spec:
     alt: Mitarbeiterin von Weiss Immobilien am Schreibtisch im Büro
     category: Employer Branding

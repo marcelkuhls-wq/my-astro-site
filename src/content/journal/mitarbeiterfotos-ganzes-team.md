@@ -5,6 +5,7 @@ date: 2026-10-16
 service: business
 cover:
   id: weiss-team-portrait-beige
+  position: "50% 18%"
   spec:
     alt: Portrait eines Maklers von Weiss Immobilien im hellen Sakko vor neutralem Hintergrund
     category: Mitarbeiterfotos
