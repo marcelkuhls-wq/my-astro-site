@@ -41,12 +41,12 @@ export const photos: Record<string, PhotoSpec> = {
     position: '50% 85%',
   },
   'home-eb': {
-    alt: 'Drei Kollegen von Software Service Stadermann lachen im Gespräch am Besprechungstisch.',
+    alt: 'Teil des Teams von Weiss Immobilien entspannt auf dem Sofa im Büro.',
     category: 'Employer Branding',
     format: 'Querformat 3:2',
-    motif: 'Stadermann – Besprechung',
-    file: 'st-besprechung',
-    position: '50% 50%',
+    motif: 'Weiss Immobilien – Team',
+    file: 'weiss-team-sofa',
+    position: '50% 15%',
   },
   'home-business-1': {
     alt: 'Portrait eines Mitarbeiters in beigem Sakko vor neutralem Hintergrund.',
@@ -73,20 +73,20 @@ export const photos: Record<string, PhotoSpec> = {
     position: '50% 58%',
   },
   'home-events-1': {
-    alt: 'Gäste in Abendgarderobe bei der Weihnachtsfeier in der geschmückten Bar des Hotel Vier Jahreszeiten.',
+    alt: 'Speaker auf der Bühne beim Kundenevent von Everllence im Atlantik-Haus.',
     category: 'Events',
     format: 'Querformat 3:2',
-    motif: 'Buying Labs – Weihnachtsfeier',
-    file: 'blx-01',
-    position: '50% 55%',
+    motif: 'Everllence – Keynote',
+    file: 'evl-01',
+    position: '50% 40%',
   },
   'home-events-2': {
-    alt: 'Gäste von Everllence auf der Dachterrasse mit Blick über den Hamburger Hafen.',
+    alt: 'Begrüßungsrede bei der Weihnachtsfeier im Hotel Vier Jahreszeiten.',
     category: 'Events',
     format: 'Hochformat 4:5',
-    motif: 'Everllence – Dachterrasse',
-    file: 'evl-02',
-    position: '55% 55%',
+    motif: 'Buying Labs – Rede',
+    file: 'blx-02',
+    position: '50% 30%',
   },
   'home-events-3': {
     alt: 'Sängerin im Paillettenkleid bei der Weihnachtsfeier im Hotel Vier Jahreszeiten.',
@@ -314,11 +314,11 @@ export const photos: Record<string, PhotoSpec> = {
 
   /* ── Events ─────────────────────────────────────────────────────────── */
   'events-hero': {
-    alt: 'Gäste in Abendgarderobe bei der Weihnachtsfeier von Buying Labs in der geschmückten Bar des Hotel Vier Jahreszeiten.',
+    alt: 'Gäste von Everllence im Gespräch auf der Dachterrasse über dem Hamburger Hafen.',
     category: 'Events',
     format: 'Querformat 3:2 (Mobile: 4:5)',
-    motif: 'Buying Labs – Weihnachtsfeier',
-    file: 'blx-01',
+    motif: 'Everllence – Dachterrasse',
+    file: 'evl-15',
     position: '50% 50%',
   },
   'events-moment-1': {

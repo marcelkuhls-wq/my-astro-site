@@ -10,7 +10,7 @@ export default defineConfig({
   site: SITE_URL,
   trailingSlash: 'never',
   devToolbar: { enabled: false },
-  build: { format: 'file' },
+  build: { format: 'file', inlineStylesheets: 'always' },
 
   // Schriften werden beim Build heruntergeladen und selbst gehostet –
   // keine Verbindung zu Google Fonts im Browser (DSGVO).

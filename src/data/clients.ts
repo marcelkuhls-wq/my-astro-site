@@ -44,16 +44,16 @@ export const press: { outlet: string; href: string; note: string }[] = [
 ];
 
 /** Kundenlogos (einfarbig, public/logos/) – nur bekanntere Marken. scale gleicht die optische Größe aus. */
-export const logos: { name: string; file: string; scale?: number }[] = [
-  { name: 'Everllence', file: 'everllence.png', scale: 0.9 },
-  { name: 'Garner Hotels (IHG)', file: 'garner-hotels.png', scale: 1.05 },
-  { name: 'Dein Dental', file: 'dein-dental.png', scale: 1.5 },
-  { name: 'gamesright', file: 'gamesright.png', scale: 0.85 },
-  { name: 'Lindbergh', file: 'lindbergh.png', scale: 0.75 },
-  { name: 'Weiss Immobilien', file: 'weiss-immobilien.png', scale: 0.5 },
-  { name: 'Tiedemann Immobilien', file: 'tiedemann-immobilien.png', scale: 1.4 },
-  { name: 'Software Service Stadermann', file: 'stadermann.png', scale: 0.8 },
-  { name: 'Lippe Personal', file: 'lippe-personal.png', scale: 1.2 },
-  { name: 'Select Hotels', file: 'select-hotels.png', scale: 1.1 },
-  { name: 'Adam & Eve Beautylounge', file: 'adam-eve-beautylounge.png', scale: 1.1 },
+export const logos: { name: string; file: string; scale?: number; w: number; h: number }[] = [
+  { name: 'Everllence', file: 'everllence.webp', scale: 0.9, w: 438, h: 72 },
+  { name: 'Garner Hotels (IHG)', file: 'garner-hotels.webp', scale: 1.05, w: 212, h: 72 },
+  { name: 'Dein Dental', file: 'dein-dental.webp', scale: 1.5, w: 59, h: 72 },
+  { name: 'gamesright', file: 'gamesright.webp', scale: 0.85, w: 391, h: 72 },
+  { name: 'Lindbergh', file: 'lindbergh.webp', scale: 0.75, w: 800, h: 72 },
+  { name: 'Weiss Immobilien', file: 'weiss-immobilien.webp', scale: 0.5, w: 900, h: 51 },
+  { name: 'Tiedemann Immobilien', file: 'tiedemann-immobilien.webp', scale: 1.4, w: 201, h: 72 },
+  { name: 'Software Service Stadermann', file: 'stadermann.webp', scale: 0.8, w: 510, h: 72 },
+  { name: 'Lippe Personal', file: 'lippe-personal.webp', scale: 1.2, w: 268, h: 72 },
+  { name: 'Select Hotels', file: 'select-hotels.webp', scale: 1.1, w: 302, h: 72 },
+  { name: 'Adam & Eve Beautylounge', file: 'adam-eve-beautylounge.webp', scale: 1.1, w: 209, h: 72 },
 ];

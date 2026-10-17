@@ -37,7 +37,7 @@ const isActive = (href: string) => path === href || path.startsWith(`${href}/`);
             href="/kontakt"
             class:list={[
               'label ml-2 inline-flex items-center gap-2 bg-ink px-4 py-2.5 text-bone transition-colors duration-300 hover:bg-black',
-              isActive('/kontakt') && 'pointer-events-none opacity-60',
+              isActive('/kontakt') && 'pointer-events-none',
             ]}
           >
             Projekt anfragen <span aria-hidden="true">→</span>

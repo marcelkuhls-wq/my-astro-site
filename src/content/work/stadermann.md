@@ -9,7 +9,7 @@ year: 2026
 summary: Employer Branding für den Hersteller der Laborsoftware DENTAplus – Teamportraits, Arbeitsalltag im Büro und die Software im Einsatz im Dentallabor bis hin zum 3D-Druck.
 scope: "Mitarbeiterportraits, Arbeitssituationen, Produkt- und Anwendungsbilder"
 usage: [Karriereseite, Website, Social Media, Produktmarketing]
-featured: true
+featured: false
 order: 99
 task: "Software Service Stadermann, Hersteller der Laborsoftware DENTAplus, brauchte Bilder für Karriereseite, Website, Social Media und Produktmarketing – vom Team bis zur Software im Einsatz."
 approach: "Ich habe Mitarbeiterportraits, Besprechungen und Entwicklerarbeitsplätze im Büro fotografiert und anschließend die Anwendung im Dentallabor begleitet – vom Scan bis zum 3D-Druck."

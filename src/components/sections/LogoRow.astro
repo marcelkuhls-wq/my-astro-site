@@ -14,19 +14,21 @@ const { class: className } = Astro.props;
 <div class:list={['wrap', className]} data-reveal>
   <div class="grid-12 gap-y-6 border-t border-line pt-5">
     <p class="label col-span-12 text-muted md:col-span-3">Projekte u. a. für</p>
-    <div class="logo-marquee col-span-12 md:col-span-9" aria-label="Kunden" role="list">
+    <div class="logo-marquee col-span-12 md:col-span-9">
       <div class="logo-track">
         {
           [0, 1].map((copy) => (
-            <ul class="logo-set" aria-hidden={copy === 1 ? 'true' : undefined}>
+            <ul class="logo-set" aria-label={copy === 0 ? 'Kunden' : undefined} aria-hidden={copy === 1 ? 'true' : undefined}>
               {logos.map((l) => (
-                <li role={copy === 0 ? 'listitem' : undefined}>
+                <li>
                   <img
                     src={`/logos/${l.file}`}
                     alt={copy === 0 ? l.name : ''}
                     title={l.name}
                     loading="lazy"
                     decoding="async"
+                    width={l.w}
+                    height={l.h}
                     style={`--s: ${l.scale ?? 1}`}
                   />
                 </li>
