@@ -33,7 +33,14 @@ const isActive = (href: string) => path === href || path.startsWith(`${href}/`);
         try {
           internal = !!document.referrer && new URL(document.referrer).host === location.host;
         } catch (e) {}
-        if (home || !internal) logo.classList.add('sk-intro');
+        if (home || !internal) {
+          logo.classList.add('sk-intro');
+          // Nach dem Intro die Klasse entfernen, sonst startet es beim Verlassen des Hovers erneut
+          var letters = logo.querySelectorAll('.sk-l');
+          letters[letters.length - 1].addEventListener('animationend', function (e) {
+            if (e.animationName === 'sk-in') logo.classList.remove('sk-intro');
+          });
+        }
       })(document.currentScript.previousElementSibling);
     </script>
 
