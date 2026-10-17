@@ -4,7 +4,7 @@
  * Pfeile + Punkte, kein Autoplay, keine fremden Skripte.
  */
 import SectionLabel from '../ui/SectionLabel.astro';
-import { testimonials } from '../../data/testimonials';
+import { testimonials, splitQuote } from '../../data/testimonials';
 import { site } from '../../config/site';
 
 interface Props {
@@ -43,7 +43,7 @@ const meta = (t: (typeof list)[number]) => [t.role, t.company].filter(Boolean).j
             {list.map((t, i) => (
               <li class="rv-slide w-full shrink-0 snap-start pr-6 md:pr-10" aria-roledescription="Folie" aria-label={`${i + 1} von ${list.length}`}>
                 <figure>
-                  <blockquote class="text-h3 !leading-[1.25]"><p>„{t.quote}“</p></blockquote>
+                  <blockquote class="text-h3 !leading-[1.25] text-ink/60"><p>„{splitQuote(t)[0]}<span class="text-ink">{splitQuote(t)[1]}</span>{splitQuote(t)[2]}“</p></blockquote>
                   <figcaption class="mt-8 text-[0.9375rem]">
                     {t.name}
                     {meta(t) && <span class="text-muted"> · {meta(t)}</span>}

@@ -6,6 +6,7 @@
  */
 import { site } from '../../config/site';
 import ArrowLink from '../ui/ArrowLink.astro';
+import { splitQuote } from '../../data/testimonials';
 
 interface Props {
   quote?: string;
@@ -13,11 +14,13 @@ interface Props {
   role?: string;
   company?: string;
   source?: string;
+  highlight?: string;
   /** Link zum zugehörigen Projekt */
   projectHref?: string;
   class?: string;
 }
-const { quote, name, role, company, source, projectHref, class: className } = Astro.props;
+const { quote, name, role, company, source, highlight, projectHref, class: className } = Astro.props;
+const [qa, qb, qc] = splitQuote({ quote: quote ?? '', highlight });
 const meta = [[role, company].filter(Boolean).join(', '), source].filter(Boolean).join(' · ');
 const isPlaceholder = !quote;
 const show = !isPlaceholder || site.showPlaceholderSpecs;
@@ -35,8 +38,8 @@ const show = !isPlaceholder || site.showPlaceholderSpecs;
           </div>
         ) : (
           <>
-            <blockquote class="text-h3 !leading-[1.25]">
-              <p>„{quote}“</p>
+            <blockquote class:list={['text-h3 !leading-[1.25]', qb && 'text-ink/60']}>
+              <p>„{qa}{qb && <span class="text-ink">{qb}</span>}{qc}“</p>
             </blockquote>
             <figcaption class="mt-8 flex flex-wrap items-baseline gap-x-8 gap-y-4">
               <span class="text-[0.9375rem]">
