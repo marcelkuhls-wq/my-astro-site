@@ -36,7 +36,7 @@ export const photos: Record<string, PhotoSpec> = {
     alt: 'Geschäftsmann im Anzug telefoniert an einer bodentiefen Fensterfront hoch über dem Hamburger Hafen.',
     category: 'Business & Corporate',
     format: 'Querformat, sehr breit',
-    motif: 'Björn Meins, Engel & Völkers',
+    motif: 'Björn Meins',
     file: 'meins-fenster-hafen',
     position: '52% 50%',
   },

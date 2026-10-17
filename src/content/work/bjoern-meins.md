@@ -1,6 +1,6 @@
 ---
-title: Björn Meins, Engel & Völkers
-client: Engel & Völkers
+title: Björn Meins – Business-Portraits
+client: Björn Meins
 industry: Immobilien
 service: business
 location: Hamburg
@@ -10,7 +10,7 @@ usage: [Website, LinkedIn, Presse]
 featured: true
 order: 3
 scope: "Studio-Portraits, Fensterfront mit Hafenblick, Schwarzweiß-Varianten"
-task: "Björn Meins von Engel & Völkers brauchte Business-Portraits für Website, LinkedIn und Presse – mit Varianten für unterschiedliche Einsätze."
+task: "Björn Meins, Immobilienmakler in Hamburg, brauchte Business-Portraits für Website, LinkedIn und Presse – mit Varianten für unterschiedliche Einsätze."
 approach: "Ich habe zwei Looks an einem Termin fotografiert: klassische Portraits im Studio-Setup und Bilder vor der Fensterfront mit Blick über den Hamburger Hafen, dazu Schwarzweiß-Varianten."
 cover:
   id: meins-fenster

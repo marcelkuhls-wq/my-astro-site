@@ -18,7 +18,6 @@ export const clients: Client[] = [];
  * bereits öffentlich auf der Website stehen. Keine Logos, daher keine Freigabe nötig.
  */
 export const clientNames: string[] = [
-  'Engel & Völkers',
   'Armand de Brignac',
   'Dein Dental',
   'gamesright × HSV',
@@ -45,7 +44,6 @@ export const press: { outlet: string; href: string; note: string }[] = [
 
 /** Kundenlogos (einfarbig, public/logos/) – nur bekanntere Marken. scale gleicht die optische Größe aus. */
 export const logos: { name: string; file: string; scale?: number }[] = [
-  { name: 'Engel & Völkers', file: 'engel-voelkers.png', scale: 0.8 },
   { name: 'Armand de Brignac', file: 'armand-de-brignac.png', scale: 1.5 },
   { name: 'Garner Hotels (IHG)', file: 'garner-hotels.png', scale: 1.05 },
   { name: 'Dein Dental', file: 'dein-dental.png', scale: 1.5 },

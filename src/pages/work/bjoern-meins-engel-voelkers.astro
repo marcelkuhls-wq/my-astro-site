@@ -1,0 +1,15 @@
+---
+/** Umbenannt in /work/bjoern-meins – alte Adresse leitet weiter. */
+const target = new URL('/work/bjoern-meins', Astro.site).toString();
+---
+
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <title>Weiterleitung – Studio Kuhls</title>
+    <meta name="robots" content="noindex, follow" />
+    <link rel="canonical" href={target} />
+    <meta http-equiv="refresh" content="0; url=/work/bjoern-meins" />
+  </head>
+  <body><p>Dieses Projekt ist umgezogen: <a href="/work/bjoern-meins">Björn Meins – Business-Portraits</a>.</p></body>
+</html>
