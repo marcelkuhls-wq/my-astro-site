@@ -1,5 +1,5 @@
 /**
- * Kundenstimmen – nur echte Zitate, wörtlich (Kürzungen mit „…“ markiert).
+ * Kundenstimmen – nur echte Zitate, wörtlich und vollständig.
  * Quelle der ersten Einträge: öffentliche Google-Bewertungen (5 Sterne).
  */
 export interface Testimonial {
@@ -28,7 +28,7 @@ export const testimonials: Testimonial[] = [
   {
     id: 'till',
     quote:
-      'Marcel hat uns bei der Aufnahme von Produktfotos und Employer Branding Thematiken unterstützt. Sehr professionell und mit einem guten ästhetischen Auge.',
+      'Marcel hat uns bei der Aufnahme von Produktfotos und Employer Branding Thematiken unterstützt. Sehr professionell und mit einem guten ästhetischen Auge',
     name: 'Till Stadermann',
     role: 'Geschäftsführender Gesellschafter',
     company: 'Software Service Stadermann GmbH',
@@ -38,7 +38,7 @@ export const testimonials: Testimonial[] = [
   {
     id: 'felix-lippe',
     quote:
-      'Marcel hat bei uns die Lippe Personal Büroeinweihung fotografiert. … und er hat sich sehr gut mit unseren Gästen verstanden, was auch ein sehr wichtiger Punkt als Fotograf ist, um gute Bilder zu schießen.',
+      'Marcel hat bei uns die Lippe Personal Büroeinweihung fotografiert. Ich bin sehr zufrieden mit seiner Leistungen und den schönen Bildern. Besonders sehr auftreten mit Smoking war sehr professionell und er hat sich sehr gut mit unseren Gästen verstanden, was auch ein sehr wichtiger Punkt als Fotograf ist, um gute Bilder zu schießen. Ich empfehle Ihn gerne weiter!',
     name: 'Felix Lippe',
     company: 'Lippe Personal',
     source: 'Google-Bewertung',
@@ -46,14 +46,14 @@ export const testimonials: Testimonial[] = [
   {
     id: 'rabil-smith',
     quote:
-      'Seine Zuverlässigkeit und die pünktliche Einhaltung von Deadlines machen ihn stets zur richtigen Wahl für uns.',
+      'Herr Kuhls überzeugt uns immer wieder mit seiner positiven Energie, seinem humorvollen Auftreten und seinem außergewöhnlichen Engagement. Seine Zuverlässigkeit und die pünktliche Einhaltung von Deadlines machen ihn stets zur richtigen Wahl für uns',
     name: 'Rabil Smith',
     source: 'Google-Bewertung',
   },
   {
     id: 'konstantin-tuludis',
     quote:
-      'Die Arbeit mit Marcel ist immer hoch professionell und er arbeitet sehr präzise mit Leidenschaft. Die Ergebnisse sind wirklich immer sehr gut …',
+      'Die Arbeit mit Marcel ist immer hoch professionell und er arbeitet sehr präzise mit Leidenschaft. Die Ergebnisse sind wirklich immer sehr gut und Marcel ist menschlich auch einfach immer gut drauf. Es macht einfach Spaß mit ihm zu arbeiten. Danke für deine Mühe!',
     name: 'Konstantin Tuludis',
     role: 'Geschäftsführer',
     company: 'Voltpol GmbH',
