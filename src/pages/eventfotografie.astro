@@ -26,7 +26,7 @@ import { breadcrumbs, serviceSchema } from '../lib/schema';
 const projects = await getProjects({ service: 'events' });
 
 const description =
-  'Eventfotograf in Hamburg für Firmenevents, Konferenzen, Jubiläen und Launches: dokumentarische Reportagen für PR, LinkedIn und interne Kommunikation.';
+  'Eventfotograf in Hamburg für Firmenfeiern, Weihnachtsfeiern, Konferenzen und Jubiläen: dokumentarische Reportagen für PR, LinkedIn und interne Kommunikation.';
 const schema = [
   serviceSchema(Astro.site, serviceById('events'), 'Eventfotografie', description),
   breadcrumbs(Astro.site, [{ name: 'Events', path: '/eventfotografie' }]),
@@ -37,6 +37,10 @@ const documented = ['Menschen', 'Atmosphäre', 'Speaker', 'Interaktionen', 'Emot
 const uses = ['PR', 'Presse', 'LinkedIn', 'Social Media', 'Interne Kommunikation', 'Event-Recaps', 'Folgeveranstaltungen'];
 
 const faq = [
+  {
+    q: 'Fotografieren Sie auch Weihnachtsfeiern und Firmenfeiern?',
+    a: 'Ja, sehr gerne – von der kleinen Teamfeier bis zum großen Abend im Hotel. Ich halte Räume, Reden, Live-Programm und vor allem die Menschen fest, zurückhaltend und ohne ständigen Blitz. Die Bilder eignen sich für interne Kommunikation, Social Media und Employer Branding.',
+  },
   {
     q: 'Wie bereiten wir die Eventfotografie vor?',
     a: 'Ich gehe Ablauf, wichtige Programmpunkte, Speaker und gewünschte Motive vorab mit Ihnen oder Ihrer Agentur durch. So weiß ich am Tag, wann ich wo sein muss.',
@@ -64,18 +68,19 @@ const faq = [
 ];
 
 const formats = [
+  { title: 'Weihnachtsfeiern & Firmenfeiern', text: 'Der Abend, an den sich ein Team das ganze Jahr erinnert – festlich, nah an den Menschen, ohne Blitzgewitter.' },
   { title: 'Konferenzen & Tagungen', text: 'Bühne, Publikum, Speaker und die Gespräche am Rand.' },
   { title: 'Produktlaunches', text: 'Produkt, Inszenierung und Reaktionen – für Presse und Social Media.' },
   { title: 'Dinner & Corporate Events', text: 'Ruhige Begleitung ohne Blitzgewitter. Gäste bleiben Gäste.' },
   { title: 'Networking & Messen', text: 'Stand, Begegnungen, Details. Bilder, die zeigen, dass etwas los war.' },
   { title: 'Eröffnungen', text: 'Neue Standorte, Büros, Hotels und Restaurants – Menschen und Räume zusammen.' },
-  { title: 'Sommerfeste & Firmenfeiern', text: 'Das Team außerhalb des Arbeitsalltags – für interne Kommunikation und Employer Branding.' },
+  { title: 'Sommerfeste & Jubiläen', text: 'Das Team außerhalb des Arbeitsalltags – für interne Kommunikation und Employer Branding.' },
 ];
 ---
 
-<BaseLayout ogImage={ogImage} title="Eventfotograf Hamburg – Firmenevents" description={description} schema={schema}>
+<BaseLayout ogImage={ogImage} title="Eventfotograf Hamburg – Firmenfeiern & Firmenevents" description={description} schema={schema}>
   <PageHeader
-    kicker="Eventfotograf für Firmenevents in Hamburg"
+    kicker="Eventfotograf für Firmenfeiern & Firmenevents in Hamburg"
     clients
     label="Leistung 04"
     title="Events"
@@ -113,8 +118,8 @@ const formats = [
 
   <Gallery layout="bleed" images={['events-atmosphere']} class="section-t" />
 
-  <SeoText label="Firmenevents" title="Firmenevents, Konferenzen und Jubiläen in Hamburg">
-    <p>Als Eventfotograf in Hamburg begleite ich Firmenevents, Konferenzen, Jubiläen, Produktlaunches und Abendveranstaltungen – von der Elbphilharmonie bis zur Alsterinsel. Dokumentarisch und zurückhaltend, damit Gäste und Programm im Mittelpunkt bleiben.</p>
+  <SeoText label="Firmenfeiern" title="Firmenfeiern, Weihnachtsfeiern und Firmenevents in Hamburg">
+    <p>Als Eventfotograf in Hamburg begleite ich Weihnachtsfeiern, Sommerfeste, Jubiläen, Kundenevents und Konferenzen – vom Hotel Vier Jahreszeiten über das Atlantik-Haus bis zur Elbphilharmonie. Dokumentarisch und zurückhaltend, damit Gäste und Programm im Mittelpunkt bleiben.</p>
     <p>Die fertige Auswahl erhalten Sie <strong>innerhalb von 48 Stunden</strong> – rechtzeitig für Pressemitteilung, LinkedIn-Recap und interne Kommunikation.</p>
   </SeoText>
 

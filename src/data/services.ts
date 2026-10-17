@@ -42,7 +42,7 @@ export const services: Service[] = [
     number: '04',
     title: 'Events',
     href: '/eventfotografie',
-    summary: 'Dokumentarische Eventfotografie für PR, Social Media und interne Kommunikation.',
+    summary: 'Firmenfeiern, Weihnachtsfeiern und Kundenevents – dokumentarisch für PR, Social Media und interne Kommunikation.',
     uses: ['PR', 'LinkedIn', 'Event-Recap', 'Interne Kommunikation'],
   },
 ];

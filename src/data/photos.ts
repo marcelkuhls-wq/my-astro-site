@@ -313,12 +313,12 @@ export const photos: Record<string, PhotoSpec> = {
 
   /* ── Events ─────────────────────────────────────────────────────────── */
   'events-hero': {
-    alt: 'Gäste im Gespräch bei einer Jubiläumsfeier, rote Lichtakzente an den Säulen.',
+    alt: 'Gäste in Abendgarderobe bei der Weihnachtsfeier von Buying Labs in der geschmückten Bar des Hotel Vier Jahreszeiten.',
     category: 'Events',
     format: 'Querformat 3:2 (Mobile: 4:5)',
-    motif: 'Adam & Eve – Gäste',
-    file: 'adam-eve-gaeste',
-    position: '45% 50%',
+    motif: 'Buying Labs – Weihnachtsfeier',
+    file: 'blx-01',
+    position: '50% 50%',
   },
   'events-moment-1': {
     alt: 'Gastgeberin begrüßt lachend einen Gast.',
