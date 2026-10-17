@@ -78,6 +78,23 @@ const ga4 = site.analytics?.ga4 ?? '';
             if (loaded) window.gtag('event', name, params || {});
           };
 
+          // Seitenbereich für Berichte („Inhaltsgruppe“ in Google Analytics)
+          function contentGroup(path) {
+            path = path.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+            if (path === '/') return 'Startseite';
+            if (path === '/work') return 'Projektübersicht';
+            if (path.indexOf('/work/') === 0) return 'Projekt';
+            if (path === '/journal') return 'Journal-Übersicht';
+            if (path.indexOf('/journal/') === 0) return 'Journal-Artikel';
+            if (/^\/(employer-branding|business-fotografie|immobilienfotografie|eventfotografie|mitarbeiterfotos)$/.test(path)) return 'Leistung';
+            if (path === '/kontakt') return 'Kontakt';
+            if (path === '/danke') return 'Anfrage gesendet';
+            if (path === '/about') return 'Über mich';
+            if (path === '/ablauf') return 'Ablauf & Konditionen';
+            if (path === '/impressum' || path === '/datenschutz') return 'Rechtliches';
+            return 'Sonstiges';
+          }
+
           function load() {
             if (loaded) return;
             loaded = true;
@@ -88,7 +105,7 @@ const ga4 = site.analytics?.ga4 ?? '';
               analytics_storage: 'granted',
             });
             window.gtag('js', new Date());
-            window.gtag('config', ga4);
+            window.gtag('config', ga4, { content_group: contentGroup(location.pathname) });
             var s = document.createElement('script');
             s.async = true;
             s.src = 'https://www.googletagmanager.com/gtag/js?id=' + ga4;
@@ -133,24 +150,36 @@ const ga4 = site.analytics?.ga4 ?? '';
       </script>
 
       <script>
-        // Lead-Signale: Klicks auf Anfrage-, Telefon-, E-Mail- und externe Links
+        // Lead-Signale: Klicks auf Anfrage-, Telefon-, E-Mail- und externe Links – mit Herkunft auf der Seite
         const track = (name: string, params: Record<string, unknown> = {}) =>
           (window as unknown as { skTrack?: (n: string, p: Record<string, unknown>) => void }).skTrack?.(name, params);
+        const where = (el: Element) =>
+          el.closest('header') ? 'Kopfzeile' : el.closest('footer') ? 'Footer' : el.closest('#consent') ? 'Banner' : 'Inhalt';
         document.addEventListener('click', (e) => {
           const a = (e.target as HTMLElement).closest<HTMLAnchorElement>('a[href]');
           if (!a) return;
           const href = a.getAttribute('href') ?? '';
-          const text = (a.textContent ?? '').replace(/\s+/g, ' ').trim().slice(0, 60);
-          if (href.startsWith('/kontakt')) track('cta_click', { link_text: text, page: location.pathname });
-          else if (href.startsWith('tel:')) track('phone_click', { page: location.pathname });
-          else if (href.startsWith('mailto:')) track('email_click', { page: location.pathname });
-          else if (href.includes('linkedin.com')) track('linkedin_click', { page: location.pathname });
-          else if (href.includes('google.com/maps')) track('reviews_click', { page: location.pathname });
+          const base = { link_text: (a.textContent ?? '').replace(/\s+/g, ' ').trim().slice(0, 60), cta_location: where(a), page: location.pathname };
+          if (href.startsWith('/kontakt')) track('cta_click', base);
+          else if (href.startsWith('tel:')) track('phone_click', base);
+          else if (href.startsWith('mailto:')) track('email_click', base);
+          else if (href.includes('linkedin.com')) track('linkedin_click', base);
+          else if (href.includes('google.com/maps')) track('reviews_click', base);
+          else if (href.startsWith('/work/')) track('select_project', { ...base, project: href.replace('/work/', '').replace(/\.html$/, '') });
         });
-        // Angesehene Projekte (Case Studies)
+        // Angesehene Projekte und Leistungsseiten
+        const services: Record<string, string> = {
+          'employer-branding': 'Employer Branding',
+          'business-fotografie': 'Business & Corporate',
+          immobilienfotografie: 'Immobilien & Interior',
+          eventfotografie: 'Events',
+          mitarbeiterfotos: 'Mitarbeiterfotos',
+        };
         const projectView = () => {
           const m = location.pathname.match(/^\/work\/([^/.]+)/);
           if (m) track('view_project', { project: m[1] });
+          const s = location.pathname.replace(/^\//, '').replace(/\.html$/, '');
+          if (services[s]) track('view_service', { service: services[s] });
         };
         document.addEventListener('sk:analytics', projectView);
         projectView();
