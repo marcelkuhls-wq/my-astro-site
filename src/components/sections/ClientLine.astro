@@ -1,16 +1,25 @@
 ---
 /** Vertrauenszeile: „Projekte u. a. für …“ – Namen aus src/data/clients.ts */
-import { clientNames, press } from '../../data/clients';
+import { clientDirectory, clientNames, press } from '../../data/clients';
+import type { ServiceId } from '../../data/services';
+import { getProjects } from '../../lib/work';
 
 interface Props {
   /** Anzahl der Namen (Standard: alle) */
   limit?: number;
+  /** Nur Kunden mit Projekten in dieser Leistung */
+  service?: ServiceId;
   /** Nur die Zeile „Bilder erschienen in“ */
   pressOnly?: boolean;
   class?: string;
 }
-const { limit, pressOnly = false, class: className } = Astro.props;
-const names = limit ? clientNames.slice(0, limit) : clientNames;
+const { limit, service, pressOnly = false, class: className } = Astro.props;
+let all = clientNames;
+if (service) {
+  const ids = new Set((await getProjects({ service })).map((p) => p.id));
+  all = clientDirectory.filter((c) => c.projects.some((id) => ids.has(id))).map((c) => c.name);
+}
+const names = limit ? all.slice(0, limit) : all;
 ---
 
 {

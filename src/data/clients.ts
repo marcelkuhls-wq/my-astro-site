@@ -14,25 +14,31 @@ export interface Client {
 export const clients: Client[] = [];
 
 /**
- * Kunden als Textzeile („Projekte u. a. für …“) – nur Namen, deren Projekte
- * bereits öffentlich auf der Website stehen. Keine Logos, daher keine Freigabe nötig.
+ * Kunden als Textzeile („Projekte u. a. für …“) – nur Namen, deren Projekte öffentlich
+ * auf der Website stehen. Über die Projekt-IDs zeigt jede Leistungsseite nur die Kunden,
+ * für die es dort auch ein Projekt gibt (Leistung oder „alsoServices“ des Projekts).
  */
-export const clientNames: string[] = [
-  'Everllence',
-  'Armand de Brignac',
-  'Dein Dental',
-  'gamesright × HSV',
-  'Garner Hotel (IHG)',
-  'Weiss Immobilien',
-  'Lindbergh',
-  'Stadermann',
-  'Bar Tabac',
-  'Lippe Personal',
-  'Adam & Eve',
-  'Select Hotel',
-  'Tiedemann Immobilien',
-  'Four Elements',
+export const clientDirectory: { name: string; projects: string[] }[] = [
+  { name: 'Everllence', projects: ['everllence-maritime-event'] },
+  { name: 'Armand de Brignac', projects: ['armand-de-brignac-elbphilharmonie'] },
+  { name: 'Dein Dental', projects: ['dein-dental', 'dein-dental-buxtehude'] },
+  { name: 'gamesright × HSV', projects: ['gamesright-hsv'] },
+  { name: 'gamesright', projects: ['gamesright-gruender'] },
+  { name: 'Garner Hotel (IHG)', projects: ['garner-hotel-opening'] },
+  { name: 'Weiss Immobilien', projects: ['weiss-immobilien', 'weiss-immobilien-team'] },
+  { name: 'Lindbergh', projects: ['lindbergh-opening'] },
+  { name: 'Stadermann', projects: ['stadermann'] },
+  { name: 'Bar Tabac', projects: ['bar-tabac'] },
+  { name: 'Lippe Personal', projects: ['lippe-personal-office-opening'] },
+  { name: 'Adam & Eve', projects: ['adam-eve-20-jahre'] },
+  { name: 'Buying Labs', projects: ['buying-labs-weihnachtsfeier'] },
+  { name: 'Select Hotel', projects: ['select-hotel-klagenfurt'] },
+  { name: 'Tiedemann Immobilien', projects: ['altbau-dachgeschoss-sanierung'] },
+  { name: 'Four Elements', projects: ['four-elements-pilates'] },
 ];
+
+/** Alle Namen (ohne Leistungsfilter) */
+export const clientNames: string[] = clientDirectory.filter((c) => c.name !== 'gamesright').map((c) => c.name);
 
 /** Veröffentlichungen mit Bildnachweis „© Marcel Kuhls“ – nur mit Link zum Beleg. */
 export const press: { outlet: string; href: string; note: string }[] = [
