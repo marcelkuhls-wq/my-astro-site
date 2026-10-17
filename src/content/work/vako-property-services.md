@@ -8,6 +8,7 @@ year: 2025
 summary: "Einheitliche Mitarbeiterportraits mit hellem, unscharfem Bürohintergrund – für Website und LinkedIn."
 usage: [Website, LinkedIn]
 featured: false
+draft: true
 order: 11.5
 scope: "Mitarbeiterportraits"
 task: "VAKO brauchte Portraits für das Team, die zusammenpassen und sich später ergänzen lassen."

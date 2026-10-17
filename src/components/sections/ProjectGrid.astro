@@ -16,7 +16,8 @@ interface Props {
   priorityFirst?: boolean;
   /** "pair" = zwei gleich große Querformate, z. B. für "Weitere Projekte" */
   /** "compact" = 1 breit + 3 nebeneinander (Startseite) */
-  layout?: 'editorial' | 'pair' | 'compact';
+  /** "grid" = gleichmäßiges, kompaktes Raster (Projektübersicht) */
+  layout?: 'editorial' | 'pair' | 'compact' | 'grid';
   /** Ein Satz Kontext unter jedem Projekt: wofür die Bilder entstanden sind */
   showContext?: boolean;
 }
@@ -36,7 +37,8 @@ const compactSlots = [
   { cls: 'col-span-12 md:col-span-4', ratio: '4 / 5', sizes: '(min-width: 768px) 31vw, 100vw' },
   { cls: 'col-span-12 md:col-span-4', ratio: '4 / 5', sizes: '(min-width: 768px) 31vw, 100vw' },
 ];
-const slots = layout === 'pair' ? [pairSlot] : layout === 'compact' ? compactSlots : editorialSlots;
+const gridSlot = { cls: 'col-span-6 md:col-span-4 lg:col-span-3', ratio: '4 / 5', sizes: '(min-width: 1024px) 23vw, (min-width: 768px) 31vw, 50vw' };
+const slots = layout === 'grid' ? [gridSlot] : layout === 'pair' ? [pairSlot] : layout === 'compact' ? compactSlots : editorialSlots;
 // "compact": nur das erste Projekt breit, danach alle in Dreierreihen
 const slotFor = (i: number) => (layout === 'compact' ? (i === 0 ? compactSlots[0] : compactSlots[1]) : slots[i % slots.length]);
 
@@ -53,7 +55,7 @@ const slotPortrait = (i: number) => {
   return h > w;
 };
 const ordered: Project[] = [];
-if (layout === 'compact') ordered.push(...projects);
+if (layout === 'compact' || layout === 'grid') ordered.push(...projects);
 else {
   const queue = [...projects];
   for (let i = 0; queue.length; i++) {
@@ -64,12 +66,12 @@ else {
 }
 ---
 
-<div class="wrap grid-12 items-start gap-y-12 md:gap-y-20">
+<div class:list={['wrap grid-12 items-start', layout === 'grid' ? 'gap-y-10 md:gap-y-14' : 'gap-y-12 md:gap-y-20']}>
   {
     ordered.map((p, i) => {
       const slot = slotFor(i);
       // Passt das Format trotzdem nicht (Hochformat im Querformat-Platz), wird beschnitten
-      const crop = isPortrait(p) && !slotPortrait(i);
+      const crop = layout === 'grid' || (isPortrait(p) && !slotPortrait(i));
       const service = serviceById(p.data.service);
       return (
         <article class={slot.cls}>
@@ -87,7 +89,7 @@ else {
               />
             </div>
             <div class="mt-4" data-reveal>
-              <h3 class="text-[1.125rem] leading-snug font-medium tracking-[-0.012em]">
+              <h3 class="text-[1rem] md:text-[1.125rem] leading-snug font-medium tracking-[-0.012em]">
                 <span class="link-line decoration-transparent group-hover:decoration-current">{p.data.title}</span>
               </h3>
               <p class="label mt-1.5 text-muted">

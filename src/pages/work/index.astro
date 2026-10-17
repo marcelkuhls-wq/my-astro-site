@@ -44,7 +44,7 @@ const schema = [breadcrumbs(Astro.site, [{ name: 'Projekte', path: '/work' }])];
   </div>
 
   <div id="view-grid" class="mt-10 md:mt-14">
-    <ProjectGrid projects={projects} priorityFirst />
+    <ProjectGrid projects={projects} layout="grid" showContext={false} priorityFirst />
   </div>
   <div id="view-index" class="mt-10 md:mt-14" hidden>
     <WorkIndex projects={projects} />
