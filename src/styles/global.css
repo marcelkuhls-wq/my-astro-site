@@ -353,3 +353,10 @@
 .date-field:hover::-webkit-calendar-picker-indicator {
   opacity: 0.9;
 }
+
+/* Startbild: auf schmalen Bildschirmen Person mittig halten */
+@media (max-width: 767px) {
+  .hero-home img {
+    object-position: 51% 50% !important;
+  }
+}
