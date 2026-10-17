@@ -15,19 +15,19 @@ approach: "Ich habe die festlich geschmückten Räume vor dem Eintreffen der Gä
 cover:
   id: blx-02
   spec:
-    alt: "Gäste in Abendgarderobe in der weihnachtlich geschmückten Bar."
+    alt: "Begrüßungsrede mit Mikrofon vor den Gästen."
     category: "Events"
     format: "Querformat"
     motif: "Titel"
 gallery:
   - layout: offset
     images:
-      - id: blx-02
+      - id: blx-01
         spec:
-          alt: "Begrüßungsrede mit Mikrofon vor den Gästen."
+          alt: "Gäste in Abendgarderobe in der weihnachtlich geschmückten Bar."
           category: "Events"
           format: "Querformat"
-          motif: "blx-02"
+          motif: "blx-01"
       - id: blx-03
         spec:
           alt: "Weihnachtlich geschmückte Bar mit Kronleuchter."
