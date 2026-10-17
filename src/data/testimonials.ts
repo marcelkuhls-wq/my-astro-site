@@ -20,6 +20,7 @@ export const testimonials: Testimonial[] = [
     quote:
       'Wir fotografieren seit längerer Zeit hochwertige Immobilien in Hamburg mit Marcel Kuhls und sind sehr zufrieden. Einmal vom professionellen Auftreten gegenüber Eigentümern und auch in Bezug auf die Fotoqualität, die immer sehr gut ist. Zusätzlich arbeitet Marcel häufig mit Drohnenfotos, was für unser Auftreten sehr modern wirkt.',
     name: 'Felix Weiss',
+    role: 'Geschäftsführer',
     company: 'Weiss Immobilien',
     source: 'Google-Bewertung',
     project: 'weiss-immobilien',
@@ -29,8 +30,8 @@ export const testimonials: Testimonial[] = [
     quote:
       'Marcel hat uns bei der Aufnahme von Produktfotos und Employer Branding Thematiken unterstützt. Sehr professionell und mit einem guten ästhetischen Auge.',
     name: 'Till Stadermann',
-    role: 'Geschäftsführer',
-    company: 'Stadermann',
+    role: 'Geschäftsführender Gesellschafter',
+    company: 'Software Service Stadermann GmbH',
     source: 'Google-Bewertung',
     project: 'stadermann',
   },
@@ -54,7 +55,8 @@ export const testimonials: Testimonial[] = [
     quote:
       'Die Arbeit mit Marcel ist immer hoch professionell und er arbeitet sehr präzise mit Leidenschaft. Die Ergebnisse sind wirklich immer sehr gut …',
     name: 'Konstantin Tuludis',
-    company: 'voltpol GmbH',
+    role: 'Geschäftsführer',
+    company: 'Voltpol GmbH',
     source: 'Google-Bewertung',
   },
 ];

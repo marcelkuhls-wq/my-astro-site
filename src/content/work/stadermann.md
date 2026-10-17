@@ -16,8 +16,8 @@ approach: "Ich habe Mitarbeiterportraits, Besprechungen und Entwicklerarbeitspl�
 testimonial:
   quote: "Marcel hat uns bei der Aufnahme von Produktfotos und Employer Branding Thematiken unterst체tzt. Sehr professionell und mit einem guten 채sthetischen Auge."
   name: "Till Stadermann"
-  role: "Gesch채ftsf체hrer"
-  company: "Stadermann"
+  role: "Gesch채ftsf체hrender Gesellschafter"
+  company: "Software Service Stadermann GmbH"
 cover:
   id: st-besprechung
   spec:
