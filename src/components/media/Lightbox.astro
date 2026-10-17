@@ -8,9 +8,10 @@
 <div id="lightbox" class="fixed inset-0 z-50 hidden bg-black/95 text-bone" role="dialog" aria-modal="true" aria-label="Diashow">
   <img id="lb-img" alt="" class="absolute inset-0 m-auto max-h-[88svh] max-w-[92vw] object-contain select-none" />
   <p id="lb-count" class="label absolute top-5 left-5 tabular-nums text-muted-dark"></p>
-  <button id="lb-close" type="button" class="label absolute top-4 right-4 p-2" aria-label="Schließen">Schließen</button>
-  <button id="lb-prev" type="button" class="absolute inset-y-0 left-0 w-1/4 text-left md:w-24 md:pl-6" aria-label="Vorheriges Bild"><span class="text-2xl">←</span></button>
-  <button id="lb-next" type="button" class="absolute inset-y-0 right-0 w-1/4 text-right md:w-24 md:pr-6" aria-label="Nächstes Bild"><span class="text-2xl">→</span></button>
+  
+  <button id="lb-prev" type="button" class="absolute top-16 bottom-0 left-0 z-10 w-1/4 text-left md:w-24 md:pl-6" aria-label="Vorheriges Bild"><span class="text-2xl">←</span></button>
+  <button id="lb-next" type="button" class="absolute top-16 bottom-0 right-0 z-10 w-1/4 text-right md:w-24 md:pr-6" aria-label="Nächstes Bild"><span class="text-2xl">→</span></button>
+  <button id="lb-close" type="button" class="label absolute top-3 right-3 z-20 inline-flex min-h-11 items-center gap-2 bg-black/60 px-4 text-bone" aria-label="Diashow schließen">Schließen <span aria-hidden="true">✕</span></button>
   <p id="lb-alt" class="absolute inset-x-0 bottom-5 mx-auto max-w-[40rem] px-6 text-center text-[0.875rem] text-muted-dark"></p>
 </div>
 
@@ -55,7 +56,8 @@
       open(group, figure);
     }
   });
-  document.getElementById('lb-close')!.addEventListener('click', close);
+  document.getElementById('lb-close')!.addEventListener('click', (e) => { e.stopPropagation(); close(); });
+  box.addEventListener('click', (e) => { if (e.target === box) close(); });
   document.getElementById('lb-prev')!.addEventListener('click', () => show(index - 1));
   document.getElementById('lb-next')!.addEventListener('click', () => show(index + 1));
   img.addEventListener('click', () => show(index + 1));
