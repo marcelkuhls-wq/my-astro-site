@@ -17,6 +17,9 @@
   --color-muted-dark: #a19c93; /* auf Ink */
   --color-line: #d6d2c9;
   --color-line-dark: #3a3936;
+  /* Akzent nur für Anfrage-Elemente (Buttons/Links zu /kontakt) */
+  --color-accent: #172e4f;
+  --color-accent-hover: #0f2140;
 
   /* Bildplatzhalter */
   --color-ph-light: #e4e0d8;

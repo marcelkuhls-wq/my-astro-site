@@ -14,7 +14,7 @@ interface Props {
 const { href, context, class: className } = Astro.props;
 ---
 
-<a href={href} class:list={['link-arrow', className]}>
+<a href={href} class:list={['link-arrow', href.startsWith('/kontakt') && 'text-accent', className]}>
   <span><slot />{context && <span class="sr-only"> {context}</span>}</span>
   <span class="arrow" aria-hidden="true">→</span>
 </a>

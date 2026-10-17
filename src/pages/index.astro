@@ -40,7 +40,9 @@ const allProjects = await getProjects();
         <p class="max-w-[22rem]">
           Ihr Team, Ihre Räume, Ihre Veranstaltungen – fotografiert aus einer Hand, in einer Bildsprache.
         </p>
-        <ArrowLink href="/kontakt" class="mt-7">Projekt anfragen</ArrowLink>
+        <a href="/kontakt" class="group label mt-7 inline-flex min-h-12 items-center gap-3 bg-accent px-6 text-bone transition-colors duration-300 hover:bg-accent-hover">
+          Projekt anfragen <span aria-hidden="true" class="transition-transform duration-300 group-hover:translate-x-1">→</span>
+        </a>
       </div>
     </div>
     {/* Bild füllt den Rest des ersten Bildschirms und ragt leicht darüber hinaus */}
