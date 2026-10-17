@@ -23,7 +23,7 @@ export const site = {
 
   /** Google Analytics 4 – Mess-ID „G-…“ eintragen; leer = kein Tracking, kein Cookie-Banner */
   analytics: {
-    ga4: '',
+    ga4: 'G-PLCES3D9M5',
   },
 
   /** Google-Unternehmensprofil – Bewertungsübersicht */
