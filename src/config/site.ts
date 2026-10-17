@@ -25,7 +25,7 @@ export const site = {
   analytics: {
     ga4: 'G-PLCES3D9M5',
     /** Microsoft Clarity – Projekt-ID (Heatmaps/Aufzeichnungen, nur mit Einwilligung); leer = aus */
-    clarity: '',
+    clarity: 'yzbh6tijtd',
   },
 
   /** Google-Unternehmensprofil – Bewertungsübersicht */
