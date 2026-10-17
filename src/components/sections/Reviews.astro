@@ -1,7 +1,11 @@
 ---
-/** Mehrere Kundenstimmen: ein großes Zitat, darunter weitere im Raster. */
+/**
+ * Kundenstimmen als ruhiger Slider: ein Zitat pro Ansicht, wischbar,
+ * Pfeile + Punkte, kein Autoplay, keine fremden Skripte.
+ */
 import SectionLabel from '../ui/SectionLabel.astro';
 import { testimonials } from '../../data/testimonials';
+import { site } from '../../config/site';
 
 interface Props {
   ids?: string[];
@@ -9,41 +13,88 @@ interface Props {
 }
 const { ids, class: className } = Astro.props;
 const list = ids ? ids.map((id) => testimonials.find((t) => t.id === id)).filter((t) => t !== undefined) : testimonials;
-const [first, ...rest] = list;
-const meta = (t: (typeof list)[number]) => [[t.role, t.company].filter(Boolean).join(', '), t.source].filter(Boolean).join(' · ');
+const meta = (t: (typeof list)[number]) => [t.role, t.company].filter(Boolean).join(', ');
 ---
 
 {
-  first && (
-    <section class:list={['section-t', className]}>
+  list.length > 0 && (
+    <section class:list={['section-t', className]} data-reviews>
       <SectionLabel label="Kundenstimmen" />
-      <figure class="wrap grid-12 mt-10 gap-y-8 md:mt-14" data-reveal>
-        <p class="label col-span-12 text-muted md:col-span-3 md:pt-[0.7em]" aria-hidden="true">★★★★★</p>
-        <div class="col-span-12 md:col-span-9 lg:col-span-8">
-          <blockquote class="text-h3 !leading-[1.25]"><p>„{first.quote}“</p></blockquote>
-          <figcaption class="mt-8 text-[0.9375rem]">
-            {first.name}
-            {meta(first) && <span class="text-muted"> · {meta(first)}</span>}
-          </figcaption>
-        </div>
-      </figure>
-      {
-        rest.length > 0 && (
-          <div class="wrap mt-16 md:mt-24">
-            <ul class="grid gap-x-[var(--gutter)] gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-              {rest.map((t, i) => (
-                <li class="border-t border-ink pt-5" data-reveal style={`--reveal-delay: ${i * 0.06}s`}>
-                  <blockquote class="text-[1.0625rem] leading-relaxed"><p>„{t.quote}“</p></blockquote>
-                  <p class="mt-5 text-[0.875rem]">
-                    {t.name}
-                    {meta(t) && <span class="block text-muted">{meta(t)}</span>}
-                  </p>
-                </li>
-              ))}
-            </ul>
+      <div class="wrap grid-12 mt-10 gap-y-8 md:mt-14">
+        <div class="col-span-12 flex flex-col gap-5 md:col-span-3">
+          {site.google && (
+            <a href={site.google.url} target="_blank" rel="noopener" class="group inline-flex flex-col gap-1">
+              <span class="font-display text-[2.5rem] leading-none tracking-[-0.03em]">
+                {site.google.rating} <span class="text-[1.5rem] align-[0.35em]" aria-hidden="true">★</span>
+              </span>
+              <span class="label text-muted transition-colors group-hover:text-ink">
+                {site.google.count} Google-Bewertungen →
+              </span>
+            </a>
+          )}
+          <div class="hidden items-center gap-2 md:flex" aria-hidden="false">
+            <button type="button" class="rv-prev label inline-flex size-11 items-center justify-center border border-ink/25 transition-colors hover:border-ink" aria-label="Vorherige Bewertung">←</button>
+            <button type="button" class="rv-next label inline-flex size-11 items-center justify-center border border-ink/25 transition-colors hover:border-ink" aria-label="Nächste Bewertung">→</button>
           </div>
-        )
-      }
+        </div>
+
+        <div class="col-span-12 min-w-0 md:col-span-9 lg:col-span-8">
+          <ul class="rv-track flex snap-x snap-mandatory overflow-x-auto scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" aria-label="Kundenstimmen">
+            {list.map((t, i) => (
+              <li class="rv-slide w-full shrink-0 snap-start pr-6 md:pr-10" aria-roledescription="Folie" aria-label={`${i + 1} von ${list.length}`}>
+                <figure>
+                  <blockquote class="text-h3 !leading-[1.25]"><p>„{t.quote}“</p></blockquote>
+                  <figcaption class="mt-8 text-[0.9375rem]">
+                    {t.name}
+                    {meta(t) && <span class="text-muted"> · {meta(t)}</span>}
+                    {t.project && (
+                      <a href={`/work/${t.project}`} class="link-line ml-3 text-muted hover:text-ink">Zum Projekt</a>
+                    )}
+                  </figcaption>
+                </figure>
+              </li>
+            ))}
+          </ul>
+          {list.length > 1 && (
+            <div class="mt-8 flex items-center gap-4">
+              <div class="flex gap-2">
+                {list.map((_, i) => (
+                  <button type="button" class="rv-dot h-[3px] w-8 bg-ink/20 transition-colors aria-[current=true]:bg-ink" aria-label={`Bewertung ${i + 1}`} data-i={i} />
+                ))}
+              </div>
+              <div class="ml-auto flex items-center gap-2 md:hidden">
+                <button type="button" class="rv-prev label inline-flex size-11 items-center justify-center border border-ink/25" aria-label="Vorherige Bewertung">←</button>
+                <button type="button" class="rv-next label inline-flex size-11 items-center justify-center border border-ink/25" aria-label="Nächste Bewertung">→</button>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
     </section>
   )
 }
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-reviews]').forEach((root) => {
+    const track = root.querySelector<HTMLElement>('.rv-track');
+    if (!track) return;
+    const slides = [...track.querySelectorAll<HTMLElement>('.rv-slide')];
+    const dots = [...root.querySelectorAll<HTMLElement>('.rv-dot')];
+    const current = () => Math.round(track.scrollLeft / track.clientWidth);
+    const go = (i: number) => {
+      const n = (i + slides.length) % slides.length;
+      track.scrollTo({ left: slides[n].offsetLeft - slides[0].offsetLeft, behavior: 'smooth' });
+    };
+    const mark = () => dots.forEach((d, i) => d.setAttribute('aria-current', String(i === current())));
+    root.querySelectorAll('.rv-prev').forEach((b) => b.addEventListener('click', () => go(current() - 1)));
+    root.querySelectorAll('.rv-next').forEach((b) => b.addEventListener('click', () => go(current() + 1)));
+    dots.forEach((d, i) => d.addEventListener('click', () => go(i)));
+    track.addEventListener('scroll', () => requestAnimationFrame(mark), { passive: true });
+    track.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') go(current() + 1);
+      if (e.key === 'ArrowLeft') go(current() - 1);
+    });
+    track.tabIndex = 0;
+    mark();
+  });
+</script>

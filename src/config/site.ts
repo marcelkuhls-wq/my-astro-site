@@ -17,6 +17,13 @@ export const site = {
     country: 'DE',
   },
 
+  /** Google-Unternehmensprofil – Bewertungsübersicht */
+  google: {
+    url: 'https://www.google.com/maps?cid=2829761485552863488',
+    rating: '5,0',
+    count: 18,
+  },
+
   social: {
     instagram: '', // TODO: z. B. 'https://www.instagram.com/studiokuhls'
     linkedin: 'https://www.linkedin.com/company/studio-kuhls',
