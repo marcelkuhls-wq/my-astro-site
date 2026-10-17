@@ -1,6 +1,6 @@
 ---
 /**
- * Cookie-Einwilligung + Google Analytics 4.
+ * Cookie-Einwilligung + Google Analytics 4 (+ optional Microsoft Clarity für Heatmaps/Aufzeichnungen).
  *
  * - Ohne Messungs-ID (site.analytics.ga4) passiert gar nichts – kein Banner, kein Skript.
  * - Google Analytics wird erst NACH Zustimmung geladen (vorher keine Verbindung zu Google).
@@ -11,6 +11,7 @@
  */
 import { site } from '../../config/site';
 const ga4 = site.analytics?.ga4 ?? '';
+const clarity = site.analytics?.clarity ?? '';
 ---
 
 {
@@ -25,8 +26,9 @@ const ga4 = site.analytics?.ga4 ?? '';
       >
         <p id="consent-title" class="label text-ink">Datenschutz-Einstellungen</p>
         <p id="consent-text" class="mt-3 text-[0.9375rem] leading-relaxed text-muted">
-          Ich würde gern mit Google Analytics verstehen, welche Inhalte Sie interessieren, um die Website zu verbessern. Dafür
-          werden Cookies gesetzt und Daten an Google übermittelt, auch in die USA. Das passiert nur mit Ihrer Zustimmung, die Sie
+          Ich würde gern mit {clarity ? 'Google Analytics und Microsoft Clarity' : 'Google Analytics'} verstehen, welche Inhalte Sie
+          interessieren, um die Website zu verbessern. Dafür werden Cookies gesetzt und Daten an {clarity ? 'Google und Microsoft' : 'Google'}
+          übermittelt, auch in die USA. Das passiert nur mit Ihrer Zustimmung, die Sie
           jederzeit widerrufen können. Mehr in der <a href="/datenschutz" class="link-line text-ink">Datenschutzerklärung</a>.
         </p>
         <div class="mt-5 grid grid-cols-2 gap-3">
@@ -39,7 +41,7 @@ const ga4 = site.analytics?.ga4 ?? '';
         </div>
       </div>
 
-      <script is:inline define:vars={{ ga4 }}>
+      <script is:inline define:vars={{ ga4, clarity }}>
         (function () {
           var KEY = 'sk-consent';
           var box = document.getElementById('consent');
@@ -60,7 +62,7 @@ const ga4 = site.analytics?.ga4 ?? '';
           function clearGaCookies() {
             document.cookie.split(';').forEach(function (c) {
               var name = c.split('=')[0].trim();
-              if (/^_ga/.test(name)) {
+              if (/^(_ga|_clck|_clsk|CLID)/.test(name)) {
                 [location.hostname, '.' + location.hostname.replace(/^www\./, '')].forEach(function (d) {
                   document.cookie = name + '=; Max-Age=0; path=/; domain=' + d;
                 });
@@ -110,6 +112,20 @@ const ga4 = site.analytics?.ga4 ?? '';
             s.async = true;
             s.src = 'https://www.googletagmanager.com/gtag/js?id=' + ga4;
             document.head.appendChild(s);
+            if (clarity) {
+              // Microsoft Clarity: Heatmaps und Sitzungsaufzeichnungen (Eingabefelder werden maskiert)
+              (function (c, l, a, r, i) {
+                c[a] = c[a] || function () {
+                  (c[a].q = c[a].q || []).push(arguments);
+                };
+                var t = l.createElement(r);
+                t.async = 1;
+                t.src = 'https://www.clarity.ms/tag/' + i;
+                var y = l.getElementsByTagName(r)[0];
+                y.parentNode.insertBefore(t, y);
+              })(window, document, 'clarity', 'script', clarity);
+              window.clarity('consentv2', { ad_Storage: 'denied', analytics_Storage: 'granted' });
+            }
             document.dispatchEvent(new Event('sk:analytics'));
           }
 

@@ -8,6 +8,7 @@
 import LegalLayout from '../layouts/LegalLayout.astro';
 import { site } from '../config/site';
 const ga = Boolean(site.analytics?.ga4);
+const clarity = Boolean(site.analytics?.clarity);
 let n = 0;
 const h = () => `${++n}.`;
 ---
@@ -93,7 +94,7 @@ const h = () => `${++n}.`;
       <>
         <h2>{h()} Cookies und Einwilligung</h2>
         <p>
-          Beim ersten Besuch fragt ein Hinweis, ob Sie Google Analytics zulassen. Ihre Entscheidung speichere ich im lokalen
+          Beim ersten Besuch fragt ein Hinweis, ob Sie {clarity ? 'Google Analytics und Microsoft Clarity' : 'Google Analytics'} zulassen. Ihre Entscheidung speichere ich im lokalen
           Speicher Ihres Browsers (Eintrag „sk-consent“), damit der Hinweis nicht bei jedem Seitenaufruf erneut erscheint. Diese
           Speicherung ist technisch erforderlich (§ 25 Abs. 2 Nr. 2 TDDDG). Weitere Cookies werden nur nach Ihrer Zustimmung
           gesetzt (§ 25 Abs. 1 TDDDG, Art. 6 Abs. 1 lit. a DSGVO).
@@ -129,6 +130,34 @@ const h = () => `${++n}.`;
           <a class="link-line" href="https://policies.google.com/privacy?hl=de" rel="noopener" target="_blank">Datenschutzerklärung von Google</a>{' '}
           und{' '}
           <a class="link-line" href="https://support.google.com/analytics/answer/6004245?hl=de" rel="noopener" target="_blank">Datennutzung in Google Analytics</a>.
+        </p>
+      </>
+    )
+  }
+
+  {
+    clarity && (
+      <>
+        <h2>{h()} Microsoft Clarity</h2>
+        <p>
+          Mit Ihrer Einwilligung nutze ich außerdem Microsoft Clarity, einen Analysedienst der Microsoft Ireland Operations Limited,
+          One Microsoft Place, South County Business Park, Leopardstown, Dublin 18, Irland. Clarity zeigt mir, wie die Website
+          genutzt wird: wohin geklickt und wie weit gescrollt wird (Heatmaps) und, in Form von Sitzungsaufzeichnungen, wie sich
+          Besucher durch die Seiten bewegen. So erkenne ich zum Beispiel, ob Inhalte gefunden werden oder Bedienelemente
+          missverständlich sind.
+        </p>
+        <p>
+          Verarbeitet werden insbesondere Mausbewegungen, Klicks, Scrollverhalten, aufgerufene Seiten, Gerät, Browser,
+          Bildschirmgröße und ungefährer Standort. Eingaben in Formularfelder werden maskiert und nicht aufgezeichnet. Clarity setzt
+          dafür Cookies (z. B. „_clck“, „_clsk“, Speicherdauer bis zu einem Jahr). Rechtsgrundlage ist Ihre Einwilligung (Art. 6
+          Abs. 1 lit. a DSGVO, § 25 Abs. 1 TDDDG), die Sie über die Cookie-Einstellungen jederzeit widerrufen können.
+        </p>
+        <p>
+          Microsoft kann Daten auch an die Microsoft Corporation in den USA übermitteln; Microsoft ist unter dem EU-US Data Privacy
+          Framework zertifiziert. Weitere Informationen:{' '}
+          <a class="link-line" href="https://privacy.microsoft.com/de-de/privacystatement" rel="noopener" target="_blank">Datenschutzerklärung von Microsoft</a>{' '}
+          und{' '}
+          <a class="link-line" href="https://learn.microsoft.com/de-de/clarity/setup-and-installation/privacy-disclosure" rel="noopener" target="_blank">Datenschutzhinweise zu Clarity</a>.
         </p>
       </>
     )
