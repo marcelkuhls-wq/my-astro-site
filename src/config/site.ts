@@ -4,6 +4,10 @@
 export const site = {
   name: 'Studio Kuhls',
   legalName: 'Marcel Kuhls',
+  /** Name des Gewerbes (Studio Kuhls ist die Marke dafür) */
+  businessName: 'Marcel Kuhls Photography',
+  /** USt-IdNr. „DE…“ – leer lassen, wenn keine vorhanden */
+  vatId: '',
   founder: 'Marcel Kuhls',
   city: 'Hamburg',
   tagline: 'Fotografie für Unternehmen',
@@ -15,6 +19,11 @@ export const site = {
     zip: '22303',
     city: 'Hamburg',
     country: 'DE',
+  },
+
+  /** Google Analytics 4 – Mess-ID „G-…“ eintragen; leer = kein Tracking, kein Cookie-Banner */
+  analytics: {
+    ga4: '',
   },
 
   /** Google-Unternehmensprofil – Bewertungsübersicht */

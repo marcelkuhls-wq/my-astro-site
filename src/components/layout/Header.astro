@@ -25,15 +25,15 @@ const isActive = (href: string) => path === href || path.startsWith(`${href}/`);
       }
     </a>
     <script is:inline>
-      // Logo-Intro: auf der Startseite bei jedem Aufruf, sonst nur einmal pro Sitzung
+      // Logo-Intro: auf der Startseite bei jedem Aufruf, auf Unterseiten nur beim Einstieg von außen
+      // (ohne Cookies oder Browser-Speicher – entschieden über die vorherige Seite)
       (function (logo) {
         var home = location.pathname === '/' || location.pathname === '/index.html';
-        var seen = false;
+        var internal = false;
         try {
-          seen = !!sessionStorage.getItem('sk-logo');
-          sessionStorage.setItem('sk-logo', '1');
+          internal = !!document.referrer && new URL(document.referrer).host === location.host;
         } catch (e) {}
-        if (home || !seen) logo.classList.add('sk-intro');
+        if (home || !internal) logo.classList.add('sk-intro');
       })(document.currentScript.previousElementSibling);
     </script>
 

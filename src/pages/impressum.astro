@@ -3,14 +3,15 @@ import LegalLayout from '../layouts/LegalLayout.astro';
 import { site } from '../config/site';
 ---
 
-<LegalLayout title="Impressum" description="Impressum von Studio Kuhls, Fotostudio in Hamburg.">
+<LegalLayout title="Impressum" description="Impressum von Studio Kuhls, Unternehmensfotografie in Hamburg.">
   <h2>Angaben gemäß § 5 DDG</h2>
   <p>
-    {site.name}<br />
     {site.legalName}<br />
+    {site.businessName}<br />
     {site.address.street}<br />
     {site.address.zip} {site.address.city}
   </p>
+  <p>„{site.name}“ ist eine Marke von {site.businessName}, Inhaber {site.legalName}.</p>
 
   <h2>Kontakt</h2>
   <p>
@@ -18,11 +19,25 @@ import { site } from '../config/site';
     E-Mail: <a class="link-line" href={`mailto:${site.email}`}>{site.email}</a>
   </p>
 
-  <h2>Vertreten durch</h2>
-  <p>{site.legalName}</p>
+  {
+    site.vatId && (
+      <>
+        <h2>Umsatzsteuer-ID</h2>
+        <p>Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz: {site.vatId}</p>
+      </>
+    )
+  }
 
   <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
   <p>{site.legalName}, Anschrift wie oben</p>
+
+  <h2>Bildrechte</h2>
+  <p>
+    Alle Fotografien auf dieser Website stammen, soweit nicht anders angegeben, von {site.legalName} und sind urheberrechtlich
+    geschützt. Eine Nutzung, Vervielfältigung oder Weitergabe ist nur mit vorheriger schriftlicher Zustimmung erlaubt.
+    Kundenlogos dienen der Darstellung von Referenzen; die Markenrechte liegen bei den
+    jeweiligen Unternehmen.
+  </p>
 
   <h2>Verbraucherstreitbeilegung</h2>
   <p>Ich bin nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>

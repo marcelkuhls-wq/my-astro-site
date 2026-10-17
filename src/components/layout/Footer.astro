@@ -58,6 +58,7 @@ const socials = [
       <p class="flex gap-6">
         <a href="/impressum" class="hover:text-bone">Impressum</a>
         <a href="/datenschutz" class="hover:text-bone">Datenschutz</a>
+        {site.analytics?.ga4 && <button type="button" data-consent-open class="hover:text-bone">Cookie-Einstellungen</button>}
       </p>
     </div>
   </div>

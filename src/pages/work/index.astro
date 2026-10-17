@@ -90,12 +90,11 @@ const schema = [breadcrumbs(Astro.site, [{ name: 'Projekte', path: '/work' }])];
     views.grid.hidden = view !== 'grid';
     views.index.hidden = view !== 'index';
     buttons.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.view === view)));
-    try { sessionStorage.setItem('work-view', view); } catch {}
+    // Ansicht in der Adresse merken (#index) statt im Browser-Speicher – so bleibt sie beim Zurückgehen erhalten
+    history.replaceState(null, '', view === 'index' ? '#index' : location.pathname + location.search);
   };
 
   toggle.hidden = false;
   buttons.forEach((b) => b.addEventListener('click', () => show(b.dataset.view as 'grid' | 'index')));
-  let saved: string | null = null;
-  try { saved = sessionStorage.getItem('work-view'); } catch {}
-  if (saved === 'index') show('index');
+  if (location.hash === '#index') show('index');
 </script>

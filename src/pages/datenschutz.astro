@@ -1,16 +1,19 @@
 ---
 /**
  * Datenschutzerklärung – beschreibt den technischen Stand dieser Website
- * (Hosting GitHub Pages, keine Cookies, kein Tracking, lokale Schriften,
- * Kontaktformular über Web3Forms). Bei Änderungen (Analyse-Tool, Formulardienst,
- * eingebettete Inhalte) anpassen. Rechtliche Prüfung empfohlen.
+ * (Hosting GitHub Pages, lokale Schriften, Kontaktformular über Web3Forms,
+ * Google Analytics nur mit Einwilligung, sobald site.analytics.ga4 gesetzt ist).
+ * Bei Änderungen (weitere Tools, eingebettete Inhalte) anpassen. Rechtliche Prüfung empfohlen.
  */
 import LegalLayout from '../layouts/LegalLayout.astro';
 import { site } from '../config/site';
+const ga = Boolean(site.analytics?.ga4);
+let n = 0;
+const h = () => `${++n}.`;
 ---
 
 <LegalLayout title="Datenschutz" description="Datenschutzerklärung von Studio Kuhls.">
-  <h2>1. Verantwortlicher</h2>
+  <h2>{h()} Verantwortlicher</h2>
   <p>
     {site.legalName}<br />
     {site.address.street}, {site.address.zip} {site.address.city}<br />
@@ -18,13 +21,25 @@ import { site } from '../config/site';
     E-Mail: <a class="link-line" href={`mailto:${site.email}`}>{site.email}</a>
   </p>
 
-  <h2>2. Allgemeines</h2>
-  <p>
-    Diese Website verwendet keine Cookies, keine Analyse- oder Trackingdienste und bindet keine Inhalte von Drittanbietern
-    ein. Für das Kontaktformular nutze ich einen Weiterleitungsdienst (siehe Abschnitt 4). Schriftarten werden vom selben Server geladen wie die Website.
-  </p>
+  <h2>{h()} Überblick</h2>
+  {
+    ga ? (
+      <p>
+        Beim Besuch dieser Website werden technisch notwendige Daten verarbeitet, damit die Seite ausgeliefert werden kann
+        (Hosting). Wenn Sie zustimmen, nutze ich außerdem Google Analytics, um zu verstehen, wie die Website genutzt wird. Ohne
+        Ihre Zustimmung wird Google Analytics nicht geladen. Schriftarten werden vom selben Server geladen wie die Website;
+        Inhalte von Drittanbietern wie Videos oder Karten sind nicht eingebunden.
+      </p>
+    ) : (
+      <p>
+        Diese Website verwendet keine Cookies, keine Analyse- oder Trackingdienste und bindet keine Inhalte von
+        Drittanbietern ein. Schriftarten werden vom selben Server geladen wie die Website. Für das Kontaktformular nutze ich
+        einen Weiterleitungsdienst (siehe unten).
+      </p>
+    )
+  }
 
-  <h2>3. Hosting</h2>
+  <h2>{h()} Hosting</h2>
   <p>
     Die Website wird über GitHub Pages bereitgestellt, einen Dienst der GitHub Inc., 88 Colin P. Kelly Jr. Street, San
     Francisco, CA 94107, USA. Beim Aufruf der Website verarbeitet GitHub technisch notwendige Daten wie Ihre IP-Adresse,
@@ -38,12 +53,58 @@ import { site } from '../config/site';
     <a class="link-line" href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener" target="_blank">GitHub Privacy Statement</a>.
   </p>
 
-  <h2>4. Kontaktformular</h2>
+  {
+    ga && (
+      <>
+        <h2>{h()} Cookies und Einwilligung</h2>
+        <p>
+          Beim ersten Besuch fragt ein Hinweis, ob Sie Google Analytics zulassen. Ihre Entscheidung speichere ich im lokalen
+          Speicher Ihres Browsers (Eintrag „sk-consent“), damit der Hinweis nicht bei jedem Seitenaufruf erneut erscheint. Diese
+          Speicherung ist technisch erforderlich (§ 25 Abs. 2 Nr. 2 TDDDG). Weitere Cookies werden nur nach Ihrer Zustimmung
+          gesetzt (§ 25 Abs. 1 TDDDG, Art. 6 Abs. 1 lit. a DSGVO).
+        </p>
+        <p>
+          Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen oder erteilen:{' '}
+          <button type="button" data-consent-open class="link-line">Cookie-Einstellungen öffnen</button>. Der Link findet sich auch
+          im Footer jeder Seite.
+        </p>
+
+        <h2>{h()} Google Analytics</h2>
+        <p>
+          Mit Ihrer Einwilligung nutze ich Google Analytics 4, einen Webanalysedienst der Google Ireland Limited, Gordon House,
+          Barrow Street, Dublin 4, Irland („Google“). Google Analytics setzt Cookies (z. B. „_ga“ und „_ga_…“, Speicherdauer bis zu
+          2 Jahre), um Ihren Browser bei weiteren Besuchen wiederzuerkennen.
+        </p>
+        <p>
+          Dabei werden insbesondere verarbeitet: aufgerufene Seiten und Verweildauer, die Seite, von der Sie kommen,
+          ungefährer Standort (Land, Stadt) auf Basis Ihrer IP-Adresse, Gerät, Browser und Bildschirmgröße sowie Interaktionen
+          wie Klicks auf Anfrage-, Telefon-, E-Mail- oder LinkedIn-Links, angesehene Projekte und das Absenden des
+          Kontaktformulars (ohne dessen Inhalte wie Name oder Nachricht; erfasst werden nur die gewählte Projektart, das
+          Budget und die Angabe, wie Sie auf mich aufmerksam geworden sind). IP-Adressen werden in Google Analytics 4 nicht
+          gespeichert. Werbefunktionen und personalisierte Werbung sind deaktiviert.
+        </p>
+        <p>
+          Zweck ist, die Website und ihre Inhalte zu verbessern und zu verstehen, welche Angebote auf Interesse stoßen.
+          Rechtsgrundlage ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TDDDG). Die Daten werden nach 14 Monaten
+          automatisch gelöscht.
+        </p>
+        <p>
+          Google kann Daten auch an die Google LLC in den USA übermitteln. Google ist unter dem EU-US Data Privacy Framework
+          zertifiziert; zusätzlich bestehen EU-Standardvertragsklauseln. Weitere Informationen:{' '}
+          <a class="link-line" href="https://policies.google.com/privacy?hl=de" rel="noopener" target="_blank">Datenschutzerklärung von Google</a>{' '}
+          und{' '}
+          <a class="link-line" href="https://support.google.com/analytics/answer/6004245?hl=de" rel="noopener" target="_blank">Datennutzung in Google Analytics</a>.
+        </p>
+      </>
+    )
+  }
+
+  <h2>{h()} Kontaktformular</h2>
   <p>
     Wenn Sie das Kontaktformular nutzen, werden Ihre Angaben (Name, Unternehmen, E-Mail-Adresse, optional Telefon, Art
-    des Projekts, optional Wunschtermin und Ihre Nachricht) an den Dienst Web3Forms übermittelt, der sie per E-Mail an mich
-    weiterleitet. Web3Forms nutzt dafür Server von Amazon Web Services; dabei kann eine Übermittlung in Drittländer
-    außerhalb der EU stattfinden. Weitere Informationen:
+    des Projekts, optional Budget, Wunschtermin und wie Sie auf mich aufmerksam geworden sind, sowie Ihre Nachricht) an den
+    Dienst Web3Forms übermittelt, der sie per E-Mail an mich weiterleitet. Web3Forms nutzt dafür Server von Amazon Web
+    Services; dabei kann eine Übermittlung in Drittländer außerhalb der EU stattfinden. Weitere Informationen:
     <a class="link-line" href="https://web3forms.com/privacy" rel="noopener" target="_blank">Datenschutzerklärung von Web3Forms</a>.
   </p>
   <p>
@@ -52,27 +113,39 @@ import { site } from '../config/site';
     E-Mail an <a class="link-line" href={`mailto:${site.email}`}>{site.email}</a> schreiben.
   </p>
 
-  <h2>5. Kontakt per E-Mail und Telefon</h2>
+  <h2>{h()} Kontakt per E-Mail und Telefon</h2>
   <p>
     Wenn Sie mich per E-Mail oder Telefon kontaktieren, verarbeite ich Ihre Angaben zur Bearbeitung der Anfrage auf
     derselben Rechtsgrundlage. Ich lösche die Daten, sobald sie nicht mehr erforderlich sind und keine gesetzlichen
-    Aufbewahrungspflichten entgegenstehen.
+    Aufbewahrungspflichten (z. B. handels- und steuerrechtliche Fristen von bis zu 10 Jahren bei Aufträgen)
+    entgegenstehen.
   </p>
 
-  <h2>6. Ihre Rechte</h2>
+  <h2>{h()} Links zu anderen Websites</h2>
+  <p>
+    Diese Website enthält Links zu anderen Angeboten, etwa zu LinkedIn, zu meinem Google-Unternehmensprofil oder zu
+    Presseartikeln. Dabei werden erst dann Daten an den jeweiligen Anbieter übertragen, wenn Sie einen Link anklicken. Für
+    die Verarbeitung auf diesen Seiten ist der jeweilige Anbieter verantwortlich.
+  </p>
+
+  <h2>{h()} Ihre Rechte</h2>
   <p>Sie haben im Rahmen der gesetzlichen Vorgaben das Recht auf</p>
   <ul>
     <li>Auskunft über die zu Ihrer Person gespeicherten Daten (Art. 15 DSGVO),</li>
     <li>Berichtigung unrichtiger Daten (Art. 16 DSGVO),</li>
     <li>Löschung (Art. 17 DSGVO) und Einschränkung der Verarbeitung (Art. 18 DSGVO),</li>
     <li>Datenübertragbarkeit (Art. 20 DSGVO),</li>
-    <li>Widerspruch gegen Verarbeitungen auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (Art. 21 DSGVO).</li>
+    <li>Widerspruch gegen Verarbeitungen auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (Art. 21 DSGVO),</li>
+    <li>Widerruf einer erteilten Einwilligung mit Wirkung für die Zukunft (Art. 7 Abs. 3 DSGVO).</li>
   </ul>
   <p>
     Außerdem können Sie sich bei einer Datenschutz-Aufsichtsbehörde beschweren, zum Beispiel beim Hamburgischen
-    Beauftragten für Datenschutz und Informationsfreiheit.
+    Beauftragten für Datenschutz und Informationsfreiheit, Ludwig-Erhard-Straße 22, 20459 Hamburg.
+  </p>
+  <p>
+    Eine automatisierte Entscheidungsfindung einschließlich Profiling im Sinne von Art. 22 DSGVO findet nicht statt.
   </p>
 
-  <h2>7. Stand</h2>
-  <p>September 2026</p>
+  <h2>{h()} Stand</h2>
+  <p>Oktober 2026</p>
 </LegalLayout>
