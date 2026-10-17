@@ -1,0 +1,191 @@
+---
+/**
+ * Allgemeine Geschäftsbedingungen (B2B). Werte wie Stornofristen, Zahlungsziel und Archivdauer
+ * sind Geschäftsentscheidungen – bei Änderungen hier anpassen. Rechtliche Prüfung empfohlen.
+ */
+import LegalLayout from '../layouts/LegalLayout.astro';
+import { site } from '../config/site';
+let n = 0;
+const h = () => `${++n}.`;
+---
+
+<LegalLayout
+  title="AGB"
+  description="Allgemeine Geschäftsbedingungen von Studio Kuhls für Fotografie im Auftrag von Unternehmen."
+>
+  <p>
+    Allgemeine Geschäftsbedingungen von {site.legalName}, {site.businessName} („{site.name}“), {site.address.street},
+    {site.address.zip} {site.address.city} – im Folgenden „Fotograf“.
+  </p>
+
+  <h2>{h()} Geltungsbereich</h2>
+  <p>
+    Diese AGB gelten für alle Angebote, Aufträge und Leistungen des Fotografen, insbesondere Foto-Produktionen, Bildbearbeitung
+    und die Einräumung von Nutzungsrechten. Sie richten sich ausschließlich an Unternehmer im Sinne von § 14 BGB, juristische
+    Personen des öffentlichen Rechts und öffentlich-rechtliche Sondervermögen („Kunde“).
+  </p>
+  <p>
+    Abweichende Bedingungen des Kunden gelten nur, wenn der Fotograf ihnen ausdrücklich in Textform zustimmt. Individuelle
+    Vereinbarungen im Angebot oder in der Auftragsbestätigung haben Vorrang vor diesen AGB. Bei laufender Geschäftsbeziehung
+    gelten die AGB auch für Folgeaufträge.
+  </p>
+
+  <h2>{h()} Angebot und Vertragsschluss</h2>
+  <p>
+    Angebote des Fotografen sind 30 Tage ab Angebotsdatum verbindlich, sofern darin nichts anderes angegeben ist. Ein Vertrag
+    kommt zustande, wenn der Kunde ein Angebot in Textform (z. B. per
+    E-Mail) annimmt oder der Fotograf einen Auftrag in Textform bestätigt. Kostenvoranschläge sind unverbindlich; zeichnet sich
+    ab, dass die geschätzten Kosten um mehr als 10 % überschritten werden, informiert der Fotograf den Kunden rechtzeitig.
+  </p>
+
+  <h2>{h()} Leistungen und Gestaltung</h2>
+  <p>
+    Umfang, Termin, Ort, Dauer und vorgesehene Nutzung ergeben sich aus dem Angebot. Der Fotograf arbeitet in seiner eigenen
+    Bildsprache; die künstlerische und technische Gestaltung, die Auswahl der gelieferten Bilder und ihre Bearbeitung liegen
+    in seinem Ermessen, soweit nichts anderes vereinbart ist. Reklamationen, die sich allein auf die künstlerische Gestaltung
+    beziehen, sind ausgeschlossen.
+  </p>
+  <p>
+    Bei der Bildbearbeitung können KI-gestützte Werkzeuge eingesetzt werden (z. B. Entrauschen, Maskieren, Retusche). Mit KI
+    erzeugte Bildinhalte, etwa virtuelles Home Staging, werden nur nach Absprache erstellt und als solche gekennzeichnet.
+  </p>
+
+  <h2>{h()} Mitwirkung des Kunden</h2>
+  <p>
+    Der Kunde sorgt dafür, dass der Fotograf zum vereinbarten Termin Zugang zu den Räumen und Personen hat und dass alle
+    nötigen Genehmigungen vorliegen (z. B. Hausrecht, Location, Drehgenehmigung). Er holt die Einwilligungen der abgebildeten
+    Personen, insbesondere seiner Mitarbeitenden, für die vorgesehene Nutzung ein und informiert sie über die Aufnahmen.
+    Für Rechte Dritter an abgebildeten Personen, Werken, Marken oder Objekten ist der Kunde verantwortlich, soweit der Fotograf
+    nicht ausdrücklich deren Klärung übernommen hat.
+  </p>
+  <p>
+    Drohnenaufnahmen setzen geeignete Wetterbedingungen und eine Flugfreigabe am jeweiligen Ort voraus. Ist ein Flug aus
+    rechtlichen, sicherheitsbedingten oder Wettergründen nicht möglich, entscheidet der Fotograf vor Ort.
+  </p>
+
+  <h2>{h()} Termine, Verschiebung und Stornierung</h2>
+  <p>
+    Vereinbarte Termine sind verbindlich. Eine einmalige Verschiebung ist bis 7 Tage vor dem Termin kostenfrei möglich. Sagt
+    der Kunde einen bestätigten Termin ab, berechnet der Fotograf folgende Ausfallpauschalen, bezogen auf das vereinbarte Honorar:
+  </p>
+  <ul>
+    <li>bis 14 Tage vor dem Termin: kostenfrei,</li>
+    <li>13 bis 7 Tage vorher: 50 %,</li>
+    <li>6 bis 3 Tage vorher: 80 %,</li>
+    <li>ab 48 Stunden vorher oder bei Nichterscheinen: 100 %.</li>
+  </ul>
+  <p>
+    Bereits angefallene Fremdkosten (z. B. Location, Assistenz, Reisekosten) werden zusätzlich in voller Höhe berechnet.
+    Dem Kunden bleibt der Nachweis vorbehalten, dass kein oder ein geringerer Schaden entstanden ist. Wetterabhängige
+    Termine, etwa für Außen- oder Drohnenaufnahmen, können bei nachweislich ungeeignetem Wetter bis 24 Stunden vorher
+    kostenfrei verschoben werden.
+  </p>
+  <p>
+    Kann der Fotograf einen Termin wegen Krankheit, höherer Gewalt oder anderer Umstände, die er nicht zu vertreten hat,
+    nicht wahrnehmen, wird gemeinsam ein Ersatztermin gesucht oder, nach Absprache, eine gleichwertige Vertretung gestellt.
+    Ist beides nicht möglich, werden bereits geleistete Zahlungen erstattet. Weitergehende Ansprüche bestehen in diesem Fall
+    nicht.
+  </p>
+
+  <h2>{h()} Arbeitszeit und Zusatzaufwand</h2>
+  <p>
+    Ein Halbtag umfasst bis zu 4 Stunden, ein Tag bis zu 8 Stunden vor Ort, jeweils einschließlich kurzer Pausen. Wird die
+    vereinbarte Zeit auf Wunsch des Kunden überschritten, wird jede angefangene Stunde nach dem im Angebot genannten
+    Stundensatz berechnet. Zusätzliche Motive, Bearbeitungen oder Änderungswünsche nach der Lieferung werden nach Aufwand
+    berechnet.
+  </p>
+
+  <h2>{h()} Lieferung und Abnahme</h2>
+  <p>
+    Die Bilder werden digital als hochaufgelöste JPG-Dateien per Download-Link geliefert, in der Regel innerhalb von
+    48 Stunden nach Veranstaltungen und innerhalb einer Woche nach anderen Shootings, sofern nichts anderes vereinbart ist.
+    Rohdaten (RAW) und nicht ausgewählte Aufnahmen werden nicht herausgegeben.
+  </p>
+  <p>
+    Der Kunde prüft die Bilder nach Erhalt. Mängel sind innerhalb von 14 Tagen nach Lieferung in Textform anzuzeigen; danach
+    gelten die Bilder als vertragsgemäß abgenommen. Bei berechtigten Mängeln bessert der Fotograf nach.
+  </p>
+
+  <h2>{h()} Archivierung</h2>
+  <p>
+    Der Fotograf bewahrt die gelieferten Bilder 12 Monate nach Lieferung auf und stellt sie auf Wunsch in dieser Zeit erneut
+    zur Verfügung. Danach besteht kein Anspruch auf erneute Lieferung. Der Kunde ist für die Sicherung der gelieferten Dateien
+    selbst verantwortlich.
+  </p>
+
+  <h2>{h()} Urheberrecht und Nutzungsrechte</h2>
+  <p>
+    Die Aufnahmen sind urheberrechtlich geschützt; das Urheberrecht verbleibt beim Fotografen. Der Kunde erhält ein einfaches,
+    nicht übertragbares Nutzungsrecht in dem Umfang, der im Angebot vereinbart ist (Medien, Zweck, Dauer, Gebiet). Ist nichts
+    anderes vereinbart, umfasst es die Nutzung für die eigene Unternehmenskommunikation des Kunden, z. B. Website, Social
+    Media, Präsentationen, Stellenanzeigen und Pressearbeit. Ausschließliche Rechte, Sperrfristen sowie Nutzung in bezahlter
+    Werbung oder durch Dritte bedürfen einer gesonderten Vereinbarung.
+  </p>
+  <p>
+    Die Nutzungsrechte gehen erst mit vollständiger Bezahlung des Honorars auf den Kunden über. Eine Weitergabe an Dritte, etwa
+    Agenturen, Druckereien oder Medien, ist nur zur Umsetzung der vereinbarten Nutzung zulässig. Die Bilder dürfen zugeschnitten
+    und für die Ausgabe angepasst werden; weitergehende Bearbeitungen, Verfremdungen, Montagen sowie die Nutzung zum Training
+    oder als Eingabe für KI-Systeme sind nur mit vorheriger Zustimmung des Fotografen erlaubt.
+  </p>
+
+  <h2>{h()} Urhebernennung</h2>
+  <p>
+    Bei redaktioneller Nutzung, insbesondere in Presse und Fachmedien, ist der Fotograf in der üblichen Form zu nennen
+    („Foto: {site.legalName}“). Bei Nutzung auf der eigenen Website, in Social Media und in der Werbung des Kunden ist eine
+    Nennung nicht erforderlich, sofern nichts anderes vereinbart ist.
+  </p>
+
+  <h2>{h()} Referenznutzung</h2>
+  <p>
+    Der Fotograf darf ausgewählte Aufnahmen und den Namen bzw. das Logo des Kunden zur Eigenwerbung nutzen, etwa auf seiner
+    Website, in Social Media, im Portfolio und in Angeboten, sofern der Kunde nicht vor Auftragserteilung widerspricht oder
+    Vertraulichkeit vereinbart ist. Die Einwilligungen abgebildeter Personen holt der Kunde nach Möglichkeit auch für diesen
+    Zweck ein; auf Wunsch entfernt der Fotograf einzelne Aufnahmen aus seiner Referenzdarstellung.
+  </p>
+
+  <h2>{h()} Honorar und Zahlung</h2>
+  <p>
+    Es gilt das im Angebot vereinbarte Honorar zuzüglich der gesetzlichen Umsatzsteuer, soweit diese anfällt. Nebenkosten wie
+    Anfahrt außerhalb Hamburgs, Parkgebühren, Location, Requisiten, Models oder Assistenz werden gesondert berechnet, soweit sie
+    im Angebot genannt oder mit dem Kunden abgestimmt sind.
+  </p>
+  <p>
+    Rechnungen sind innerhalb von 14 Tagen nach Rechnungsdatum ohne Abzug zahlbar. Bei umfangreichen Produktionen kann der
+    Fotograf eine Anzahlung von bis zu 50 % nach Auftragserteilung verlangen. Der Kunde kann nur mit unbestrittenen oder
+    rechtskräftig festgestellten Forderungen aufrechnen.
+  </p>
+
+  <h2>{h()} Unberechtigte Nutzung</h2>
+  <p>
+    Nutzt der Kunde Bilder über den vereinbarten Umfang hinaus oder vor vollständiger Bezahlung, schuldet er eine Vergütung in
+    Höhe des Doppelten des für diese Nutzung üblichen Honorars, mindestens nach den aktuellen Empfehlungen der Mittelstandsgemeinschaft
+    Foto-Marketing (MFM). Unterbleibt eine nach Ziffer 10 erforderliche Urhebernennung, kann ein Zuschlag von 100 % auf das
+    Nutzungshonorar verlangt werden. Weitergehende Ansprüche bleiben unberührt.
+  </p>
+
+  <h2>{h()} Haftung</h2>
+  <p>
+    Der Fotograf haftet unbeschränkt bei Vorsatz und grober Fahrlässigkeit sowie bei Verletzung von Leben, Körper oder
+    Gesundheit. Bei leichter Fahrlässigkeit haftet er nur bei Verletzung wesentlicher Vertragspflichten und begrenzt auf den
+    vertragstypischen, vorhersehbaren Schaden. Die Haftung nach dem Produkthaftungsgesetz bleibt unberührt.
+  </p>
+  <p>
+    Für den Verlust von Aufnahmen durch technische Defekte, etwa von Speichermedien, haftet der Fotograf nur bei Vorsatz oder
+    grober Fahrlässigkeit; in diesem Fall ist die Haftung auf die Wiederholung der Aufnahmen, soweit möglich, oder auf die
+    Rückzahlung des Honorars für die betroffenen Leistungen beschränkt.
+  </p>
+
+  <h2>{h()} Datenschutz und Vertraulichkeit</h2>
+  <p>
+    Beide Seiten behandeln vertrauliche Informationen, die sie im Rahmen des Auftrags erhalten, vertraulich. Zur Verarbeitung
+    personenbezogener Daten gilt die <a class="link-line" href="/datenschutz">Datenschutzerklärung</a>.
+  </p>
+
+  <h2>{h()} Schlussbestimmungen</h2>
+  <p>
+    Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts. Erfüllungsort und, soweit gesetzlich
+    zulässig, Gerichtsstand ist Hamburg. Änderungen und Ergänzungen bedürfen der Textform. Sollte eine Bestimmung unwirksam
+    sein, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt.
+  </p>
+  <p>Stand: Oktober 2026</p>
+</LegalLayout>

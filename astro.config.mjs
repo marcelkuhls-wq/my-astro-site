@@ -45,7 +45,7 @@ export default defineConfig({
 
   integrations: [
     sitemap({
-      filter: (page) => !page.includes('/impressum') && !page.includes('/datenschutz') && !page.includes('/danke') && !page.includes('/immobilienwirtschaft') && !page.includes('/tiedemann-immobilien') && !page.includes('/bjoern-meins-engel-voelkers'),
+      filter: (page) => !page.includes('/impressum') && !page.includes('/datenschutz') && !page.includes('/agb') && !page.includes('/danke') && !page.includes('/immobilienwirtschaft') && !page.includes('/tiedemann-immobilien') && !page.includes('/bjoern-meins-engel-voelkers'),
     }),
   ],
 });
