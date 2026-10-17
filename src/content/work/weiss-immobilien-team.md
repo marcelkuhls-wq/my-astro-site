@@ -96,6 +96,56 @@ gallery:
           category: "Portrait"
           format: "Hochformat 4:5"
           motif: "portrait-sitzend"
+  - layout: full
+    images:
+      - id: wtx-01
+        spec:
+          alt: "Das gesamte Team von Weiss Immobilien im Büro, alle in Weiß und Beige."
+          category: "Team"
+          format: "Querformat"
+          motif: "wtx-01"
+  - layout: pair
+    images:
+      - id: wtx-02
+        spec:
+          alt: "Zwei Mitarbeitende von Weiss Immobilien vor der Ladenfront mit Schriftzug."
+          category: "Team"
+          format: "Hochformat"
+          motif: "wtx-02"
+      - id: wtx-04
+        spec:
+          alt: "Mitarbeiter von Weiss Immobilien sitzt lächelnd mit Smartphone im Sessel."
+          category: "Team"
+          format: "Hochformat"
+          motif: "wtx-04"
+  - layout: pair
+    images:
+      - id: wtx-05
+        spec:
+          alt: "Drei Mitarbeitende von Weiss Immobilien am Fenster."
+          category: "Team"
+          format: "Hochformat"
+          motif: "wtx-05"
+      - id: wtx-03
+        spec:
+          alt: "Portrait eines Maklers im beigen Sakko vor neutralem Hintergrund."
+          category: "Team"
+          format: "Hochformat"
+          motif: "wtx-03"
+  - layout: pair
+    images:
+      - id: wtx-06
+        spec:
+          alt: "Portrait eines Maklers im dunkelblauen Sakko vor neutralem Hintergrund."
+          category: "Team"
+          format: "Hochformat"
+          motif: "wtx-06"
+      - id: wtx-07
+        spec:
+          alt: "Portrait einer Maklerin vor neutralem Hintergrund."
+          category: "Team"
+          format: "Hochformat"
+          motif: "wtx-07"
 ---
 
 Die Serie verbindet drei Ebenen: Einzelportraits vor neutralem Hintergrund, Szenen im Büro – am Schreibtisch, auf dem Sofa, im Sessel – und das ganze Team vor der Ladenfront mit dem Schriftzug.
