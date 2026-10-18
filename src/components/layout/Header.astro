@@ -10,17 +10,17 @@ const isActive = (href: string) => path === href || path.startsWith(`${href}/`);
   class="fixed inset-x-0 top-0 z-40 bg-paper/95 transition-transform duration-500 ease-out-soft"
 >
   <div class="wrap flex h-[var(--header-h)] items-center justify-between">
-    <a href="/" class="sk-logo relative inline-flex min-h-11 items-center gap-[0.32em] font-display text-[1.25rem] leading-none tracking-[0.06em] uppercase md:text-[1.5rem]" aria-label={`${site.name} – Startseite`}>
+    <a href="/" class="sk-logo relative inline-flex min-h-11 items-center gap-[0.32em] font-display text-[1.25rem] leading-none tracking-[0.06em] uppercase md:text-[1.5rem]" aria-label={`${site.name} – zur Startseite`}>
       {
         [
           { w: 'Studio', cls: 'font-normal', o: 0 },
           { w: 'Kuhls', cls: 'font-semibold', o: 6 },
-        ].map(({ w, cls, o }) => (
-          <span class:list={['sk-word', cls]} aria-hidden="true">
+        ].map(({ w, cls, o }, i) => (
+          <>{i > 0 && ' '}<span class:list={['sk-word', cls]} aria-hidden="true">
             {[...w].map((c, i) => (
               <span class="sk-l" style={`--i: ${o + i}`}>{c}</span>
             ))}
-          </span>
+          </span></>
         ))
       }
     </a>
