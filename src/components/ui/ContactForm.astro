@@ -6,7 +6,7 @@
 import { site } from '../../config/site';
 
 const projectTypes = ['Employer Branding', 'Business & Corporate', 'Immobilien & Interior', 'Event', 'Etwas anderes'];
-const budgets = ['bis 1.000 €', '1.000–2.500 €', '2.500–5.000 €', 'über 5.000 €', 'noch offen'];
+const budgets = ['bis 1.000 €', '1.000 bis 2.500 €', '2.500 bis 5.000 €', 'über 5.000 €', 'noch offen'];
 const sources = ['Google-Suche', 'LinkedIn', 'Empfehlung', 'Instagram', 'Anderes'];
 const endpoint = site.formEndpoint;
 // Frühestes wählbares Datum (Build-Zeitpunkt; wird im Browser auf heute aktualisiert)
@@ -159,7 +159,7 @@ const labelCls = 'label text-muted';
         `E-Mail: ${data.get('email')}`,
         `Telefon: ${data.get('telefon') || '–'}`,
         `Projekt: ${data.get('projekt')}`,
-        `Budget: ${data.get('budget') || '–'}`,
+        `Budget: ${data.get('budget') || 'keine Angabe'}`,
         `Gefunden über: ${data.get('quelle') || '–'}`,
         `Wunschtermin: ${termin}`,
         '',
