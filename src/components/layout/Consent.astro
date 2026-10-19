@@ -32,10 +32,10 @@ const clarity = site.analytics?.clarity ?? '';
           jederzeit widerrufen können. Mehr in der <a href="/datenschutz" class="link-line text-ink">Datenschutzerklärung</a>.
         </p>
         <div class="mt-5 grid grid-cols-2 gap-3">
-          <button type="button" data-consent="deny" class="label min-h-11 border border-ink/25 px-4 transition-colors hover:border-ink">
+          <button type="button" data-consent="deny" class="label min-h-11 border border-ink px-4 text-ink transition-colors hover:bg-ink hover:text-bone">
             Ablehnen
           </button>
-          <button type="button" data-consent="grant" class="label min-h-11 border border-ink bg-ink px-4 text-bone transition-colors hover:bg-black">
+          <button type="button" data-consent="grant" class="label min-h-11 border border-ink px-4 text-ink transition-colors hover:bg-ink hover:text-bone">
             Akzeptieren
           </button>
         </div>
@@ -82,6 +82,7 @@ const clarity = site.analytics?.clarity ?? '';
 
           // Seitenbereich für Berichte („Inhaltsgruppe“ in Google Analytics)
           function contentGroup(path) {
+            if (document.title.indexOf('Seite nicht gefunden') === 0) return 'Fehlerseite 404';
             path = path.replace(/\.html$/, '').replace(/\/$/, '') || '/';
             if (path === '/') return 'Startseite';
             if (path === '/work') return 'Projektübersicht';
@@ -197,6 +198,12 @@ const clarity = site.analytics?.clarity ?? '';
           const s = location.pathname.replace(/^\//, '').replace(/\.html$/, '');
           if (services[s]) track('view_service', { service: services[s] });
         };
+        // Kaputte Links finden: Aufruf der 404-Seite mit Herkunft
+        if (document.title.indexOf('Seite nicht gefunden') === 0) {
+          const nf = () => track('page_not_found', { page: location.pathname, referrer: document.referrer || '(direkt)' });
+          document.addEventListener('sk:analytics', nf);
+          nf();
+        }
         document.addEventListener('sk:analytics', projectView);
         projectView();
       </script>
