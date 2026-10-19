@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ArrowLink from '../components/ui/ArrowLink.astro';
+import { services } from '../data/services';
 ---
 
 <BaseLayout title="Seite nicht gefunden" description="Diese Seite existiert nicht." noindex>
@@ -8,7 +8,27 @@ import ArrowLink from '../components/ui/ArrowLink.astro';
     <p class="label col-span-12 text-muted md:col-span-3 md:pt-[0.9em]">404</p>
     <div class="col-span-12 md:col-span-9">
       <h1 class="text-display">Hier ist nichts.</h1>
-      <ArrowLink href="/" class="mt-12">Zur Startseite</ArrowLink>
+      <p class="mt-8 max-w-[34rem] text-lead">
+        Diese Seite gibt es nicht oder nicht mehr. Vielleicht hilft einer dieser Wege weiter:
+      </p>
+      <ul class="mt-10 grid gap-x-[var(--gutter)] gap-y-0 sm:grid-cols-2">
+        {
+          [
+            ...services.map((s) => ({ href: s.href, label: s.title })),
+            { href: '/work', label: 'Alle Projekte' },
+            { href: '/journal', label: 'Journal' },
+          ].map((l) => (
+            <li class="border-t border-line">
+              <a href={l.href} class="group flex items-center justify-between py-4 text-[1.0625rem] transition-colors hover:text-accent">
+                {l.label} <span aria-hidden="true" class="transition-transform duration-300 group-hover:translate-x-1">→</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <a href="/kontakt" class="group label mt-12 inline-flex min-h-12 items-center gap-3 bg-accent px-6 text-bone transition-colors duration-300 hover:bg-accent-hover">
+        Projekt anfragen <span aria-hidden="true" class="transition-transform duration-300 group-hover:translate-x-1">→</span>
+      </a>
     </div>
   </section>
 </BaseLayout>
