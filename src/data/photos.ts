@@ -55,7 +55,7 @@ export const photos: Record<string, PhotoSpec> = {
     category: 'Business & Corporate',
     format: 'Hochformat 4:5',
     motif: 'Weiss Immobilien – Portrait',
-    file: 'weiss-team-portrait-beige',
+    file: 'wtx-03',
     position: '50% 30%',
   },
   'home-business-2': {
@@ -210,11 +210,11 @@ export const photos: Record<string, PhotoSpec> = {
     position: '50% 45%',
   },
   'business-portrait-1': {
-    alt: 'Businessportrait eines Mitarbeiters in dunklem Sakko.',
+    alt: 'Businessportrait eines Maklers in dunkelblauem Sakko vor neutralem Hintergrund.',
     category: 'Portrait',
     format: 'Hochformat 4:5',
     motif: 'Weiss Immobilien',
-    file: 'weiss-team-portrait-dunkel',
+    file: 'wtx-06',
     position: '50% 30%',
   },
   'business-portrait-2': {

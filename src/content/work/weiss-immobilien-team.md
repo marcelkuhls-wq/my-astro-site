@@ -32,13 +32,12 @@ gallery:
           category: "Team"
           format: "Querformat 3:2"
           motif: "sofa"
-      - id: weiss-team-portrait-beige
-        position: "50% 35%"
+      - id: wtx-03
         spec:
-          alt: "Portrait eines Mitarbeiters in beigem Sakko vor neutralem Hintergrund."
-          category: "Portrait"
-          format: "Hochformat 4:5"
-          motif: "portrait-beige"
+          alt: "Portrait eines Maklers im beigen Sakko vor neutralem Hintergrund."
+          category: "Team"
+          format: "Hochformat"
+          motif: "wtx-03"
   - layout: pair
     images:
       - id: weiss-team-schreibtisch
@@ -66,13 +65,12 @@ gallery:
           motif: "unterwegs"
   - layout: trio
     images:
-      - id: weiss-team-portrait-dunkel
-        position: "50% 35%"
+      - id: wtx-06
         spec:
-          alt: "Portrait eines Mitarbeiters in dunklem Sakko."
-          category: "Portrait"
-          format: "Hochformat 4:5"
-          motif: "portrait-dunkel"
+          alt: "Portrait eines Maklers im dunkelblauen Sakko vor neutralem Hintergrund."
+          category: "Team"
+          format: "Hochformat"
+          motif: "wtx-06"
       - id: weiss-team-duo
         position: "50% 30%"
         spec:
@@ -126,20 +124,22 @@ gallery:
           category: "Team"
           format: "Hochformat"
           motif: "wtx-05"
-      - id: wtx-03
+      - id: weiss-team-portrait-beige
+        position: "50% 35%"
         spec:
-          alt: "Portrait eines Maklers im beigen Sakko vor neutralem Hintergrund."
-          category: "Team"
-          format: "Hochformat"
-          motif: "wtx-03"
+          alt: "Portrait eines Mitarbeiters in beigem Sakko vor neutralem Hintergrund."
+          category: "Portrait"
+          format: "Hochformat 4:5"
+          motif: "portrait-beige"
   - layout: pair
     images:
-      - id: wtx-06
+      - id: weiss-team-portrait-dunkel
+        position: "50% 35%"
         spec:
-          alt: "Portrait eines Maklers im dunkelblauen Sakko vor neutralem Hintergrund."
-          category: "Team"
-          format: "Hochformat"
-          motif: "wtx-06"
+          alt: "Portrait eines Mitarbeiters in dunklem Sakko."
+          category: "Portrait"
+          format: "Hochformat 4:5"
+          motif: "portrait-dunkel"
       - id: wtx-07
         spec:
           alt: "Portrait einer Maklerin vor neutralem Hintergrund."
