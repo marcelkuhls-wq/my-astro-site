@@ -5,13 +5,13 @@ industry: "Gastronomie & Catering"
 service: business
 location: "Hamburg"
 year: 2026
-summary: "Team-Portraits und Gruppenbild vor der eigenen Fahrzeugflotte – für Website, Social Media und Recruiting."
+summary: "Team-Portraits und Gruppenbild vor der eigenen Fahrzeugflotte, für Website, Social Media und Recruiting."
 usage: [Website, Social Media]
 featured: false
 order: 4.5
 scope: "Einzelportraits, Teambild, Standort"
 task: "Hamburger Küche wollte das Team so zeigen, wie Kundinnen und Kunden es erleben: vor Ort, mit den eigenen Fahrzeugen."
-approach: "Ich habe vor dem Firmengebäude fotografiert – Einzelportraits in einem einheitlichen Look und das Leitungsteam gemeinsam vor den gebrandeten Autos."
+approach: "Ich habe vor dem Firmengebäude fotografiert: Einzelportraits in einem einheitlichen Look und das Leitungsteam gemeinsam vor den gebrandeten Autos."
 cover:
   id: hk-01
   spec:
@@ -66,4 +66,4 @@ gallery:
 
 Statt neutralem Hintergrund steht hier das Unternehmen selbst im Bild: die Flotte mit dem Schriftzug, der Standort und die Menschen davor.
 
-So entstehen Portraits, die sofort erzählen, wofür das Team steht.
+Die Portraits zeigen damit auf den ersten Blick, zu welchem Unternehmen das Team gehört.

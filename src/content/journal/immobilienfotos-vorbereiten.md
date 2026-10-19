@@ -1,5 +1,5 @@
 ---
-title: Immobilienfotos vorbereiten – Checkliste für Makler und Eigentümer
+title: "Immobilienfotos vorbereiten: Checkliste für Makler und Eigentümer"
 description: Wie eine Wohnung vor dem Fototermin vorbereitet wird, welche Motive ins Exposé gehören und warum Tageszeit und Licht so viel ausmachen.
 date: 2026-10-12
 service: immobilien
@@ -13,11 +13,11 @@ cover:
 draft: false
 ---
 
-Die Fotos sind der erste Eindruck, den eine Immobilie macht – lange vor der ersten Besichtigung. Ob jemand anfragt oder weiterscrollt, entscheidet sich oft in wenigen Sekunden. Gute Immobilienfotos beginnen deshalb nicht mit der Kamera, sondern mit der Vorbereitung der Räume.
+Die Fotos sind der erste Eindruck, den eine Immobilie macht, lange vor der ersten Besichtigung. Ob jemand anfragt oder weiterscrollt, entscheidet sich oft in wenigen Sekunden. Gute Immobilienfotos fangen deshalb schon vor dem Termin an, bei der Vorbereitung der Räume.
 
 ## Vor dem Termin: Räume vorbereiten
 
-- **Aufräumen und reduzieren:** Alles, was nicht zur Einrichtung gehört, kommt aus dem Bild – Ladekabel, Post, Fernbedienungen, Kosmetik, Spülmittel, Magnete am Kühlschrank.
+- **Aufräumen und reduzieren:** Alles, was nicht zur Einrichtung gehört, kommt aus dem Bild: Ladekabel, Post, Fernbedienungen, Kosmetik, Spülmittel, Magnete am Kühlschrank.
 - **Persönliches zurücknehmen:** Familienfotos und sehr persönliche Gegenstände lenken ab. Interessenten sollen sich selbst in den Räumen vorstellen können.
 - **Licht an, Vorhänge auf:** Alle Leuchtmittel sollten funktionieren. Jalousien und Vorhänge werden so eingestellt, dass möglichst viel Tageslicht hereinkommt.
 - **Kleine Reparaturen:** Lockere Griffe, defekte Lampen oder sichtbare Kabel fallen auf Fotos stärker auf als vor Ort.
@@ -32,7 +32,7 @@ Ein vollständiges Exposé zeigt die Immobilie so, wie ein Interessent sie bei e
 - Eingang, Treppenhaus oder Foyer
 - jeder Wohnraum mindestens einmal, die wichtigsten aus mehreren Blickwinkeln
 - Küche und Bad
-- Balkon, Terrasse, Garten – und der Ausblick
+- Balkon, Terrasse, Garten und der Ausblick
 - Details, die die Immobilie besonders machen: Stuck, Dielen, eine Wendeltreppe, sichtbares Gebälk
 
 ## Tageszeit und Licht

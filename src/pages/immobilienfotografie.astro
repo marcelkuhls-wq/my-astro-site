@@ -23,7 +23,7 @@ import { breadcrumbs, serviceSchema } from '../lib/schema';
 const projects = await getProjects({ service: 'immobilien' });
 
 const description =
-  'Immobilienfotograf in Hamburg: Architektur-, Interior- und Drohnenaufnahmen für Exposés, Portale und Projektmarketing – natürliches Licht, gerade Linien.';
+  'Immobilienfotograf in Hamburg: Architektur-, Interior- und Drohnenaufnahmen für Exposés, Portale und Projektmarketing. Natürliches Licht, gerade Linien.';
 const schema = [
   serviceSchema(Astro.site, serviceById('immobilien'), 'Immobilienfotografie', description),
   breadcrumbs(Astro.site, [{ name: 'Immobilien & Interior', path: '/immobilienfotografie' }]),
@@ -40,11 +40,11 @@ const faq = [
   },
   {
     q: 'Arbeiten Sie mit HDR?',
-    a: 'Nicht im Sinne der typischen, überzeichneten HDR-Optik. Wo es für Fenster und Innenraum nötig ist, kombiniere ich Belichtungen – und bearbeite so, dass Licht und Farben dem Raum entsprechen.',
+    a: 'Nicht im Sinne der typischen, überzeichneten HDR-Optik. Wo es für Fenster und Innenraum nötig ist, kombiniere ich Belichtungen und bearbeite so, dass Licht und Farben dem Raum entsprechen.',
   },
   {
     q: 'Fotografieren Sie Hotels und Restaurants im laufenden Betrieb?',
-    a: 'Ja. Ich stimme die Zeitfenster so ab, dass Gäste möglichst wenig gestört werden – etwa vor Öffnung oder in ruhigen Stunden.',
+    a: 'Ja. Ich stimme die Zeitfenster so ab, dass Gäste möglichst wenig gestört werden, etwa vor Öffnung oder in ruhigen Stunden.',
   },
   {
     q: 'Welche Formate erhalten wir?',
@@ -52,7 +52,7 @@ const faq = [
   },
   {
     q: 'Fotografieren Sie auch unser Makler-Team?',
-    a: 'Ja. Portraits und Teambilder für Website, Exposé und Portale entstehen in derselben Bildsprache wie die Objektfotos – an einem eigenen Termin oder, wenn es passt, am selben Tag.',
+    a: 'Ja. Portraits und Teambilder für Website, Exposé und Portale entstehen in derselben Bildsprache wie die Objektfotos, an einem eigenen Termin oder, wenn es passt, am selben Tag.',
   },
   {
     q: 'Arbeiten Sie regelmäßig für uns, zum Beispiel bei jedem neuen Objekt?',
@@ -60,11 +60,11 @@ const faq = [
   },
   {
     q: 'Was kostet ein Immobilien-Shooting?',
-    a: 'Das hängt von Umfang, Anzahl der Personen und Motive, Ort und geplanter Nutzung ab. Nach dem Briefing erhalten Sie ein verbindliches Angebot. Im Anfrageformular können Sie Ihren Budgetrahmen angeben – dann plane ich passend dazu.',
+    a: 'Das hängt von Umfang, Anzahl der Personen und Motive, Ort und geplanter Nutzung ab. Nach dem Briefing erhalten Sie ein verbindliches Angebot. Im Anfrageformular können Sie Ihren Budgetrahmen angeben. Dann plane ich passend dazu.',
   },
   {
     q: 'Wie werden die Nutzungsrechte geregelt?',
-    a: 'Nach dem geplanten Einsatz – Vermarktung, Portale, Presse. Wenn mehrere Beteiligte die Bilder nutzen möchten, etwa Bauherr und Architekturbüro, regle ich das vorab.',
+    a: 'Nach dem geplanten Einsatz: Vermarktung, Portale, Presse. Wenn mehrere Beteiligte die Bilder nutzen möchten, etwa Bauherr und Architekturbüro, regle ich das vorab.',
   },
 ];
 ---
@@ -75,7 +75,7 @@ const faq = [
     clients="immobilien"
     label="Leistung 03"
     title="Immobilien & Interior"
-    lead="Räume so, wie sie sich anfühlen – für Exposé, Immobilienportal, Hospitality Marketing und Projektkommunikation. Natürliches Licht, saubere Perspektiven, keine HDR-Optik."
+    lead="Ich fotografiere Räume so, wie sie sich anfühlen, für Exposé, Immobilienportal, Hospitality Marketing und Projektkommunikation. Natürliches Licht, saubere Perspektiven, keine HDR-Optik."
     photo="immo-hero"
     photoMode="bleed"
     ratio="21 / 9"
@@ -92,8 +92,8 @@ const faq = [
       <div class="col-span-12 md:col-span-6" data-reveal>
         <p class="text-h3 !leading-[1.2]">Ich fotografiere mit dem Licht, das ein Raum hat, und ergänze nur dort, wo es nötig ist.</p>
         <p class="mt-6 max-w-[32rem] text-muted">
-          Senkrechte Linien, ehrliche Farben, sorgfältig vorbereitete Räume. Die Bilder funktionieren im Exposé, auf der Website und
-          im Hotelbuchungsportal – und halten auch beim Besichtigungstermin, was sie versprechen.
+          Die Linien stehen senkrecht, die Farben stimmen, und die Räume sind sorgfältig vorbereitet. Die Bilder funktionieren im Exposé,
+          auf der Website und im Hotelbuchungsportal. Beim Besichtigungstermin halten sie, was sie versprechen.
         </p>
       </div>
     </div>
@@ -107,9 +107,9 @@ const faq = [
 
   <UseLine items={uses} label="Im Einsatz" class="section-t" />
 
-  <SeoText label="Für Makler & Immobilienunternehmen" title="Ihr Team und Ihre Objekte – aus einer Hand" link={{ href: '/mitarbeiterfotos', text: 'Einheitliche Teamportraits' }}>
+  <SeoText label="Für Makler & Immobilienunternehmen" title="Ihr Team und Ihre Objekte aus einer Hand" link={{ href: '/mitarbeiterfotos', text: 'Einheitliche Teamportraits' }}>
     <p>Für Maklerbüros, Bestandshalter und Projektentwickler fotografiere ich beides: <strong>die Menschen, die verkaufen, und die Objekte, die verkauft werden</strong>. Portraits für Teamseite und Exposé, dazu Architektur-, Interior- und Drohnenaufnahmen.</p>
-    <p>So passt Ihr Auftritt auf Website, Portalen und Social Media zusammen – und lässt sich bei jedem neuen Objekt fortsetzen.</p>
+    <p>So passt Ihr Auftritt auf Website, Portalen und Social Media zusammen und lässt sich bei jedem neuen Objekt fortsetzen.</p>
   </SeoText>
 
   <Gallery
@@ -145,8 +145,8 @@ const faq = [
   <Testimonial {...testimonialById('felix-weiss')} projectHref="/work/weiss-immobilien" class="section-t" />
 
   <ServiceTerms
-    scope="Ein Objekt pro Termin oder mehrere Objekte als Serie – innen, außen und auf Wunsch aus der Luft."
-    delivery="Innerhalb einer Woche nach dem Termin – in den Formaten für Exposé, Portale und Social Media."
+    scope="Ein Objekt pro Termin oder mehrere Objekte als Serie: innen, außen und auf Wunsch aus der Luft."
+    delivery="Innerhalb einer Woche nach dem Termin, in den Formaten für Exposé, Portale und Social Media."
   />
 
   <JournalLink slug="immobilienfotos-vorbereiten" />

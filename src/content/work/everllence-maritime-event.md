@@ -5,13 +5,13 @@ industry: "Maritime Antriebe & Energie"
 service: events
 location: "Atlantik-Haus, Hamburg"
 year: 2025
-summary: "Kundenevent von Everllence über den Dächern des Hamburger Hafens – Vorträge, Networking, Produktwelten und Live-Musik bis in die Nacht."
+summary: "Kundenevent von Everllence über den Dächern des Hamburger Hafens: Vorträge, Networking, Produktwelten und Live-Musik bis in die Nacht."
 usage: [PR, LinkedIn, Interne Kommunikation]
 featured: true
 order: 6.8
 scope: "Eventreportage, Speaker, Networking, Location, Live-Musik"
 task: "Everllence, die frühere MAN Energy Solutions, lud Kunden und Partner zu einem Abend im Atlantik-Haus ein. Die Bilder sollten Vorträge, Gespräche und die besondere Lage über dem Hafen gleichermaßen zeigen."
-approach: "Ich habe den Abend vom Empfang über die Vorträge auf der Bühne bis zum Konzert begleitet – dazwischen Gespräche an den Produktdisplays, die Dachterrasse im Sonnenuntergang und der Hafen bei Nacht."
+approach: "Ich habe den Abend vom Empfang über die Vorträge auf der Bühne bis zum Konzert begleitet. Dazwischen lagen Gespräche an den Produktdisplays, die Dachterrasse im Sonnenuntergang und der Hafen bei Nacht."
 cover:
   id: evl-01
   spec:
@@ -226,6 +226,6 @@ gallery:
           motif: "evl-30"
 ---
 
-Ein Abend, der vom Tageslicht bis in die Nacht reicht: Speaker vor der Markenwand, Handschläge vor den Displays zu Retrofit und Future Fuel Engines, Gäste auf der Terrasse mit Blick auf Elbphilharmonie und Hafen.
+Der Abend reichte vom Tageslicht bis in die Nacht. Die Serie zeigt Speaker vor der Markenwand, Handschläge vor den Displays zu Retrofit und Future Fuel Engines, Gäste auf der Terrasse mit Blick auf Elbphilharmonie und Hafen.
 
-So entsteht Material für Rückblick, LinkedIn und interne Kommunikation – Corporate-Eventfotografie mit Hamburg als Kulisse.
+Die Bilder sind für Rückblick, LinkedIn und interne Kommunikation entstanden: Corporate-Eventfotografie mit Hamburg als Kulisse.

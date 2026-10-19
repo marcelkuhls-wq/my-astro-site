@@ -5,7 +5,7 @@ industry: "Immobilien & Facility"
 service: business
 location: "Hamburg"
 year: 2025
-summary: "Einheitliche Mitarbeiterportraits mit hellem, unscharfem Bürohintergrund – für Website und LinkedIn."
+summary: "Einheitliche Mitarbeiterportraits mit hellem, unscharfem Bürohintergrund für Website und LinkedIn."
 usage: [Website, LinkedIn]
 featured: false
 draft: true
@@ -37,4 +37,4 @@ gallery:
           motif: "vako-03"
 ---
 
-Ein Look für alle: gleicher Hintergrund, gleiches Licht, gleiche Bearbeitung – so wirkt die Teamseite geschlossen.
+Alle Portraits haben denselben Hintergrund, dasselbe Licht und dieselbe Bearbeitung. So wirkt die Teamseite geschlossen.

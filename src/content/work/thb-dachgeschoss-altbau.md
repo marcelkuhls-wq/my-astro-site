@@ -5,7 +5,7 @@ industry: "Immobilien"
 service: immobilien
 location: "Hamburg"
 year: 2026
-summary: "Helle Dachgeschosswohnung mit Dachterrasse in einem repräsentativen Altbau – Interior und Fassade für die Vermarktung."
+summary: "Interior und Fassade einer hellen Dachgeschosswohnung mit Dachterrasse in einem repräsentativen Altbau, fotografiert für die Vermarktung."
 usage: [Exposé, Website, Immobilienportale]
 featured: false
 order: 12.2

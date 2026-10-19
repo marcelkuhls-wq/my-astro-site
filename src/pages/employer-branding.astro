@@ -36,7 +36,7 @@ const projects = await getProjects({ service: 'employer-branding' });
 const principles = [
   {
     title: 'Ihr Team, keine Models',
-    text: 'Wer sich bewirbt, soll die Menschen wiedererkennen, mit denen er später arbeitet. Ich plane mit HR, wer mitmacht – und wer nicht.',
+    text: 'Wer sich bewirbt, soll die Menschen wiedererkennen, mit denen er später arbeitet. Ich plane mit HR, wer mitmacht und wer nicht.',
   },
   {
     title: 'Geplant, nicht inszeniert',
@@ -44,14 +44,14 @@ const principles = [
   },
   {
     title: 'Ein Look, der bleibt',
-    text: 'Eine durchgängige Bildsprache für Karriereseite, Anzeigen, Social Media und Präsentationen – fortsetzbar bei jedem weiteren Termin und Standort.',
+    text: 'Eine durchgängige Bildsprache für Karriereseite, Anzeigen, Social Media und Präsentationen. Sie lässt sich bei jedem weiteren Termin und Standort fortsetzen.',
   },
 ];
 
 const uses = [
-  { title: 'Arbeitssituationen', text: 'Besprechungen, Werkstatt, Labor, Empfang, Außendienst – dort, wo die Arbeit tatsächlich passiert.' },
-  { title: 'Portraits', text: 'Mitarbeitende als Gesichter der Kampagne. Ruhig, direkt, mit Bezug zum Arbeitsplatz.' },
-  { title: 'Teams', text: 'Teambilder, die nach Zusammenarbeit aussehen – nicht nach Aufstellung.' },
+  { title: 'Arbeitssituationen', text: 'Besprechungen, Werkstatt, Labor, Empfang, Außendienst: dort, wo die Arbeit tatsächlich passiert.' },
+  { title: 'Portraits', text: 'Mitarbeitende als Gesichter der Kampagne, ruhig und direkt fotografiert, mit Bezug zum Arbeitsplatz.' },
+  { title: 'Teams', text: 'Teambilder, auf denen man Zusammenarbeit sieht statt einer Aufstellung.' },
   { title: 'Recruiting & Kampagnen', text: 'Motive passend zu konkreten Stellen und Zielgruppen, von Ausbildung bis Führung.' },
   { title: 'Karriereseite', text: 'Ein zusammenhängendes Set aus Übersicht, Details und Menschen für Ihre Karrierewebsite.' },
   { title: 'LinkedIn & Social Media', text: 'Hoch- und Querformate aus einer Produktion, geplant für Posts, Stories und Unternehmensprofile.' },
@@ -69,11 +69,11 @@ const faq = [
   },
   {
     q: 'Wie lange dauert eine Produktion?',
-    a: 'Von einem halben Tag bis zu mehreren Tagen – je nach Standorten, Motiven und Anzahl der Personen. Den Umfang legen wir im Briefing gemeinsam fest.',
+    a: 'Von einem halben Tag bis zu mehreren Tagen, je nach Standorten, Motiven und Anzahl der Personen. Den Umfang legen wir im Briefing gemeinsam fest.',
   },
   {
     q: 'Unsere Mitarbeitenden stehen nicht gern vor der Kamera. Funktioniert das trotzdem?',
-    a: 'Ja – das ist der Normalfall. Ich fotografiere überwiegend während der Arbeit statt in Posen. Wer nicht abgebildet werden möchte, wird es auch nicht.',
+    a: 'Ja, das ist der Normalfall. Ich fotografiere überwiegend während der Arbeit statt in Posen. Wer nicht abgebildet werden möchte, wird es auch nicht.',
   },
   {
     q: 'Wie gehen wir mit Einwilligungen und Datenschutz um?',
@@ -81,15 +81,15 @@ const faq = [
   },
   {
     q: 'Was kostet ein Employer-Branding-Shooting?',
-    a: 'Das hängt von Umfang, Anzahl der Personen und Motive, Ort und geplanter Nutzung ab. Nach dem Briefing erhalten Sie ein verbindliches Angebot. Im Anfrageformular können Sie Ihren Budgetrahmen angeben – dann plane ich passend dazu.',
+    a: 'Das hängt von Umfang, Anzahl der Personen und Motive, Ort und geplanter Nutzung ab. Nach dem Briefing erhalten Sie ein verbindliches Angebot. Im Anfrageformular können Sie Ihren Budgetrahmen angeben. Dann plane ich passend dazu.',
   },
   {
     q: 'Wie werden die Nutzungsrechte geregelt?',
-    a: 'Nach Ihrem tatsächlichen Einsatz – von Karriereseite und Social Media bis zur Kampagne. Ich lege die Rechte im Angebot transparent fest.',
+    a: 'Nach Ihrem tatsächlichen Einsatz, von Karriereseite und Social Media bis zur Kampagne. Ich lege die Rechte im Angebot transparent fest.',
   },
   {
     q: 'Wie erhalten wir die Bilder?',
-    a: 'Innerhalb einer Woche nach dem Shooting als bearbeitete Auswahl in den vereinbarten Formaten – hochaufgelöst für Druck und optimiert für Web und Social Media.',
+    a: 'Innerhalb einer Woche nach dem Shooting als bearbeitete Auswahl in den vereinbarten Formaten: hochaufgelöst für Druck und optimiert für Web und Social Media.',
   },
 ];
 ---
@@ -100,13 +100,13 @@ const faq = [
     clients="employer-branding"
     label="Leistung 01"
     title="Employer Branding"
-    lead="Echte Teams, echte Arbeitsplätze und eine Bildsprache, die zeigt, wie sich Ihr Unternehmen von innen anfühlt – für Karriereseite, Recruiting und Kommunikation. Aus Hamburg und darüber hinaus."
+    lead="Ihre echten Teams und Arbeitsplätze, in einer Bildsprache, die zeigt, wie sich Ihr Unternehmen von innen anfühlt. Für Karriereseite, Recruiting und Kommunikation, aus Hamburg und darüber hinaus."
     photo="eb-hero"
     ratio="16 / 9"
   />
 
   <Statement label="Haltung" size="h2" as="h2" class="section-y">
-    Ein Bildset für alle Kanäle – und für die nächsten Jahre.
+    Ein Bildset für alle Kanäle und für die nächsten Jahre.
   </Statement>
 
   <div class="wrap -mt-[calc(var(--section)*0.4)]">
@@ -152,7 +152,7 @@ const faq = [
   <Gallery layout="pair" images={['eb-portrait-2', 'eb-portrait-3']} class="mt-[var(--gutter)]" />
 
   <SeoText label="Karriereseite & Recruiting" title="Employer-Branding-Fotografie für Karriereseite, Stellenanzeigen und LinkedIn" link={{ href: '/mitarbeiterfotos', text: 'Einheitliche Mitarbeiterfotos' }}>
-    <p>Employer-Branding-Fotografie zeigt Bewerberinnen und Bewerbern, wie es bei Ihnen wirklich aussieht: die Menschen, die Räume, den Arbeitsalltag. Ich plane die Motive gemeinsam mit HR oder Marketing so, dass am Ende ein zusammenhängendes Bildset entsteht – für <strong>Karriereseite, Stellenanzeigen, LinkedIn und interne Kommunikation</strong>.</p>
+    <p>Employer-Branding-Fotografie zeigt Bewerberinnen und Bewerbern, wie es bei Ihnen wirklich aussieht: die Menschen, die Räume, den Arbeitsalltag. Ich plane die Motive gemeinsam mit HR oder Marketing so, dass am Ende ein zusammenhängendes Bildset für <strong>Karriereseite, Stellenanzeigen, LinkedIn und interne Kommunikation</strong> entsteht.</p>
     <p>Fotografiert wird im laufenden Betrieb in Hamburg und Umgebung, mit einem kompakten Setup und Zeitfenstern pro Team. Hoch- und Querformate entstehen gleich mit, damit jede Anzeige und jeder Post das passende Bild hat.</p>
   </SeoText>
 
@@ -173,8 +173,8 @@ const faq = [
   <Testimonial {...testimonialById('till')} projectHref="/work/stadermann" class="section-t" />
 
   <ServiceTerms
-    scope="Von einem halben Tag bis zu mehreren Produktionstagen und Standorten – je nach Motivliste und Anzahl der Personen."
-    delivery="Innerhalb einer Woche nach dem Shooting – als bearbeitete Auswahl in allen vereinbarten Formaten."
+    scope="Von einem halben Tag bis zu mehreren Produktionstagen und Standorten, je nach Motivliste und Anzahl der Personen."
+    delivery="Innerhalb einer Woche nach dem Shooting, als bearbeitete Auswahl in allen vereinbarten Formaten."
   />
 
 
@@ -184,8 +184,8 @@ const faq = [
       <div class="col-span-12 md:col-span-5 md:col-start-8" data-reveal>
         <p class="label text-muted">Am Produktionstag</p>
         <p class="mt-5 text-h3 !leading-[1.2]">
-          Kompaktes Setup, klare Absprachen, wenig Unterbrechung. Nach kurzer Zeit arbeitet das Team einfach weiter – und genau dann
-          entstehen die Bilder, um die es geht.
+          Das Setup ist kompakt, die Absprachen sind klar, und es gibt wenig Unterbrechung. Nach kurzer Zeit arbeitet das Team einfach weiter.
+          Dann entstehen die Bilder, um die es geht.
         </p>
       </div>
     </div>

@@ -6,12 +6,12 @@ industry: Immobilien
 service: immobilien
 location: Hamburg
 year: 2026
-summary: Interioraufnahmen einer möblierten Dachgeschosswohnung – Wohnraum, Essbereich und Details.
+summary: "Interioraufnahmen einer möblierten Dachgeschosswohnung: Wohnraum, Essbereich und Details."
 usage: [Exposé, Immobilienportale, Website]
 featured: false
 order: 12
 scope: "Wohnraum, Essbereich, Hauseingang, Details"
-task: "Eine möblierte Dachgeschosswohnung sollte für die Vermarktung hell, wohnlich und großzügig wirken – ohne die Räume größer erscheinen zu lassen, als sie sind."
+task: "Eine möblierte Dachgeschosswohnung sollte für die Vermarktung hell, wohnlich und großzügig wirken, ohne die Räume größer erscheinen zu lassen, als sie sind."
 approach: "Ich habe Wohnraum, Essbereich und Details mit natürlichem Licht fotografiert und den Hauseingang ergänzt, damit Interessenten auch die Umgebung einordnen können."
 cover:
   id: immo-dg-wohnraum

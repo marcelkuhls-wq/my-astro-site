@@ -18,7 +18,7 @@ export const services: Service[] = [
     title: 'Employer Branding',
     href: '/employer-branding',
     summary:
-      'Echte Teams in ihrer echten Arbeitsumgebung – für Karriereseite, Recruiting und Unternehmenskommunikation.',
+      'Echte Teams in ihrer echten Arbeitsumgebung, fotografiert für Karriereseite, Recruiting und Unternehmenskommunikation.',
     uses: ['Karriereseite', 'Recruiting', 'LinkedIn', 'Kampagnen', 'Interne Kommunikation'],
   },
   {
@@ -26,7 +26,7 @@ export const services: Service[] = [
     number: '02',
     title: 'Business & Corporate',
     href: '/business-fotografie',
-    summary: 'Portraits, Führungsteams und Arbeitswelten – einheitlich für Website, Presse und Kommunikation.',
+    summary: 'Portraits, Führungsteams und Arbeitswelten in einer einheitlichen Bildsprache für Website, Presse und Kommunikation.',
     uses: ['Website', 'Presse', 'LinkedIn', 'Geschäftsbericht'],
   },
   {
@@ -42,7 +42,7 @@ export const services: Service[] = [
     number: '04',
     title: 'Events',
     href: '/eventfotografie',
-    summary: 'Firmenfeiern, Weihnachtsfeiern und Kundenevents – dokumentarisch für PR, Social Media und interne Kommunikation.',
+    summary: 'Firmenfeiern, Weihnachtsfeiern und Kundenevents, dokumentarisch fotografiert für PR, Social Media und interne Kommunikation.',
     uses: ['PR', 'LinkedIn', 'Event-Recap', 'Interne Kommunikation'],
   },
 ];

@@ -6,13 +6,13 @@ service: immobilien
 alsoServices: [business]
 location: "Hamburg"
 year: 2025
-summary: "Interior, Food und Gäste für ein Café-Restaurant in der Passage – Räume, Speisen und Atmosphäre in einer warmen Bildsprache."
+summary: "Interior, Food und Gäste für ein Café-Restaurant in der Passage. Räume, Speisen und Atmosphäre sind in einer warmen Bildsprache fotografiert."
 usage: [Website, Social Media]
 featured: true
 order: 6.5
 scope: "Interior, Food, Gäste-Szenen, Inhaber-Portrait"
 task: "Bar Tabac brauchte Bilder, die zeigen, wie es sich anfühlt, dort zu sitzen: die grünen Samtbänke, das warme Licht, die Küche und die Gäste."
-approach: "Ich habe die Räume im vorhandenen Licht fotografiert und mit Gäste-Szenen, Food-Details und einem Portrait des Inhabers ergänzt – vom Frühstück bis zum Abendessen."
+approach: "Ich habe die Räume im vorhandenen Licht fotografiert und mit Gäste-Szenen, Food-Details und einem Portrait des Inhabers ergänzt, vom Frühstück bis zum Abendessen."
 cover:
   id: bt-01
   spec:
@@ -185,6 +185,6 @@ gallery:
           motif: "bt-24"
 ---
 
-Die Serie führt von der Passage mit Schachbrettboden in den Gastraum, zeigt Etagere, Kaffee und Ente mit Rotkohl und Menschen, die genießen.
+Die Serie führt von der Passage mit Schachbrettboden in den Gastraum. Sie zeigt Etagere, Kaffee, Ente mit Rotkohl und Gäste, die es sich schmecken lassen.
 
-So entsteht Material für Website, Speisekarte und Social Media – Hospitality-Fotografie, die Lust auf einen Besuch macht.
+Die Bilder sind für Website, Speisekarte und Social Media gedacht. Als Hospitality-Fotografie sollen sie Lust auf einen Besuch machen.

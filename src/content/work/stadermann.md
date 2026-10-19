@@ -6,13 +6,13 @@ service: employer-branding
 alsoServices: [business]
 location: Glinde bei Hamburg
 year: 2026
-summary: Employer Branding für den Hersteller der Laborsoftware DENTAplus – Teamportraits, Arbeitsalltag im Büro und die Software im Einsatz im Dentallabor bis hin zum 3D-Druck.
+summary: "Employer Branding für den Hersteller der Laborsoftware DENTAplus: Teamportraits, Arbeitsalltag im Büro und die Software im Einsatz im Dentallabor bis hin zum 3D-Druck."
 scope: "Mitarbeiterportraits, Arbeitssituationen, Produkt- und Anwendungsbilder"
 usage: [Karriereseite, Website, Social Media, Produktmarketing]
 featured: false
 order: 99
-task: "Software Service Stadermann, Hersteller der Laborsoftware DENTAplus, brauchte Bilder für Karriereseite, Website, Social Media und Produktmarketing – vom Team bis zur Software im Einsatz."
-approach: "Ich habe Mitarbeiterportraits, Besprechungen und Entwicklerarbeitsplätze im Büro fotografiert und anschließend die Anwendung im Dentallabor begleitet – vom Scan bis zum 3D-Druck."
+task: "Software Service Stadermann, Hersteller der Laborsoftware DENTAplus, brauchte Bilder für Karriereseite, Website, Social Media und Produktmarketing, vom Team bis zur Software im Einsatz."
+approach: "Ich habe Mitarbeiterportraits, Besprechungen und Entwicklerarbeitsplätze im Büro fotografiert und anschließend die Anwendung im Dentallabor begleitet, vom Scan bis zum 3D-Druck."
 testimonial:
   quote: "Marcel hat uns bei der Aufnahme von Produktfotos und Employer Branding Thematiken unterstützt. Sehr professionell und mit einem guten ästhetischen Auge"
   name: "Till Stadermann"
@@ -196,4 +196,4 @@ gallery:
 
 Die Bildserie reicht vom Team bis zum Produkt: Besprechungen und Präsentationen im Büro, Entwicklerarbeitsplätze mit mehreren Bildschirmen, Portraits der Mitarbeitenden und der Geschäftsführung.
 
-Im Dentallabor zeigen die Bilder, wie die Software im Alltag eingesetzt wird – von der Beratung über den Scan bis zum 3D-Druck von Modellen und Schienen.
+Im Dentallabor zeigen die Bilder, wie die Software im Alltag eingesetzt wird, von der Beratung über den Scan bis zum 3D-Druck von Modellen und Schienen.

@@ -5,12 +5,12 @@ industry: "E-Commerce & Konsumgüter"
 service: events
 location: "Hotel Vier Jahreszeiten, Hamburg"
 year: 2025
-summary: "Weihnachtsfeier von Buying Labs im Jahreszeiten Grill des Hotel Vier Jahreszeiten – festliche Räume, Gäste in Abendgarderobe, Rede, Live-Gesang und Gospelchor."
+summary: "Weihnachtsfeier von Buying Labs im Jahreszeiten Grill des Hotel Vier Jahreszeiten: festliche Räume, Gäste in Abendgarderobe, Rede, Live-Gesang und Gospelchor."
 usage: [Interne Kommunikation, Social Media, Employer Branding]
 featured: true
 order: 6.9
 scope: "Eventreportage, Location, Gäste, Live-Musik"
-task: "Buying Labs feierte Weihnachten mit dem Team im Hotel Vier Jahreszeiten. Die Bilder sollten den Abend für das Team festhalten – und zeigen, wie das Unternehmen feiert."
+task: "Buying Labs feierte Weihnachten mit dem Team im Hotel Vier Jahreszeiten. Die Bilder sollten den Abend für das Team festhalten und zeigen, wie das Unternehmen feiert."
 approach: "Ich habe die festlich geschmückten Räume vor dem Eintreffen der Gäste fotografiert und danach den Abend begleitet: Begrüßung, Gespräche an der Bar, Live-Gesang und den Auftritt des Gospelchors."
 cover:
   id: blx-04
@@ -106,6 +106,6 @@ gallery:
           motif: "blx-13"
 ---
 
-Weihnachtsfeiern gehören zu den Abenden, an die sich ein Team das ganze Jahr erinnert. Die Serie zeigt die Atmosphäre im Jahreszeiten Grill – warmes Licht, Kronleuchter, Abendgarderobe – und die Momente, in denen gefeiert wird.
+Weihnachtsfeiern gehören zu den Abenden, an die sich ein Team das ganze Jahr erinnert. Die Serie zeigt die Atmosphäre im Jahreszeiten Grill mit warmem Licht, Kronleuchtern und Abendgarderobe, dazu die Momente, in denen gefeiert wird.
 
-So entstehen Bilder für die interne Kommunikation, für Social Media und für die Karriereseite: Firmenkultur, die man sehen kann.
+Die Bilder sind für die interne Kommunikation, für Social Media und für die Karriereseite gedacht. Dort machen sie die Firmenkultur sichtbar.

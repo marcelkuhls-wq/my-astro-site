@@ -12,7 +12,7 @@ featured: false
 order: 2.6
 scope: "Team-Portraits, Behandlungssituationen, Praxisräume"
 task: "Für den Auftritt der Praxis in Buxtehude sollten Team und Behandlungsalltag so gezeigt werden, dass sich Patientinnen und Bewerber gleichermaßen angesprochen fühlen."
-approach: "Ich habe Portraits des Teams vor natürlichem Hintergrund fotografiert und Behandlungen im laufenden Betrieb begleitet – vom Röntgenbild am Tablet bis zum Eingriff."
+approach: "Ich habe Portraits des Teams vor natürlichem Hintergrund fotografiert und Behandlungen im laufenden Betrieb begleitet, vom Röntgenbild am Tablet bis zum Eingriff."
 cover:
   id: ddb-11
   spec:
@@ -115,6 +115,6 @@ gallery:
           motif: "ddb-13"
 ---
 
-Die Bilder zeigen Menschen, Handwerk und Räume: Zahnärztinnen und Zahnärzte im Portrait, Behandlungen mit Lupenbrille, die Auswertung von Röntgenbildern und die Praxis von außen.
+Die Bilder zeigen Zahnärztinnen und Zahnärzte im Portrait, Behandlungen mit Lupenbrille, die Auswertung von Röntgenbildern und die Praxis von außen.
 
-Zusammen mit der Zentrale entsteht so eine Bildsprache für die gesamte Praxisgruppe.
+Zusammen mit den Bildern aus der Zentrale ergibt das eine gemeinsame Bildsprache für die gesamte Praxisgruppe.

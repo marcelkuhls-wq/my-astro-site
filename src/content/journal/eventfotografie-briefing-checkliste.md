@@ -1,6 +1,6 @@
 ---
-title: Eventfotografie planen – die Briefing-Checkliste für Firmenevents
-description: Ablaufplan, Speaker, Motive, Datenschutz und Lieferzeit – was vor einem Firmenevent geklärt sein sollte, damit die Bilder am nächsten Tag einsatzbereit sind.
+title: "Eventfotografie planen: die Briefing-Checkliste für Firmenevents"
+description: "Ablaufplan, Speaker, Motive, Datenschutz und Lieferzeit: Was vor einem Firmenevent geklärt sein sollte, damit die Bilder am nächsten Tag einsatzbereit sind."
 date: 2026-10-16
 service: events
 cover:
@@ -13,17 +13,17 @@ cover:
 draft: false
 ---
 
-Bei einem Firmenevent gibt es keine zweite Chance: Die Rede wird einmal gehalten, der Toast einmal ausgesprochen, der Moment auf der Bühne ist nach Sekunden vorbei. Gute Eventfotos entstehen deshalb vor allem durch ein gutes Briefing. Diese Punkte gehe ich vor jeder Veranstaltung mit meinen Kunden oder ihrer Agentur durch.
+Bei einem Firmenevent wird nichts wiederholt. Die Rede wird einmal gehalten, der Toast einmal ausgesprochen, und der Moment auf der Bühne ist nach Sekunden vorbei. Ob die Eventfotos gut werden, hängt deshalb stark vom Briefing ab. Diese Punkte gehe ich vor jeder Veranstaltung mit meinen Kunden oder ihrer Agentur durch.
 
 ## Ablaufplan und Programmpunkte
 
 - **Zeitplan mit festen Momenten:** Begrüßung, Reden, Keynotes, Preisverleihungen, Showacts, Buffet-Eröffnung.
 - **Räume und Wege:** Wo findet was statt? Gibt es eine Bühne, eine Terrasse, einen zweiten Raum?
-- **Lichtverhältnisse:** Bühnenlicht, Tageslicht, späte Abendstunden – das beeinflusst, wie ich arbeite.
+- **Lichtverhältnisse:** Bühnenlicht, Tageslicht oder späte Abendstunden. Davon hängt ab, wie ich arbeite.
 
 ## Wer muss aufs Bild?
 
-Eine kurze Liste der wichtigsten Personen – Geschäftsführung, Speaker, Ehrengäste, Partner – hilft enorm. Am besten mit Foto oder Hinweis, woran ich sie erkenne. Wenn bestimmte Kombinationen wichtig sind, etwa Vorstand mit Partner, plane ich dafür einen kurzen Moment ein.
+Eine kurze Liste der wichtigsten Personen hilft sehr: Geschäftsführung, Speaker, Ehrengäste, Partner. Am besten mit Foto oder Hinweis, woran ich sie erkenne. Wenn bestimmte Kombinationen wichtig sind, etwa Vorstand mit Partner, plane ich dafür einen kurzen Moment ein.
 
 ## Welche Motive brauchen Sie?
 
@@ -32,11 +32,11 @@ Eine kurze Liste der wichtigsten Personen – Geschäftsführung, Speaker, Ehren
 - Speaker auf der Bühne, gern mit Publikum im Vordergrund
 - Branding vor Ort: Bühnenbild, Roll-ups, Namensschilder, Produkte
 - Details: Dekoration, Essen, Getränke
-- Gruppenbilder – nur, wenn sie wirklich gebraucht werden
+- Gruppenbilder, aber nur, wenn sie wirklich gebraucht werden
 
 ## Wofür werden die Bilder eingesetzt?
 
-Pressemitteilung, LinkedIn-Recap, interne Kommunikation, Website, Einladung für das nächste Jahr: Der Einsatz bestimmt, welche Formate wichtig sind und ob schon am Abend eine kleine Auswahl gebraucht wird. Die fertige Auswahl liefere ich innerhalb von 48 Stunden nach der Veranstaltung, eine schnelle Vorauswahl am selben Tag lässt sich einplanen.
+Pressemitteilung, LinkedIn-Recap, interne Kommunikation, Website, Einladung für das nächste Jahr: Der Einsatz bestimmt, welche Formate wichtig sind und ob schon am Abend eine kleine Auswahl gebraucht wird. Die fertige Auswahl liefere ich innerhalb von 48 Stunden nach der Veranstaltung. Eine schnelle Vorauswahl am selben Tag lässt sich einplanen.
 
 ## Datenschutz und Gäste
 

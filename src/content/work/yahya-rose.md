@@ -6,12 +6,12 @@ service: events
 alsoServices: [business]
 location: "Mauritius"
 year: 2020
-summary: "Kampagnenmotive für den Rosé Yahya an Steg, Strand und Pool – dazu Bilder vom Launch-Event mit Gästen."
+summary: "Kampagnenmotive für den Rosé Yahya an Steg, Strand und Pool, dazu Bilder vom Launch-Event mit Gästen."
 usage: [Social Media, Kampagne, Website]
 featured: false
 order: 9.9
 scope: "Produkt- und Lifestyle-Motive, Launch-Event"
-task: "Für den Marktstart des Rosés brauchte Yahya Kampagnenmotive mit Urlaubsstimmung – und Bilder vom Launch."
+task: "Für den Marktstart des Rosés brauchte Yahya Kampagnenmotive mit Urlaubsstimmung und Bilder vom Launch."
 approach: "Ich habe die Flasche im natürlichen Licht an Wasser, Strand und Pool inszeniert und den Launch mit Gästen, Bar und Details begleitet."
 cover:
   id: yah-06
@@ -121,4 +121,4 @@ gallery:
           motif: "yah-15"
 ---
 
-Sonne, Wasser und warme Farben: Die Kampagnenmotive transportieren das Gefühl, für das der Wein steht. Die Bilder vom Launch zeigen, wie er ankommt – im Glas, an der Bar und bei den Gästen.
+Die Kampagnenmotive leben von Sonne, Wasser und warmen Farben, also von der Stimmung, für die der Wein steht. Die Bilder vom Launch zeigen, wie er bei den Gästen ankommt, im Glas und an der Bar.

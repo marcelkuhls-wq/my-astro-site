@@ -6,12 +6,12 @@ service: business
 alsoServices: [employer-branding]
 location: Elstorf
 year: 2026
-summary: Team-Portraits, Behandlungssituationen und Bilder der Praxis – für die neue Website und Social Media.
+summary: Team-Portraits, Behandlungssituationen und Bilder der Praxis für die neue Website und Social Media.
 usage: [Website, Social Media]
 featured: false
 order: 4
 scope: "Team-Portraits, Behandlungen, Empfang, Praxisgebäude"
-task: "Für die neue Website und Social Media brauchte die Kleintierpraxis Benecke in Elstorf Bilder, die das Team und den Praxisalltag zeigen – nahbar und ohne gestellte Szenen."
+task: "Für die neue Website und Social Media brauchte die Kleintierpraxis Benecke in Elstorf Bilder, die das Team und den Praxisalltag nahbar zeigen, ohne gestellte Szenen."
 approach: "Ich habe Team-Portraits mit Behandlungssituationen kombiniert: Untersuchungen, Röntgen, Empfang und die Praxis von außen. Die Tiere haben das Tempo bestimmt, die Bilder entstanden im laufenden Betrieb."
 cover:
   id: benecke-untersuchung-katze
@@ -224,4 +224,4 @@ gallery:
 
 Die Bildserie verbindet Portraits des Teams mit echten Situationen aus dem Praxisalltag: Untersuchungen mit dem Stethoskop, Röntgen, die Auswertung von Dentalröntgenbildern und der Empfang.
 
-Ergänzt wird das Set um Bilder der Praxis von außen und um Details – so entsteht ein vollständiges Bild für Website und Social Media.
+Dazu kommen Bilder der Praxis von außen und Details für Website und Social Media.

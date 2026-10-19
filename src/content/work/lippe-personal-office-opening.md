@@ -5,13 +5,13 @@ industry: "Personaldienstleistung & Recruiting"
 service: events
 location: "Düsseldorf"
 year: 2024
-summary: "Reportage der Büroeinweihung von Lippe Personal – Reden, Bandschnitt, Gäste, Kunst und DJ-Set."
+summary: "Reportage der Büroeinweihung von Lippe Personal mit Reden, Bandschnitt, Gästen, Kunst und DJ-Set."
 usage: [Social Media, LinkedIn]
 featured: false
 order: 9.5
 scope: "Eventreportage, Gruppenbild, Details"
 task: "Lippe Personal wollte die Einweihung der neuen Büroräume mit Gästen und Partnern festhalten."
-approach: "Ich habe den Abend vom Klavier zur Begrüßung über Reden und Bandschnitt bis zum DJ-Set begleitet – und mich dabei unter die Gäste gemischt."
+approach: "Ich habe den Abend vom Klavier zur Begrüßung über Reden und Bandschnitt bis zum DJ-Set begleitet. Dabei habe ich mich unter die Gäste gemischt."
 testimonial:
   quote: "Marcel hat bei uns die Lippe Personal Büroeinweihung fotografiert. Ich bin sehr zufrieden mit seiner Leistungen und den schönen Bildern. Besonders sehr auftreten mit Smoking war sehr professionell und er hat sich sehr gut mit unseren Gästen verstanden, was auch ein sehr wichtiger Punkt als Fotograf ist, um gute Bilder zu schießen. Ich empfehle Ihn gerne weiter!"
   name: "Felix Lippe"
@@ -133,4 +133,4 @@ gallery:
           motif: "lip-16"
 ---
 
-Farbiges Licht, volle Räume und viele Begegnungen: Die Serie zeigt den Abend so, wie die Gäste ihn erlebt haben, inklusive Kunstübergabe und Teamfoto.
+Die Serie zeigt den Abend so, wie die Gäste ihn erlebt haben: volle Räume unter farbigem Licht und viele Begegnungen. Die Kunstübergabe und das Teamfoto gehören auch dazu.

@@ -6,7 +6,7 @@ industry: Immobilien
 service: immobilien
 location: Hamburg
 year: 2026
-summary: Neu ausgebautes Dachgeschoss in einem Gründerzeitbau – Architektur, Treppen, Küche unter sichtbarem Gebälk und Dachterrasse.
+summary: "Neu ausgebautes Dachgeschoss in einem Gründerzeitbau: Architektur, Treppen, Küche unter sichtbarem Gebälk und Dachterrasse."
 usage: [Exposé, Immobilienportale, Website]
 featured: false
 order: 14
@@ -101,6 +101,6 @@ gallery:
           motif: "tie-05"
 ---
 
-Das Set zeigt, was diese Wohnung besonders macht: den Kontrast zwischen historischer Substanz und neuem Ausbau. Gründerzeitfassade und Marmortreppe auf der einen Seite, Küche mit Kochinsel unter sichtbarem Gebälk und die schwarze Wendeltreppe auf der anderen.
+Das Set zeigt den Kontrast zwischen historischer Substanz und neuem Ausbau. Auf der einen Seite stehen Gründerzeitfassade und Marmortreppe, auf der anderen die Küche mit Kochinsel unter sichtbarem Gebälk und die schwarze Wendeltreppe.
 
-Die Luftaufnahme im Abendlicht ordnet die Lage ein – über den Dächern und Bäumen des Viertels.
+Die Luftaufnahme im Abendlicht zeigt die Lage über den Dächern und Bäumen des Viertels.

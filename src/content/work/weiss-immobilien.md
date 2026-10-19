@@ -6,7 +6,7 @@ service: immobilien
 location: Hamburg
 # TODO: Jahr prüfen
 year: 2026
-summary: Architektur- und Interioraufnahmen einer Wohnung im Hochhaus – von der Fassade über die Eingangshalle bis zu Wohnraum und Loggia mit Blick über den Hafen.
+summary: Architektur- und Interioraufnahmen einer Wohnung im Hochhaus, von der Fassade über die Eingangshalle bis zu Wohnraum und Loggia mit Blick über den Hafen.
 # Optional ergänzen, wenn bekannt:
 # scope: "z. B. 1 Termin, Außen- und Innenaufnahmen"
 # usage: [Exposé, Immobilienportale, Website]
@@ -18,7 +18,7 @@ order: 9
 scope: "Fassade, Eingangshalle, Wohnräume, Loggia"
 usage: [Exposé, Social Media]
 task: "Für Weiss Immobilien sollte eine Wohnung in einem Hochhaus mit Hafenblick so fotografiert werden, dass Gebäude, Ausstattung und Ausblick gleichermaßen wirken."
-approach: "Ich habe von der Glasfassade und der Eingangshalle bis zu Wohnraum, Essbereich und Loggia fotografiert, mit natürlichem Licht und geraden Linien – und dem Blick über Hafen und Großmarkthalle."
+approach: "Ich habe die Wohnung von der Glasfassade und der Eingangshalle bis zu Wohnraum, Essbereich und Loggia fotografiert, mit natürlichem Licht und geraden Linien. Dazu kommt der Blick über Hafen und Großmarkthalle."
 cover:
   id: weiss-immobilien-wohnraum
   position: "50% 58%"
@@ -62,4 +62,4 @@ gallery:
 
 Das Set beginnt außen mit der Glasfassade des Wohnhochhauses, führt durch die Eingangshalle mit Pendelleuchten und bepflanzter Wand und endet in der Wohnung.
 
-Wohnraum mit Eichenparkett und Kücheninsel, Essbereich und die Loggia mit Blick über Hafen und Großmarkthalle zeigen, was das Objekt ausmacht: Licht, Ausstattung und Aussicht.
+Wohnraum mit Eichenparkett und Kücheninsel, Essbereich und die Loggia mit Blick über Hafen und Großmarkthalle zeigen das Licht, die Ausstattung und die Aussicht der Wohnung.

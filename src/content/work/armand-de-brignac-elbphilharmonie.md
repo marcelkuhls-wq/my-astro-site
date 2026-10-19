@@ -6,7 +6,7 @@ service: events
 location: Elbphilharmonie, Hamburg
 # TODO: Jahr prüfen
 year: 2026
-summary: Abendevent auf der Plaza-Ebene und dem Dach der Elbphilharmonie – Gäste, DJ-Set, Champagner-Service und die Stadt im Sonnenuntergang.
+summary: "Abendevent auf der Plaza-Ebene und dem Dach der Elbphilharmonie: Gäste, DJ-Set, Champagner-Service und die Stadt im Sonnenuntergang."
 # Optional ergänzen, wenn bekannt:
 # scope: "..."
 # usage: [Social Media, PR, Brand Content]
@@ -17,7 +17,7 @@ featured: true
 order: 7
 scope: "Abendreportage: Gäste, DJ-Set, Champagner-Service, Location"
 task: "Armand de Brignac lud zu einem Abendevent auf die Plaza-Ebene und das Dach der Elbphilharmonie. Die Bilder sollten Gäste, Musik und Champagner-Service ebenso zeigen wie die besondere Lage über der Stadt."
-approach: "Ich habe den Abend vom Sonnenuntergang bis in die Nacht begleitet: Gäste im Gespräch, das DJ-Set im roten Licht, den Service am Glas und die Stadt vom Dach aus. Zurückhaltend und ohne ständigen Blitz, damit die Stimmung erhalten bleibt."
+approach: "Ich habe den Abend vom Sonnenuntergang bis in die Nacht begleitet: Gäste im Gespräch, das DJ-Set im roten Licht, den Service am Glas und die Stadt vom Dach aus. Ich habe mich zurückgehalten und auf ständigen Blitz verzichtet, damit die Stimmung erhalten bleibt."
 cover:
   id: armand-lounge
   spec:
@@ -134,6 +134,6 @@ gallery:
           motif: "dach"
 ---
 
-Zwischen Plaza-Ebene und Dach der Elbphilharmonie entstand eine Serie, die Marke, Gäste und Ort zusammenbringt: Gäste im Gespräch unter hängenden Glühbirnen, das DJ-Set im roten Licht, Gläser mit Armand-de-Brignac-Gravur im Abendlicht.
+Zwischen Plaza-Ebene und Dach der Elbphilharmonie entstand eine Serie, in der Marke, Gäste und Ort zusammenkommen: Gäste im Gespräch unter hängenden Glühbirnen, das DJ-Set im roten Licht, Gläser mit Armand-de-Brignac-Gravur im Abendlicht.
 
-Dazu kommen Bilder, die nur an diesem Ort entstehen können – der Blick vom Dach über die Hamburger Innenstadt und den Hafen im Sonnenuntergang.
+Dazu kommen Bilder, die nur an diesem Ort entstehen können: der Blick vom Dach über die Hamburger Innenstadt und den Hafen im Sonnenuntergang.

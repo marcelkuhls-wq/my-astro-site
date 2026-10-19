@@ -5,13 +5,13 @@ industry: Immobilien & Objektmanagement
 service: business
 location: Hamburg
 year: 2026
-summary: Business-Portraits für Markus Haacke – drinnen und auf der Terrasse mit Blick über die Hamburger Innenstadt.
+summary: Business-Portraits für Markus Haacke, drinnen und auf der Terrasse mit Blick über die Hamburger Innenstadt.
 usage: [Website, LinkedIn, Presse]
 featured: false
 order: 11
 scope: "Portraits drinnen und auf der Terrasse, mehrere Outfits"
-task: "Markus Haacke brauchte Business-Portraits für Website, LinkedIn und Presse, die zeigen, wo sein Unternehmen zu Hause ist: in Hamburg."
-approach: "Ich habe drinnen und auf der Terrasse fotografiert, mit den Kirchtürmen der Innenstadt im Hintergrund – in verschiedenen Outfits und Ausschnitten für unterschiedliche Einsätze."
+task: "Markus Haacke brauchte Business-Portraits für Website, LinkedIn und Presse, die zeigen, dass sein Unternehmen in Hamburg zu Hause ist."
+approach: "Ich habe drinnen und auf der Terrasse fotografiert, mit den Kirchtürmen der Innenstadt im Hintergrund. Dazu kamen verschiedene Outfits und Ausschnitte für unterschiedliche Einsätze."
 cover:
   id: haacke-cover
   spec:
@@ -63,4 +63,4 @@ gallery:
 
 Die Portraits zeigen Markus Haacke in zwei Situationen: drinnen am Fenster und auf der Terrasse mit den Kirchtürmen der Hamburger Innenstadt im Hintergrund.
 
-Verschiedene Outfits – im Hemd und im hellen Sakko – und unterschiedliche Ausschnitte ergeben eine Auswahl für Website, LinkedIn und Presse.
+Verschiedene Outfits (Hemd und helles Sakko) und unterschiedliche Ausschnitte ergeben eine Auswahl für Website, LinkedIn und Presse.

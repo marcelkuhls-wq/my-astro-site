@@ -28,7 +28,7 @@ const projects = await getProjects({ service: 'business' });
 const faq = [
   {
     q: 'Kommen Sie zu uns ins Unternehmen?',
-    a: 'Ja. Ich fotografiere in Ihren Räumen – mit einem mobilen Studio-Setup für einheitliche Portraits oder direkt in Ihrer Arbeitsumgebung. Sie brauchen dafür nur einen ruhigen Raum oder eine passende Ecke.',
+    a: 'Ja. Ich fotografiere in Ihren Räumen, mit einem mobilen Studio-Setup für einheitliche Portraits oder direkt in Ihrer Arbeitsumgebung. Sie brauchen dafür nur einen ruhigen Raum oder eine passende Ecke.',
   },
   {
     q: 'Wie lange dauert ein Portrait pro Person?',
@@ -36,11 +36,11 @@ const faq = [
   },
   {
     q: 'Können neue Mitarbeitende später im gleichen Look fotografiert werden?',
-    a: 'Ja. Licht, Hintergrund, Ausschnitt und Bearbeitung halte ich fest. So lassen sich neue Kolleginnen und Kollegen auch Monate später nahtlos in die bestehende Teamseite einfügen.',
+    a: 'Ja. Licht, Hintergrund, Ausschnitt und Bearbeitung halte ich fest. So lassen sich neue Kolleginnen und Kollegen auch Monate später im gleichen Look in die bestehende Teamseite einfügen.',
   },
   {
     q: 'Was sollen wir anziehen?',
-    a: 'Das, was Sie auch im Arbeitsalltag tragen – gepflegt und am besten einfarbig. Ein, zwei Alternativen, etwa mit und ohne Sakko, geben mehr Möglichkeiten für unterschiedliche Einsätze.',
+    a: 'Das, was Sie auch im Arbeitsalltag tragen, gepflegt und am besten einfarbig. Ein, zwei Alternativen, etwa mit und ohne Sakko, geben mehr Möglichkeiten für unterschiedliche Einsätze.',
   },
   {
     q: 'Was kostet ein Business-Shooting?',
@@ -48,12 +48,12 @@ const faq = [
   },
   {
     q: 'Wann erhalten wir die Bilder?',
-    a: 'Innerhalb einer Woche nach dem Shooting – bearbeitet, hochaufgelöst für Druck und optimiert für Web und LinkedIn.',
+    a: 'Innerhalb einer Woche nach dem Shooting. Die Bilder sind bearbeitet, hochaufgelöst für Druck und optimiert für Web und LinkedIn.',
   },
 ];
 
 const description =
-  'Business- und Corporate-Fotografie in Hamburg: Portraits, Führungsteams und Arbeitswelten mit einheitlicher Bildsprache – für Website, Presse, LinkedIn und Geschäftsbericht.';
+  'Business- und Corporate-Fotografie in Hamburg: Portraits, Führungsteams und Arbeitswelten mit einheitlicher Bildsprache. Für Website, Presse, LinkedIn und Geschäftsbericht.';
 const schema = [
   serviceSchema(Astro.site, serviceById('business'), 'Business- und Corporate-Fotografie', description),
   breadcrumbs(Astro.site, [{ name: 'Business & Corporate', path: '/business-fotografie' }]),
@@ -61,9 +61,9 @@ const schema = [
 
 const offers = [
   { title: 'Portraits', text: 'Geschäftsführung, Vorstand, Mitarbeitende. Im Studio-Setup vor Ort oder in Ihrer Arbeitsumgebung.' },
-  { title: 'Führungsteams', text: 'Gruppenbilder mit Haltung – für Website, Geschäftsbericht und Presse.' },
+  { title: 'Führungsteams', text: 'Gruppenbilder mit Haltung, für Website, Geschäftsbericht und Presse.' },
   { title: 'Arbeitswelten', text: 'Büros, Produktion, Kundenkontakt. Reportageartige Bilder für Website und Kommunikation.' },
-  { title: 'Presse & PR', text: 'Bildmaterial zu Personalien, Standorten und Anlässen – passend zum restlichen Auftritt.' },
+  { title: 'Presse & PR', text: 'Bildmaterial zu Personalien, Standorten und Anlässen, passend zum restlichen Auftritt.' },
 ];
 ---
 
@@ -73,7 +73,7 @@ const offers = [
     clients="business"
     label="Leistung 02"
     title="Business & Corporate"
-    lead="Portraits und Unternehmensbilder mit einer Bildsprache, die zu Ihrer Marke passt – einheitlich über alle Personen, Standorte und Termine hinweg."
+    lead="Portraits und Unternehmensbilder mit einer Bildsprache, die zu Ihrer Marke passt. Sie bleibt einheitlich über alle Personen, Standorte und Termine hinweg."
     photo="business-hero"
   />
 
@@ -97,13 +97,13 @@ const offers = [
   </section>
 
   <SeoText label="Corporate-Fotografie" title="Businessfotografie und Corporate-Fotografie in Hamburg">
-    <p>Als <strong>Businessfotograf und Corporate-Fotograf in Hamburg</strong> fotografiere ich Geschäftsführung, Führungsteams und Arbeitswelten für Website, Presse, LinkedIn und Geschäftsbericht – bei Ihnen im Unternehmen, im Büro oder vor Ort beim Kunden.</p>
+    <p>Als <strong>Businessfotograf und Corporate-Fotograf in Hamburg</strong> fotografiere ich Geschäftsführung, Führungsteams und Arbeitswelten für Website, Presse, LinkedIn und Geschäftsbericht. Fotografiert wird bei Ihnen im Unternehmen, im Büro oder vor Ort beim Kunden.</p>
     <p>Gute Businessfotografie und Corporate-Fotografie heißen für mich: ein einheitlicher Look über alle Personen, Standorte und Termine hinweg. So passen Pressefoto, Teamseite und Präsentation zusammen.</p>
   </SeoText>
 
   <SeoText label="Mitarbeiterfotos" title="Mitarbeiterfotos und Teamfotos in Hamburg" link={{ href: '/mitarbeiterfotos', text: 'Mitarbeiterfotos im Detail' }}>
-    <p>Als Businessfotograf in Hamburg fotografiere ich Geschäftsführung, Teams und Mitarbeitende direkt bei Ihnen vor Ort – mit einem mobilen Studio-Setup oder in Ihrer Arbeitsumgebung.</p>
-    <p>Alle Portraits entstehen in <strong>einem einheitlichen Look</strong>: gleiches Licht, gleicher Ausschnitt, gleiche Bearbeitung. So wirkt Ihre Teamseite geschlossen, und neue Kolleginnen und Kollegen lassen sich später nahtlos ergänzen.</p>
+    <p>Als Businessfotograf in Hamburg fotografiere ich Geschäftsführung, Teams und Mitarbeitende direkt bei Ihnen vor Ort, mit einem mobilen Studio-Setup oder in Ihrer Arbeitsumgebung.</p>
+    <p>Alle Portraits entstehen in <strong>einem einheitlichen Look</strong>: gleiches Licht, gleicher Ausschnitt, gleiche Bearbeitung. So wirkt Ihre Teamseite geschlossen, und neue Kolleginnen und Kollegen lassen sich später im selben Stil ergänzen.</p>
   </SeoText>
 
   <Gallery layout="bleed" images={['business-workspace']} class="section-t" />
@@ -126,7 +126,7 @@ const offers = [
 
   <ServiceTerms
     scope="Vom einzelnen Portrait bis zum ganzen Team an mehreren Standorten. Den Zeitplan pro Person stimme ich vorab mit Ihnen ab."
-    delivery="Innerhalb einer Woche nach dem Shooting – bearbeitet, für Web und Druck."
+    delivery="Innerhalb einer Woche nach dem Shooting, bearbeitet und für Web und Druck aufbereitet."
   />
 
   <Faq items={faq} />

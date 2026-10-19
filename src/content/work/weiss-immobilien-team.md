@@ -7,14 +7,14 @@ alsoServices: [employer-branding]
 location: Hamburg
 # TODO: Jahr prüfen
 year: 2026
-summary: Teambilder, Portraits und Arbeitssituationen des Maklerteams – im Büro, vor dem Geschäft und unterwegs im Viertel, in einer durchgängigen Bildsprache.
+summary: Teambilder, Portraits und Arbeitssituationen des Maklerteams in einer durchgängigen Bildsprache, aufgenommen im Büro, vor dem Geschäft und unterwegs im Viertel.
 # Optional ergänzen: scope, usage, task, approach, outcome, testimonial
 featured: true
 order: 6
 scope: "Einzelportraits, Teambild, Büro, Ladenfront, Viertel"
 usage: [Website, Social Media]
 task: "Das Maklerteam von Weiss Immobilien sollte einen einheitlichen Bildauftritt bekommen: Portraits, Teambilder und Arbeitssituationen, die zusammenpassen."
-approach: "Ich habe im Büro, vor dem Geschäft und unterwegs im Viertel fotografiert – Einzelportraits vor neutralem Hintergrund, Szenen am Schreibtisch und das ganze Team vor der Ladenfront, in einer durchgängigen Bildsprache."
+approach: "Ich habe im Büro, vor dem Geschäft und unterwegs im Viertel fotografiert: Einzelportraits vor neutralem Hintergrund, Szenen am Schreibtisch und das ganze Team vor der Ladenfront. Alle Bilder folgen einer durchgängigen Bildsprache."
 cover:
   id: weiss-team-storefront
   position: "50% 55%"
@@ -148,6 +148,6 @@ gallery:
           motif: "wtx-07"
 ---
 
-Die Serie verbindet drei Ebenen: Einzelportraits vor neutralem Hintergrund, Szenen im Büro – am Schreibtisch, auf dem Sofa, im Sessel – und das ganze Team vor der Ladenfront mit dem Schriftzug.
+Die Serie besteht aus Einzelportraits vor neutralem Hintergrund, Szenen im Büro (am Schreibtisch, auf dem Sofa, im Sessel) und dem ganzen Team vor der Ladenfront mit dem Schriftzug.
 
-Bilder unterwegs in einer Hamburger Wohnstraße zeigen das Team dort, wo es arbeitet: im Viertel.
+Dazu kommen Bilder aus einer Hamburger Wohnstraße. Sie zeigen das Team im Viertel, in dem es arbeitet.

@@ -1,6 +1,6 @@
 ---
-title: Business-Portraits für Website und LinkedIn – so bereiten Sie sich vor
-description: Kleidung, Ort, Bildausschnitt und Ablauf – was vor einem Portrait-Termin wichtig ist, damit die Bilder lange und vielseitig nutzbar sind.
+title: "Business-Portraits für Website und LinkedIn: So bereiten Sie sich vor"
+description: "Kleidung, Ort, Bildausschnitt und Ablauf: Was vor einem Portrait-Termin wichtig ist, damit die Bilder lange und vielseitig nutzbar sind."
 date: 2026-10-14
 service: business
 cover:
@@ -14,7 +14,7 @@ cover:
 draft: false
 ---
 
-Ein gutes Business-Portrait ist eines der meistgenutzten Bilder eines Unternehmens: auf der Website, im LinkedIn-Profil, in Präsentationen, in der Presse und in der E-Mail-Signatur. Umso mehr lohnt sich ein wenig Vorbereitung. Diese Punkte bespreche ich vor jedem Portrait-Termin.
+Kaum ein Bild wird in einem Unternehmen so oft genutzt wie das Business-Portrait. Es steht auf der Website, im LinkedIn-Profil, in Präsentationen, in der Presse und in der E-Mail-Signatur. Deshalb lohnt sich ein wenig Vorbereitung. Diese Punkte bespreche ich vor jedem Portrait-Termin.
 
 ## Wofür wird das Portrait gebraucht?
 
@@ -24,7 +24,7 @@ Deshalb fotografiere ich in der Regel mehrere Varianten: eng und weit, hoch und 
 
 ## Studio oder vor Ort?
 
-Beides hat seine Berechtigung. Ein neutraler Hintergrund ist zeitlos und lässt sich für ein ganzes Team einheitlich wiederholen – auch Monate später für neue Kolleginnen und Kollegen. Portraits vor Ort erzählen mehr: das eigene Büro, eine markante Fensterfront, der Blick über die Stadt. Für viele Kunden kombiniere ich beides an einem Termin.
+Beides funktioniert, nur für unterschiedliche Zwecke. Ein neutraler Hintergrund ist zeitlos und lässt sich für ein ganzes Team einheitlich wiederholen, auch Monate später noch für neue Kolleginnen und Kollegen. Portraits vor Ort erzählen mehr: das eigene Büro, eine markante Fensterfront, der Blick über die Stadt. Für viele Kunden kombiniere ich beides an einem Termin.
 
 ## Was soll ich anziehen?
 
@@ -35,13 +35,13 @@ Beides hat seine Berechtigung. Ein neutraler Hintergrund ist zeitlos und lässt 
 
 ## Wie läuft der Termin ab?
 
-Die meisten Menschen stehen nicht gern vor der Kamera – das ist völlig normal. Ich nehme mir zu Beginn Zeit, damit Sie ankommen können, und gebe während des Shootings konkrete, kleine Hinweise zu Haltung und Blick. Künstliches Posing braucht es nicht. Nach den ersten Minuten wird es fast immer entspannter, und genau dann entstehen die besten Bilder.
+Die meisten Menschen stehen nicht gern vor der Kamera. Das ist normal. Ich nehme mir zu Beginn Zeit, damit Sie ankommen können, und gebe Ihnen während des Shootings kleine, konkrete Hinweise zu Haltung und Blick. Künstliches Posing braucht es nicht. Nach den ersten Minuten wird es fast immer entspannter, und dann entstehen meistens die besten Bilder.
 
 Für ein einzelnes Portrait mit mehreren Varianten reicht meist ein überschaubares Zeitfenster. Bei Teamportraits plane ich den Ablauf so, dass jede Person nur kurz aus ihrem Arbeitstag herausgeholt wird.
 
 ## Einheitlich im Team
 
-Wenn mehrere Personen fotografiert werden, ist eine einheitliche Bildsprache wichtig: gleicher Hintergrund, gleiches Licht, gleicher Ausschnitt, gleiche Bearbeitung. So wirkt die Teamseite geschlossen, und neue Mitarbeitende lassen sich später nahtlos ergänzen.
+Wenn mehrere Personen fotografiert werden, braucht es eine einheitliche Bildsprache: gleicher Hintergrund, gleiches Licht, gleicher Ausschnitt, gleiche Bearbeitung. Dann wirkt die Teamseite geschlossen, und neue Mitarbeitende lassen sich später ohne sichtbaren Bruch ergänzen.
 
 ## Nach dem Termin
 

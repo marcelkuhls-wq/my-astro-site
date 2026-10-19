@@ -11,7 +11,7 @@ featured: false
 draft: true
 order: 12.4
 scope: "Architektur außen, Treppenhaus, Büroflächen"
-task: "Buying Labs wollte die eigenen Räume zeigen – vom Gebäude bis zum Besprechungsraum."
+task: "Buying Labs wollte die eigenen Räume zeigen, vom Gebäude bis zum Besprechungsraum."
 approach: "Ich habe das Gebäude von außen und die Innenräume mit geraden Linien und natürlichem Licht fotografiert, inklusive Branding im Flur."
 cover:
   id: bl-01
@@ -45,4 +45,4 @@ gallery:
           motif: "bl-04"
 ---
 
-Gewerbefotografie mit derselben Sorgfalt wie im Wohnbereich: klare Perspektiven, ehrliche Farben und Räume, die so aussehen wie beim Besuch.
+Gewerbeflächen fotografiere ich mit derselben Sorgfalt wie Wohnungen: mit klaren Perspektiven und ehrlichen Farben, damit die Räume so aussehen wie beim Besuch.

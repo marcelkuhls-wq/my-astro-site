@@ -5,13 +5,13 @@ industry: "Schmuck & Uhren"
 service: events
 location: "Hamburg"
 year: 2022
-summary: "Messebegleitung bei „The Show – Best of Jewelry & Watches“: Stand, Bühne, Interviews und Schmuck aus Osmium – am Stand und am Model."
+summary: "Messebegleitung bei „The Show – Best of Jewelry & Watches“: Stand, Bühne, Interviews und Schmuck aus Osmium, am Stand und am Model."
 usage: [Social Media, PR, Produktmarketing]
 featured: false
 order: 9.8
 scope: "Eventreportage, Schmuck- und Uhrendetails, Model-Motive"
-task: "Das Osmium-Institut wollte seinen Auftritt auf der Messe dokumentieren – und gleichzeitig Bilder der Schmuckstücke für Marketing und Social Media mitnehmen."
-approach: "Ich habe Bühne, Interviews und Gäste begleitet und zwischendurch Uhren, Anhänger und Ringe am Stand fotografiert – ergänzt um Motive mit Model."
+task: "Das Osmium-Institut wollte seinen Auftritt auf der Messe dokumentieren und dabei gleich Bilder der Schmuckstücke für Marketing und Social Media mitnehmen."
+approach: "Ich habe Bühne, Interviews und Gäste begleitet und zwischendurch Uhren, Anhänger und Ringe am Stand fotografiert. Dazu kamen Motive mit Model."
 cover:
   id: osm-19
   spec:
@@ -156,6 +156,6 @@ gallery:
           motif: "osm-20"
 ---
 
-Event und Produkt in einem: Die Serie verbindet die Atmosphäre der Messe mit Detailaufnahmen der Schmuckstücke, deren Osmium-Kristalle im Licht funkeln.
+Die Serie verbindet die Atmosphäre der Messe mit Detailaufnahmen der Schmuckstücke, deren Osmium-Kristalle im Licht funkeln.
 
-So entsteht Material für Pressebericht, Social Media und Produktkommunikation aus einem Termin.
+Aus einem Termin entsteht so Material für Pressebericht, Social Media und Produktkommunikation.

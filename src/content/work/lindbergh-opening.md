@@ -5,13 +5,13 @@ industry: "Fashion & Retail"
 service: events
 location: "Hamburg"
 year: 2026
-summary: "Eröffnung des Lindbergh-Stores in Hamburg – Gäste, DJ, Team, Details und die Fassade in der Innenstadt."
+summary: "Eröffnung des Lindbergh-Stores in Hamburg mit Gästen, DJ, Team, Details und der Fassade in der Innenstadt."
 usage: [Social Media, PR]
 featured: false
 order: 7.2
 scope: "Eventreportage, Store-Interior, Details"
 task: "Zur Eröffnung des Hamburger Stores sollten Atmosphäre, Gäste und Kollektion in einer Serie zusammenkommen."
-approach: "Ich habe den Tag dokumentarisch begleitet – von der Fassade mit rotem Teppich über das DJ-Set bis zu Details der Kollektion und Gästen im Store."
+approach: "Ich habe den Tag dokumentarisch begleitet, von der Fassade mit rotem Teppich über das DJ-Set bis zu Details der Kollektion und Gästen im Store."
 cover:
   id: lin-01
   spec:
@@ -136,6 +136,6 @@ gallery:
           motif: "lin-17"
 ---
 
-Retail-Event mit natürlicher Bildsprache: viel Tageslicht, echte Begegnungen und Details, die die Marke erzählen.
+Ein Retail-Event in natürlicher Bildsprache: viel Tageslicht, Begegnungen unter den Gästen und Details der Marke.
 
 Das Material eignet sich für Social Media, PR und den Rückblick auf die Eröffnung.

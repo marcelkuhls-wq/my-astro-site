@@ -6,7 +6,7 @@ industry: Industrie
 service: employer-branding
 location: Schleswig-Holstein
 year: 2024
-summary: Motive für eine Recruiting-Kampagne um Ausbildungsplätze – mit Auszubildenden in Werkstatt, Lager und Verwaltung.
+summary: Motive für eine Recruiting-Kampagne um Ausbildungsplätze, mit Auszubildenden in Werkstatt, Lager und Verwaltung.
 usage: [Kampagne, Karriereseite, Social Media]
 featured: false
 order: 8
@@ -28,7 +28,7 @@ gallery:
           alt: "Ausbilder erklärt einem Auszubildenden ein Bauteil."
           category: "Employer Branding"
           format: "Querformat 3:2"
-          motif: "Ausbilder und Azubi – Interaktion."
+          motif: "Ausbilder und Azubi in Interaktion."
       - id: work-produktion-2
         spec:
           alt: "Portrait einer Auszubildenden in Arbeitskleidung."

@@ -6,12 +6,12 @@ service: events
 alsoServices: []
 location: "Hamburg"
 year: 2024
-summary: "Eröffnung des Garner Hotels in Hamburg (an IHG Hotel): Bandschnitt, Gäste, Team – und die neuen Zimmer und Räume."
+summary: "Eröffnung des Garner Hotels in Hamburg (an IHG Hotel): Bandschnitt, Gäste und Team, dazu die neuen Zimmer und Räume."
 usage: [PR, Social Media]
 featured: false
 order: 9.7
 scope: "Eröffnungsreportage, Teambild, Hotel-Interior"
-task: "Zur Eröffnung sollten der Moment selbst und das neue Haus dokumentiert werden – für PR und Social Media."
+task: "Zur Eröffnung sollten für PR und Social Media der Moment selbst und das neue Haus dokumentiert werden."
 approach: "Ich habe Bandschnitt, Gäste und Team begleitet und zwischen den Programmpunkten Lobby, Frühstücksraum und Zimmer fotografiert."
 cover:
   id: gar-01
@@ -151,4 +151,4 @@ gallery:
           motif: "gar-19"
 ---
 
-Event und Hotelfotografie an einem Tag: der Bandschnitt mit Konfetti, das Team an der Rezeption, die Gastgeber im Gespräch – und die Räume, die ab sofort Gäste empfangen.
+Event- und Hotelfotografie an einem Tag. Zu sehen sind der Bandschnitt mit Konfetti, das Team an der Rezeption und die Gastgeber im Gespräch. Dazu kommen die Räume, die ab sofort Gäste empfangen.

@@ -11,7 +11,7 @@ featured: false
 order: 9.6
 scope: "Eventreportage, Bühne, Portraits, Produktdetails"
 task: "Für das Brand-Event sollten Live-Styling, Publikum, Produkte und die fertigen Looks in einer Serie dokumentiert werden."
-approach: "Ich habe die Shows auf der Bühne begleitet und zwischen den Programmpunkten die Models vor neutralem Hintergrund portraitiert – dazu Details der Produkte."
+approach: "Ich habe die Shows auf der Bühne begleitet und zwischen den Programmpunkten die Models vor neutralem Hintergrund portraitiert. Dazu kamen Details der Produkte."
 cover:
   id: nfg-01
   spec:
@@ -198,4 +198,4 @@ gallery:
           motif: "nfg-26"
 ---
 
-Bühne, Backstage und Portrait in einem: Die Serie zeigt Handwerk, Publikum und Ergebnis – farbig, lebendig und nah an den Menschen.
+Die Serie verbindet Bühne, Backstage und Portrait. Sie zeigt das Handwerk der Stylisten, das Publikum und die fertigen Looks, in kräftigen Farben und nah an den Menschen.

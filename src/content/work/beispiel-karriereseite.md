@@ -6,14 +6,14 @@ industry: Software
 service: employer-branding
 location: Hamburg
 year: 2025
-summary: Fotografische Begleitung mehrerer Teams im Arbeitsalltag – für Karriereseite, Stellenanzeigen und LinkedIn.
+summary: Fotografische Begleitung mehrerer Teams im Arbeitsalltag, für Karriereseite, Stellenanzeigen und LinkedIn.
 scope: "Umfang eintragen, z. B. Produktionstage, Standorte, Abteilungen"
 usage: [Karriereseite, Stellenanzeigen, LinkedIn, Interne Kommunikation]
 task: "Die Aufgabe in ein bis drei Sätzen: Was sollte die Bildwelt leisten, was gab es vorher, wer war beteiligt?"
 approach: "Die Umsetzung in ein bis drei Sätzen: Wie wurde der Produktionstag organisiert, was war besonders?"
-outcome: "Wo die Bilder heute im Einsatz sind – ein, zwei Sätze, nur belegbare Angaben."
+outcome: "Wo die Bilder heute im Einsatz sind: ein, zwei Sätze, nur belegbare Angaben."
 testimonial:
-  quote: "Platzhalter – hier steht ein freigegebenes Zitat der Ansprechperson beim Kunden."
+  quote: "Platzhalter: Hier steht ein freigegebenes Zitat der Ansprechperson beim Kunden."
   name: Name
   role: Position
   company: Unternehmen
@@ -38,7 +38,7 @@ gallery:
           alt: "Team im Stand-up-Meeting vor einem Whiteboard."
           category: "Employer Branding"
           format: "Querformat 3:2"
-          motif: "Stand-up oder Besprechung – Bewegung, Gestik, echte Reaktion."
+          motif: "Stand-up oder Besprechung mit Bewegung, Gestik und echter Reaktion."
       - id: work-karriereseite-2
         spec:
           alt: "Portrait eines Mitarbeiters an seinem Arbeitsplatz."
@@ -52,7 +52,7 @@ gallery:
           alt: "Großraumbüro mit mehreren Teams bei der Arbeit."
           category: "Employer Branding"
           format: "Panorama 21:9"
-          motif: "Überblick Arbeitsumgebung mit Menschen – zeigt Größe und Atmosphäre."
+          motif: "Überblick über die Arbeitsumgebung mit Menschen, zeigt Größe und Atmosphäre."
           tone: dark
   - layout: trio
     images:
@@ -82,7 +82,7 @@ behindTheScenes:
           alt: "Fotograf bei der Arbeit im Büro."
           category: "Behind the Scenes"
           format: "Hochformat 4:5"
-          motif: "Marcel bei der Arbeit – zeigt kompaktes Setup."
+          motif: "Marcel bei der Arbeit, zeigt das kompakte Setup."
       - id: work-karriereseite-bts-2
         spec:
           alt: "Lichtaufbau für Portraits in einem Besprechungsraum."
@@ -91,4 +91,4 @@ behindTheScenes:
           motif: "Portrait-Setup vor Ort."
 ---
 
-Optionaler Fließtext zum Projekt („Das Projekt“). Kann auch leer bleiben – dann tragen Kurzbeschreibung, Aufgabe und Umsetzung die Geschichte.
+Optionaler Fließtext zum Projekt („Das Projekt“). Kann auch leer bleiben. Dann tragen Kurzbeschreibung, Aufgabe und Umsetzung die Geschichte.

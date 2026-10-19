@@ -6,15 +6,15 @@ service: events
 location: Hamburg
 # TODO: Jahr prüfen
 year: 2026
-summary: Erster offizieller Besuch von gamesright als neuer Trikotsponsor der 3. Herrenmannschaft des HSV – mit Begrüßung durch HSV-Präsident Marcell Jansen, Trikotübergabe, Mannschaftsfoto und Heimspiel.
+summary: "Erster offizieller Besuch von gamesright als neuer Trikotsponsor der 3. Herrenmannschaft des HSV: Begrüßung durch HSV-Präsident Marcell Jansen, Trikotübergabe, Mannschaftsfoto und Heimspiel."
 # Optional ergänzen: scope, usage (z. B. [PR, LinkedIn, Social Media]), task, approach, outcome, testimonial
 featured: true
 order: 8
 scope: "Trikotübergabe, Mannschaftsfoto, Trainingsplatz"
-task: "Zum Start des Trikotsponsorings beim HSV III wollte gamesright den ersten offiziellen Besuch festhalten – mit Bildern, die Partnerschaft, Team und Fußball an der Basis zeigen."
+task: "Zum Start des Trikotsponsorings beim HSV III wollte gamesright den ersten offiziellen Besuch festhalten. Die Bilder sollten die Partnerschaft zeigen, das Team und den Fußball an der Basis."
 approach: "Ich habe den Besuch rund um das Heimspiel begleitet: die Trikotübergabe mit HSV-Präsident Marcell Jansen, das Mannschaftsfoto vor dem Tor und Szenen vom Spiel im Abendlicht."
 usage: [LinkedIn, Social Media]
-outcome: "Die Bilder erschienen im LinkedIn-Beitrag von gamesright zum Start des Trikotsponsorings beim HSV III – geteilt unter anderem von HSV-Präsident Marcell Jansen."
+outcome: "Die Bilder erschienen im LinkedIn-Beitrag von gamesright zum Start des Trikotsponsorings beim HSV III. Geteilt hat ihn unter anderem HSV-Präsident Marcell Jansen."
 outcomeLink:
   href: "https://www.linkedin.com/posts/gamesright-gmbh_gamesright-hsv-dritteherren-ugcPost-7315280710687207426-hnyn"
   text: "Beitrag von gamesright auf LinkedIn ansehen"

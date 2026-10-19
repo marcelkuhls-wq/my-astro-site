@@ -11,7 +11,7 @@ usage: [Exposé, Immobilienportale, Website]
 featured: false
 order: 11
 scope: "Luftaufnahme, Interior, Treppenhaus"
-task: "Ein Neubau mit Gartenwohnung sollte für die Vermarktung von innen und außen gezeigt werden – inklusive Lage und Grünflächen."
+task: "Ein Neubau mit Gartenwohnung sollte für die Vermarktung von innen und außen gezeigt werden, dazu Lage und Grünflächen."
 approach: "Ich habe Interior und Architektur fotografiert und mit einer Drohnenaufnahme ergänzt, die das Gebäude mit seinen Gärten im Zusammenhang zeigt. Einige Räume und die Terrasse wurden für die Vermarktung virtuell eingerichtet (Home Staging mit KI); diese Bilder sind gekennzeichnet."
 cover:
   id: immo-neubau-drohne
@@ -54,14 +54,14 @@ gallery:
     images:
       - id: pet-03
         spec:
-          alt: "Wohnzimmer mit Sofa und Blick auf die Terrasse – virtuell eingerichtet, Einrichtung mit KI ergänzt."
+          alt: "Wohnzimmer mit Sofa und Blick auf die Terrasse (virtuell eingerichtet, Einrichtung mit KI ergänzt)."
           ai: "Virtuell eingerichtet (KI)"
           category: "Immobilien"
           format: "Querformat"
           motif: "pet-03"
       - id: pet-04
         spec:
-          alt: "Bad mit Badewanne und Dusche – virtuell eingerichtet, Einrichtung mit KI ergänzt."
+          alt: "Bad mit Badewanne und Dusche (virtuell eingerichtet, Einrichtung mit KI ergänzt)."
           ai: "Virtuell eingerichtet (KI)"
           category: "Immobilien"
           format: "Querformat"
@@ -70,20 +70,20 @@ gallery:
     images:
       - id: pet-05
         spec:
-          alt: "Terrasse mit Loungemöbeln – virtuell eingerichtet, Einrichtung mit KI ergänzt."
+          alt: "Terrasse mit Loungemöbeln (virtuell eingerichtet, Einrichtung mit KI ergänzt)."
           ai: "Virtuell eingerichtet (KI)"
           category: "Immobilien"
           format: "Querformat"
           motif: "pet-05"
       - id: pet-06
         spec:
-          alt: "Garten mit Terrasse in der Abenddämmerung – virtuell eingerichtet, Einrichtung mit KI ergänzt."
+          alt: "Garten mit Terrasse in der Abenddämmerung (virtuell eingerichtet, Einrichtung mit KI ergänzt)."
           ai: "Virtuell eingerichtet (KI)"
           category: "Immobilien"
           format: "Querformat"
           motif: "pet-06"
 ---
 
-Die Drohnenaufnahme zeigt den Neubau mit seinen Gärten und Hecken im Zusammenhang – ein Motiv, das Lage und Grünflächen sofort verständlich macht.
+Die Drohnenaufnahme zeigt den Neubau mit seinen Gärten und Hecken im Zusammenhang. So sind Lage und Grünflächen auf einen Blick klar.
 
 Innen ergänzen ein heller Wohnraum mit bodentiefen Fenstern und das Treppenhaus mit Glastür zum Garten das Set.

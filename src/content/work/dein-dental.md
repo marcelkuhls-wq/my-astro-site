@@ -6,13 +6,13 @@ service: employer-branding
 alsoServices: [business]
 location: "Hamburg"
 year: 2024
-summary: "Employer Branding in der Zentrale der Praxisgruppe Dein Dental – Teams im Arbeitsalltag, Führung, Büroflächen und Markenwelt."
+summary: "Employer Branding in der Zentrale der Praxisgruppe Dein Dental: Teams im Arbeitsalltag, Führung, Büroflächen und Markenwelt."
 usage: [Karriereseite, Website, Social Media]
 featured: true
 order: 2.5
 scope: "Teamszenen, Führungsportraits, Büro und Markendetails"
-task: "Dein Dental brauchte Bilder aus der Zentrale, die zeigen, wie die Teams hinter den Praxen arbeiten – für Karriereseite, Website und Social Media."
-approach: "Ich habe den Büroalltag begleitet: Besprechungen am Laptop, Gespräche zwischen Kolleginnen und Kollegen, Portraits der Führung vor der Markenwand und die Räume selbst – vom Empfang bis zur Lounge."
+task: "Dein Dental brauchte für Karriereseite, Website und Social Media Bilder aus der Zentrale, die zeigen, wie die Teams hinter den Praxen arbeiten."
+approach: "Ich habe den Büroalltag begleitet: Besprechungen am Laptop, Gespräche zwischen Kolleginnen und Kollegen, Portraits der Führung vor der Markenwand und die Räume selbst, vom Empfang bis zur Lounge."
 cover:
   id: dd-01
   spec:
@@ -153,4 +153,4 @@ gallery:
 
 Die Serie verbindet Menschen und Marke: Teams im Gespräch, Führungskräfte vor dem beleuchteten Logo, dazu Empfang, Moos-Wand und Arbeitsplätze.
 
-So entsteht ein Bildset, das auf der Karriereseite genauso funktioniert wie in Stellenanzeigen und auf LinkedIn – inklusive Büro­hund.
+Das Bildset funktioniert auf der Karriereseite genauso wie in Stellenanzeigen und auf LinkedIn. Der Büro­hund ist auch dabei.

@@ -6,7 +6,7 @@ service: immobilien
 alsoServices: [business]
 location: "Klagenfurt"
 year: 2022
-summary: "Hotelfotografie und Team-Portraits: historische Fassade, Lobby, Suiten und Zimmer – dazu das Führungsteam."
+summary: "Hotelfotografie und Team-Portraits: historische Fassade, Lobby, Suiten und Zimmer, dazu das Führungsteam."
 usage: [Website, Buchungsportale]
 featured: false
 order: 12.6
@@ -87,4 +87,4 @@ gallery:
           motif: "sel-10"
 ---
 
-Von der rosafarbenen Gründerzeitfassade über die Lobby bis zur Suite: Die Bilder zeigen, was Gäste erwartet – ergänzt um Portraits der Menschen, die das Haus führen.
+Die Bilder zeigen, was Gäste erwartet: die rosafarbene Gründerzeitfassade, die Lobby und die Suite. Dazu kommen Portraits der Menschen, die das Haus führen.

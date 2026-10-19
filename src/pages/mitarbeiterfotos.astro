@@ -18,7 +18,7 @@ import { serviceById } from '../data/services';
 
 const ogImage = await ogImageFor('weiss-team-sofa');
 const description =
-  'Mitarbeiterfotos und Teamfotos in Hamburg: einheitliche Portraits für das ganze Team an einem Termin, bei Ihnen vor Ort – und neue Kolleginnen später im gleichen Look.';
+  'Mitarbeiterfotos und Teamfotos in Hamburg: einheitliche Portraits für das ganze Team an einem Termin, bei Ihnen vor Ort. Neue Kolleginnen später im gleichen Look.';
 const schema = [
   serviceSchema(Astro.site, serviceById('business'), 'Mitarbeiterfotos und Teamfotos', description),
   breadcrumbs(Astro.site, [
@@ -40,9 +40,9 @@ const team = [
 ];
 
 const steps = [
-  { title: 'Ein Raum genügt', text: 'Ich baue ein mobiles Studio-Setup bei Ihnen auf – ein Besprechungsraum oder eine ruhige Ecke reicht.' },
+  { title: 'Ein Raum genügt', text: 'Ich baue ein mobiles Studio-Setup bei Ihnen auf. Ein Besprechungsraum oder eine ruhige Ecke reicht.' },
   { title: 'Feste Zeitfenster', text: 'Jede Person bekommt ein kurzes Zeitfenster. Niemand wartet lange, der Arbeitstag läuft weiter.' },
-  { title: 'Ein Look für alle', text: 'Gleiches Licht, gleicher Hintergrund, gleicher Ausschnitt – vom ersten bis zum letzten Portrait.' },
+  { title: 'Ein Look für alle', text: 'Gleiches Licht, gleicher Hintergrund, gleicher Ausschnitt, vom ersten bis zum letzten Portrait.' },
   { title: 'Später ergänzbar', text: 'Licht und Aufbau halte ich fest. Neue Kolleginnen und Kollegen passen auch Monate später in die bestehende Teamseite.' },
 ];
 
@@ -61,7 +61,7 @@ const faq = [
   },
   {
     q: 'Wie fotografieren Sie Neuzugänge später?',
-    a: 'Mit denselben Einstellungen wie beim ersten Termin. So fügen sich neue Portraits nahtlos in Website, Teamseite und Signaturen ein.',
+    a: 'Mit denselben Einstellungen wie beim ersten Termin. So passen neue Portraits zu den bestehenden auf Website, Teamseite und in Signaturen.',
   },
   {
     q: 'Was kostet ein Termin für unser Team?',
@@ -76,7 +76,7 @@ const faq = [
     clients="employer-branding"
     label="Business & Corporate"
     title="Ein Team. Ein Look."
-    lead="Einheitliche Portraits für Ihr ganzes Team – an einem Termin, bei Ihnen vor Ort. Für Website, Teamseite, LinkedIn und E-Mail-Signatur."
+    lead="Einheitliche Portraits für Ihr ganzes Team, an einem Termin und bei Ihnen vor Ort. Für Website, Teamseite, LinkedIn und E-Mail-Signatur."
   />
 
   <section class="section-t">
@@ -100,7 +100,7 @@ const faq = [
   </section>
 
   <SeoText label="Teamfotos" title="Teamfotos und Gruppenbilder in Hamburg" link={{ href: '/employer-branding', text: 'Bilder aus dem Arbeitsalltag: Employer Branding' }}>
-    <p>Neben den Einzelportraits entstehen auf Wunsch <strong>Teamfotos und Gruppenbilder</strong> – in kleinen Gruppen, die miteinander arbeiten, statt in einer langen Reihe vor der Wand.</p>
+    <p>Neben den Einzelportraits entstehen auf Wunsch <strong>Teamfotos und Gruppenbilder</strong>, in kleinen Gruppen, die miteinander arbeiten, statt in einer langen Reihe vor der Wand.</p>
     <p>Wer zusätzlich zeigen möchte, wie im Unternehmen gearbeitet wird, ergänzt das Set um Arbeitssituationen für Karriereseite und Recruiting.</p>
   </SeoText>
 
@@ -108,7 +108,7 @@ const faq = [
 
   <ServiceTerms
     scope="Vom kleinen Team bis zu mehreren Abteilungen und Standorten. Neuzugänge später zu einem eigenen Termin."
-    delivery="Innerhalb einer Woche nach dem Termin – einheitlich bearbeitet, für Web, Druck und LinkedIn."
+    delivery="Innerhalb einer Woche nach dem Termin. Einheitlich bearbeitet für Web, Druck und LinkedIn."
   />
 
   <Faq items={faq} />

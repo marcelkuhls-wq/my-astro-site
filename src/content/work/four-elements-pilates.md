@@ -6,13 +6,13 @@ service: business
 alsoServices: [employer-branding]
 location: Hamburg-Winterhude
 year: 2026
-summary: Trainerinnen-Portraits, Kursszenen und Kampagnenmotive für das neue Pilates-Studio – für den Instagram-Auftritt und Werbung auf verschiedenen Plattformen.
+summary: Trainerinnen-Portraits, Kursszenen und Kampagnenmotive für das neue Pilates-Studio. Sie sind für den Instagram-Auftritt und für Werbung auf verschiedenen Plattformen gedacht.
 usage: [Instagram, Werbeanzeigen, Buchungsplattformen, Website]
 featured: true
 order: 1
 scope: "Trainerinnen-Portraits, Kursszenen, Details, Kampagnenmotive"
 task: "Das neue Pilates-Studio Four Elements in Winterhude brauchte Bildmaterial für den Start: für Instagram, Werbeanzeigen, Buchungsplattformen und die Website."
-approach: "Ich habe Trainerinnen-Portraits, Kursszenen und Details wie Logo und Studio-Socken fotografiert – viel im Hochformat, damit das Material direkt für Posts, Stories und Anzeigen nutzbar ist."
+approach: "Ich habe Trainerinnen-Portraits, Kursszenen und Details wie Logo und Studio-Socken fotografiert. Vieles ist im Hochformat entstanden, damit das Material direkt für Posts, Stories und Anzeigen nutzbar ist."
 cover:
   id: fe-kurs-seitstuetz
   position: "50% 45%"
@@ -228,4 +228,4 @@ gallery:
 
 Für den Start des Studios entstand ein Set aus drei Bausteinen: Portraits der Trainerinnen vor den beleuchteten Spiegeln, Kursszenen mit Hanteln und auf der Matte und Details wie Logo und Studio-Socken.
 
-Viele Motive sind im Hochformat fotografiert, damit sie direkt für Posts, Stories und Werbeanzeigen funktionieren – auch die Varianten im roten Licht.
+Viele Motive sind im Hochformat fotografiert, damit sie direkt für Posts, Stories und Werbeanzeigen funktionieren. Das gilt auch für die Varianten im roten Licht.

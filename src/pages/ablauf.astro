@@ -11,14 +11,14 @@ import { breadcrumbs } from '../lib/schema';
 
 const ogImage = await ogImageFor('eb-behind');
 const description =
-  'Ablauf, Lieferzeiten, Nutzungsrechte und Kosten einer Fotoproduktion mit Studio Kuhls in Hamburg – vom Briefing bis zur fertigen Bildauswahl.';
+  'Ablauf, Lieferzeiten, Nutzungsrechte und Kosten einer Fotoproduktion mit Studio Kuhls in Hamburg, vom Briefing bis zur fertigen Bildauswahl.';
 const schema = [breadcrumbs(Astro.site, [{ name: 'Ablauf & Konditionen', path: '/ablauf' }])];
 
 const terms = [
-  { title: 'Rückmeldung', text: 'Auf jede Anfrage innerhalb von 24 Stunden (werktags) – mit Rückfragen oder einem ersten Vorschlag.' },
+  { title: 'Rückmeldung', text: 'Auf jede Anfrage innerhalb von 24 Stunden (werktags). Sie bekommen Rückfragen oder einen ersten Vorschlag.' },
   { title: 'Lieferung Shootings', text: 'Innerhalb einer Woche nach dem Termin, bearbeitet und in allen vereinbarten Formaten.' },
   { title: 'Lieferung Events', text: 'Innerhalb von 48 Stunden nach der Veranstaltung. Eine schnelle Vorauswahl am selben Tag ist möglich.' },
-  { title: 'Formate', text: 'Hochaufgelöst für Druck, optimiert für Web und Social Media – Hoch- und Querformate nach Bedarf.' },
+  { title: 'Formate', text: 'Hochaufgelöst für Druck, optimiert für Web und Social Media. Hoch- und Querformate nach Bedarf.' },
   { title: 'Nutzungsrechte', text: 'Werden im Angebot passend zum geplanten Einsatz festgelegt: Website, Social Media, Presse, Kampagne, Weitergabe an Partner.' },
   { title: 'Kosten', text: 'Auf Anfrage. Sie erhalten nach dem Briefing ein verbindliches, schriftliches Angebot.' },
   { title: 'Einsatzgebiet', text: 'Hamburg und Umgebung, auf Anfrage auch darüber hinaus.' },
@@ -32,7 +32,7 @@ const faq = [
   },
   {
     q: 'Was bedeutet „Nutzungsrechte je nach Projekt“?',
-    a: 'Eine Teamseite braucht andere Rechte als eine bezahlte Kampagne oder eine Weitergabe an Partner, Architekten oder Agenturen. Ich lege die Rechte deshalb im Angebot genau für Ihren Einsatz fest – transparent und ohne Kleingedrucktes.',
+    a: 'Eine Teamseite braucht andere Rechte als eine bezahlte Kampagne oder eine Weitergabe an Partner, Architekten oder Agenturen. Ich lege die Rechte deshalb im Angebot genau für Ihren Einsatz fest, klar und ohne Kleingedrucktes.',
   },
   {
     q: 'Arbeiten Sie auch für Agenturen?',
@@ -40,11 +40,11 @@ const faq = [
   },
   {
     q: 'Wie weit im Voraus sollten wir buchen?',
-    a: 'Je früher, desto besser – besonders für Events und Termine mit vielen Beteiligten. Kurzfristige Anfragen sind trotzdem willkommen; schreiben Sie einfach Ihren Wunschtermin in die Anfrage.',
+    a: 'Je früher, desto besser, besonders für Events und Termine mit vielen Beteiligten. Kurzfristige Anfragen sind trotzdem willkommen. Schreiben Sie einfach Ihren Wunschtermin in die Anfrage.',
   },
   {
     q: 'Was brauchen Sie von uns vor dem Termin?',
-    a: 'Ziel und Einsatz der Bilder, eine grobe Motivliste, Ansprechpartner vor Ort und – bei Mitarbeitenden – die Einwilligungen zur Bildnutzung. Den Rest erarbeiten wir im Briefing gemeinsam.',
+    a: 'Ziel und Einsatz der Bilder, eine grobe Motivliste, Ansprechpartner vor Ort und (bei Mitarbeitenden) die Einwilligungen zur Bildnutzung. Den Rest erarbeiten wir im Briefing gemeinsam.',
   },
 ];
 ---
@@ -54,7 +54,7 @@ const faq = [
     kicker="Ablauf & Konditionen"
     label="Zusammenarbeit"
     title="So arbeiten wir zusammen."
-    lead="Vom ersten Gespräch bis zur fertigen Bildauswahl – mit klaren Absprachen, festen Lieferzeiten und einem Ansprechpartner."
+    lead="Vom ersten Gespräch bis zur fertigen Bildauswahl, mit klaren Absprachen, festen Lieferzeiten und einem Ansprechpartner."
   />
 
   <Process title="Vier Schritte bis zum fertigen Bild." showLink={false} />
@@ -80,7 +80,7 @@ const faq = [
   </section>
 
   <SeoText label="Für Agenturen" title="Fotografie im Auftrag von Agenturen">
-    <p>Für Event-, PR- und Werbeagenturen arbeite ich nach Ihrem Briefing und in Ihrer Abstimmung mit dem Kunden – diskret, pünktlich und mit klar geregelter Weitergabe der Bilder.</p>
+    <p>Für Event-, PR- und Werbeagenturen arbeite ich nach Ihrem Briefing und in Ihrer Abstimmung mit dem Kunden. Ich bin pünktlich, arbeite diskret, und die Weitergabe der Bilder ist klar geregelt.</p>
     <p>Typische Einsätze: Eventreportagen, Speaker- und Gästebilder, Portraits für Kampagnen und Bildmaterial für Pressemitteilungen.</p>
   </SeoText>
 

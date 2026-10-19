@@ -6,7 +6,7 @@ service: events
 location: Alsterinsel, Hamburg
 # TODO: Jahr prüfen
 year: 2026
-summary: Reportage der Jubiläumsfeier zum 20-jährigen Bestehen – Begrüßung, Rede, Gäste und Partner, Bar und Details.
+summary: "Reportage der Jubiläumsfeier zum 20-jährigen Bestehen: Begrüßung, Rede, Gäste und Partner, Bar und Details."
 # Optional ergänzen, wenn bekannt:
 # scope: "z. B. 1 Abend, Reportage und Gästeportraits"
 # usage: [Social Media, PR, Website]
@@ -21,8 +21,8 @@ outcome: "Die Bilder begleiten den Jubiläumsauftritt in Social Media und erschi
 outcomeLink:
   href: "https://www.augenmanufaktur.de/blogs/news/20-jahre-adam-eve-beautylounge-mehr-als-nur-ein-jubilaum"
   text: "Blogbeitrag der Augenmanufaktur ansehen"
-task: "Zum 20-jährigen Bestehen lud die Adam & Eve Beautylounge Gäste und Partner auf die Alsterinsel. Gefragt war eine Reportage, die den Abend als Ganzes erzählt – von der Begrüßung bis zu den Details an der Bar."
-approach: "Ich habe den Abend dokumentarisch begleitet: Begrüßung und Rede der Gastgeberin, Begegnungen unter den Gästen, die Jubiläumswand und die Inszenierung an der Bar im roten Licht. Zurückhaltend, ohne Gäste für Fotos aufzustellen."
+task: "Zum 20-jährigen Bestehen lud die Adam & Eve Beautylounge Gäste und Partner auf die Alsterinsel. Gefragt war eine Reportage, die den Abend als Ganzes erzählt, von der Begrüßung bis zu den Details an der Bar."
+approach: "Ich habe den Abend dokumentarisch begleitet: Begrüßung und Rede der Gastgeberin, Begegnungen unter den Gästen, die Jubiläumswand und die Inszenierung an der Bar im roten Licht. Ich habe mich im Hintergrund gehalten und keine Gäste für Fotos aufgestellt."
 cover:
   id: adam-eve-rede
   spec:
@@ -226,6 +226,6 @@ gallery:
           motif: "ae-x-13"
 ---
 
-Die Bildserie folgt dem Abend: vom Empfang der Gäste über die Rede der Gastgeberin bis zu den Gesprächen in der Location. Dazu kommen Details, die das Jubiläum erzählen – die Fotowand „20 Jahre Hamburgs Beauty Adresse“, Blumenbar und die inszenierten Drinks an der Bar.
+Die Bildserie folgt dem Abend: vom Empfang der Gäste über die Rede der Gastgeberin bis zu den Gesprächen in der Location. Dazu kommen Details zum Jubiläum: die Fotowand „20 Jahre Hamburgs Beauty Adresse“, die Blumenbar und die inszenierten Drinks an der Bar.
 
-So entsteht Material für Social Media, für den Rückblick auf der Website und als Erinnerung für Partner und Stammkundinnen.
+Die Bilder sind für Social Media gedacht, für den Rückblick auf der Website und als Erinnerung für Partner und Stammkundinnen.
